@@ -1,0 +1,15 @@
+#Metrics tools
+radon==5.1.0
+
+#testing tools
+pytest==7.2.1
+coverage==5.5 #version required by mutatest
+
+#mutation tools
+mutpy==0.6.1  #Released: Nov 17, 2019
+mutmut==2.4.0 #Released: Feb 9, 2022
+mutatest==3.1.0 #Released: Feb 20, 2022
+cosmic-ray==8.3.5 #Released: Aug 17, 2021
+
+#test generators
+pynguin==0.30.0
