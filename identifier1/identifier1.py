@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-""" generated source for module Identifier """
-
 # package: identifier
 class Identifier(object):
     """ generated source for class Identifier """
