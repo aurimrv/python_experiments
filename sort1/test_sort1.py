@@ -4,7 +4,7 @@
 """
 
 import unittest
-import sort1 as sorting
+from sort1 import Sort as sorting
 
 class TestSortingMethods(unittest.TestCase):
     def setUp(self):
