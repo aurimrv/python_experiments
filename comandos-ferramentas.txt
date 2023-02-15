@@ -73,11 +73,11 @@ Executar Mutatest e gerar relatório
 Cosmic-ray 8.3.5
 
 Criar nova config
-    cosmic-ray new-config testes1.toml
+    cosmic-ray new-config testes.toml
     
     [?] Top-level module path: Identifier.py
     [?] Test execution timeout (seconds): 20
-    [?] Test command: python -m unittest test_Identifier_parsed.py
+    [?] Test command: python -m pytest test_Identifier_parsed.py
     -- MENU: Distributor --
       (0) http
       (1) local
