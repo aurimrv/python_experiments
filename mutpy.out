@@ -1,0 +1,12 @@
+[*] Start mutation process:
+   - targets: stack5.py
+   - tests: ./DYNAMOSA
+[*] 0 tests passed:
+[*] Start mutants generation and execution:
+[*] Can't load module: stack5.py (ModuleNotFoundError: No module named 'stack5.py')
+0.23user 0.04system 0:00.28elapsed 100%CPU (0avgtext+0avgdata 33236maxresident)k
+0inputs+8outputs (0major+17609minor)pagefaults 0swaps
+0.15user 0.03system 0:00.18elapsed 100%CPU (0avgtext+0avgdata 25652maxresident)k
+0inputs+0outputs (0major+10775minor)pagefaults 0swaps
+0.31user 0.02system 0:00.33elapsed 100%CPU (0avgtext+0avgdata 33356maxresident)k
+0inputs+0outputs (0major+17762minor)pagefaults 0swaps
