@@ -1,0 +1,116 @@
+2023-02-24 00:21:54,053: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.8, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack5
+collected 6 items
+
+DYNAMOSA/test_stack5_DYNAMOSA.py ......                                  [100%]
+
+============================== 6 passed in 0.01s ===============================
+2023-02-24 00:21:54,224: [92m11 mutation targets found in stack5.py AST.[0m
+2023-02-24 00:21:54,224: Setting random.seed to: None
+2023-02-24 00:21:54,224: Coverage file does not exist, proceeding to sample from all targets.
+2023-02-24 00:21:54,225: Total sample space size: 11
+2023-02-24 00:21:54,225: [92mSelecting 10 locations from 11 potentials.[0m
+2023-02-24 00:21:54,225: Starting individual mutation trials!
+2023-02-24 00:21:54,225: Running serial (single processor) dispatch mode.
+2023-02-24 00:21:54,225: Current target location: stack5.py, LocIndex(ast_class='NameConstant', lineno=17, col_offset=58, op_type=None, end_lineno=17, end_col_offset=62)
+2023-02-24 00:21:54,400: [91mResult: Survived at stack5.py: (17, 58)[0m
+2023-02-24 00:21:54,579: [91mResult: Survived at stack5.py: (17, 58)[0m
+2023-02-24 00:21:54,579: Current target location: stack5.py, LocIndex(ast_class='CompareIs', lineno=10, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=10, end_col_offset=27)
+2023-02-24 00:21:54,778: [92mResult: Detected at stack5.py: (10, 11)[0m
+2023-02-24 00:21:54,779: Current target location: stack5.py, LocIndex(ast_class='If', lineno=10, col_offset=8, op_type='If_Statement', end_lineno=11, end_col_offset=23)
+2023-02-24 00:21:54,965: [92mResult: Detected at stack5.py: (10, 8)[0m
+2023-02-24 00:21:55,163: [92mResult: Detected at stack5.py: (10, 8)[0m
+2023-02-24 00:21:55,163: Current target location: stack5.py, LocIndex(ast_class='NameConstant', lineno=17, col_offset=48, op_type=None, end_lineno=17, end_col_offset=52)
+2023-02-24 00:21:55,359: [92mResult: Detected at stack5.py: (17, 48)[0m
+2023-02-24 00:21:55,554: [92mResult: Detected at stack5.py: (17, 48)[0m
+2023-02-24 00:21:55,554: Current target location: stack5.py, LocIndex(ast_class='CompareIs', lineno=20, col_offset=15, op_type=<class 'ast.Is'>, end_lineno=20, end_col_offset=34)
+2023-02-24 00:21:55,729: [91mResult: Survived at stack5.py: (20, 15)[0m
+2023-02-24 00:21:55,729: Current target location: stack5.py, LocIndex(ast_class='CompareIs', lineno=17, col_offset=32, op_type=<class 'ast.IsNot'>, end_lineno=17, end_col_offset=52)
+2023-02-24 00:21:55,922: [92mResult: Detected at stack5.py: (17, 32)[0m
+2023-02-24 00:21:55,922: Current target location: stack5.py, LocIndex(ast_class='NameConstant', lineno=3, col_offset=27, op_type=None, end_lineno=3, end_col_offset=31)
+2023-02-24 00:21:56,124: [92mResult: Detected at stack5.py: (3, 27)[0m
+2023-02-24 00:21:56,323: [92mResult: Detected at stack5.py: (3, 27)[0m
+2023-02-24 00:21:56,323: Current target location: stack5.py, LocIndex(ast_class='NameConstant', lineno=20, col_offset=30, op_type=None, end_lineno=20, end_col_offset=34)
+2023-02-24 00:21:56,500: [91mResult: Survived at stack5.py: (20, 30)[0m
+2023-02-24 00:21:56,676: [91mResult: Survived at stack5.py: (20, 30)[0m
+2023-02-24 00:21:56,676: Current target location: stack5.py, LocIndex(ast_class='NameConstant', lineno=11, col_offset=19, op_type=None, end_lineno=11, end_col_offset=23)
+2023-02-24 00:21:56,851: [91mResult: Survived at stack5.py: (11, 19)[0m
+2023-02-24 00:21:57,027: [91mResult: Survived at stack5.py: (11, 19)[0m
+2023-02-24 00:21:57,027: Current target location: stack5.py, LocIndex(ast_class='NameConstant', lineno=10, col_offset=23, op_type=None, end_lineno=10, end_col_offset=27)
+2023-02-24 00:21:57,221: [92mResult: Detected at stack5.py: (10, 23)[0m
+2023-02-24 00:21:57,419: [92mResult: Detected at stack5.py: (10, 23)[0m
+2023-02-24 00:21:57,419: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.8, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack5
+collected 6 items
+
+DYNAMOSA/test_stack5_DYNAMOSA.py ......                                  [100%]
+
+============================== 6 passed in 0.01s ===============================
+2023-02-24 00:21:57,593: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/stack5/stack5.py
+ - Test commands: ['python', '-m', 'pytest', './DYNAMOSA']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 11
+ - Location sample coverage: 90.91 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:00.170554
+ - Clean trial 2 run time: 0:00:00.174100
+ - Mutation trials total run time: 0:00:03.195209
+
+2023-02-24 00:21:57,593: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - SURVIVED: 7
+ - DETECTED: 10
+ - TOTAL RUNS: 17
+ - RUN DATETIME: 2023-02-24 00:21:57.593665
+
+2023-02-24 00:21:57,593: Detected mutations:[92m
+
+DETECTED
+--------
+ - stack5.py: (l: 3, c: 27) - mutation from None to False
+ - stack5.py: (l: 3, c: 27) - mutation from None to True
+ - stack5.py: (l: 10, c: 8) - mutation from If_Statement to If_True
+ - stack5.py: (l: 10, c: 8) - mutation from If_Statement to If_False
+ - stack5.py: (l: 10, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - stack5.py: (l: 10, c: 23) - mutation from None to False
+ - stack5.py: (l: 10, c: 23) - mutation from None to True
+ - stack5.py: (l: 17, c: 32) - mutation from <class 'ast.IsNot'> to <class 'ast.Is'>
+ - stack5.py: (l: 17, c: 48) - mutation from None to False
+ - stack5.py: (l: 17, c: 48) - mutation from None to True[0m
+
+2023-02-24 00:21:57,593: Timedout mutations:
+
+2023-02-24 00:21:57,593: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - stack5.py: (l: 11, c: 19) - mutation from None to False
+ - stack5.py: (l: 11, c: 19) - mutation from None to True
+ - stack5.py: (l: 17, c: 58) - mutation from None to False
+ - stack5.py: (l: 17, c: 58) - mutation from None to True
+ - stack5.py: (l: 20, c: 15) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - stack5.py: (l: 20, c: 30) - mutation from None to False
+ - stack5.py: (l: 20, c: 30) - mutation from None to True[0m
+
+2023-02-24 00:21:57,594: Creating directory tree for: /home/auri/temp/lucca/python_experiments/stack5/DYNAMOSA/mutatest
+2023-02-24 00:21:57,594: Writing output report to: /home/auri/temp/lucca/python_experiments/stack5/DYNAMOSA/mutatest/DYNAMOSA-report.rst
