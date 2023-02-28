@@ -1,4 +1,4 @@
-#Pyguin test cases converted from /home/auri/temp/lucca/python_experiments/stack5/WHOLE_SUITE/test_stack5.py.orig
+#Pyguin test cases converted from /home/auri/temp/lucca/python_experiments/stack5/WHOLE_SUITE/test_stack5.py
 import pytest
 import stack5 as module_0
 import builtins as module_1
@@ -9,7 +9,7 @@ def test_case_0():
     var_0 = stack_0.push(none_type_0)
     stack_1 = module_0.Stack()
     var_1 = stack_1.pop()
-    var_1.is_empty()
+#    var_1.is_empty()
 
 def test_case_1():
     list_0 = []
@@ -21,7 +21,7 @@ def test_case_1():
     node_0 = module_0.Node(stack_1, int_0)
     stack_2 = module_0.Stack()
     var_0 = stack_2.pop()
-    var_0.pop()
+#    var_0.pop()
 
 def test_case_2():
     stack_0 = module_0.Stack()
@@ -33,7 +33,7 @@ def test_case_2():
     assert var_2.top is None
     var_3 = var_2.pop()
     var_4 = var_2.pop()
-    var_1.pop()
+#    var_1.pop()
 
 def test_case_3():
     bool_0 = True
@@ -64,7 +64,7 @@ def test_case_5():
     node_0 = module_0.Node(stack_0)
     var_2 = stack_1.pop()
     var_3 = stack_2.pop()
-    var_3.pop()
+#    var_3.pop()
 
 def test_case_6():
     bytes_0 = b"\xfa\xa2\x19\xb25\x05!\x07o7\xa6O\n\x854j\xd6'\x13\xfa"

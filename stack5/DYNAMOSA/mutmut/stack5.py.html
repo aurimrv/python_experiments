@@ -1,14 +1,25 @@
-<html><body><h1>stack5.py</h1>Killed 5 out of 9 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- stack5.py
+<html><body><h1>stack5.py</h1>Killed 3 out of 9 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 2</h3><pre>--- stack5.py
 +++ stack5.py
-@@ -1,7 +1,7 @@
- class Stack(object):
- 
-     def __init__(self, top=None):
--        self.top = top
-+        self.top = None
+@@ -4,7 +4,7 @@
+         self.top = top
  
      def push(self, data):
-         self.top = Node(data, self.top)
+-        self.top = Node(data, self.top)
++        self.top = None
+ 
+     def pop(self):
+         if self.top is None:
+</pre><h3>Mutant 4</h3><pre>--- stack5.py
++++ stack5.py
+@@ -9,7 +9,7 @@
+     def pop(self):
+         if self.top is None:
+             return None
+-        data = self.top.data
++        data = None
+         self.top = self.top.next
+         return data
+ 
 </pre><h3>Mutant 5</h3><pre>--- stack5.py
 +++ stack5.py
 @@ -10,7 +10,7 @@
@@ -31,6 +42,15 @@
  
  class Node(object):
  
+</pre><h3>Mutant 8</h3><pre>--- stack5.py
++++ stack5.py
+@@ -22,5 +22,5 @@
+ class Node(object):
+ 
+     def __init__(self, data, next=None):
+-        self.data = data
++        self.data = None
+         self.next = next
 </pre><h3>Mutant 9</h3><pre>--- stack5.py
 +++ stack5.py
 @@ -23,4 +23,4 @@

@@ -36,24 +36,27 @@
 <h3>Details</h3>
 <ul>
     <li>module - <code><module 'stack5' from '/home/auri/temp/lucca/python_experiments/stack5/./stack5.py'></code></li>
-    <li><span class="label label-success">killed</span> by <code>DYNAMOSA/test_stack5_DYNAMOSA.py::test_case_3</code></li>
+    <li><span class="label label-success">killed</span> by <code>DYNAMOSA/test_stack5.py::test_case_5</code></li>
     
-    <li>duration - 0.073 s</li>
+    <li>duration - 0.056 s</li>
     
-    
-    <li>tests run - 4</li>
     
 </ul>
 
 <h3>Exception traceback</h3>
-<pre>def test_case_3():
+<pre>def test_case_5():
         stack_0 = module_0.Stack()
->       var_0 = stack_0.peek()
+        var_0 = stack_0.pop()
+        none_type_0 = None
+>       var_1 = stack_0.is_empty()
 
-DYNAMOSA/test_stack5_DYNAMOSA.py:27: 
+DYNAMOSA/test_stack5.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5:20: in is_empty
+    ???
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <stack5.Stack object at 0x7f95e5ad33d0>
+self = <stack5.Stack object at 0x7f3add8bb4f0>
 
 >   ???
 E   NameError: name 'top' is not defined

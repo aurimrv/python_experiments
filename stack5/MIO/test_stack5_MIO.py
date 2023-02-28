@@ -1,4 +1,4 @@
-#Pyguin test cases converted from /home/auri/temp/lucca/python_experiments/stack5/MIO/test_stack5.py.orig
+#Pyguin test cases converted from /home/auri/temp/lucca/python_experiments/stack5/MIO/test_stack5.py
 import pytest
 import stack5 as module_0
 
@@ -7,7 +7,7 @@ def test_case_0():
     var_0 = stack_0.pop()
     var_1 = stack_0.is_empty()
     var_2 = stack_0.pop()
-    var_1.push(stack_0)
+#    var_1.push(stack_0)
 
 def test_case_1():
     tuple_0 = ()

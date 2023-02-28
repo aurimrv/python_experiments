@@ -1,11 +1,11 @@
-#Pyguin test cases converted from /home/auri/temp/lucca/python_experiments/stack5/MOSA/test_stack5.py.orig
+#Pyguin test cases converted from /home/auri/temp/lucca/python_experiments/stack5/MOSA/test_stack5.py
 import pytest
 import stack5 as module_0
 
 def test_case_0():
     stack_0 = module_0.Stack()
     var_0 = stack_0.pop()
-    var_0.pop()
+#    var_0.pop()
 
 def test_case_1():
     stack_0 = module_0.Stack()
