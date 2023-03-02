@@ -120,9 +120,9 @@ td.lines span{
 </head>
 <body>
 <h1>Pynguin coverage report for module 'stack4'</h1>
-<p>Achieved 97.50% branch coverage:
+<p>Achieved 95.00% branch coverage:
 10/10 branchless code objects covered.
-29/30 branches covered.</p>
+28/30 branches covered.</p>
 <table>
     <tbody>
         <tr>
@@ -200,7 +200,7 @@ td.lines span{
                   <span class="notRelevant">71</span>
                   <span class="notRelevant">72</span>
                   <span class="fullyCovered" title="4/4 branches covered">73</span>
-                  <span class="fullyCovered" title="4/4 branches covered">74</span>
+                  <span class="partiallyCovered" title="3/4 branches covered">74</span>
                   <span class="notRelevant">75</span>
                   <span class="notRelevant">76</span>
                   <span class="notRelevant">77</span>
@@ -242,19 +242,19 @@ td.lines span{
             <td style="width: 100%;"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Stack implementation in Python.&quot;&quot;&quot;</span>
 
 <span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Node (data element) object.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Node (data element) object.</span>
 
 <span class="sd">    Data attribute for data storage and Next for pointer to next node.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">next_node</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Attribute data and next_node.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Attribute data and next_node.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">next_node</span>
 
 
 <span class="k">class</span> <span class="nc">LinkedList</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Method for linked list.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Method for linked list.</span>
 
 <span class="sd">    push(val) - will insert the value at the head of the list.</span>
 <span class="sd">    pop() - remove the first value off the head and return it.</span>
@@ -268,7 +268,7 @@ td.lines span{
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Linked list initialized with head.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Linked list initialized with head.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_length</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">try</span><span class="p">:</span>
@@ -279,13 +279,13 @@ td.lines span{
                 <span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Insert a value at the head of the list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Insert a value at the head of the list.&quot;&quot;&quot;</span>
         <span class="n">old_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">old_head</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_length</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Remove the first value and return it.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove the first value and return it.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">&#39;Cannot pop from an empty list&#39;</span><span class="p">)</span>
         <span class="n">to_return</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
@@ -294,11 +294,11 @@ td.lines span{
         <span class="k">return</span> <span class="n">to_return</span><span class="o">.</span><span class="n">data</span>
 
     <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the length of the list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the length of the list.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_length</span>
 
     <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the node containing val.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the node containing val.&quot;&quot;&quot;</span>
         <span class="n">curr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="k">while</span> <span class="n">curr</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">curr</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
@@ -306,7 +306,7 @@ td.lines span{
             <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>
 
     <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Remove node from list if exists.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove node from list if exists.&quot;&quot;&quot;</span>
         <span class="n">curr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="k">if</span> <span class="n">curr</span> <span class="ow">and</span> <span class="n">val</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">next</span>
@@ -318,7 +318,7 @@ td.lines span{
             <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="n">next</span>
 
     <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Display list as a tuple.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display list as a tuple.&quot;&quot;&quot;</span>
         <span class="n">curr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="n">display</span> <span class="o">=</span> <span class="s1">&#39;(&#39;</span>
         <span class="k">while</span> <span class="n">curr</span><span class="p">:</span>
@@ -328,7 +328,7 @@ td.lines span{
 
 
 <span class="k">class</span> <span class="nc">Stack</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Implementation of Stack.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Implementation of Stack.</span>
 
 <span class="sd">    public methods:</span>
 
@@ -340,15 +340,15 @@ td.lines span{
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialization.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialization.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span> <span class="o">=</span> <span class="n">LinkedList</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add val to the stack.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add val to the stack.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Remove item off the stack.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove item off the stack.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 </pre></div>
 </td>
@@ -356,7 +356,7 @@ td.lines span{
     </tbody>
 </table>
 <footer>
-  <p>Created at 2023-02-13 14:49:07.923784</p>
+  <p>Created at 2023-03-01 19:18:24.443918</p>
 </footer>
 </body>
 </html>

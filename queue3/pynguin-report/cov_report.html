@@ -120,9 +120,9 @@ td.lines span{
 </head>
 <body>
 <h1>Pynguin coverage report for module 'queue3'</h1>
-<p>Achieved 97.37% branch coverage:
+<p>Achieved 92.11% branch coverage:
 16/16 branchless code objects covered.
-21/22 branches covered.</p>
+19/22 branches covered.</p>
 <table>
     <tbody>
         <tr>
@@ -211,7 +211,7 @@ td.lines span{
                   <span class="notRelevant">82</span>
                   <span class="fullyCovered" title="2/2 branches covered">83</span>
                   <span class="notRelevant">84</span>
-                  <span class="fullyCovered" title="2/2 branches covered">85</span>
+                  <span class="partiallyCovered" title="1/2 branches covered">85</span>
                   <span class="notRelevant">86</span>
                   <span class="notRelevant">87</span>
                   <span class="notRelevant">88</span>
@@ -267,7 +267,7 @@ td.lines span{
                   <span class="notRelevant">138</span>
                   <span class="notRelevant">139</span>
                   <span class="notRelevant">140</span>
-                  <span class="fullyCovered" title="4/4 branches covered">141</span>
+                  <span class="partiallyCovered" title="3/4 branches covered">141</span>
                   <span class="notRelevant">142</span>
                   <span class="notRelevant">143</span>
                   <span class="notRelevant">144</span>
@@ -344,7 +344,7 @@ td.lines span{
 
     <span class="k">def</span> <span class="nf">addAtHead</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Add node at head end.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add node at head end.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">newNode</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
@@ -363,7 +363,7 @@ td.lines span{
 
     <span class="k">def</span> <span class="nf">addAtTail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Add node at tail end.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add node at tail end.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">newNode</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
@@ -380,7 +380,7 @@ td.lines span{
 
     <span class="k">def</span> <span class="nf">removeAtHead</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-        <span class="sd">&quot;&quot;&quot;Remove node at head end.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove node at head end.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -402,7 +402,7 @@ td.lines span{
 
     <span class="k">def</span> <span class="nf">removeAtTail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-        <span class="sd">&quot;&quot;&quot;Remove node at tail end.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove node at tail end.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -425,13 +425,13 @@ td.lines span{
 
     <span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Check if linkedlist is empty&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if linkedlist is empty&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="kc">True</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__size</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">getHead</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-        <span class="sd">&quot;&quot;&quot;Get value at the front end of the list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get value at the front end of the list.&quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
@@ -440,25 +440,25 @@ td.lines span{
 
     <span class="k">def</span> <span class="nf">getTail</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Get value at the tail of the list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get value at the tail of the list.&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__tail</span><span class="o">.</span><span class="n">value</span>
 
     <span class="k">def</span> <span class="nf">getSize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Get length of the linked list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get length of the linked list.&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__size</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Get length of the linked list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get length of the linked list.&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__size</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Return String representation of linkedlist values.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return String representation of linkedlist values.&quot;&quot;&quot;</span>
 
         <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__head</span><span class="o">.</span><span class="n">next</span>
@@ -473,43 +473,43 @@ td.lines span{
 
     <span class="k">def</span> <span class="nf">getHead</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;View first element in the queue.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;View first element in the queue.&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__queue</span><span class="o">.</span><span class="n">getHead</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">getTail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-        <span class="sd">&quot;&quot;&quot;View last element in the queue.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;View last element in the queue.&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__queue</span><span class="o">.</span><span class="n">getTail</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Remove element from the queue.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove element from the queue.&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__queue</span><span class="o">.</span><span class="n">removeAtHead</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Add element to queue.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add element to queue.&quot;&quot;&quot;</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">__queue</span><span class="o">.</span><span class="n">addAtTail</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">getSize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Get size of the queue.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get size of the queue.&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__queue</span><span class="o">.</span><span class="n">getSize</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Check if queue is empty.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if queue is empty.&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__queue</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 
-        <span class="sd">&quot;&quot;&quot;Get string representation of the queue.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get string representation of the queue.&quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__queue</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
 
@@ -522,7 +522,7 @@ td.lines span{
     </tbody>
 </table>
 <footer>
-  <p>Created at 2023-02-12 22:21:27.291798</p>
+  <p>Created at 2023-03-01 06:59:33.640818</p>
 </footer>
 </body>
 </html>

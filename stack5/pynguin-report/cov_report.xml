@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd"><coverage line-rate="None" branch-rate="1.0" lines-covered="0" lines-valid="0" branches-covered="11" branches-valid="11" complexity="0.0" version="pynguin-0.27.0" timestamp="1676299782">
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd"><coverage line-rate="None" branch-rate="1.0" lines-covered="0" lines-valid="0" branches-covered="11" branches-valid="11" complexity="0.0" version="pynguin-0.31.0" timestamp="1677698313">
   <sources>
     <source>stack5</source>
   </sources>
@@ -10,12 +10,12 @@
           <lines>
             <line number="1" hits="1" branch="true" condition-coverage="100% (2/2)" />
             <line number="3" hits="1" branch="true" condition-coverage="100% (1/1)" />
-            <line number="7" hits="1" branch="true" condition-coverage="100% (1/1)" />
-            <line number="9" hits="1" branch="true" condition-coverage="100% (1/1)" />
-            <line number="12" hits="1" branch="true" condition-coverage="100% (1/1)" />
-            <line number="16" hits="1" branch="true" condition-coverage="100% (2/2)" />
-            <line number="23" hits="1" branch="true" condition-coverage="100% (2/2)" />
-            <line number="25" hits="1" branch="true" condition-coverage="100% (1/1)" />
+            <line number="6" hits="1" branch="true" condition-coverage="100% (1/1)" />
+            <line number="10" hits="1" branch="true" condition-coverage="100% (2/2)" />
+            <line number="17" hits="1" branch="true" condition-coverage="100% (2/2)" />
+            <line number="19" hits="1" branch="true" condition-coverage="100% (1/1)" />
+            <line number="22" hits="1" branch="true" condition-coverage="100% (1/1)" />
+            <line number="24" hits="1" branch="true" condition-coverage="100% (1/1)" />
           </lines>
         </class>
       </classes>

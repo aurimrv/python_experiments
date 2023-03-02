@@ -120,9 +120,9 @@ td.lines span{
 </head>
 <body>
 <h1>Pynguin coverage report for module 'stack1'</h1>
-<p>Achieved 75.00% branch coverage:
+<p>Achieved 60.00% branch coverage:
 6/12 branchless code objects covered.
-24/28 branches covered.</p>
+18/28 branches covered.</p>
 <table>
     <tbody>
         <tr>
@@ -192,7 +192,7 @@ td.lines span{
                   <span class="notRelevant">63</span>
                   <span class="notRelevant">64</span>
                   <span class="notRelevant">65</span>
-                  <span class="fullyCovered" title="2/2 branches covered">66</span>
+                  <span class="notCovered" title="0/2 branches covered">66</span>
                   <span class="notRelevant">67</span>
                   <span class="notRelevant">68</span>
                   <span class="partiallyCovered" title="1/2 branches covered">69</span>
@@ -230,9 +230,9 @@ td.lines span{
                   <span class="notRelevant">101</span>
                   <span class="notRelevant">102</span>
                   <span class="notRelevant">103</span>
-                  <span class="fullyCovered" title="2/2 branches covered">104</span>
+                  <span class="partiallyCovered" title="1/2 branches covered">104</span>
                   <span class="notRelevant">105</span>
-                  <span class="fullyCovered" title="2/2 branches covered">106</span>
+                  <span class="partiallyCovered" title="1/2 branches covered">106</span>
                   <span class="notRelevant">107</span>
                   <span class="notRelevant">108</span>
                   <span class="notRelevant">109</span>
@@ -243,7 +243,7 @@ td.lines span{
                   <span class="notRelevant">114</span>
                   <span class="notRelevant">115</span>
                   <span class="notRelevant">116</span>
-                  <span class="partiallyCovered" title="1/2 branches covered">117</span>
+                  <span class="notCovered" title="0/2 branches covered">117</span>
                   <span class="notRelevant">118</span>
                   <span class="notRelevant">119</span>
                   <span class="notRelevant">120</span>
@@ -256,7 +256,7 @@ td.lines span{
                   <span class="notRelevant">127</span>
                   <span class="notRelevant">128</span>
                   <span class="notRelevant">129</span>
-                  <span class="partiallyCovered" title="1/2 branches covered">130</span>
+                  <span class="notCovered" title="0/2 branches covered">130</span>
                   <span class="notRelevant">131</span>
                   <span class="notRelevant">132</span>
                   <span class="notRelevant">133</span>
@@ -305,7 +305,7 @@ td.lines span{
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">top</span><span class="o">.</span><span class="n">data</span>
 
 <span class="k">class</span> <span class="nc">StackNode</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Look familiar? &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Look familiar? &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">item</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="kc">None</span>
@@ -339,7 +339,7 @@ td.lines span{
         <span class="k">return</span> <span class="kc">True</span>
 
 <span class="k">def</span> <span class="nf">postfix_eval</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Here we setup a dictionary relating the characters of </span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; Here we setup a dictionary relating the characters of </span>
 <span class="sd">        operations to lambda functions. It&#39;s similar to saying:</span>
 <span class="sd">        </span>
 <span class="sd">        def add(a,b):</span>
@@ -400,7 +400,7 @@ td.lines span{
     </tbody>
 </table>
 <footer>
-  <p>Created at 2023-02-13 10:14:13.673583</p>
+  <p>Created at 2023-03-01 09:10:06.414049</p>
 </footer>
 </body>
 </html>

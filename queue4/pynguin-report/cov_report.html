@@ -120,9 +120,9 @@ td.lines span{
 </head>
 <body>
 <h1>Pynguin coverage report for module 'queue4'</h1>
-<p>Achieved 89.29% branch coverage:
+<p>Achieved 76.79% branch coverage:
 10/10 branchless code objects covered.
-40/46 branches covered.</p>
+33/46 branches covered.</p>
 <table>
     <tbody>
         <tr>
@@ -223,13 +223,13 @@ td.lines span{
                   <span class="notRelevant">94</span>
                   <span class="fullyCovered" title="4/4 branches covered">95</span>
                   <span class="fullyCovered" title="2/2 branches covered">96</span>
-                  <span class="fullyCovered" title="2/2 branches covered">97</span>
+                  <span class="partiallyCovered" title="1/2 branches covered">97</span>
                   <span class="notRelevant">98</span>
-                  <span class="partiallyCovered" title="3/4 branches covered">99</span>
+                  <span class="notCovered" title="0/4 branches covered">99</span>
                   <span class="notRelevant">100</span>
-                  <span class="fullyCovered" title="2/2 branches covered">101</span>
+                  <span class="notCovered" title="0/2 branches covered">101</span>
                   <span class="notRelevant">102</span>
-                  <span class="partiallyCovered" title="1/2 branches covered">103</span>
+                  <span class="notCovered" title="0/2 branches covered">103</span>
                   <span class="notRelevant">104</span>
                   <span class="notRelevant">105</span>
                   <span class="notRelevant">106</span>
@@ -288,21 +288,21 @@ td.lines span{
 
 
 <span class="k">class</span> <span class="nc">Node</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Node class for data storage.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Node class for data storage.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">next_node</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prev</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize Node.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize Node.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">next_node</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">prev</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;String representation.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;String representation.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;Value: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">DoubleLinkedList</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Double linked list impplementation.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Double linked list impplementation.</span>
 
 <span class="sd">    Methods supported</span>
 <span class="sd">    push(val) - will insert the value (val) at the head of the list</span>
@@ -314,7 +314,7 @@ td.lines span{
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize list.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_length</span> <span class="o">=</span> <span class="mi">0</span>
@@ -326,7 +326,7 @@ td.lines span{
                 <span class="bp">self</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">push</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add val to the head of the list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add val to the head of the list.&quot;&quot;&quot;</span>
         <span class="n">old_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">next_node</span><span class="o">=</span><span class="n">old_head</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">old_head</span><span class="p">:</span>
@@ -336,7 +336,7 @@ td.lines span{
         <span class="bp">self</span><span class="o">.</span><span class="n">_length</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Remove the val from the head of the list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove the val from the head of the list.&quot;&quot;&quot;</span>
         <span class="n">to_return</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_length</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">&#39;Cannot pop from an empty list.&#39;</span><span class="p">)</span>
@@ -351,7 +351,7 @@ td.lines span{
         <span class="k">return</span> <span class="n">to_return</span><span class="o">.</span><span class="n">data</span>
 
     <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add val to the tail of the list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add val to the tail of the list.&quot;&quot;&quot;</span>
         <span class="n">old_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">prev</span><span class="o">=</span><span class="n">old_tail</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">old_tail</span><span class="p">:</span>
@@ -361,7 +361,7 @@ td.lines span{
         <span class="bp">self</span><span class="o">.</span><span class="n">_length</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">shift</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Remove the val from the tail of the list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove the val from the tail of the list.&quot;&quot;&quot;</span>
         <span class="n">to_return</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_length</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s1">&#39;Cannot shift from an empty list.&#39;</span><span class="p">)</span>
@@ -376,7 +376,7 @@ td.lines span{
         <span class="k">return</span> <span class="n">to_return</span><span class="o">.</span><span class="n">data</span>
 
     <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Remove first occurance of val from list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove first occurance of val from list.&quot;&quot;&quot;</span>
         <span class="n">curr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="k">while</span> <span class="n">curr</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">curr</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="n">val</span><span class="p">:</span>
@@ -395,7 +395,7 @@ td.lines span{
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> is not in the list&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">_repr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return list representation of dll.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return list representation of dll.&quot;&quot;&quot;</span>
         <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
@@ -407,7 +407,7 @@ td.lines span{
 
 
 <span class="k">class</span> <span class="nc">Queue</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Implementation of Queue.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Implementation of Queue.</span>
 
 <span class="sd">    This implementation supports the following public methods:</span>
 <span class="sd">    enqueue(value): adds value to the queue</span>
@@ -419,26 +419,26 @@ td.lines span{
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Initialize queue data structure.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize queue data structure.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_container</span> <span class="o">=</span> <span class="n">DoubleLinkedList</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Add a value to the queue.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a value to the queue.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_container</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Remove a value from the front of the queue.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove a value from the front of the queue.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">peek</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the next value in the queue without dequing it.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the next value in the queue without dequing it.&quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">data</span>
         <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the size of the queue.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the size of the queue.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container</span><span class="o">.</span><span class="n">_length</span>
 </pre></div>
 </td>
@@ -446,7 +446,7 @@ td.lines span{
     </tbody>
 </table>
 <footer>
-  <p>Created at 2023-02-13 08:13:33.846271</p>
+  <p>Created at 2023-03-01 07:33:02.359959</p>
 </footer>
 </body>
 </html>

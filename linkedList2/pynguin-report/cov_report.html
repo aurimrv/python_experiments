@@ -120,9 +120,9 @@ td.lines span{
 </head>
 <body>
 <h1>Pynguin coverage report for module 'linkedList2'</h1>
-<p>Achieved 87.18% branch coverage:
+<p>Achieved 76.92% branch coverage:
 5/5 branchless code objects covered.
-29/34 branches covered.</p>
+25/34 branches covered.</p>
 <table>
     <tbody>
         <tr>
@@ -141,13 +141,13 @@ td.lines span{
                   <span class="notRelevant">12</span>
                   <span class="notRelevant">13</span>
                   <span class="notRelevant">14</span>
-                  <span class="partiallyCovered" title="5/8 branches covered">15</span>
+                  <span class="partiallyCovered" title="2/8 branches covered">15</span>
                   <span class="fullyCovered" title="2/2 branches covered">16</span>
                   <span class="notRelevant">17</span>
                   <span class="notRelevant">18</span>
                   <span class="notRelevant">19</span>
                   <span class="notRelevant">20</span>
-                  <span class="partiallyCovered" title="1/2 branches covered">21</span>
+                  <span class="notCovered" title="0/2 branches covered">21</span>
                   <span class="notRelevant">22</span>
                   <span class="notRelevant">23</span>
                   <span class="fullyCovered" title="1/1 branchless code objects covered">24</span>
@@ -214,12 +214,12 @@ td.lines span{
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="k">class</span> <span class="nc">LinkedNode</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tail</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Node in a Linked List.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Node in a Linked List.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">next</span>  <span class="o">=</span> <span class="n">tail</span>
 
     <span class="k">def</span> <span class="nf">checkInfinite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Check whether infinite loop via next.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check whether infinite loop via next.&quot;&quot;&quot;</span>
         <span class="n">p1</span> <span class="o">=</span> <span class="n">p2</span> <span class="o">=</span> <span class="bp">self</span>
         <span class="k">while</span> <span class="n">p1</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">p2</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">p2</span><span class="o">.</span><span class="n">next</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span> <span class="k">return</span> <span class="kc">False</span>
@@ -232,17 +232,17 @@ td.lines span{
 
 <span class="k">class</span> <span class="nc">LinkedList</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">start</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Demonstrate linked lists in Python.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Demonstrate linked lists in Python.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">head</span>  <span class="o">=</span> <span class="kc">None</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">start</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">prepend</span><span class="p">(</span><span class="n">_</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">prepend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Prepend element into list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prepend element into list.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">LinkedNode</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Remove first value in list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove first value in list.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span> <span class="p">(</span><span class="s2">&quot;Linked list is empty.&quot;</span><span class="p">)</span>
         <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">value</span>
@@ -250,7 +250,7 @@ td.lines span{
         <span class="k">return</span> <span class="n">val</span>
 
     <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Remove value from list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove value from list.&quot;&quot;&quot;</span>
         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="n">last</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
@@ -264,21 +264,21 @@ td.lines span{
         <span class="k">return</span> <span class="kc">False</span>
         
     <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Iterator of values in the list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Iterator of values in the list.&quot;&quot;&quot;</span>
         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">yield</span> <span class="n">n</span><span class="o">.</span><span class="n">value</span>
             <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">next</span>
         
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;String representation of linked list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;String representation of linked list.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;link:[]&#39;</span>
 
         <span class="k">return</span> <span class="s1">&#39;link:[</span><span class="si">{0:s}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="bp">self</span><span class="p">)))</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Count values in list.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Count values in list.&quot;&quot;&quot;</span>
         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head</span>
         <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
@@ -291,7 +291,7 @@ td.lines span{
     </tbody>
 </table>
 <footer>
-  <p>Created at 2023-02-12 19:06:26.990562</p>
+  <p>Created at 2023-03-01 03:03:01.256400</p>
 </footer>
 </body>
 </html>
