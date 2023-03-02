@@ -1,0 +1,2198 @@
+[*] Start mutation process:
+   - targets: identifier1.py
+   - tests: ./MIO
+[*] 11 tests passed:
+   - test_identifier1_MIO [0.06887 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+- 33:                     i += 1
++ 33:                     i -= 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.07941 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MIO/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f478d71e4a0>, s = 'e=g'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+   - [#   2] CDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+-  5:     def valid_s(self, ch):
+-  6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
+-  9:         else:
+- 10:             return False
+- 11:     
++  5:     @classmethod
++  6:     def valid_s(self, ch):
++  7:         ''' generated source for method valid_s '''
++  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  9:             return True
++ 10:         else:
++ 11:             return False
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[0.09748 s] survived
+   - [#   3] CDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+- 12:     def valid_f(self, ch):
+- 13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
+- 16:         else:
+- 17:             return False
+- 18:     
++ 12:     @classmethod
++ 13:     def valid_f(self, ch):
++ 14:         ''' generated source for method valid_f '''
++ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 16:             return True
++ 17:         else:
++ 18:             return False
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[0.06562 s] survived
+   - [#   4] CDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+- 19:     def validateIdentifier(self, s):
+- 20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
+- 22:         valid_id = False
+- 23:         if len(s) > 0:
+- 24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
+- 27:                 achar = s[1]
+- 28:                 i = 1
+- 29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
+- 38:         else:
+- 39:             return False
++ 19:     @classmethod
++ 20:     def validateIdentifier(self, s):
++ 21:         ''' generated source for method validateIdentifier '''
++ 22:         achar = str()
++ 23:         valid_id = False
++ 24:         if len(s) > 0:
++ 25:             achar = s[0]
++ 26:             valid_id = self.valid_s(achar)
++ 27:             if len(s) > 1:
++ 28:                 achar = s[1]
++ 29:                 i = 1
++ 30:                 while i < len(s):
++ 31:                     achar = s[i]
++ 32:                     if not (self.valid_f(achar)):
++ 33:                         valid_id = False
++ 34:                     i += 1
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:
++ 38:                 return False
++ 39:         else:
++ 40:             return False
+--------------------------------------------------------------------------------
+[0.09343 s] incompetent
+
+TypeError: identifier1:26: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+   - [#   5] COD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if self.valid_f(achar):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.09436 s] killed by MIO/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:38: AssertionError
+   - [#   6] COI identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z'))):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09967 s] killed by MIO/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:14: AssertionError
+   - [#   7] COI identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9'))):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09141 s] killed by MIO/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:32: AssertionError
+   - [#   8] COI identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if not (len(s) > 0):
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.08349 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#   9] COI identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if not (len(s) > 1):
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.08569 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  10] COI identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while not (i < len(s)):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.10283 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  11] COI identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if not ((not (self.valid_f(achar)))):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.08715 s] killed by MIO/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:38: AssertionError
+   - [#  12] COI identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if not ((valid_id and len(s) >= 1 and len(s) <= 6)):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.10052 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  13] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08405 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  14] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09222 s] killed by MIO/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:14: AssertionError
+   - [#  15] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06323 s] survived
+   - [#  16] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09015 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  17] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06601 s] survived
+   - [#  18] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.10501 s] killed by MIO/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:14: AssertionError
+   - [#  19] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06386 s] survived
+   - [#  20] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06854 s] survived
+   - [#  21] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09064 s] killed by MIO/test_identifier1_MIO.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'HI8ft5A\x0bj%%;.q.1@'
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:44: AssertionError
+   - [#  22] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08711 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  23] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.07479 s] survived
+   - [#  24] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.11416 s] killed by MIO/test_identifier1_MIO.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'HI8ft5A\x0bj%%;.q.1@'
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:44: AssertionError
+   - [#  25] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.06624 s] survived
+   - [#  26] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10538 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  27] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08901 s] killed by MIO/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:32: AssertionError
+   - [#  28] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09476 s] killed by MIO/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:32: AssertionError
+   - [#  29] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= 'mutpy' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08459 s] survived
+   - [#  30] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08360 s] killed by MIO/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:38: AssertionError
+   - [#  31] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= 'mutpy')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08582 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  32] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.06208 s] survived
+   - [#  33] CRP identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) > 1:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.08920 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  34] CRP identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+- 24:             achar = s[0]
++ 24:             achar = s[1]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[0.08256 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MIO/test_identifier1_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f478d70f070>, s = 'M'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:24: IndexError
+   - [#  35] CRP identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) > 2:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.09192 s] killed by MIO/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:38: AssertionError
+   - [#  36] CRP identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+- 27:                 achar = s[1]
++ 27:                 achar = s[2]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[0.09668 s] killed by MIO/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MIO/test_identifier1_MIO.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f478d4f6860>, s = 'S\x0c'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+   - [#  37] CRP identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+- 28:                 i = 1
++ 28:                 i = 2
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[0.08378 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  38] CRP identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+- 33:                     i += 1
++ 33:                     i += 2
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.07158 s] survived
+   - [#  39] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 2 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.09262 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  40] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) <= 7):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.06492 s] survived
+   - [#  41] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08622 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  42] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08868 s] killed by MIO/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:14: AssertionError
+   - [#  43] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08941 s] killed by MIO/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:14: AssertionError
+   - [#  44] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z') and (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08976 s] killed by MIO/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:32: AssertionError
+   - [#  45] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09087 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  46] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.14354 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  47] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' or ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08427 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  48] LCR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id or len(s) >= 1 or len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08533 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  49] OIL identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
++ 34:                     break
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:return False
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.06825 s] survived
+   - [#  50] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09268 s] killed by MIO/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:14: AssertionError
+   - [#  51] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06041 s] survived
+   - [#  52] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.11102 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  53] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06694 s] survived
+   - [#  54] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08797 s] killed by MIO/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:14: AssertionError
+   - [#  55] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06795 s] survived
+   - [#  56] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08404 s] killed by MIO/test_identifier1_MIO.py::test_case_3
+
+def test_case_3():
+        str_0 = '}\t'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:26: AssertionError
+   - [#  57] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06272 s] survived
+   - [#  58] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08665 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  59] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.06126 s] survived
+   - [#  60] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.13022 s] killed by MIO/test_identifier1_MIO.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'HI8ft5A\x0bj%%;.q.1@'
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:44: AssertionError
+   - [#  61] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.06553 s] survived
+   - [#  62] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.11153 s] killed by MIO/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:32: AssertionError
+   - [#  63] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.07199 s] survived
+   - [#  64] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09257 s] killed by MIO/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:32: AssertionError
+   - [#  65] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.07114 s] survived
+   - [#  66] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch <= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09182 s] killed by MIO/test_identifier1_MIO.py::test_case_5
+
+def test_case_5():
+        str_0 = 'S\x0c'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:38: AssertionError
+   - [#  67] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch > '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.06280 s] survived
+   - [#  68] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch >= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08662 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  69] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch < '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.07116 s] survived
+   - [#  70] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) < 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.08867 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  71] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) >= 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.09840 s] killed by MIO/test_identifier1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MIO/test_identifier1_MIO.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f478d71d210>, s = ''
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:24: IndexError
+   - [#  72] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) < 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.08792 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  73] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) >= 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.08203 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MIO/test_identifier1_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f478d5c5270>, s = 'M'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+   - [#  74] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while i > len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.08798 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  75] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while i <= len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.09242 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MIO/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f478d5c6a10>, s = 'e=g'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+   - [#  76] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) <= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.06794 s] survived
+   - [#  77] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) > 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08863 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  78] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) >= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.11849 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  79] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) < 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08907 s] survived
+   - [#  80] SDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+-  5:     def valid_s(self, ch):
+-  6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
+-  9:         else:
+- 10:             return False
+- 11:     
++  5:     @staticmethod
++  6:     def valid_s(self, ch):
++  7:         ''' generated source for method valid_s '''
++  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  9:             return True
++ 10:         else:
++ 11:             return False
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[0.11075 s] incompetent
+
+TypeError: identifier1:25: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+   - [#  81] SDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+- 12:     def valid_f(self, ch):
+- 13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
+- 16:         else:
+- 17:             return False
+- 18:     
++ 12:     @staticmethod
++ 13:     def valid_f(self, ch):
++ 14:         ''' generated source for method valid_f '''
++ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 16:             return True
++ 17:         else:
++ 18:             return False
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[0.08787 s] incompetent
+
+TypeError: identifier1:31: TypeError: Identifier.valid_f() missing 1 required positional argument: 'ch'
+
+   - [#  82] SDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+- 19:     def validateIdentifier(self, s):
+- 20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
+- 22:         valid_id = False
+- 23:         if len(s) > 0:
+- 24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
+- 27:                 achar = s[1]
+- 28:                 i = 1
+- 29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
+- 38:         else:
+- 39:             return False
++ 19:     @staticmethod
++ 20:     def validateIdentifier(self, s):
++ 21:         ''' generated source for method validateIdentifier '''
++ 22:         achar = str()
++ 23:         valid_id = False
++ 24:         if len(s) > 0:
++ 25:             achar = s[0]
++ 26:             valid_id = self.valid_s(achar)
++ 27:             if len(s) > 1:
++ 28:                 achar = s[1]
++ 29:                 i = 1
++ 30:                 while i < len(s):
++ 31:                     achar = s[i]
++ 32:                     if not (self.valid_f(achar)):
++ 33:                         valid_id = False
++ 34:                     i += 1
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:
++ 38:                 return False
++ 39:         else:
++ 40:             return False
+--------------------------------------------------------------------------------
+[0.07923 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/identifier1/MIO/test_identifier1_MIO.py:7: TypeError: Identifier.validateIdentifier() missing 1 required positional argument: 's'
+
+   - [#  83] SDL identifier1: 
+--------------------------------------------------------------------------------
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
++  8:             pass
+   9:         else:
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+--------------------------------------------------------------------------------
+[0.09271 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  84] SDL identifier1: 
+--------------------------------------------------------------------------------
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+- 10:             return False
++ 10:             pass
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+--------------------------------------------------------------------------------
+[0.09326 s] killed by MIO/test_identifier1_MIO.py::test_case_1
+
+def test_case_1():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:14: AssertionError
+   - [#  85] SDL identifier1: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
++ 15:             pass
+  16:         else:
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+--------------------------------------------------------------------------------
+[0.08782 s] killed by MIO/test_identifier1_MIO.py::test_case_4
+
+def test_case_4():
+        str_0 = 'y'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_f(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:32: AssertionError
+   - [#  86] SDL identifier1: 
+--------------------------------------------------------------------------------
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+- 17:             return False
++ 17:             pass
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+--------------------------------------------------------------------------------
+[0.07473 s] survived
+   - [#  87] SDL identifier1: 
+--------------------------------------------------------------------------------
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
++ 21:         pass
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+--------------------------------------------------------------------------------
+[0.06290 s] survived
+   - [#  88] SDL identifier1: 
+--------------------------------------------------------------------------------
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+- 22:         valid_id = False
++ 22:         pass
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+--------------------------------------------------------------------------------
+[0.05738 s] survived
+   - [#  89] SDL identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+- 24:             achar = s[0]
++ 24:             pass
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[0.08810 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  90] SDL identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
++ 25:             pass
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[0.08686 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  91] SDL identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+- 27:                 achar = s[1]
++ 27:                 pass
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[0.06749 s] survived
+   - [#  92] SDL identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+- 28:                 i = 1
++ 28:                 pass
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[0.09675 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MIO/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f478d4f4c10>, s = 'e=g'
+
+>   ???
+E   UnboundLocalError: local variable 'i' referenced before assignment
+
+identifier1:29: UnboundLocalError
+   - [#  93] SDL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+- 30:                     achar = s[i]
++ 30:                     pass
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+--------------------------------------------------------------------------------
+[0.06414 s] survived
+   - [#  94] SDL identifier1: 
+--------------------------------------------------------------------------------
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
++ 32:                         pass
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+--------------------------------------------------------------------------------
+[0.09455 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  95] SDL identifier1: 
+--------------------------------------------------------------------------------
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
++ 35:                 pass
+  36:             else:
+  37:                 return False
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.10289 s] killed by MIO/test_identifier1_MIO.py::test_case_2
+
+def test_case_2():
+        str_0 = 'M'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:20: AssertionError
+   - [#  96] SDL identifier1: 
+--------------------------------------------------------------------------------
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+- 37:                 return False
++ 37:                 pass
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.08755 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+   - [#  97] SDL identifier1: 
+--------------------------------------------------------------------------------
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+- 39:             return False
++ 39:             pass
+--------------------------------------------------------------------------------
+[0.10992 s] killed by MIO/test_identifier1_MIO.py::test_case_9
+
+def test_case_9():
+        str_0 = ''
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:62: AssertionError
+   - [#  98] SVD identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
++ 25:             valid_id = valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[0.08367 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MIO/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f478d96c910>, s = 'e=g'
+
+>   ???
+E   NameError: name 'valid_s' is not defined
+
+identifier1:25: NameError
+   - [#  99] SVD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if not (valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.09623 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MIO/test_identifier1_MIO.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f478d879b70>, s = 'e=g'
+
+>   ???
+E   NameError: name 'valid_f' is not defined
+
+identifier1:31: NameError
+   - [# 100] ZIL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
++ 30:                     break
++ 31:             
++ 32:             
++ 33:             
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.08595 s] killed by MIO/test_identifier1_MIO.py::test_case_0
+
+def test_case_0():
+        str_0 = 'e=g'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MIO/test_identifier1_MIO.py:8: AssertionError
+[*] Mutation score [11.70111 s]: 68.8%
+   - all: 100
+   - killed: 66 (66.0%)
+   - survived: 30 (30.0%)
+   - incompetent: 4 (4.0%)
+   - timeout: 0 (0.0%)

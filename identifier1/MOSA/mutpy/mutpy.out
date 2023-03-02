@@ -1,0 +1,2267 @@
+[*] Start mutation process:
+   - targets: identifier1.py
+   - tests: ./MOSA
+[*] 11 tests passed:
+   - test_identifier1_MOSA [0.06162 s]
+[*] Start mutants generation and execution:
+   - [#   1] ASR identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+- 33:                     i += 1
++ 33:                     i -= 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.09063 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MOSA/test_identifier1_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f12d9f7a3e0>, s = 'H9'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+   - [#   2] CDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+-  5:     def valid_s(self, ch):
+-  6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
+-  9:         else:
+- 10:             return False
+- 11:     
++  5:     @classmethod
++  6:     def valid_s(self, ch):
++  7:         ''' generated source for method valid_s '''
++  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  9:             return True
++ 10:         else:
++ 11:             return False
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[0.06901 s] survived
+   - [#   3] CDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+- 12:     def valid_f(self, ch):
+- 13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
+- 16:         else:
+- 17:             return False
+- 18:     
++ 12:     @classmethod
++ 13:     def valid_f(self, ch):
++ 14:         ''' generated source for method valid_f '''
++ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 16:             return True
++ 17:         else:
++ 18:             return False
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[0.06958 s] survived
+   - [#   4] CDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+- 19:     def validateIdentifier(self, s):
+- 20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
+- 22:         valid_id = False
+- 23:         if len(s) > 0:
+- 24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
+- 27:                 achar = s[1]
+- 28:                 i = 1
+- 29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
+- 38:         else:
+- 39:             return False
++ 19:     @classmethod
++ 20:     def validateIdentifier(self, s):
++ 21:         ''' generated source for method validateIdentifier '''
++ 22:         achar = str()
++ 23:         valid_id = False
++ 24:         if len(s) > 0:
++ 25:             achar = s[0]
++ 26:             valid_id = self.valid_s(achar)
++ 27:             if len(s) > 1:
++ 28:                 achar = s[1]
++ 29:                 i = 1
++ 30:                 while i < len(s):
++ 31:                     achar = s[i]
++ 32:                     if not (self.valid_f(achar)):
++ 33:                         valid_id = False
++ 34:                     i += 1
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:
++ 38:                 return False
++ 39:         else:
++ 40:             return False
+--------------------------------------------------------------------------------
+[0.07837 s] incompetent
+
+TypeError: identifier1:26: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+   - [#   5] COD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if self.valid_f(achar):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.07600 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#   6] COI identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z'))):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08194 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#   7] COI identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if not (((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9'))):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08578 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#   8] COI identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if not (len(s) > 0):
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.08950 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#   9] COI identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if not (len(s) > 1):
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.08505 s] killed by MOSA/test_identifier1_MOSA.py::test_case_1
+
+def test_case_1():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'f'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MOSA/test_identifier1_MOSA.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f12d9dccd90>, s = 'f'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+   - [#  10] COI identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while not (i < len(s)):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.08639 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  11] COI identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if not ((not (self.valid_f(achar)))):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.08362 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  12] COI identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if not ((valid_id and len(s) >= 1 and len(s) <= 6)):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.07900 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  13] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08139 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  14] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.07993 s] killed by MOSA/test_identifier1_MOSA.py::test_case_2
+
+def test_case_2():
+        identifier_0 = module_0.Identifier()
+        str_0 = '6E'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:21: AssertionError
+   - [#  15] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08367 s] survived
+   - [#  16] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08002 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  17] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08533 s] killed by MOSA/test_identifier1_MOSA.py::test_case_1
+
+def test_case_1():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'f'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:15: AssertionError
+   - [#  18] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.07929 s] killed by MOSA/test_identifier1_MOSA.py::test_case_2
+
+def test_case_2():
+        identifier_0 = module_0.Identifier()
+        str_0 = '6E'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:21: AssertionError
+   - [#  19] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06093 s] survived
+   - [#  20] CRP identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08535 s] killed by MOSA/test_identifier1_MOSA.py::test_case_1
+
+def test_case_1():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'f'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:15: AssertionError
+   - [#  21] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'mutpy' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09039 s] killed by MOSA/test_identifier1_MOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = 'e6zLE'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:55: AssertionError
+   - [#  22] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= '' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08531 s] killed by MOSA/test_identifier1_MOSA.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'g$'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:42: AssertionError
+   - [#  23] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'mutpy') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.06849 s] survived
+   - [#  24] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= '') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10261 s] killed by MOSA/test_identifier1_MOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = 'e6zLE'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:55: AssertionError
+   - [#  25] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'mutpy' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.06179 s] survived
+   - [#  26] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= '' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10414 s] killed by MOSA/test_identifier1_MOSA.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'g$'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:42: AssertionError
+   - [#  27] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'mutpy') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.09411 s] killed by MOSA/test_identifier1_MOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = 'e6v'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:48: AssertionError
+   - [#  28] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= '') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08538 s] killed by MOSA/test_identifier1_MOSA.py::test_case_7
+
+def test_case_7():
+        str_0 = 'e6v'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:48: AssertionError
+   - [#  29] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= 'mutpy' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08026 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  30] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08028 s] killed by MOSA/test_identifier1_MOSA.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'g$'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:42: AssertionError
+   - [#  31] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= 'mutpy')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.06190 s] survived
+   - [#  32] CRP identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.07947 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  33] CRP identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) > 1:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.09705 s] killed by MOSA/test_identifier1_MOSA.py::test_case_1
+
+def test_case_1():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'f'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:15: AssertionError
+   - [#  34] CRP identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+- 24:             achar = s[0]
++ 24:             achar = s[1]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[0.07880 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  35] CRP identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) > 2:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.08173 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  36] CRP identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+- 27:                 achar = s[1]
++ 27:                 achar = s[2]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[0.07736 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MOSA/test_identifier1_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f12d9f6aec0>, s = 'H9'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+   - [#  37] CRP identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+- 28:                 i = 1
++ 28:                 i = 2
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[0.08180 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  38] CRP identifier1: 
+--------------------------------------------------------------------------------
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+- 33:                     i += 1
++ 33:                     i += 2
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.05782 s] survived
+   - [#  39] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 2 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08057 s] killed by MOSA/test_identifier1_MOSA.py::test_case_1
+
+def test_case_1():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'f'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:15: AssertionError
+   - [#  40] CRP identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) <= 7):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08104 s] killed by MOSA/test_identifier1_MOSA.py::test_case_10
+
+def test_case_10():
+        str_0 = 'e6iczLE'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:73: AssertionError
+   - [#  41] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.07747 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  42] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08037 s] killed by MOSA/test_identifier1_MOSA.py::test_case_2
+
+def test_case_2():
+        identifier_0 = module_0.Identifier()
+        str_0 = '6E'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:21: AssertionError
+   - [#  43] LCR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.08370 s] killed by MOSA/test_identifier1_MOSA.py::test_case_2
+
+def test_case_2():
+        identifier_0 = module_0.Identifier()
+        str_0 = '6E'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:21: AssertionError
+   - [#  44] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') and (ch >= 'a' and ch <= 'z') and (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.07847 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  45] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' or ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08376 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  46] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' or ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.07946 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  47] LCR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' or ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08189 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  48] LCR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id or len(s) >= 1 or len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08005 s] killed by MOSA/test_identifier1_MOSA.py::test_case_2
+
+def test_case_2():
+        identifier_0 = module_0.Identifier()
+        str_0 = '6E'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:21: AssertionError
+   - [#  49] OIL identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
++ 34:                     break
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:return False
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.05722 s] survived
+   - [#  50] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.07863 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  51] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.05609 s] survived
+   - [#  52] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.09227 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  53] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.05542 s] survived
+   - [#  54] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.07895 s] killed by MOSA/test_identifier1_MOSA.py::test_case_1
+
+def test_case_1():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'f'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:15: AssertionError
+   - [#  55] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06097 s] survived
+   - [#  56] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.07795 s] killed by MOSA/test_identifier1_MOSA.py::test_case_1
+
+def test_case_1():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'f'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:15: AssertionError
+   - [#  57] ROR identifier1: 
+--------------------------------------------------------------------------------
+   3:     ''' generated source for class Identifier '''
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z')):
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+--------------------------------------------------------------------------------
+[0.06036 s] survived
+   - [#  58] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch <= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08263 s] killed by MOSA/test_identifier1_MOSA.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'g$'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:42: AssertionError
+   - [#  59] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch > 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.05916 s] survived
+   - [#  60] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch >= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08190 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  61] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch < 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.05642 s] survived
+   - [#  62] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch <= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08379 s] killed by MOSA/test_identifier1_MOSA.py::test_case_6
+
+def test_case_6():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'g$'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:42: AssertionError
+   - [#  63] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch > 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.05946 s] survived
+   - [#  64] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch >= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.10134 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  65] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch < 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08008 s] killed by MOSA/test_identifier1_MOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = 'e6zLE'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:55: AssertionError
+   - [#  66] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch <= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08008 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  67] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch > '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.05666 s] survived
+   - [#  68] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch >= '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.08140 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  69] ROR identifier1: 
+--------------------------------------------------------------------------------
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch < '9')):
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+--------------------------------------------------------------------------------
+[0.07923 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  70] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) < 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.08140 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  71] ROR identifier1: 
+--------------------------------------------------------------------------------
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+- 23:         if len(s) > 0:
++ 23:         if len(s) >= 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+--------------------------------------------------------------------------------
+[0.08589 s] killed by MOSA/test_identifier1_MOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = 'e6zLE'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+        assert var_0 is True
+        str_1 = ''
+>       var_1 = identifier_0.validateIdentifier(str_1)
+
+MOSA/test_identifier1_MOSA.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f12d9e13880>, s = ''
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:24: IndexError
+   - [#  72] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) < 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.08350 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  73] ROR identifier1: 
+--------------------------------------------------------------------------------
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
++ 26:             if len(s) >= 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+--------------------------------------------------------------------------------
+[0.07977 s] killed by MOSA/test_identifier1_MOSA.py::test_case_1
+
+def test_case_1():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'f'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MOSA/test_identifier1_MOSA.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f12d9f9a7a0>, s = 'f'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:27: IndexError
+   - [#  74] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while i > len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.08385 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  75] ROR identifier1: 
+--------------------------------------------------------------------------------
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+- 29:                 while i < len(s):
++ 29:                 while i <= len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+--------------------------------------------------------------------------------
+[0.07486 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MOSA/test_identifier1_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f12d9e13af0>, s = 'H9'
+
+>   ???
+E   IndexError: string index out of range
+
+identifier1:30: IndexError
+   - [#  76] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) <= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08175 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  77] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) > 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.08037 s] killed by MOSA/test_identifier1_MOSA.py::test_case_1
+
+def test_case_1():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'f'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:15: AssertionError
+   - [#  78] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) >= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.09630 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  79] ROR identifier1: 
+--------------------------------------------------------------------------------
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 34:             if (valid_id and len(s) >= 1 and len(s) < 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+--------------------------------------------------------------------------------
+[0.07710 s] survived
+   - [#  80] SDI identifier1: 
+--------------------------------------------------------------------------------
+   1: 
+   2: class Identifier(object):
+   3:     ''' generated source for class Identifier '''
+   4:     
+-  5:     def valid_s(self, ch):
+-  6:         ''' generated source for method valid_s '''
+-  7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
+-  9:         else:
+- 10:             return False
+- 11:     
++  5:     @staticmethod
++  6:     def valid_s(self, ch):
++  7:         ''' generated source for method valid_s '''
++  8:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
++  9:             return True
++ 10:         else:
++ 11:             return False
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+--------------------------------------------------------------------------------
+[0.07438 s] incompetent
+
+TypeError: identifier1:25: TypeError: Identifier.valid_s() missing 1 required positional argument: 'ch'
+
+   - [#  81] SDI identifier1: 
+--------------------------------------------------------------------------------
+   8:             return True
+   9:         else:
+  10:             return False
+  11:     
+- 12:     def valid_f(self, ch):
+- 13:         ''' generated source for method valid_f '''
+- 14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
+- 16:         else:
+- 17:             return False
+- 18:     
++ 12:     @staticmethod
++ 13:     def valid_f(self, ch):
++ 14:         ''' generated source for method valid_f '''
++ 15:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
++ 16:             return True
++ 17:         else:
++ 18:             return False
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+--------------------------------------------------------------------------------
+[0.07695 s] incompetent
+
+TypeError: identifier1:31: TypeError: Identifier.valid_f() missing 1 required positional argument: 'ch'
+
+   - [#  82] SDI identifier1: 
+--------------------------------------------------------------------------------
+  15:             return True
+  16:         else:
+  17:             return False
+  18:     
+- 19:     def validateIdentifier(self, s):
+- 20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
+- 22:         valid_id = False
+- 23:         if len(s) > 0:
+- 24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
+- 26:             if len(s) > 1:
+- 27:                 achar = s[1]
+- 28:                 i = 1
+- 29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
+- 34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
+- 36:             else:
+- 37:                 return False
+- 38:         else:
+- 39:             return False
++ 19:     @staticmethod
++ 20:     def validateIdentifier(self, s):
++ 21:         ''' generated source for method validateIdentifier '''
++ 22:         achar = str()
++ 23:         valid_id = False
++ 24:         if len(s) > 0:
++ 25:             achar = s[0]
++ 26:             valid_id = self.valid_s(achar)
++ 27:             if len(s) > 1:
++ 28:                 achar = s[1]
++ 29:                 i = 1
++ 30:                 while i < len(s):
++ 31:                     achar = s[i]
++ 32:                     if not (self.valid_f(achar)):
++ 33:                         valid_id = False
++ 34:                     i += 1
++ 35:             if (valid_id and len(s) >= 1 and len(s) <= 6):
++ 36:                 return True
++ 37:             else:
++ 38:                 return False
++ 39:         else:
++ 40:             return False
+--------------------------------------------------------------------------------
+[0.07877 s] incompetent
+
+TypeError: /home/auri/temp/lucca/python_experiments/identifier1/MOSA/test_identifier1_MOSA.py:8: TypeError: Identifier.validateIdentifier() missing 1 required positional argument: 's'
+
+   - [#  83] SDL identifier1: 
+--------------------------------------------------------------------------------
+   4:     
+   5:     def valid_s(self, ch):
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+-  8:             return True
++  8:             pass
+   9:         else:
+  10:             return False
+  11:     
+  12:     def valid_f(self, ch):
+--------------------------------------------------------------------------------
+[0.08341 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  84] SDL identifier1: 
+--------------------------------------------------------------------------------
+   6:         ''' generated source for method valid_s '''
+   7:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z')):
+   8:             return True
+   9:         else:
+- 10:             return False
++ 10:             pass
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+--------------------------------------------------------------------------------
+[0.08785 s] killed by MOSA/test_identifier1_MOSA.py::test_case_9
+
+def test_case_9():
+        str_0 = 'z*'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.valid_s(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:64: AssertionError
+   - [#  85] SDL identifier1: 
+--------------------------------------------------------------------------------
+  11:     
+  12:     def valid_f(self, ch):
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+- 15:             return True
++ 15:             pass
+  16:         else:
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+--------------------------------------------------------------------------------
+[0.08487 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  86] SDL identifier1: 
+--------------------------------------------------------------------------------
+  13:         ''' generated source for method valid_f '''
+  14:         if ((ch >= 'A' and ch <= 'Z') or (ch >= 'a' and ch <= 'z') or (ch >= '0' and ch <= '9')):
+  15:             return True
+  16:         else:
+- 17:             return False
++ 17:             pass
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+--------------------------------------------------------------------------------
+[0.05699 s] survived
+   - [#  87] SDL identifier1: 
+--------------------------------------------------------------------------------
+  17:             return False
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+- 21:         achar = str()
++ 21:         pass
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+--------------------------------------------------------------------------------
+[0.06606 s] survived
+   - [#  88] SDL identifier1: 
+--------------------------------------------------------------------------------
+  18:     
+  19:     def validateIdentifier(self, s):
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+- 22:         valid_id = False
++ 22:         pass
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+--------------------------------------------------------------------------------
+[0.05850 s] survived
+   - [#  89] SDL identifier1: 
+--------------------------------------------------------------------------------
+  20:         ''' generated source for method validateIdentifier '''
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+- 24:             achar = s[0]
++ 24:             pass
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+--------------------------------------------------------------------------------
+[0.08240 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  90] SDL identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
++ 25:             pass
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[0.07921 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  91] SDL identifier1: 
+--------------------------------------------------------------------------------
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+- 27:                 achar = s[1]
++ 27:                 pass
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+--------------------------------------------------------------------------------
+[0.05966 s] survived
+   - [#  92] SDL identifier1: 
+--------------------------------------------------------------------------------
+  24:             achar = s[0]
+  25:             valid_id = self.valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+- 28:                 i = 1
++ 28:                 pass
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+--------------------------------------------------------------------------------
+[0.07823 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MOSA/test_identifier1_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f12d9ce6080>, s = 'H9'
+
+>   ???
+E   UnboundLocalError: local variable 'i' referenced before assignment
+
+identifier1:29: UnboundLocalError
+   - [#  93] SDL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+- 30:                     achar = s[i]
++ 30:                     pass
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+--------------------------------------------------------------------------------
+[0.05539 s] survived
+   - [#  94] SDL identifier1: 
+--------------------------------------------------------------------------------
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+  31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
++ 32:                         pass
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+--------------------------------------------------------------------------------
+[0.09022 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+   - [#  95] SDL identifier1: 
+--------------------------------------------------------------------------------
+  31:                     if not (self.valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+- 35:                 return True
++ 35:                 pass
+  36:             else:
+  37:                 return False
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.08186 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is True
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:9: AssertionError
+   - [#  96] SDL identifier1: 
+--------------------------------------------------------------------------------
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+- 37:                 return False
++ 37:                 pass
+  38:         else:
+  39:             return False
+--------------------------------------------------------------------------------
+[0.08256 s] killed by MOSA/test_identifier1_MOSA.py::test_case_2
+
+def test_case_2():
+        identifier_0 = module_0.Identifier()
+        str_0 = '6E'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:21: AssertionError
+   - [#  97] SDL identifier1: 
+--------------------------------------------------------------------------------
+  35:                 return True
+  36:             else:
+  37:                 return False
+  38:         else:
+- 39:             return False
++ 39:             pass
+--------------------------------------------------------------------------------
+[0.08422 s] killed by MOSA/test_identifier1_MOSA.py::test_case_8
+
+def test_case_8():
+        str_0 = 'e6zLE'
+        identifier_0 = module_0.Identifier()
+        var_0 = identifier_0.validateIdentifier(str_0)
+        assert var_0 is True
+        str_1 = ''
+        var_1 = identifier_0.validateIdentifier(str_1)
+>       assert var_1 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:58: AssertionError
+   - [#  98] SVD identifier1: 
+--------------------------------------------------------------------------------
+  21:         achar = str()
+  22:         valid_id = False
+  23:         if len(s) > 0:
+  24:             achar = s[0]
+- 25:             valid_id = self.valid_s(achar)
++ 25:             valid_id = valid_s(achar)
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+--------------------------------------------------------------------------------
+[0.08481 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MOSA/test_identifier1_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f12d9e395d0>, s = 'H9'
+
+>   ???
+E   NameError: name 'valid_s' is not defined
+
+identifier1:25: NameError
+   - [#  99] SVD identifier1: 
+--------------------------------------------------------------------------------
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+  30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
++ 31:                     if not (valid_f(achar)):
+  32:                         valid_id = False
+  33:                     i += 1
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+--------------------------------------------------------------------------------
+[0.07865 s] killed by MOSA/test_identifier1_MOSA.py::test_case_0
+
+def test_case_0():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'H9'
+>       var_0 = identifier_0.validateIdentifier(str_0)
+
+MOSA/test_identifier1_MOSA.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <identifier1.Identifier object at 0x7f12d9fbabc0>, s = 'H9'
+
+>   ???
+E   NameError: name 'valid_f' is not defined
+
+identifier1:31: NameError
+   - [# 100] ZIL identifier1: 
+--------------------------------------------------------------------------------
+  26:             if len(s) > 1:
+  27:                 achar = s[1]
+  28:                 i = 1
+  29:                 while i < len(s):
+- 30:                     achar = s[i]
+- 31:                     if not (self.valid_f(achar)):
+- 32:                         valid_id = False
+- 33:                     i += 1
++ 30:                     break
++ 31:             
++ 32:             
++ 33:             
+  34:             if (valid_id and len(s) >= 1 and len(s) <= 6):
+  35:                 return True
+  36:             else:
+  37:                 return False
+--------------------------------------------------------------------------------
+[0.10571 s] killed by MOSA/test_identifier1_MOSA.py::test_case_5
+
+def test_case_5():
+        identifier_0 = module_0.Identifier()
+        str_0 = 'j{'
+        var_0 = identifier_0.validateIdentifier(str_0)
+>       assert var_0 is False
+E       AssertionError
+
+MOSA/test_identifier1_MOSA.py:36: AssertionError
+[*] Mutation score [10.47419 s]: 76.0%
+   - all: 100
+   - killed: 73 (73.0%)
+   - survived: 23 (23.0%)
+   - incompetent: 4 (4.0%)
+   - timeout: 0 (0.0%)
