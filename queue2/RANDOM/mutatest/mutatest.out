@@ -1,0 +1,186 @@
+2023-03-03 17:25:47,116: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 2226 items
+
+RANDOM/test_queue2_RANDOM.py ........................................... [  1%]
+........................................................................ [  5%]
+........................................................................ [  8%]
+........................................................................ [ 11%]
+........................................................................ [ 14%]
+........................................................................ [ 18%]
+........................................................................ [ 21%]
+........................................................................ [ 24%]
+........................................................................ [ 27%]
+........................................................................ [ 31%]
+........................................................................ [ 34%]
+........................................................................ [ 37%]
+........................................................................ [ 40%]
+........................................................................ [ 43%]
+........................................................................ [ 47%]
+........................................................................ [ 50%]
+........................................................................ [ 53%]
+........................................................................ [ 56%]
+........................................................................ [ 60%]
+........................................................................ [ 63%]
+........................................................................ [ 66%]
+........................................................................ [ 69%]
+........................................................................ [ 73%]
+........................................................................ [ 76%]
+........................................................................ [ 79%]
+........................................................................ [ 82%]
+........................................................................ [ 86%]
+........................................................................ [ 89%]
+........................................................................ [ 92%]
+........................................................................ [ 95%]
+........................................................................ [ 98%]
+.......................                                                  [100%]
+
+============================ 2226 passed in 33.75s =============================
+2023-03-03 17:26:21,092: [92m59 mutation targets found in queue2.py AST.[0m
+2023-03-03 17:26:21,092: Setting random.seed to: None
+2023-03-03 17:26:21,092: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-03 17:26:21,092: Total sample space size: 59
+2023-03-03 17:26:21,093: [92mSelecting 10 locations from 59 potentials.[0m
+2023-03-03 17:26:21,093: Starting individual mutation trials!
+2023-03-03 17:26:21,093: Running serial (single processor) dispatch mode.
+2023-03-03 17:26:21,093: Current target location: queue2.py, LocIndex(ast_class='Compare', lineno=49, col_offset=19, op_type=<class 'ast.Eq'>, end_lineno=49, end_col_offset=31)
+2023-03-03 17:26:23,048: [91mResult: Survived at queue2.py: (49, 19)[0m
+2023-03-03 17:26:25,041: [91mResult: Survived at queue2.py: (49, 19)[0m
+2023-03-03 17:26:27,032: [91mResult: Survived at queue2.py: (49, 19)[0m
+2023-03-03 17:26:29,018: [91mResult: Survived at queue2.py: (49, 19)[0m
+2023-03-03 17:26:30,929: [91mResult: Survived at queue2.py: (49, 19)[0m
+2023-03-03 17:26:30,929: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=16, col_offset=26, op_type=None, end_lineno=16, end_col_offset=30)
+2023-03-03 17:29:20,832: [93mResult: Timeout at queue2.py: (16, 26)[0m
+2023-03-03 17:29:20,832: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 17:29:20,832: Current target location: queue2.py, LocIndex(ast_class='CompareIs', lineno=91, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=91, end_col_offset=28)
+2023-03-03 17:32:10,735: [93mResult: Timeout at queue2.py: (91, 11)[0m
+2023-03-03 17:32:10,735: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 17:32:10,735: Current target location: queue2.py, LocIndex(ast_class='If', lineno=107, col_offset=8, op_type='If_Statement', end_lineno=108, end_col_offset=28)
+2023-03-03 17:32:12,737: [91mResult: Survived at queue2.py: (107, 8)[0m
+2023-03-03 17:32:14,762: [91mResult: Survived at queue2.py: (107, 8)[0m
+2023-03-03 17:32:14,762: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=91, col_offset=24, op_type=None, end_lineno=91, end_col_offset=28)
+2023-03-03 17:35:04,665: [93mResult: Timeout at queue2.py: (91, 24)[0m
+2023-03-03 17:35:04,665: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 17:35:04,665: Current target location: queue2.py, LocIndex(ast_class='CompareIs', lineno=120, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=120, end_col_offset=28)
+2023-03-03 17:35:14,450: [92mResult: Detected at queue2.py: (120, 11)[0m
+2023-03-03 17:35:14,450: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=66, col_offset=24, op_type=None, end_lineno=66, end_col_offset=28)
+2023-03-03 17:35:16,435: [91mResult: Survived at queue2.py: (66, 24)[0m
+2023-03-03 17:35:18,379: [91mResult: Survived at queue2.py: (66, 24)[0m
+2023-03-03 17:35:18,379: Current target location: queue2.py, LocIndex(ast_class='Compare', lineno=60, col_offset=14, op_type=<class 'ast.NotEq'>, end_lineno=60, end_col_offset=23)
+2023-03-03 17:38:08,278: [93mResult: Timeout at queue2.py: (60, 14)[0m
+2023-03-03 17:38:08,278: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 17:38:08,278: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=99, col_offset=28, op_type=None, end_lineno=99, end_col_offset=32)
+2023-03-03 17:40:58,177: [93mResult: Timeout at queue2.py: (99, 28)[0m
+2023-03-03 17:40:58,177: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 17:40:58,177: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=15, col_offset=35, op_type=None, end_lineno=15, end_col_offset=39)
+2023-03-03 17:41:00,382: [91mResult: Survived at queue2.py: (15, 35)[0m
+2023-03-03 17:41:02,508: [91mResult: Survived at queue2.py: (15, 35)[0m
+2023-03-03 17:41:02,508: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue2
+collected 2226 items
+
+RANDOM/test_queue2_RANDOM.py ........................................... [  1%]
+........................................................................ [  5%]
+........................................................................ [  8%]
+........................................................................ [ 11%]
+........................................................................ [ 14%]
+........................................................................ [ 18%]
+........................................................................ [ 21%]
+........................................................................ [ 24%]
+........................................................................ [ 27%]
+........................................................................ [ 31%]
+........................................................................ [ 34%]
+........................................................................ [ 37%]
+........................................................................ [ 40%]
+........................................................................ [ 43%]
+........................................................................ [ 47%]
+........................................................................ [ 50%]
+........................................................................ [ 53%]
+........................................................................ [ 56%]
+........................................................................ [ 60%]
+........................................................................ [ 63%]
+........................................................................ [ 66%]
+........................................................................ [ 69%]
+........................................................................ [ 73%]
+........................................................................ [ 76%]
+........................................................................ [ 79%]
+........................................................................ [ 82%]
+........................................................................ [ 86%]
+........................................................................ [ 89%]
+........................................................................ [ 92%]
+........................................................................ [ 95%]
+........................................................................ [ 98%]
+.......................                                                  [100%]
+
+============================= 2226 passed in 1.92s =============================
+2023-03-03 17:41:04,641: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/queue2/queue2.py
+ - Test commands: ['python', '-m', 'pytest', './RANDOM']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 59
+ - Location sample coverage: 16.95 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:33.973510
+ - Clean trial 2 run time: 0:00:02.132799
+ - Mutation trials total run time: 0:14:41.418263
+
+2023-03-03 17:41:04,641: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - SURVIVED: 11
+ - TIMEOUT: 5
+ - DETECTED: 1
+ - TOTAL RUNS: 17
+ - RUN DATETIME: 2023-03-03 17:41:04.641381
+
+2023-03-03 17:41:04,641: Detected mutations:[92m
+
+DETECTED
+--------
+ - queue2.py: (l: 120, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>[0m
+
+2023-03-03 17:41:04,641: Timedout mutations:[93m
+
+TIMEOUT
+-------
+ - queue2.py: (l: 16, c: 26) - mutation from None to False
+ - queue2.py: (l: 60, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Gt'>
+ - queue2.py: (l: 91, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue2.py: (l: 91, c: 24) - mutation from None to False
+ - queue2.py: (l: 99, c: 28) - mutation from None to False[0m
+
+2023-03-03 17:41:04,641: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - queue2.py: (l: 15, c: 35) - mutation from None to True
+ - queue2.py: (l: 15, c: 35) - mutation from None to False
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - queue2.py: (l: 66, c: 24) - mutation from None to True
+ - queue2.py: (l: 66, c: 24) - mutation from None to False
+ - queue2.py: (l: 107, c: 8) - mutation from If_Statement to If_True
+ - queue2.py: (l: 107, c: 8) - mutation from If_Statement to If_False[0m
+
+2023-03-03 17:41:04,641: Writing output report to: /home/auri/temp/lucca/python_experiments/queue2/RANDOM/mutatest/RANDOM-report.rst

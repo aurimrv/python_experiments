@@ -1,0 +1,1037 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 04/03/2023 22:51:50</p><p>Total jobs: 14</p><p>Complete: 14 (100.00%)</p><p>Surviving mutants: 2 (14.29%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID aa55f5eb9f8f43089f3853f3990e7045</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 16), end pos: (23, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if self.front is not None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py F..F..FF                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+MOSA/test_queue1_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f9efcc0bd90&gt;
+item = &lt;queue1.Queue object at 0x7f9efcc0bd90&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+MOSA/test_queue1_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f9efcb9b310&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+MOSA/test_queue1_MOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f9efcc0bca0&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+MOSA/test_queue1_MOSA.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f9efcc0a980&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_0 - AttributeError: 'NoneType' obj...
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - AttributeError: 'NoneType' obj...
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - AttributeError: 'NoneType' obj...
+FAILED MOSA/test_queue1_MOSA.py::test_case_7 - AttributeError: 'NoneType' obj...
+========================= 4 failed, 4 passed in 0.25s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 563696193bb74e8da0e01c971dc07da9</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 16), end pos: (35, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py .F.F..F.                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+MOSA/test_queue1_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7efe92b2aec0&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       var_2 = queue_0.dequeue()
+
+MOSA/test_queue1_MOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7efe92abb370&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+MOSA/test_queue1_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7efe92b38fa0&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_1 - AttributeError: 'NoneType' obj...
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - ValueError
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - ValueError
+========================= 3 failed, 5 passed in 0.23s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 05dbdc24a50e4f7f9a7f85b9e6d1374a</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 16), end pos: (44, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py ..F.....                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+MOSA/test_queue1_MOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc4f8d86c20&gt;
+
+    def peek(self):
+    	if self.front is not None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_2 - AttributeError: 'NoneType' obj...
+========================= 1 failed, 7 passed in 0.12s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 5cf53cf51618476ab2a1b4f5a59de947</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 5), end pos: (23, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if not self.front is None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py F..F..FF                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+MOSA/test_queue1_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f5ffb14aec0&gt;
+item = &lt;queue1.Queue object at 0x7f5ffb14aec0&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+MOSA/test_queue1_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f5ffb0db400&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+MOSA/test_queue1_MOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f5ffb14b550&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+MOSA/test_queue1_MOSA.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f5ffb1496c0&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_0 - AttributeError: 'NoneType' obj...
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - AttributeError: 'NoneType' obj...
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - AttributeError: 'NoneType' obj...
+FAILED MOSA/test_queue1_MOSA.py::test_case_7 - AttributeError: 'NoneType' obj...
+========================= 4 failed, 4 passed in 0.24s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID b834b4937a124ebbb05b875eaf7c3d0a</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 5), end pos: (35, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py .F.F..F.                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+MOSA/test_queue1_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f8272b12fe0&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       var_2 = queue_0.dequeue()
+
+MOSA/test_queue1_MOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f8272aa7e50&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+MOSA/test_queue1_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f8272b210c0&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_1 - AttributeError: 'NoneType' obj...
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - ValueError
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - ValueError
+========================= 3 failed, 5 passed in 0.12s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 96bb324159964e5da67fecd43d511c06</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 5), end pos: (44, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py ..F.....                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+MOSA/test_queue1_MOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f0db31e2ec0&gt;
+
+    def peek(self):
+    	if not self.front is None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_2 - AttributeError: 'NoneType' obj...
+========================= 1 failed, 7 passed in 0.22s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 7091246031ac4b39b4d58cc2c216a5bf</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = 1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py FFFFFFFF                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fb2ded937c0&gt;)
+
+MOSA/test_queue1_MOSA.py:7: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fb2deda47f0&gt;)
+
+MOSA/test_queue1_MOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fb2def0efe0&gt;)
+
+MOSA/test_queue1_MOSA.py:21: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fb2deda65f0&gt;)
+
+MOSA/test_queue1_MOSA.py:31: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fb2def0e710&gt;)
+
+MOSA/test_queue1_MOSA.py:41: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fb2ded27400&gt;)
+
+MOSA/test_queue1_MOSA.py:46: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fb2def0e140&gt;)
+
+MOSA/test_queue1_MOSA.py:53: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fb2deda7f40&gt;)
+
+MOSA/test_queue1_MOSA.py:64: AssertionError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_0 - assert 1 == 0
+FAILED MOSA/test_queue1_MOSA.py::test_case_1 - assert 1 == 0
+FAILED MOSA/test_queue1_MOSA.py::test_case_2 - assert 1 == 0
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - assert 1 == 0
+FAILED MOSA/test_queue1_MOSA.py::test_case_4 - assert 1 == 0
+FAILED MOSA/test_queue1_MOSA.py::test_case_5 - assert 1 == 0
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - assert 1 == 0
+FAILED MOSA/test_queue1_MOSA.py::test_case_7 - assert 1 == 0
+============================== 8 failed in 0.20s ===============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 0f6e600271b545f0b1b8c7f70b40fa46</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = -1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py FFFFFFFF                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:7: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:15: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:21: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:31: ValueError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:41: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:46: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:53: ValueError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:64: ValueError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_0 - ValueError: __len__() should r...
+FAILED MOSA/test_queue1_MOSA.py::test_case_1 - ValueError: __len__() should r...
+FAILED MOSA/test_queue1_MOSA.py::test_case_2 - ValueError: __len__() should r...
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - ValueError: __len__() should r...
+FAILED MOSA/test_queue1_MOSA.py::test_case_4 - ValueError: __len__() should r...
+FAILED MOSA/test_queue1_MOSA.py::test_case_5 - ValueError: __len__() should r...
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - ValueError: __len__() should r...
+FAILED MOSA/test_queue1_MOSA.py::test_case_7 - ValueError: __len__() should r...
+============================== 8 failed in 0.23s ===============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 6660eb78c7d345b7b5f5926fe944a0c4</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 2
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py F..F..FF                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f31b7087e80&gt;)
+
+MOSA/test_queue1_MOSA.py:11: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f31b7098a90&gt;)
+
+MOSA/test_queue1_MOSA.py:33: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f31b7086a40&gt;)
+
+MOSA/test_queue1_MOSA.py:55: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f31b709afe0&gt;)
+
+MOSA/test_queue1_MOSA.py:66: AssertionError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_0 - assert 2 == 1
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - assert 2 == 1
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - assert 2 == 1
+FAILED MOSA/test_queue1_MOSA.py::test_case_7 - assert 2 == 1
+========================= 4 failed, 4 passed in 0.24s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID bda7e7578fe347a0b61e3dada323ac1b</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 0
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py F..F..FF                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fc878216f80&gt;)
+
+MOSA/test_queue1_MOSA.py:11: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fc878224a90&gt;)
+
+MOSA/test_queue1_MOSA.py:33: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fc8781abc70&gt;)
+
+MOSA/test_queue1_MOSA.py:55: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fc878226fe0&gt;)
+
+MOSA/test_queue1_MOSA.py:66: AssertionError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_0 - assert 0 == 1
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - assert 0 == 1
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - assert 0 == 1
+FAILED MOSA/test_queue1_MOSA.py::test_case_7 - assert 0 == 1
+========================= 4 failed, 4 passed in 0.23s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID 6aa879e3c32343a98471c4e0be597099</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 2
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py ...F..F.                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+MOSA/test_queue1_MOSA.py:57: ValueError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - ValueError: __len__() should r...
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - ValueError: __len__() should r...
+========================= 2 failed, 6 passed in 0.23s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID 1ab0e913e39d4ce2ba02edae6cc3677f</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 0
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py ...F..F.                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7faeeb6facb0&gt;)
+
+MOSA/test_queue1_MOSA.py:36: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7faeeb87a860&gt;)
+
+MOSA/test_queue1_MOSA.py:57: AssertionError
+=========================== short test summary info ============================
+FAILED MOSA/test_queue1_MOSA.py::test_case_3 - assert 1 == 0
+FAILED MOSA/test_queue1_MOSA.py::test_case_6 - assert 1 == 0
+========================= 2 failed, 6 passed in 0.22s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_13_1"><button class="btn btn-outline-danger"><span class="job_id">13 : Job ID 176f33b914dd4c4e95b83406acba81ec</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = 1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py ........                                        [100%]
+
+============================== 8 passed in 0.11s ===============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_14_1"><button class="btn btn-outline-danger"><span class="job_id">14 : Job ID 2e339eae4f1c45138917e5571d5d2529</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = -1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+MOSA/test_queue1_MOSA.py ........                                        [100%]
+
+============================== 8 passed in 0.05s ===============================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

@@ -1,0 +1,4533 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 03/03/2023 23:30:53</p><p>Total jobs: 5</p><p>Complete: 5 (100.00%)</p><p>Surviving mutants: 1 (20.00%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 55f69a9f9b0a48038dfa246ebdcafc87</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack5.py&amp;line=10" class="text-secondary"><button class="btn btn-outline-dark">stack5.py, start pos: (10, 20), end pos: (10, 22)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack5.py
++++ bstack5.py
+@@ -7,7 +7,7 @@
+         self.top = Node(data, self.top)
+ 
+     def pop(self):
+-        if self.top is None:
++        if self.top is not None:
+             return None
+         data = self.top.data
+         self.top = self.top.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack5
+collected 63 items
+
+RANDOM/test_stack5_RANDOM.py F..FFFF.F.FFFF.F.FF.F..F..FFF.FFFF.F.FFF.F. [ 68%]
+F.FFF.FFFFFFFF..FFFF                                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b5210&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e6350&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b12c1270&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e7dc0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b5f00&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b02dbbe0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b50c0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_11 _________________________________
+
+    def test_case_11():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e5ab0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_12 _________________________________
+
+    def test_case_12():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        none_type_0 = None
+        stack_4 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_4.pop()
+
+RANDOM/test_stack5_RANDOM.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b5cf0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_13 _________________________________
+
+    def test_case_13():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e4b80&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_15 _________________________________
+
+    def test_case_15():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:188: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b7f70&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_17 _________________________________
+
+    def test_case_17():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        var_0 = stack_0.peek()
+        none_type_0 = None
+        stack_6 = module_0.Stack(none_type_0)
+&gt;       var_1 = stack_6.pop()
+
+RANDOM/test_stack5_RANDOM.py:231: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b02d9b10&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_18 _________________________________
+
+    def test_case_18():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:242: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b5f00&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_20 _________________________________
+
+    def test_case_20():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:287: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b02d9660&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_23 _________________________________
+
+    def test_case_23():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_2, stack_2: stack_2}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        none_type_1 = None
+        stack_5 = module_0.Stack(none_type_1)
+&gt;       var_0 = stack_5.pop()
+
+RANDOM/test_stack5_RANDOM.py:336: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b7eb0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_26 _________________________________
+
+    def test_case_26():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:372: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e7010&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_27 _________________________________
+
+    def test_case_27():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        stack_3 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_3.pop()
+
+RANDOM/test_stack5_RANDOM.py:407: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b6bf0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_28 _________________________________
+
+    def test_case_28():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        stack_5 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_5.pop()
+
+RANDOM/test_stack5_RANDOM.py:439: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e53f0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_30 _________________________________
+
+    def test_case_30():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        stack_3 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_3.pop()
+
+RANDOM/test_stack5_RANDOM.py:464: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b023fb50&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_31 _________________________________
+
+    def test_case_31():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:484: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e45b0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_32 _________________________________
+
+    def test_case_32():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_4, stack_4: stack_4}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        var_1 = stack_7.peek()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        none_type_1 = None
+        stack_15 = module_0.Stack(none_type_1)
+&gt;       var_2 = stack_15.pop()
+
+RANDOM/test_stack5_RANDOM.py:537: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b03aa320&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_33 _________________________________
+
+    def test_case_33():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.pop()
+
+RANDOM/test_stack5_RANDOM.py:554: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b6380&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_35 _________________________________
+
+    def test_case_35():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        var_0 = stack_3.peek()
+        none_type_1 = None
+        stack_9 = module_0.Stack(none_type_1)
+&gt;       var_1 = stack_9.pop()
+
+RANDOM/test_stack5_RANDOM.py:581: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b026baf0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_37 _________________________________
+
+    def test_case_37():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        var_0 = stack_2.peek()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+&gt;       var_1 = stack_9.pop()
+
+RANDOM/test_stack5_RANDOM.py:632: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e5c00&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_38 _________________________________
+
+    def test_case_38():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        var_0 = stack_0.peek()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        bool_0 = True
+        var_1 = stack_8.push(bool_0)
+        none_type_0 = None
+        stack_10 = module_0.Stack(none_type_0)
+&gt;       var_2 = stack_10.pop()
+
+RANDOM/test_stack5_RANDOM.py:684: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b026a530&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_39 _________________________________
+
+    def test_case_39():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        var_1 = stack_4.peek()
+        none_type_0 = None
+        stack_10 = module_0.Stack(none_type_0)
+&gt;       var_2 = stack_10.pop()
+
+RANDOM/test_stack5_RANDOM.py:703: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e57e0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_41 _________________________________
+
+    def test_case_41():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:736: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b026b2b0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_43 _________________________________
+
+    def test_case_43():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        none_type_0 = None
+        stack_7 = module_0.Stack(none_type_0)
+&gt;       var_1 = stack_7.pop()
+
+RANDOM/test_stack5_RANDOM.py:783: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e47f0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_45 _________________________________
+
+    def test_case_45():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:818: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b02d9ba0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_46 _________________________________
+
+    def test_case_46():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+&gt;       var_0 = stack_4.pop()
+
+RANDOM/test_stack5_RANDOM.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e60b0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_47 _________________________________
+
+    def test_case_47():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_2.push(stack_0)
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+&gt;       var_1 = stack_4.pop()
+
+RANDOM/test_stack5_RANDOM.py:890: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b02dac80&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_49 _________________________________
+
+    def test_case_49():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_1.is_empty()
+        none_type_1 = None
+        stack_3 = module_0.Stack(none_type_1)
+&gt;       var_1 = stack_3.pop()
+
+RANDOM/test_stack5_RANDOM.py:922: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04e7670&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_50 _________________________________
+
+    def test_case_50():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_1.is_empty()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        none_type_1 = None
+        dict_1 = {none_type_1: stack_3, stack_3: stack_3}
+        node_1 = module_0.Node(none_type_1, dict_1)
+        var_1 = stack_4.is_empty()
+        stack_6 = module_0.Stack()
+        none_type_2 = None
+        stack_7 = module_0.Stack(none_type_2)
+&gt;       var_2 = stack_7.pop()
+
+RANDOM/test_stack5_RANDOM.py:973: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b02dba00&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_51 _________________________________
+
+    def test_case_51():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_2.push(stack_0)
+        none_type_1 = None
+        stack_3 = module_0.Stack(none_type_1)
+&gt;       var_1 = stack_3.pop()
+
+RANDOM/test_stack5_RANDOM.py:993: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b6a10&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_52 _________________________________
+
+    def test_case_52():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:1016: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b0268df0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_53 _________________________________
+
+    def test_case_53():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:1025: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b023e4a0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_54 _________________________________
+
+    def test_case_54():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        var_0 = stack_2.peek()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_8, stack_8: stack_8}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        none_type_1 = None
+        stack_14 = module_0.Stack(none_type_1)
+&gt;       var_1 = stack_14.pop()
+
+RANDOM/test_stack5_RANDOM.py:1049: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b026b760&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_55 _________________________________
+
+    def test_case_55():
+        stack_0 = module_0.Stack()
+        none_type_0 = None
+        stack_1 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_1.pop()
+
+RANDOM/test_stack5_RANDOM.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b023dfc0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_56 _________________________________
+
+    def test_case_56():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_4.push(bool_0)
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        var_1 = stack_6.peek()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_12, stack_12: stack_12}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_15 = module_0.Stack()
+        stack_16 = module_0.Stack()
+        stack_17 = module_0.Stack()
+        none_type_1 = None
+        stack_18 = module_0.Stack(none_type_1)
+&gt;       var_2 = stack_18.pop()
+
+RANDOM/test_stack5_RANDOM.py:1100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b026aef0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_59 _________________________________
+
+    def test_case_59():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        var_0 = stack_5.peek()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        bool_0 = True
+        var_1 = stack_13.push(bool_0)
+        stack_15 = module_0.Stack()
+        stack_16 = module_0.Stack()
+        stack_17 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_15, stack_15: stack_15}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        none_type_1 = None
+        stack_18 = module_0.Stack(none_type_1)
+&gt;       var_2 = stack_18.pop()
+
+RANDOM/test_stack5_RANDOM.py:1170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b023fe20&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_60 _________________________________
+
+    def test_case_60():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.pop()
+
+RANDOM/test_stack5_RANDOM.py:1191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b04b56f0&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_61 _________________________________
+
+    def test_case_61():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_1 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_1.is_empty()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+&gt;       var_1 = stack_4.pop()
+
+RANDOM/test_stack5_RANDOM.py:1215: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b023ec80&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_62 _________________________________
+
+    def test_case_62():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.pop()
+
+RANDOM/test_stack5_RANDOM.py:1237: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f39b026a860&gt;
+
+    def pop(self):
+        if self.top is not None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+=========================== short test summary info ============================
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_0 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_3 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_6 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_8 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_10 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_11 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_12 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_13 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_15 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_17 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_18 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_20 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_23 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_26 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_27 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_28 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_30 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_31 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_32 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_33 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_35 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_37 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_38 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_39 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_41 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_43 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_45 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_46 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_47 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_49 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_50 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_51 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_52 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_53 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_54 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_55 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_56 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_59 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_60 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_61 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_62 - AttributeError: 'NoneType...
+======================== 43 failed, 20 passed in 1.21s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_2_1"><button class="btn btn-outline-danger"><span class="job_id">2 : Job ID 160679d22994443dbff737addd671cd1</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack5.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">stack5.py, start pos: (20, 27), end pos: (20, 29)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack5.py
++++ bstack5.py
+@@ -17,7 +17,7 @@
+         return self.top.data if self.top is not None else None
+ 
+     def is_empty(self):
+-        return self.peek() is None
++        return self.peek() is not None
+ 
+ class Node(object):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack5
+collected 63 items
+
+RANDOM/test_stack5_RANDOM.py ........................................... [ 68%]
+....................                                                     [100%]
+
+============================== 63 passed in 0.09s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 3ce6014f679f4017bccadbbaf32e3bce</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">stack5.py, start pos: (17, 41), end pos: (17, 47)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_IsNot_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack5.py
++++ bstack5.py
+@@ -14,7 +14,7 @@
+         return data
+ 
+     def peek(self):
+-        return self.top.data if self.top is not None else None
++        return self.top.data if self.top is None else None
+ 
+     def is_empty(self):
+         return self.peek() is None</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack5
+collected 63 items
+
+RANDOM/test_stack5_RANDOM.py ....F.F...F.F.FFFFFF.F..FFFF..FFF.FFFFFFFF. [ 68%]
+F.FF.FFFF..F.F.FFFF.                                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_1 = None
+        stack_3 = module_0.Stack(none_type_1)
+        var_1 = stack_3.pop()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        node_0 = module_0.Node(stack_3)
+&gt;       var_2 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ee07010&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        none_type_1 = None
+        stack_4 = module_0.Stack(none_type_1)
+        var_1 = stack_4.pop()
+&gt;       var_2 = stack_4.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec68370&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+&gt;       var_1 = stack_3.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1fa69a50&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_12 _________________________________
+
+    def test_case_12():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        none_type_0 = None
+        stack_4 = module_0.Stack(none_type_0)
+        var_0 = stack_4.pop()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        node_0 = module_0.Node(stack_4)
+        none_type_1 = None
+        stack_8 = module_0.Stack(none_type_1)
+        var_1 = stack_8.pop()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        none_type_2 = None
+        dict_0 = {none_type_2: stack_11, stack_11: stack_11}
+        node_1 = module_0.Node(none_type_2, dict_0)
+&gt;       var_2 = stack_9.peek()
+
+RANDOM/test_stack5_RANDOM.py:156: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec68190&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_14 _________________________________
+
+    def test_case_14():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:183: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec921a0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_15 _________________________________
+
+    def test_case_15():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+&gt;       var_1 = stack_4.peek()
+
+RANDOM/test_stack5_RANDOM.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1eb4db10&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_16 _________________________________
+
+    def test_case_16():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_2, stack_2: stack_2}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+&gt;       var_0 = stack_5.peek()
+
+RANDOM/test_stack5_RANDOM.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ee06cb0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_17 _________________________________
+
+    def test_case_17():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1eb4cac0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_18 _________________________________
+
+    def test_case_18():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+&gt;       var_1 = stack_6.peek()
+
+RANDOM/test_stack5_RANDOM.py:255: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ee06950&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_19 _________________________________
+
+    def test_case_19():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_4, stack_4: stack_4}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_5.peek()
+
+RANDOM/test_stack5_RANDOM.py:282: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1eb4c790&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_21 _________________________________
+
+    def test_case_21():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+&gt;       var_0 = stack_2.peek()
+
+RANDOM/test_stack5_RANDOM.py:309: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec5b130&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_24 _________________________________
+
+    def test_case_24():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+&gt;       var_0 = stack_3.peek()
+
+RANDOM/test_stack5_RANDOM.py:354: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1eb4f280&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_25 _________________________________
+
+    def test_case_25():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_4.peek()
+
+RANDOM/test_stack5_RANDOM.py:367: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec933a0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_26 _________________________________
+
+    def test_case_26():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+&gt;       var_1 = stack_3.peek()
+
+RANDOM/test_stack5_RANDOM.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1e9f88e0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_27 _________________________________
+
+    def test_case_27():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        stack_3 = module_0.Stack(none_type_0)
+        var_0 = stack_3.pop()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        node_0 = module_0.Node(stack_3)
+        none_type_1 = None
+        stack_7 = module_0.Stack(none_type_1)
+        var_1 = stack_7.pop()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+&gt;       var_2 = stack_8.peek()
+
+RANDOM/test_stack5_RANDOM.py:421: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec92110&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_30 _________________________________
+
+    def test_case_30():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        stack_3 = module_0.Stack(none_type_0)
+        var_0 = stack_3.pop()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        node_0 = module_0.Node(stack_3)
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+&gt;       var_1 = stack_7.peek()
+
+RANDOM/test_stack5_RANDOM.py:475: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1e9fb2e0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_31 _________________________________
+
+    def test_case_31():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        bool_0 = True
+        var_1 = stack_7.push(bool_0)
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        stack_15 = module_0.Stack()
+        stack_16 = module_0.Stack()
+&gt;       var_2 = stack_11.peek()
+
+RANDOM/test_stack5_RANDOM.py:504: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec90d90&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_32 _________________________________
+
+    def test_case_32():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_4, stack_4: stack_4}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+&gt;       var_1 = stack_7.peek()
+
+RANDOM/test_stack5_RANDOM.py:532: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1e9f98a0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_34 _________________________________
+
+    def test_case_34():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:563: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec59cf0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_35 _________________________________
+
+    def test_case_35():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+&gt;       var_0 = stack_3.peek()
+
+RANDOM/test_stack5_RANDOM.py:578: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1eb4cdf0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_36 _________________________________
+
+    def test_case_36():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:614: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec6baf0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_37 _________________________________
+
+    def test_case_37():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+&gt;       var_0 = stack_2.peek()
+
+RANDOM/test_stack5_RANDOM.py:629: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec59510&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_38 _________________________________
+
+    def test_case_38():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:675: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ea93be0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_39 _________________________________
+
+    def test_case_39():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+&gt;       var_1 = stack_4.peek()
+
+RANDOM/test_stack5_RANDOM.py:700: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1e9fa680&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_40 _________________________________
+
+    def test_case_40():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_2, stack_2: stack_2}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_3.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:730: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ea91510&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_41 _________________________________
+
+    def test_case_41():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+&gt;       var_1 = stack_8.peek()
+
+RANDOM/test_stack5_RANDOM.py:751: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1e9fadd0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_43 _________________________________
+
+    def test_case_43():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        none_type_0 = None
+        stack_7 = module_0.Stack(none_type_0)
+        var_1 = stack_7.pop()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        var_2 = stack_9.pop()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        none_type_1 = None
+        dict_0 = {none_type_1: stack_12, stack_12: stack_12}
+        node_1 = module_0.Node(none_type_1, dict_0)
+&gt;       var_3 = stack_13.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:795: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ea93370&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_45 _________________________________
+
+    def test_case_45():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        none_type_1 = None
+        dict_0 = {none_type_1: stack_1, stack_1: stack_1}
+        node_0 = module_0.Node(none_type_1, dict_0)
+        var_1 = stack_3.push(stack_1)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+&gt;       var_2 = stack_4.peek()
+
+RANDOM/test_stack5_RANDOM.py:832: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1e9fa6b0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_46 _________________________________
+
+    def test_case_46():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        var_0 = stack_4.pop()
+        none_type_0 = None
+        stack_5 = module_0.Stack(none_type_0)
+        var_1 = stack_5.pop()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        none_type_1 = None
+        dict_0 = {none_type_1: stack_6, stack_6: stack_6}
+        node_1 = module_0.Node(none_type_1, dict_0)
+        var_2 = stack_8.push(stack_6)
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+&gt;       var_3 = stack_9.peek()
+
+RANDOM/test_stack5_RANDOM.py:877: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec92950&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_48 _________________________________
+
+    def test_case_48():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:909: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1e9f9840&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_49 _________________________________
+
+    def test_case_49():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:919: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec93130&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_50 _________________________________
+
+    def test_case_50():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:962: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ea905b0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_51 _________________________________
+
+    def test_case_51():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_2.push(stack_0)
+        none_type_1 = None
+        stack_3 = module_0.Stack(none_type_1)
+        var_1 = stack_3.pop()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        node_1 = module_0.Node(stack_3)
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        var_2 = stack_9.pop()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        none_type_2 = None
+        dict_1 = {none_type_2: stack_10, stack_10: stack_10}
+        node_2 = module_0.Node(none_type_2, dict_1)
+&gt;       var_3 = stack_11.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:1008: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec90100&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_54 _________________________________
+
+    def test_case_54():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+&gt;       var_0 = stack_2.peek()
+
+RANDOM/test_stack5_RANDOM.py:1037: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1e9fbaf0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_56 _________________________________
+
+    def test_case_56():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_4.push(bool_0)
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+&gt;       var_1 = stack_6.peek()
+
+RANDOM/test_stack5_RANDOM.py:1088: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec68940&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_58 _________________________________
+
+    def test_case_58():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:1124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec900d0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_59 _________________________________
+
+    def test_case_59():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+&gt;       var_0 = stack_5.peek()
+
+RANDOM/test_stack5_RANDOM.py:1155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec6a500&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_60 _________________________________
+
+    def test_case_60():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.pop()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_2, stack_2: stack_2}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_1 = stack_3.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:1198: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec92470&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_61 _________________________________
+
+    def test_case_61():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_1 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:1212: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f5f1ec6b430&gt;
+
+    def peek(self):
+&gt;       return self.top.data if self.top is None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+=========================== short test summary info ============================
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_6 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_10 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_12 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_14 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_15 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_16 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_17 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_18 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_19 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_21 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_24 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_25 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_26 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_27 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_30 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_31 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_32 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_34 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_35 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_36 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_37 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_38 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_39 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_40 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_41 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_43 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_45 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_46 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_48 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_49 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_50 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_51 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_54 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_56 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_58 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_59 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_60 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_61 - AttributeError: 'NoneType...
+======================== 39 failed, 24 passed in 1.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 3bf5edcb247946c89cdd03379eaecf64</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack5.py&amp;line=10" class="text-secondary"><button class="btn btn-outline-dark">stack5.py, start pos: (10, 11), end pos: (10, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack5.py
++++ bstack5.py
+@@ -7,7 +7,7 @@
+         self.top = Node(data, self.top)
+ 
+     def pop(self):
+-        if self.top is None:
++        if not self.top is None:
+             return None
+         data = self.top.data
+         self.top = self.top.next</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack5
+collected 63 items
+
+RANDOM/test_stack5_RANDOM.py F..FFFF.F.FFFF.F.FF.F..F..FFF.FFFF.F.FFF.F. [ 68%]
+F.FFF.FFFFFFFF..FFFF                                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c86633d0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c87b44c0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c9479360&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8661c60&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8805900&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843fd00&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8806350&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_11 _________________________________
+
+    def test_case_11():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843c280&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_12 _________________________________
+
+    def test_case_12():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        none_type_0 = None
+        stack_4 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_4.pop()
+
+RANDOM/test_stack5_RANDOM.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8806aa0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_13 _________________________________
+
+    def test_case_13():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8622a40&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_15 _________________________________
+
+    def test_case_15():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:188: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8663790&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_17 _________________________________
+
+    def test_case_17():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        var_0 = stack_0.peek()
+        none_type_0 = None
+        stack_6 = module_0.Stack(none_type_0)
+&gt;       var_1 = stack_6.pop()
+
+RANDOM/test_stack5_RANDOM.py:231: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843dab0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_18 _________________________________
+
+    def test_case_18():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:242: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8551e10&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_20 _________________________________
+
+    def test_case_20():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:287: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843dde0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_23 _________________________________
+
+    def test_case_23():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_2, stack_2: stack_2}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        none_type_1 = None
+        stack_5 = module_0.Stack(none_type_1)
+&gt;       var_0 = stack_5.pop()
+
+RANDOM/test_stack5_RANDOM.py:336: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8806350&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_26 _________________________________
+
+    def test_case_26():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:372: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843f430&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_27 _________________________________
+
+    def test_case_27():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        stack_3 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_3.pop()
+
+RANDOM/test_stack5_RANDOM.py:407: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8806470&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_28 _________________________________
+
+    def test_case_28():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        stack_5 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_5.pop()
+
+RANDOM/test_stack5_RANDOM.py:439: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843e3e0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_30 _________________________________
+
+    def test_case_30():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        stack_3 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_3.pop()
+
+RANDOM/test_stack5_RANDOM.py:464: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c85d7c40&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_31 _________________________________
+
+    def test_case_31():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:484: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843da80&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_32 _________________________________
+
+    def test_case_32():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_4, stack_4: stack_4}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        var_1 = stack_7.peek()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        none_type_1 = None
+        stack_15 = module_0.Stack(none_type_1)
+&gt;       var_2 = stack_15.pop()
+
+RANDOM/test_stack5_RANDOM.py:537: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8552fb0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_33 _________________________________
+
+    def test_case_33():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.pop()
+
+RANDOM/test_stack5_RANDOM.py:554: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8806ad0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_35 _________________________________
+
+    def test_case_35():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        var_0 = stack_3.peek()
+        none_type_1 = None
+        stack_9 = module_0.Stack(none_type_1)
+&gt;       var_1 = stack_9.pop()
+
+RANDOM/test_stack5_RANDOM.py:581: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c854c340&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_37 _________________________________
+
+    def test_case_37():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        var_0 = stack_2.peek()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+&gt;       var_1 = stack_9.pop()
+
+RANDOM/test_stack5_RANDOM.py:632: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843e260&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_38 _________________________________
+
+    def test_case_38():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        var_0 = stack_0.peek()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        bool_0 = True
+        var_1 = stack_8.push(bool_0)
+        none_type_0 = None
+        stack_10 = module_0.Stack(none_type_0)
+&gt;       var_2 = stack_10.pop()
+
+RANDOM/test_stack5_RANDOM.py:684: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c854cdf0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_39 _________________________________
+
+    def test_case_39():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        var_1 = stack_4.peek()
+        none_type_0 = None
+        stack_10 = module_0.Stack(none_type_0)
+&gt;       var_2 = stack_10.pop()
+
+RANDOM/test_stack5_RANDOM.py:703: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843dbd0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_41 _________________________________
+
+    def test_case_41():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:736: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c854f1c0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_43 _________________________________
+
+    def test_case_43():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        none_type_0 = None
+        stack_7 = module_0.Stack(none_type_0)
+&gt;       var_1 = stack_7.pop()
+
+RANDOM/test_stack5_RANDOM.py:783: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843dd50&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_45 _________________________________
+
+    def test_case_45():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:818: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8697a00&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_46 _________________________________
+
+    def test_case_46():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+&gt;       var_0 = stack_4.pop()
+
+RANDOM/test_stack5_RANDOM.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843ffa0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_47 _________________________________
+
+    def test_case_47():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_2.push(stack_0)
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+&gt;       var_1 = stack_4.pop()
+
+RANDOM/test_stack5_RANDOM.py:890: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8695bd0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_49 _________________________________
+
+    def test_case_49():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_1.is_empty()
+        none_type_1 = None
+        stack_3 = module_0.Stack(none_type_1)
+&gt;       var_1 = stack_3.pop()
+
+RANDOM/test_stack5_RANDOM.py:922: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843f6d0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_50 _________________________________
+
+    def test_case_50():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_1.is_empty()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        none_type_1 = None
+        dict_1 = {none_type_1: stack_3, stack_3: stack_3}
+        node_1 = module_0.Node(none_type_1, dict_1)
+        var_1 = stack_4.is_empty()
+        stack_6 = module_0.Stack()
+        none_type_2 = None
+        stack_7 = module_0.Stack(none_type_2)
+&gt;       var_2 = stack_7.pop()
+
+RANDOM/test_stack5_RANDOM.py:973: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8697f70&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_51 _________________________________
+
+    def test_case_51():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_2.push(stack_0)
+        none_type_1 = None
+        stack_3 = module_0.Stack(none_type_1)
+&gt;       var_1 = stack_3.pop()
+
+RANDOM/test_stack5_RANDOM.py:993: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c85d5b70&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_52 _________________________________
+
+    def test_case_52():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:1016: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c854dba0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_53 _________________________________
+
+    def test_case_53():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.pop()
+
+RANDOM/test_stack5_RANDOM.py:1025: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c85d5960&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_54 _________________________________
+
+    def test_case_54():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        var_0 = stack_2.peek()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_8, stack_8: stack_8}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        none_type_1 = None
+        stack_14 = module_0.Stack(none_type_1)
+&gt;       var_1 = stack_14.pop()
+
+RANDOM/test_stack5_RANDOM.py:1049: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c854c190&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_55 _________________________________
+
+    def test_case_55():
+        stack_0 = module_0.Stack()
+        none_type_0 = None
+        stack_1 = module_0.Stack(none_type_0)
+&gt;       var_0 = stack_1.pop()
+
+RANDOM/test_stack5_RANDOM.py:1060: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c85d6b90&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_56 _________________________________
+
+    def test_case_56():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_4.push(bool_0)
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        var_1 = stack_6.peek()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_12, stack_12: stack_12}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_15 = module_0.Stack()
+        stack_16 = module_0.Stack()
+        stack_17 = module_0.Stack()
+        none_type_1 = None
+        stack_18 = module_0.Stack(none_type_1)
+&gt;       var_2 = stack_18.pop()
+
+RANDOM/test_stack5_RANDOM.py:1100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c854fb20&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_59 _________________________________
+
+    def test_case_59():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        var_0 = stack_5.peek()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        bool_0 = True
+        var_1 = stack_13.push(bool_0)
+        stack_15 = module_0.Stack()
+        stack_16 = module_0.Stack()
+        stack_17 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_15, stack_15: stack_15}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        none_type_1 = None
+        stack_18 = module_0.Stack(none_type_1)
+&gt;       var_2 = stack_18.pop()
+
+RANDOM/test_stack5_RANDOM.py:1170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c85d40d0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_60 _________________________________
+
+    def test_case_60():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.pop()
+
+RANDOM/test_stack5_RANDOM.py:1191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c8662bf0&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_61 _________________________________
+
+    def test_case_61():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_1 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_1.is_empty()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+&gt;       var_1 = stack_4.pop()
+
+RANDOM/test_stack5_RANDOM.py:1215: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c843fc10&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+_________________________________ test_case_62 _________________________________
+
+    def test_case_62():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.pop()
+
+RANDOM/test_stack5_RANDOM.py:1237: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7f20c85d6f20&gt;
+
+    def pop(self):
+        if not self.top is None:
+            return None
+&gt;       data = self.top.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:12: AttributeError
+=========================== short test summary info ============================
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_0 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_3 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_5 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_6 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_8 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_10 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_11 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_12 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_13 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_15 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_17 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_18 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_20 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_23 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_26 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_27 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_28 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_30 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_31 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_32 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_33 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_35 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_37 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_38 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_39 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_41 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_43 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_45 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_46 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_47 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_49 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_50 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_51 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_52 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_53 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_54 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_55 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_56 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_59 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_60 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_61 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_62 - AttributeError: 'NoneType...
+======================== 43 failed, 20 passed in 1.22s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 27ac0ac28a844170a218660f1dfacbc0</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">stack5.py, start pos: (17, 32), end pos: (17, 52)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack5.py
++++ bstack5.py
+@@ -14,7 +14,7 @@
+         return data
+ 
+     def peek(self):
+-        return self.top.data if self.top is not None else None
++        return self.top.data if not self.top is not None else None
+ 
+     def is_empty(self):
+         return self.peek() is None</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack5
+collected 63 items
+
+RANDOM/test_stack5_RANDOM.py ....F.F...F.F.FFFFFF.F..FFFF..FFF.FFFFFFFF. [ 68%]
+F.FF.FFFF..F.F.FFFF.                                                     [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_1 = None
+        stack_3 = module_0.Stack(none_type_1)
+        var_1 = stack_3.pop()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        node_0 = module_0.Node(stack_3)
+&gt;       var_2 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb4a30a0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        none_type_1 = None
+        stack_4 = module_0.Stack(none_type_1)
+        var_1 = stack_4.pop()
+&gt;       var_2 = stack_4.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb31a950&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+&gt;       var_1 = stack_3.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cc115a50&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_12 _________________________________
+
+    def test_case_12():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        none_type_0 = None
+        stack_4 = module_0.Stack(none_type_0)
+        var_0 = stack_4.pop()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        node_0 = module_0.Node(stack_4)
+        none_type_1 = None
+        stack_8 = module_0.Stack(none_type_1)
+        var_1 = stack_8.pop()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        none_type_2 = None
+        dict_0 = {none_type_2: stack_11, stack_11: stack_11}
+        node_1 = module_0.Node(none_type_2, dict_0)
+&gt;       var_2 = stack_9.peek()
+
+RANDOM/test_stack5_RANDOM.py:156: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb31ab90&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_14 _________________________________
+
+    def test_case_14():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:183: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb32e1d0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_15 _________________________________
+
+    def test_case_15():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+&gt;       var_1 = stack_4.peek()
+
+RANDOM/test_stack5_RANDOM.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb1edb40&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_16 _________________________________
+
+    def test_case_16():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_2, stack_2: stack_2}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+&gt;       var_0 = stack_5.peek()
+
+RANDOM/test_stack5_RANDOM.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb4a2b60&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_17 _________________________________
+
+    def test_case_17():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb1ecb50&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_18 _________________________________
+
+    def test_case_18():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+&gt;       var_1 = stack_6.peek()
+
+RANDOM/test_stack5_RANDOM.py:255: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb4a30a0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_19 _________________________________
+
+    def test_case_19():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_4, stack_4: stack_4}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_5.peek()
+
+RANDOM/test_stack5_RANDOM.py:282: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb319a80&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_21 _________________________________
+
+    def test_case_21():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+&gt;       var_0 = stack_2.peek()
+
+RANDOM/test_stack5_RANDOM.py:309: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb2fdb70&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_24 _________________________________
+
+    def test_case_24():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+&gt;       var_0 = stack_3.peek()
+
+RANDOM/test_stack5_RANDOM.py:354: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb318f40&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_25 _________________________________
+
+    def test_case_25():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_4.peek()
+
+RANDOM/test_stack5_RANDOM.py:367: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb32f760&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_26 _________________________________
+
+    def test_case_26():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+&gt;       var_1 = stack_3.peek()
+
+RANDOM/test_stack5_RANDOM.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d48b0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_27 _________________________________
+
+    def test_case_27():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        stack_3 = module_0.Stack(none_type_0)
+        var_0 = stack_3.pop()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        node_0 = module_0.Node(stack_3)
+        none_type_1 = None
+        stack_7 = module_0.Stack(none_type_1)
+        var_1 = stack_7.pop()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+&gt;       var_2 = stack_8.peek()
+
+RANDOM/test_stack5_RANDOM.py:421: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb32fa00&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_30 _________________________________
+
+    def test_case_30():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        stack_3 = module_0.Stack(none_type_0)
+        var_0 = stack_3.pop()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        node_0 = module_0.Node(stack_3)
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+&gt;       var_1 = stack_7.peek()
+
+RANDOM/test_stack5_RANDOM.py:475: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d7310&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_31 _________________________________
+
+    def test_case_31():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        bool_0 = True
+        var_1 = stack_7.push(bool_0)
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        stack_15 = module_0.Stack()
+        stack_16 = module_0.Stack()
+&gt;       var_2 = stack_11.peek()
+
+RANDOM/test_stack5_RANDOM.py:504: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb32ea70&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_32 _________________________________
+
+    def test_case_32():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_4, stack_4: stack_4}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+&gt;       var_1 = stack_7.peek()
+
+RANDOM/test_stack5_RANDOM.py:532: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d6d10&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_34 _________________________________
+
+    def test_case_34():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:563: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb4a2ef0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_35 _________________________________
+
+    def test_case_35():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+&gt;       var_0 = stack_3.peek()
+
+RANDOM/test_stack5_RANDOM.py:578: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb31ac20&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_36 _________________________________
+
+    def test_case_36():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:614: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb1ec9a0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_37 _________________________________
+
+    def test_case_37():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+&gt;       var_0 = stack_2.peek()
+
+RANDOM/test_stack5_RANDOM.py:629: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb2fdff0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_38 _________________________________
+
+    def test_case_38():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:675: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb154460&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_39 _________________________________
+
+    def test_case_39():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+&gt;       var_1 = stack_4.peek()
+
+RANDOM/test_stack5_RANDOM.py:700: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d6f20&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_40 _________________________________
+
+    def test_case_40():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_2, stack_2: stack_2}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_3.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:730: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb156a70&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_41 _________________________________
+
+    def test_case_41():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        node_0 = module_0.Node(stack_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+&gt;       var_1 = stack_8.peek()
+
+RANDOM/test_stack5_RANDOM.py:751: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d4fa0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_43 _________________________________
+
+    def test_case_43():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_2.push(bool_0)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        none_type_0 = None
+        stack_7 = module_0.Stack(none_type_0)
+        var_1 = stack_7.pop()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        var_2 = stack_9.pop()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+        none_type_1 = None
+        dict_0 = {none_type_1: stack_12, stack_12: stack_12}
+        node_1 = module_0.Node(none_type_1, dict_0)
+&gt;       var_3 = stack_13.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:795: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb154ac0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_45 _________________________________
+
+    def test_case_45():
+        none_type_0 = None
+        stack_0 = module_0.Stack(none_type_0)
+        var_0 = stack_0.pop()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        none_type_1 = None
+        dict_0 = {none_type_1: stack_1, stack_1: stack_1}
+        node_0 = module_0.Node(none_type_1, dict_0)
+        var_1 = stack_3.push(stack_1)
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+&gt;       var_2 = stack_4.peek()
+
+RANDOM/test_stack5_RANDOM.py:832: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d4310&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_46 _________________________________
+
+    def test_case_46():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        var_0 = stack_4.pop()
+        none_type_0 = None
+        stack_5 = module_0.Stack(none_type_0)
+        var_1 = stack_5.pop()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        none_type_1 = None
+        dict_0 = {none_type_1: stack_6, stack_6: stack_6}
+        node_1 = module_0.Node(none_type_1, dict_0)
+        var_2 = stack_8.push(stack_6)
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        stack_13 = module_0.Stack()
+        stack_14 = module_0.Stack()
+&gt;       var_3 = stack_9.peek()
+
+RANDOM/test_stack5_RANDOM.py:877: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb1ef1f0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_48 _________________________________
+
+    def test_case_48():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:909: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d7370&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_49 _________________________________
+
+    def test_case_49():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:919: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb1efd90&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_50 _________________________________
+
+    def test_case_50():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:962: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb156cb0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_51 _________________________________
+
+    def test_case_51():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_0 = module_0.Node(none_type_0, dict_0)
+        var_0 = stack_2.push(stack_0)
+        none_type_1 = None
+        stack_3 = module_0.Stack(none_type_1)
+        var_1 = stack_3.pop()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        node_1 = module_0.Node(stack_3)
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        var_2 = stack_9.pop()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+        stack_12 = module_0.Stack()
+        none_type_2 = None
+        dict_1 = {none_type_2: stack_10, stack_10: stack_10}
+        node_2 = module_0.Node(none_type_2, dict_1)
+&gt;       var_3 = stack_11.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:1008: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb1ecb80&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_54 _________________________________
+
+    def test_case_54():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+&gt;       var_0 = stack_2.peek()
+
+RANDOM/test_stack5_RANDOM.py:1037: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d5240&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_56 _________________________________
+
+    def test_case_56():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        bool_0 = True
+        var_0 = stack_4.push(bool_0)
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+        stack_11 = module_0.Stack()
+&gt;       var_1 = stack_6.peek()
+
+RANDOM/test_stack5_RANDOM.py:1088: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb32e0e0&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_58 _________________________________
+
+    def test_case_58():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+&gt;       var_0 = stack_0.peek()
+
+RANDOM/test_stack5_RANDOM.py:1124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d5f60&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_59 _________________________________
+
+    def test_case_59():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        stack_5 = module_0.Stack()
+        stack_6 = module_0.Stack()
+        stack_7 = module_0.Stack()
+        stack_8 = module_0.Stack()
+        stack_9 = module_0.Stack()
+        stack_10 = module_0.Stack()
+&gt;       var_0 = stack_5.peek()
+
+RANDOM/test_stack5_RANDOM.py:1155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb32f850&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_60 _________________________________
+
+    def test_case_60():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.pop()
+        stack_2 = module_0.Stack()
+        stack_3 = module_0.Stack()
+        stack_4 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_2, stack_2: stack_2}
+        node_0 = module_0.Node(none_type_0, dict_0)
+&gt;       var_1 = stack_3.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:1198: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb0d4a30&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+_________________________________ test_case_61 _________________________________
+
+    def test_case_61():
+        float_0 = -1439.95584
+        node_0 = module_0.Node(float_0, float_0)
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        stack_2 = module_0.Stack()
+        none_type_0 = None
+        dict_0 = {none_type_0: stack_0, stack_0: stack_0}
+        node_1 = module_0.Node(none_type_0, dict_0)
+&gt;       var_0 = stack_1.is_empty()
+
+RANDOM/test_stack5_RANDOM.py:1212: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack5.py:20: in is_empty
+    return self.peek() is None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;stack5.Stack object at 0x7fd5cb32ca90&gt;
+
+    def peek(self):
+&gt;       return self.top.data if not self.top is not None else None
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+stack5.py:17: AttributeError
+=========================== short test summary info ============================
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_4 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_6 - AttributeError: 'NoneType'...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_10 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_12 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_14 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_15 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_16 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_17 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_18 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_19 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_21 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_24 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_25 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_26 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_27 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_30 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_31 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_32 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_34 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_35 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_36 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_37 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_38 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_39 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_40 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_41 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_43 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_45 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_46 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_48 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_49 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_50 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_51 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_54 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_56 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_58 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_59 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_60 - AttributeError: 'NoneType...
+FAILED RANDOM/test_stack5_RANDOM.py::test_case_61 - AttributeError: 'NoneType...
+======================== 39 failed, 24 passed in 1.14s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>
