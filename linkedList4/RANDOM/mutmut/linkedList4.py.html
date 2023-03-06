@@ -1,0 +1,465 @@
+<html><body><h1>linkedList4.py</h1>Killed 3 out of 46 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 1</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -9,7 +9,7 @@
+ 
+     def __init__(self, data, next_node=None):
+         """Attribute data and next_node."""
+-        self.data = data
++        self.data = None
+         self.next = next_node
+ 
+ 
+</pre><h3>Mutant 2</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -10,7 +10,7 @@
+     def __init__(self, data, next_node=None):
+         """Attribute data and next_node."""
+         self.data = data
+-        self.next = next_node
++        self.next = None
+ 
+ 
+ class LinkedList(object):
+</pre><h3>Mutant 3</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -29,7 +29,7 @@
+ 
+     def __init__(self, data=None):
+         """Linked list initialized with head."""
+-        self._length = 0
++        self._length = 1
+         self.head = None
+         try:
+             for val in data:
+</pre><h3>Mutant 4</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -29,7 +29,7 @@
+ 
+     def __init__(self, data=None):
+         """Linked list initialized with head."""
+-        self._length = 0
++        self._length = None
+         self.head = None
+         try:
+             for val in data:
+</pre><h3>Mutant 5</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -30,7 +30,7 @@
+     def __init__(self, data=None):
+         """Linked list initialized with head."""
+         self._length = 0
+-        self.head = None
++        self.head = ""
+         try:
+             for val in data:
+                 self.push(val)
+</pre><h3>Mutant 6</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -40,7 +40,7 @@
+ 
+     def push(self, val):
+         """Insert a value at the head of the list."""
+-        old_head = self.head
++        old_head = None
+         self.head = Node(val, old_head)
+         self._length += 1
+ 
+</pre><h3>Mutant 7</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -41,7 +41,7 @@
+     def push(self, val):
+         """Insert a value at the head of the list."""
+         old_head = self.head
+-        self.head = Node(val, old_head)
++        self.head = None
+         self._length += 1
+ 
+     def pop(self):
+</pre><h3>Mutant 9</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -42,7 +42,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length -= 1
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+</pre><h3>Mutant 10</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -42,7 +42,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length += 2
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+</pre><h3>Mutant 11</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -46,7 +46,7 @@
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+-        if not self.head:
++        if  self.head:
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+</pre><h3>Mutant 13</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -48,7 +48,7 @@
+         """Remove the first value and return it."""
+         if not self.head:
+             raise IndexError('Cannot pop from an empty list')
+-        to_return = self.head
++        to_return = None
+         self.head = self.head.next
+         self._length -= 1
+         return to_return.data
+</pre><h3>Mutant 22</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -68,7 +68,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr and val is not self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+</pre><h3>Mutant 23</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -68,7 +68,7 @@
+     def remove(self, val):
+         """Remove node from list if exists."""
+         curr = self.head
+-        if curr and val is self.head.data:
++        if curr or val is self.head.data:
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+</pre><h3>Mutant 29</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -72,7 +72,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next or curr.next.data == val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next
+</pre><h3>Mutant 35</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -79,7 +79,7 @@
+ 
+     def display(self):
+         """Display list as a tuple."""
+-        curr = self.head
++        curr = None
+         display = '('
+         while curr:
+             display += str(curr.data) + ', '
+</pre><h3>Mutant 36</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -80,7 +80,7 @@
+     def display(self):
+         """Display list as a tuple."""
+         curr = self.head
+-        display = '('
++        display = 'XX(XX'
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+</pre><h3>Mutant 37</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -80,7 +80,7 @@
+     def display(self):
+         """Display list as a tuple."""
+         curr = self.head
+-        display = '('
++        display = None
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+</pre><h3>Mutant 38</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -82,7 +82,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display = str(curr.data) + ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ 
+</pre><h3>Mutant 39</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -82,7 +82,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display -= str(curr.data) + ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ 
+</pre><h3>Mutant 40</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -82,7 +82,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) - ', '
+             curr = curr.next
+         return display[:-2] + ')'
+ 
+</pre><h3>Mutant 41</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -82,7 +82,7 @@
+         curr = self.head
+         display = '('
+         while curr:
+-            display += str(curr.data) + ', '
++            display += str(curr.data) + 'XX, XX'
+             curr = curr.next
+         return display[:-2] + ')'
+ 
+</pre><h3>Mutant 42</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -83,6 +83,6 @@
+         display = '('
+         while curr:
+             display += str(curr.data) + ', '
+-            curr = curr.next
++            curr = None
+         return display[:-2] + ')'
+ 
+</pre><h3>Mutant 43</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -84,5 +84,5 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:+2] + ')'
+ 
+</pre><h3>Mutant 44</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -84,5 +84,5 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-3] + ')'
+ 
+</pre><h3>Mutant 45</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -84,5 +84,5 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] - ')'
+ 
+</pre><h3>Mutant 46</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -84,5 +84,5 @@
+         while curr:
+             display += str(curr.data) + ', '
+             curr = curr.next
+-        return display[:-2] + ')'
++        return display[:-2] + 'XX)XX'
+ 
+</pre><h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 12</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -47,7 +47,7 @@
+     def pop(self):
+         """Remove the first value and return it."""
+         if not self.head:
+-            raise IndexError('Cannot pop from an empty list')
++            raise IndexError('XXCannot pop from an empty listXX')
+         to_return = self.head
+         self.head = self.head.next
+         self._length -= 1
+</pre><h3>Mutant 14</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -49,7 +49,7 @@
+         if not self.head:
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+-        self.head = self.head.next
++        self.head = None
+         self._length -= 1
+         return to_return.data
+ 
+</pre><h3>Mutant 20</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -63,7 +63,7 @@
+         while curr:
+             if curr.data == val:
+                 return curr
+-            curr = curr.next
++            curr = None
+ 
+     def remove(self, val):
+         """Remove node from list if exists."""
+</pre><h3>Mutant 24</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -69,7 +69,7 @@
+         """Remove node from list if exists."""
+         curr = self.head
+         if curr and val is self.head.data:
+-            self.head = self.head.next
++            self.head = None
+             self._length -= 1
+         while curr:
+             if (curr.next and curr.next.data == val):
+</pre><h3>Mutant 25</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -70,7 +70,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length = 1
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+</pre><h3>Mutant 26</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -70,7 +70,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length += 1
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+</pre><h3>Mutant 27</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -70,7 +70,7 @@
+         curr = self.head
+         if curr and val is self.head.data:
+             self.head = self.head.next
+-            self._length -= 1
++            self._length -= 2
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+</pre><h3>Mutant 28</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -72,7 +72,7 @@
+             self.head = self.head.next
+             self._length -= 1
+         while curr:
+-            if (curr.next and curr.next.data == val):
++            if (curr.next and curr.next.data != val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+             curr = curr.next
+</pre><h3>Mutant 30</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -73,7 +73,7 @@
+             self._length -= 1
+         while curr:
+             if (curr.next and curr.next.data == val):
+-                curr.next = curr.next.next
++                curr.next = None
+                 self._length -= 1
+             curr = curr.next
+ 
+</pre><h3>Mutant 31</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -74,7 +74,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length = 1
+             curr = curr.next
+ 
+     def display(self):
+</pre><h3>Mutant 32</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -74,7 +74,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length += 1
+             curr = curr.next
+ 
+     def display(self):
+</pre><h3>Mutant 33</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -74,7 +74,7 @@
+         while curr:
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+-                self._length -= 1
++                self._length -= 2
+             curr = curr.next
+ 
+     def display(self):
+</pre><h3>Mutant 34</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -75,7 +75,7 @@
+             if (curr.next and curr.next.data == val):
+                 curr.next = curr.next.next
+                 self._length -= 1
+-            curr = curr.next
++            curr = None
+ 
+     def display(self):
+         """Display list as a tuple."""
+</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 8</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -42,7 +42,7 @@
+         """Insert a value at the head of the list."""
+         old_head = self.head
+         self.head = Node(val, old_head)
+-        self._length += 1
++        self._length = 1
+ 
+     def pop(self):
+         """Remove the first value and return it."""
+</pre><h3>Mutant 15</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -50,7 +50,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length = 1
+         return to_return.data
+ 
+     def size(self):
+</pre><h3>Mutant 16</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -50,7 +50,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length += 1
+         return to_return.data
+ 
+     def size(self):
+</pre><h3>Mutant 17</h3><pre>--- linkedList4.py
++++ linkedList4.py
+@@ -50,7 +50,7 @@
+             raise IndexError('Cannot pop from an empty list')
+         to_return = self.head
+         self.head = self.head.next
+-        self._length -= 1
++        self._length -= 2
+         return to_return.data
+ 
+     def size(self):
+</pre></body></html>
