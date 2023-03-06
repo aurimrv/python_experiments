@@ -1,0 +1,117 @@
+2023-03-05 01:55:08,637: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 8 items
+
+WHOLE_SUITE/test_queue5_WHOLE_SUITE.py ........                          [100%]
+
+============================== 8 passed in 0.15s ===============================
+2023-03-05 01:55:09,737: [92m20 mutation targets found in queue5.py AST.[0m
+2023-03-05 01:55:09,737: Setting random.seed to: None
+2023-03-05 01:55:09,738: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:55:09,738: Total sample space size: 20
+2023-03-05 01:55:09,738: [92mSelecting 10 locations from 20 potentials.[0m
+2023-03-05 01:55:09,738: Starting individual mutation trials!
+2023-03-05 01:55:09,738: Running serial (single processor) dispatch mode.
+2023-03-05 01:55:09,738: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=17, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=17, end_col_offset=28)
+2023-03-05 01:55:10,946: [92mResult: Detected at queue5.py: (17, 11)[0m
+2023-03-05 01:55:10,946: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=12, col_offset=20, op_type=None, end_lineno=12, end_col_offset=24)
+2023-03-05 01:55:12,272: [92mResult: Detected at queue5.py: (12, 20)[0m
+2023-03-05 01:55:13,407: [92mResult: Detected at queue5.py: (12, 20)[0m
+2023-03-05 01:55:13,407: Current target location: queue5.py, LocIndex(ast_class='Compare', lineno=30, col_offset=11, op_type=<class 'ast.Eq'>, end_lineno=30, end_col_offset=33)
+2023-03-05 01:55:14,563: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-03-05 01:55:15,759: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-03-05 01:55:16,971: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-03-05 01:55:18,127: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-03-05 01:55:19,379: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-03-05 01:55:19,379: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=32, col_offset=24, op_type=None, end_lineno=32, end_col_offset=28)
+2023-03-05 01:55:20,440: [92mResult: Detected at queue5.py: (32, 24)[0m
+2023-03-05 01:55:21,475: [92mResult: Detected at queue5.py: (32, 24)[0m
+2023-03-05 01:55:21,476: Current target location: queue5.py, LocIndex(ast_class='If', lineno=17, col_offset=8, op_type='If_Statement', end_lineno=22, end_col_offset=28)
+2023-03-05 01:55:22,779: [92mResult: Detected at queue5.py: (17, 8)[0m
+2023-03-05 01:55:23,767: [92mResult: Detected at queue5.py: (17, 8)[0m
+2023-03-05 01:55:23,768: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=26, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=26, end_col_offset=28)
+2023-03-05 01:55:24,899: [92mResult: Detected at queue5.py: (26, 11)[0m
+2023-03-05 01:55:24,899: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=17, col_offset=33, op_type=<class 'ast.Is'>, end_lineno=17, end_col_offset=50)
+2023-03-05 01:55:26,242: [92mResult: Detected at queue5.py: (17, 33)[0m
+2023-03-05 01:55:26,242: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=26, col_offset=33, op_type=<class 'ast.Is'>, end_lineno=26, end_col_offset=50)
+2023-03-05 01:55:27,426: [92mResult: Detected at queue5.py: (26, 33)[0m
+2023-03-05 01:55:27,426: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=11, col_offset=20, op_type=None, end_lineno=11, end_col_offset=24)
+2023-03-05 01:55:28,660: [92mResult: Detected at queue5.py: (11, 20)[0m
+2023-03-05 01:55:30,015: [92mResult: Detected at queue5.py: (11, 20)[0m
+2023-03-05 01:55:30,015: Current target location: queue5.py, LocIndex(ast_class='BoolOp', lineno=26, col_offset=11, op_type=<class 'ast.And'>, end_lineno=26, end_col_offset=50)
+2023-03-05 01:55:31,072: [91mResult: Survived at queue5.py: (26, 11)[0m
+2023-03-05 01:55:31,072: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 8 items
+
+WHOLE_SUITE/test_queue5_WHOLE_SUITE.py ........                          [100%]
+
+============================== 8 passed in 0.12s ===============================
+2023-03-05 01:55:32,188: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/queue5/queue5.py
+ - Test commands: ['python', '-m', 'pytest', './WHOLE_SUITE']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 20
+ - Location sample coverage: 50.00 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.097579
+ - Clean trial 2 run time: 0:00:01.115359
+ - Mutation trials total run time: 0:00:21.336625
+
+2023-03-05 01:55:32,189: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 17
+ - SURVIVED: 1
+ - TOTAL RUNS: 18
+ - RUN DATETIME: 2023-03-05 01:55:32.188551
+
+2023-03-05 01:55:32,189: Detected mutations:[92m
+
+DETECTED
+--------
+ - queue5.py: (l: 11, c: 20) - mutation from None to False
+ - queue5.py: (l: 11, c: 20) - mutation from None to True
+ - queue5.py: (l: 12, c: 20) - mutation from None to False
+ - queue5.py: (l: 12, c: 20) - mutation from None to True
+ - queue5.py: (l: 17, c: 8) - mutation from If_Statement to If_False
+ - queue5.py: (l: 17, c: 8) - mutation from If_Statement to If_True
+ - queue5.py: (l: 17, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 17, c: 33) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 26, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 26, c: 33) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - queue5.py: (l: 32, c: 24) - mutation from None to True
+ - queue5.py: (l: 32, c: 24) - mutation from None to False[0m
+
+2023-03-05 01:55:32,189: Timedout mutations:
+
+2023-03-05 01:55:32,189: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - queue5.py: (l: 26, c: 11) - mutation from <class 'ast.And'> to <class 'ast.Or'>[0m
+
+2023-03-05 01:55:32,189: Writing output report to: /home/auri/temp/lucca/python_experiments/queue5/WHOLE_SUITE/mutatest/WHOLE_SUITE-report.rst

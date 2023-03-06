@@ -1,0 +1,1156 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 04/03/2023 23:57:19</p><p>Total jobs: 14</p><p>Complete: 14 (100.00%)</p><p>Surviving mutants: 0 (0.00%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 8d678549aba5437fa08d6e0f17733d07</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 16), end pos: (23, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if self.front is not None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fe2cba303d0&gt;
+item = &lt;queue1.Queue object at 0x7fe2cba303d0&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(bool_0)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fe2cb9ebbb0&gt;, item = False
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fe2cbbd6dd0&gt;
+item = &lt;queue1.Queue object at 0x7fe2cbbd6dd0&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+&gt;       var_0 = queue_1.enqueue(queue_0)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fe2cba354e0&gt;
+item = &lt;queue1.Queue object at 0x7fe2cba34d90&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - AttributeError: ...
+========================= 4 failed, 6 passed in 0.32s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID b390fde18dc54f7892640940a0d261e0</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 16), end pos: (35, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .F...F....                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f6fb502a890&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f6fb51ce080&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - ValueError
+========================= 2 failed, 8 passed in 0.31s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 146add80c5dd4da4b7c82a0762a04d95</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 16), end pos: (44, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py F....F...F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__str__()
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+&gt;       var_1 = queue_1.peek()
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f9e99ec6da0&gt;
+
+    def peek(self):
+    	if self.front is not None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 0
+        var_2 = queue_0.enqueue(var_1)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        var_3 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+&gt;       var_4 = queue_0.peek()
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f9e99e7fc40&gt;
+
+    def peek(self):
+    	if self.front is not None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+        var_0 = queue_1.enqueue(queue_0)
+        assert len(queue_1) == 1
+        var_1 = queue_1.peek()
+&gt;       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+E       AssertionError: assert 'builtins.NoneType' == 'queue1.Queue'
+E         - queue1.Queue
+E         + builtins.NoneType
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:103: AssertionError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - AssertionError: ...
+========================= 3 failed, 7 passed in 0.17s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 35b6d7ab85e147deae49f12ee2a4b516</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 5), end pos: (23, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if not self.front is None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f481c8e43d0&gt;
+item = &lt;queue1.Queue object at 0x7f481c8e43d0&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(bool_0)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f481c89fbb0&gt;, item = False
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f481ca8edd0&gt;
+item = &lt;queue1.Queue object at 0x7f481ca8edd0&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+&gt;       var_0 = queue_1.enqueue(queue_0)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f481c8e94e0&gt;
+item = &lt;queue1.Queue object at 0x7f481c8e8d90&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - AttributeError: ...
+========================= 4 failed, 6 passed in 0.35s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 2e811af815a949539d668a01cd5a27cb</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 5), end pos: (35, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .F...F....                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fcdf0ed82b0&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fcdf0e93d90&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - ValueError
+========================= 2 failed, 8 passed in 0.19s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 2b6e25e18ebb440a8cb4af6097ce7373</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 5), end pos: (44, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py F....F...F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__str__()
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+&gt;       var_1 = queue_1.peek()
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f74fdbcc370&gt;
+
+    def peek(self):
+    	if not self.front is None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 0
+        var_2 = queue_0.enqueue(var_1)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        var_3 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+&gt;       var_4 = queue_0.peek()
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f74fdb87ee0&gt;
+
+    def peek(self):
+    	if not self.front is None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+        var_0 = queue_1.enqueue(queue_0)
+        assert len(queue_1) == 1
+        var_1 = queue_1.peek()
+&gt;       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+E       AssertionError: assert 'builtins.NoneType' == 'queue1.Queue'
+E         - queue1.Queue
+E         + builtins.NoneType
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:103: AssertionError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - AttributeError: ...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - AssertionError: ...
+========================= 3 failed, 7 passed in 0.23s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID aa17076f70cd4c2ca6bc2cb5695dde49</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = 1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py FFFFFFFFFF                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f1e7c280&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:7: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f2022b00&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f1e37ee0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:21: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f20226e0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:26: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f1e826e0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:31: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f2022ef0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:38: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f1e819c0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:70: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f1e377c0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:79: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f1e81c90&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:87: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f32f2022a40&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:95: AssertionError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0 - assert 1 == 0
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1 - assert 1 == 0
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_2 - assert 1 == 0
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_3 - assert 1 == 0
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_4 - assert 1 == 0
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert 1 == 0
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_6 - assert 1 == 0
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - assert 1 == 0
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - assert 1 == 0
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - assert 1 == 0
+============================== 10 failed in 0.30s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID d3961e214aa74de3bd4909ccf43978ce</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = -1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py FFFFFFFFFF                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:7: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:15: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:21: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:26: ValueError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:31: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:38: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:70: ValueError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:79: ValueError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:87: ValueError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:95: ValueError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0 - ValueError: __le...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1 - ValueError: __le...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_2 - ValueError: __le...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_3 - ValueError: __le...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_4 - ValueError: __le...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - ValueError: __le...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_6 - ValueError: __le...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - ValueError: __le...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - ValueError: __le...
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - ValueError: __le...
+============================== 10 failed in 0.21s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 16f755f4db344e228305818eb66d8322</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 2
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f47a38150f0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:40: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(bool_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f47a39be7d0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:81: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f47a3815060&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:89: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+        var_0 = queue_1.enqueue(queue_0)
+&gt;       assert len(queue_1) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f47a39befb0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:101: AssertionError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert 2 == 1
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - assert 2 == 1
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - assert 2 == 1
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - assert 2 == 1
+========================= 4 failed, 6 passed in 0.33s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID 3e59bf2428834ab1bd60a93474d67829</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 0
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7ffb022183d0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:40: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(bool_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7ffb023bda50&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:81: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7ffb021d3bb0&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:89: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+        var_0 = queue_1.enqueue(queue_0)
+&gt;       assert len(queue_1) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7ffb023be380&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:101: AssertionError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert 0 == 1
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7 - assert 0 == 1
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8 - assert 0 == 1
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9 - assert 0 == 1
+========================= 4 failed, 6 passed in 0.29s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID d9ababad46d2476b84758305a6b4f561</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 2
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:42: ValueError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - ValueError: __le...
+========================= 1 failed, 9 passed in 0.20s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID 40acde19e26a44b59b9a451531117096</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 0
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fc46e708400&gt;)
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:42: AssertionError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert 1 == 0
+========================= 1 failed, 9 passed in 0.23s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 786ddc7fa78744f89806930e277b7e4f</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = 1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 0
+        var_2 = queue_0.enqueue(var_1)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        var_3 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        var_4 = queue_0.peek()
+        var_5 = queue_0.enqueue(var_3)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        assert len(var_3) == 1
+        var_6 = var_3.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        assert len(var_6) == 0
+        var_7 = var_6.clear()
+        var_8 = var_6.__len__()
+&gt;       assert var_8 == 0
+E       assert 1 == 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:64: AssertionError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert 1 == 0
+========================= 1 failed, 9 passed in 0.16s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID da995a9b44de4c7fa69df2bd1029b990</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = -1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 10 items
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 0
+        var_2 = queue_0.enqueue(var_1)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        var_3 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        var_4 = queue_0.peek()
+        var_5 = queue_0.enqueue(var_3)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        assert len(var_3) == 1
+        var_6 = var_3.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        assert len(var_6) == 0
+        var_7 = var_6.clear()
+        var_8 = var_6.__len__()
+&gt;       assert var_8 == 0
+E       assert -1 == 0
+
+WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:64: AssertionError
+=========================== short test summary info ============================
+FAILED WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5 - assert -1 == 0
+========================= 1 failed, 9 passed in 0.17s ==========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

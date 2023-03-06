@@ -1,0 +1,51 @@
+[job-id] fe52028d1aa641089e0ded83c11e3883
+queue5.py core/ReplaceComparisonOperator_Eq_NotEq 0
+worker outcome: normal, test outcome: killed
+[job-id] b3f390c4e5704391bf5240dcb607126f
+queue5.py core/ReplaceComparisonOperator_Eq_Lt 0
+worker outcome: normal, test outcome: killed
+[job-id] 5d14472660c64dbab14babf06c74b37c
+queue5.py core/ReplaceComparisonOperator_Eq_LtE 0
+worker outcome: normal, test outcome: killed
+[job-id] 356bc399a65747cfae935fd79f658b64
+queue5.py core/ReplaceComparisonOperator_Eq_Gt 0
+worker outcome: normal, test outcome: killed
+[job-id] 38b31ab4f058479ea6082dee6e46415f
+queue5.py core/ReplaceComparisonOperator_Eq_GtE 0
+worker outcome: normal, test outcome: killed
+[job-id] 6992a5f379624a2c8ec5eca1bc8e34fa
+queue5.py core/ReplaceComparisonOperator_Eq_Is 0
+worker outcome: normal, test outcome: survived
+[job-id] 1b41c9c7151b4c83ba8cb03c0b599621
+queue5.py core/ReplaceComparisonOperator_Eq_IsNot 0
+worker outcome: normal, test outcome: killed
+[job-id] 0c7374d9781e4806b5467887388b6436
+queue5.py core/ReplaceComparisonOperator_Is_IsNot 0
+worker outcome: normal, test outcome: killed
+[job-id] e5dc497a43964e49bb20ede60b44092c
+queue5.py core/ReplaceComparisonOperator_Is_IsNot 1
+worker outcome: normal, test outcome: killed
+[job-id] a6cd310f016142a892f3ec502e0c7094
+queue5.py core/ReplaceComparisonOperator_Is_IsNot 2
+worker outcome: normal, test outcome: killed
+[job-id] 73f5dca4fc414399aad64873fa1320b8
+queue5.py core/ReplaceComparisonOperator_Is_IsNot 3
+worker outcome: normal, test outcome: killed
+[job-id] 48dbecf8f37643ba9e6ea94dd9cae929
+queue5.py core/AddNot 0
+worker outcome: normal, test outcome: killed
+[job-id] 71df944d415a419da1b10512aab42f81
+queue5.py core/AddNot 1
+worker outcome: normal, test outcome: killed
+[job-id] 2c7c78dfb1a2468885728e5938e4bfcb
+queue5.py core/AddNot 2
+worker outcome: normal, test outcome: killed
+[job-id] 19946b3ff58247739c515275788ed0d2
+queue5.py core/ReplaceAndWithOr 0
+worker outcome: normal, test outcome: survived
+[job-id] fa5e5b04a1ab4eb3bf458810cd3e3aad
+queue5.py core/ReplaceAndWithOr 1
+worker outcome: normal, test outcome: survived
+total jobs: 16
+complete: 16 (100.00%)
+surviving mutants: 3 (18.75%)

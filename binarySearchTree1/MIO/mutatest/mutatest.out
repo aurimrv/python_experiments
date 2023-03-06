@@ -1,0 +1,159 @@
+2023-03-05 01:20:49,570: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree1
+collected 31 items
+
+MIO/test_binarySearchTree1_MIO.py ...............................        [100%]
+
+============================== 31 passed in 0.47s ==============================
+2023-03-05 01:20:50,896: [92m67 mutation targets found in binarySearchTree1.py AST.[0m
+2023-03-05 01:20:50,896: Setting random.seed to: None
+2023-03-05 01:20:50,896: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:20:50,897: Total sample space size: 67
+2023-03-05 01:20:50,897: [92mSelecting 10 locations from 67 potentials.[0m
+2023-03-05 01:20:50,897: Starting individual mutation trials!
+2023-03-05 01:20:50,897: Running serial (single processor) dispatch mode.
+2023-03-05 01:20:50,897: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=90, col_offset=8, op_type='If_Statement', end_lineno=93, end_col_offset=32)
+2023-03-05 01:20:52,183: [91mResult: Survived at binarySearchTree1.py: (90, 8)[0m
+2023-03-05 01:20:53,919: [92mResult: Detected at binarySearchTree1.py: (90, 8)[0m
+2023-03-05 01:20:53,919: Current target location: binarySearchTree1.py, LocIndex(ast_class='BinOp', lineno=68, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=68, end_col_offset=69)
+2023-03-05 01:20:55,379: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:20:56,896: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:20:58,459: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:20:59,983: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:01,343: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:02,986: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:02,986: Current target location: binarySearchTree1.py, LocIndex(ast_class='Compare', lineno=105, col_offset=14, op_type=<class 'ast.NotEq'>, end_lineno=105, end_col_offset=28)
+2023-03-05 01:21:04,359: [92mResult: Detected at binarySearchTree1.py: (105, 14)[0m
+2023-03-05 01:21:05,926: [92mResult: Detected at binarySearchTree1.py: (105, 14)[0m
+2023-03-05 01:21:07,163: [92mResult: Detected at binarySearchTree1.py: (105, 14)[0m
+2023-03-05 01:21:08,527: [92mResult: Detected at binarySearchTree1.py: (105, 14)[0m
+2023-03-05 01:21:09,871: [92mResult: Detected at binarySearchTree1.py: (105, 14)[0m
+2023-03-05 01:21:09,872: Current target location: binarySearchTree1.py, LocIndex(ast_class='BinOp', lineno=68, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=68, end_col_offset=60)
+2023-03-05 01:21:11,360: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:13,011: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:14,341: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:15,908: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:17,323: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:18,759: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:18,760: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=136, col_offset=24, op_type=None, end_lineno=136, end_col_offset=28)
+2023-03-05 01:21:20,195: [92mResult: Detected at binarySearchTree1.py: (136, 24)[0m
+2023-03-05 01:21:21,552: [92mResult: Detected at binarySearchTree1.py: (136, 24)[0m
+2023-03-05 01:21:21,552: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=127, col_offset=23, op_type=True, end_lineno=127, end_col_offset=27)
+2023-03-05 01:21:22,988: [92mResult: Detected at binarySearchTree1.py: (127, 23)[0m
+2023-03-05 01:21:24,259: [92mResult: Detected at binarySearchTree1.py: (127, 23)[0m
+2023-03-05 01:21:24,260: Current target location: binarySearchTree1.py, LocIndex(ast_class='BinOp', lineno=142, col_offset=19, op_type=<class 'ast.Sub'>, end_lineno=142, end_col_offset=38)
+2023-03-05 01:21:25,557: [91mResult: Survived at binarySearchTree1.py: (142, 19)[0m
+2023-03-05 01:21:26,746: [91mResult: Survived at binarySearchTree1.py: (142, 19)[0m
+2023-03-05 01:21:28,043: [91mResult: Survived at binarySearchTree1.py: (142, 19)[0m
+2023-03-05 01:21:29,351: [91mResult: Survived at binarySearchTree1.py: (142, 19)[0m
+2023-03-05 01:21:30,667: [91mResult: Survived at binarySearchTree1.py: (142, 19)[0m
+2023-03-05 01:21:31,856: [91mResult: Survived at binarySearchTree1.py: (142, 19)[0m
+2023-03-05 01:21:31,857: Current target location: binarySearchTree1.py, LocIndex(ast_class='BinOp', lineno=68, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=68, end_col_offset=28)
+2023-03-05 01:21:33,223: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:34,624: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:36,154: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:37,739: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:39,366: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:40,755: [92mResult: Detected at binarySearchTree1.py: (68, 15)[0m
+2023-03-05 01:21:40,755: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=40, col_offset=28, op_type=None, end_lineno=40, end_col_offset=32)
+2023-03-05 01:21:42,323: [92mResult: Detected at binarySearchTree1.py: (40, 28)[0m
+2023-03-05 01:21:43,823: [92mResult: Detected at binarySearchTree1.py: (40, 28)[0m
+2023-03-05 01:21:43,824: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=102, col_offset=24, op_type=None, end_lineno=102, end_col_offset=28)
+2023-03-05 01:21:45,214: [92mResult: Detected at binarySearchTree1.py: (102, 24)[0m
+2023-03-05 01:21:46,714: [92mResult: Detected at binarySearchTree1.py: (102, 24)[0m
+2023-03-05 01:21:46,715: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree1
+collected 31 items
+
+MIO/test_binarySearchTree1_MIO.py ...............................        [100%]
+
+============================== 31 passed in 0.35s ==============================
+2023-03-05 01:21:48,007: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/binarySearchTree1/binarySearchTree1.py
+ - Test commands: ['python', '-m', 'pytest', './MIO']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 67
+ - Location sample coverage: 14.93 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.318560
+ - Clean trial 2 run time: 0:00:01.291363
+ - Mutation trials total run time: 0:00:55.826193
+
+2023-03-05 01:21:48,008: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - SURVIVED: 7
+ - DETECTED: 32
+ - TOTAL RUNS: 39
+ - RUN DATETIME: 2023-03-05 01:21:48.007290
+
+2023-03-05 01:21:48,008: Detected mutations:[92m
+
+DETECTED
+--------
+ - binarySearchTree1.py: (l: 40, c: 28) - mutation from None to False
+ - binarySearchTree1.py: (l: 40, c: 28) - mutation from None to True
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 90, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 102, c: 24) - mutation from None to True
+ - binarySearchTree1.py: (l: 102, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Gt'>
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 105, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 127, c: 23) - mutation from True to None
+ - binarySearchTree1.py: (l: 127, c: 23) - mutation from True to False
+ - binarySearchTree1.py: (l: 136, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 136, c: 24) - mutation from None to True[0m
+
+2023-03-05 01:21:48,008: Timedout mutations:
+
+2023-03-05 01:21:48,008: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - binarySearchTree1.py: (l: 90, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Add'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 142, c: 19) - mutation from <class 'ast.Sub'> to <class 'ast.Mult'>[0m
+
+2023-03-05 01:21:48,008: Writing output report to: /home/auri/temp/lucca/python_experiments/binarySearchTree1/MIO/mutatest/MIO-report.rst

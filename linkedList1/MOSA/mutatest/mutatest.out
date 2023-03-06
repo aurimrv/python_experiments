@@ -1,0 +1,126 @@
+2023-03-05 01:37:18,943: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList1
+collected 29 items
+
+MOSA/test_linkedList1_MOSA.py .............................              [100%]
+
+============================== 29 passed in 0.77s ==============================
+2023-03-05 01:37:20,489: [92m53 mutation targets found in linkedList1.py AST.[0m
+2023-03-05 01:37:20,490: Setting random.seed to: None
+2023-03-05 01:37:20,490: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:37:20,490: Total sample space size: 53
+2023-03-05 01:37:20,490: [92mSelecting 10 locations from 53 potentials.[0m
+2023-03-05 01:37:20,491: Starting individual mutation trials!
+2023-03-05 01:37:20,491: Running serial (single processor) dispatch mode.
+2023-03-05 01:37:20,491: Current target location: linkedList1.py, LocIndex(ast_class='CompareIs', lineno=21, col_offset=11, op_type=<class 'ast.IsNot'>, end_lineno=21, end_col_offset=32)
+2023-03-05 01:37:22,443: [92mResult: Detected at linkedList1.py: (21, 11)[0m
+2023-03-05 01:37:22,444: Current target location: linkedList1.py, LocIndex(ast_class='NameConstant', lineno=71, col_offset=35, op_type=None, end_lineno=71, end_col_offset=39)
+2023-03-05 01:37:24,275: [92mResult: Detected at linkedList1.py: (71, 35)[0m
+2023-03-05 01:37:25,894: [92mResult: Detected at linkedList1.py: (71, 35)[0m
+2023-03-05 01:37:25,894: Current target location: linkedList1.py, LocIndex(ast_class='BoolOp', lineno=44, col_offset=11, op_type=<class 'ast.Or'>, end_lineno=44, end_col_offset=42)
+2023-03-05 01:37:27,487: [92mResult: Detected at linkedList1.py: (44, 11)[0m
+2023-03-05 01:37:27,487: Current target location: linkedList1.py, LocIndex(ast_class='CompareIs', lineno=24, col_offset=19, op_type=<class 'ast.Is'>, end_lineno=24, end_col_offset=35)
+2023-03-05 01:37:29,291: [92mResult: Detected at linkedList1.py: (24, 19)[0m
+2023-03-05 01:37:29,292: Current target location: linkedList1.py, LocIndex(ast_class='NameConstant', lineno=178, col_offset=20, op_type=None, end_lineno=178, end_col_offset=24)
+2023-03-05 01:37:30,762: [92mResult: Detected at linkedList1.py: (178, 20)[0m
+2023-03-05 01:37:31,963: [92mResult: Detected at linkedList1.py: (178, 20)[0m
+2023-03-05 01:37:31,963: Current target location: linkedList1.py, LocIndex(ast_class='Compare', lineno=180, col_offset=3, op_type=<class 'ast.Eq'>, end_lineno=180, end_col_offset=25)
+2023-03-05 01:37:33,495: [93mResult: Error at linkedList1.py: (180, 3)[0m
+2023-03-05 01:37:33,496: [93mBreak on error: stopping further mutations at location.[0m
+2023-03-05 01:37:33,496: Current target location: linkedList1.py, LocIndex(ast_class='If', lineno=134, col_offset=12, op_type='If_Statement', end_lineno=169, end_col_offset=26)
+2023-03-05 01:37:34,640: [91mResult: Survived at linkedList1.py: (134, 12)[0m
+2023-03-05 01:37:35,747: [91mResult: Survived at linkedList1.py: (134, 12)[0m
+2023-03-05 01:37:35,748: Current target location: linkedList1.py, LocIndex(ast_class='NameConstant', lineno=113, col_offset=35, op_type=None, end_lineno=113, end_col_offset=39)
+2023-03-05 01:37:37,825: [92mResult: Detected at linkedList1.py: (113, 35)[0m
+2023-03-05 01:37:39,715: [92mResult: Detected at linkedList1.py: (113, 35)[0m
+2023-03-05 01:37:39,716: Current target location: linkedList1.py, LocIndex(ast_class='Compare', lineno=134, col_offset=17, op_type=<class 'ast.Eq'>, end_lineno=134, end_col_offset=27)
+2023-03-05 01:37:40,935: [91mResult: Survived at linkedList1.py: (134, 17)[0m
+2023-03-05 01:37:42,166: [91mResult: Survived at linkedList1.py: (134, 17)[0m
+2023-03-05 01:37:43,319: [91mResult: Survived at linkedList1.py: (134, 17)[0m
+2023-03-05 01:37:44,572: [91mResult: Survived at linkedList1.py: (134, 17)[0m
+2023-03-05 01:37:45,841: [91mResult: Survived at linkedList1.py: (134, 17)[0m
+2023-03-05 01:37:45,842: Current target location: linkedList1.py, LocIndex(ast_class='Compare', lineno=44, col_offset=11, op_type=<class 'ast.GtE'>, end_lineno=44, end_col_offset=29)
+2023-03-05 01:37:47,095: [91mResult: Survived at linkedList1.py: (44, 11)[0m
+2023-03-05 01:37:48,380: [92mResult: Detected at linkedList1.py: (44, 11)[0m
+2023-03-05 01:37:49,813: [92mResult: Detected at linkedList1.py: (44, 11)[0m
+2023-03-05 01:37:51,425: [92mResult: Detected at linkedList1.py: (44, 11)[0m
+2023-03-05 01:37:52,984: [92mResult: Detected at linkedList1.py: (44, 11)[0m
+2023-03-05 01:37:52,984: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList1
+collected 29 items
+
+MOSA/test_linkedList1_MOSA.py .............................              [100%]
+
+============================== 29 passed in 0.32s ==============================
+2023-03-05 01:37:54,174: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/linkedList1/linkedList1.py
+ - Test commands: ['python', '-m', 'pytest', './MOSA']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 53
+ - Location sample coverage: 18.87 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.538720
+ - Clean trial 2 run time: 0:00:01.189136
+ - Mutation trials total run time: 0:00:32.501785
+
+2023-03-05 01:37:54,174: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 13
+ - ERROR: 1
+ - SURVIVED: 8
+ - TOTAL RUNS: 22
+ - RUN DATETIME: 2023-03-05 01:37:54.174169
+
+2023-03-05 01:37:54,174: Detected mutations:[92m
+
+DETECTED
+--------
+ - linkedList1.py: (l: 21, c: 11) - mutation from <class 'ast.IsNot'> to <class 'ast.Is'>
+ - linkedList1.py: (l: 24, c: 19) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - linkedList1.py: (l: 44, c: 11) - mutation from <class 'ast.Or'> to <class 'ast.And'>
+ - linkedList1.py: (l: 44, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.Eq'>
+ - linkedList1.py: (l: 44, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.NotEq'>
+ - linkedList1.py: (l: 44, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.LtE'>
+ - linkedList1.py: (l: 44, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.Lt'>
+ - linkedList1.py: (l: 71, c: 35) - mutation from None to False
+ - linkedList1.py: (l: 71, c: 35) - mutation from None to True
+ - linkedList1.py: (l: 113, c: 35) - mutation from None to True
+ - linkedList1.py: (l: 113, c: 35) - mutation from None to False
+ - linkedList1.py: (l: 178, c: 20) - mutation from None to True
+ - linkedList1.py: (l: 178, c: 20) - mutation from None to False[0m
+
+2023-03-05 01:37:54,174: Timedout mutations:
+
+2023-03-05 01:37:54,174: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - linkedList1.py: (l: 44, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.Gt'>
+ - linkedList1.py: (l: 134, c: 12) - mutation from If_Statement to If_False
+ - linkedList1.py: (l: 134, c: 12) - mutation from If_Statement to If_True
+ - linkedList1.py: (l: 134, c: 17) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - linkedList1.py: (l: 134, c: 17) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - linkedList1.py: (l: 134, c: 17) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - linkedList1.py: (l: 134, c: 17) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - linkedList1.py: (l: 134, c: 17) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>[0m
+
+2023-03-05 01:37:54,175: Writing output report to: /home/auri/temp/lucca/python_experiments/linkedList1/MOSA/mutatest/MOSA-report.rst

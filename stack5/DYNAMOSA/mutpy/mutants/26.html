@@ -35,28 +35,26 @@
 </div>
 <h3>Details</h3>
 <ul>
-    <li>module - <code><module 'stack5' from '/home/auri/temp/lucca/python_experiments/stack5/./stack5.py'></code></li>
-    <li><span class="label label-success">killed</span> by <code>DYNAMOSA/test_stack5.py::test_case_4</code></li>
+    <li>module - <code><module 'stack5' from '/home/lucca/desktop/ic/experimento/testes/python_experiments/stack5/./stack5.py'></code></li>
+    <li><span class="label label-success">killed</span> by <code>DYNAMOSA/test_stack5_DYNAMOSA.py::test_case_1</code></li>
     
-    <li>duration - 0.059 s</li>
+    <li>duration - 0.168 s</li>
     
     
-    <li>tests run - -1</li>
+    <li>tests run - 2</li>
     
 </ul>
 
 <h3>Exception traceback</h3>
-<pre>def test_case_4():
-        bytes_0 = b"\x94\xc5\xfeh^\xfcI\x14\xdc\xbeR\x8f"
-        int_0 = -437
-        stack_0 = module_0.Stack(int_0)
->       var_0 = stack_0.push(bytes_0)
+<pre>def test_case_1():
+        stack_0 = module_0.Stack()
+>       var_0 = stack_0.push(stack_0)
 
-DYNAMOSA/test_stack5.py:46: 
+DYNAMOSA/test_stack5_DYNAMOSA.py:11: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <stack5.Stack object at 0x7f3add8776a0>
-data = b'\x94\xc5\xfeh^\xfcI\x14\xdc\xbeR\x8f'
+self = <stack5.Stack object at 0x7f249f5829b0>
+data = <stack5.Stack object at 0x7f249f5829b0>
 
 >   ???
 E   NameError: name 'top' is not defined

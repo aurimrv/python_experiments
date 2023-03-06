@@ -1,0 +1,133 @@
+2023-03-05 01:41:58,510: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue3
+collected 20 items
+
+MOSA/test_queue3_MOSA.py ....................                            [100%]
+
+============================== 20 passed in 0.55s ==============================
+2023-03-05 01:42:00,118: [92m44 mutation targets found in queue3.py AST.[0m
+2023-03-05 01:42:00,119: Setting random.seed to: None
+2023-03-05 01:42:00,119: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:42:00,119: Total sample space size: 44
+2023-03-05 01:42:00,119: [92mSelecting 10 locations from 44 potentials.[0m
+2023-03-05 01:42:00,120: Starting individual mutation trials!
+2023-03-05 01:42:00,120: Running serial (single processor) dispatch mode.
+2023-03-05 01:42:00,120: Current target location: queue3.py, LocIndex(ast_class='If', lineno=193, col_offset=0, op_type='If_Statement', end_lineno=194, end_col_offset=8)
+2023-03-05 01:42:01,359: [91mResult: Survived at queue3.py: (193, 0)[0m
+2023-03-05 01:42:02,622: [91mResult: Survived at queue3.py: (193, 0)[0m
+2023-03-05 01:42:02,622: Current target location: queue3.py, LocIndex(ast_class='Compare', lineno=85, col_offset=13, op_type=<class 'ast.Eq'>, end_lineno=85, end_col_offset=29)
+2023-03-05 01:42:03,949: [92mResult: Detected at queue3.py: (85, 13)[0m
+2023-03-05 01:42:05,234: [92mResult: Detected at queue3.py: (85, 13)[0m
+2023-03-05 01:42:06,323: [91mResult: Survived at queue3.py: (85, 13)[0m
+2023-03-05 01:42:07,799: [92mResult: Detected at queue3.py: (85, 13)[0m
+2023-03-05 01:42:09,043: [91mResult: Survived at queue3.py: (85, 13)[0m
+2023-03-05 01:42:09,044: Current target location: queue3.py, LocIndex(ast_class='NameConstant', lineno=66, col_offset=32, op_type=None, end_lineno=66, end_col_offset=36)
+2023-03-05 01:42:10,310: [92mResult: Detected at queue3.py: (66, 32)[0m
+2023-03-05 01:42:11,503: [92mResult: Detected at queue3.py: (66, 32)[0m
+2023-03-05 01:42:11,503: Current target location: queue3.py, LocIndex(ast_class='NameConstant', lineno=106, col_offset=45, op_type=False, end_lineno=106, end_col_offset=50)
+2023-03-05 01:42:12,523: [92mResult: Detected at queue3.py: (106, 45)[0m
+2023-03-05 01:42:13,849: [92mResult: Detected at queue3.py: (106, 45)[0m
+2023-03-05 01:42:13,849: Current target location: queue3.py, LocIndex(ast_class='NameConstant', lineno=88, col_offset=35, op_type=None, end_lineno=88, end_col_offset=39)
+2023-03-05 01:42:15,151: [91mResult: Survived at queue3.py: (88, 35)[0m
+2023-03-05 01:42:16,311: [91mResult: Survived at queue3.py: (88, 35)[0m
+2023-03-05 01:42:16,311: Current target location: queue3.py, LocIndex(ast_class='NameConstant', lineno=168, col_offset=35, op_type=None, end_lineno=168, end_col_offset=39)
+2023-03-05 01:42:17,459: [91mResult: Survived at queue3.py: (168, 35)[0m
+2023-03-05 01:42:18,569: [91mResult: Survived at queue3.py: (168, 35)[0m
+2023-03-05 01:42:18,569: Current target location: queue3.py, LocIndex(ast_class='NameConstant', lineno=11, col_offset=20, op_type=None, end_lineno=11, end_col_offset=24)
+2023-03-05 01:42:19,641: [91mResult: Survived at queue3.py: (11, 20)[0m
+2023-03-05 01:42:20,775: [91mResult: Survived at queue3.py: (11, 20)[0m
+2023-03-05 01:42:20,776: Current target location: queue3.py, LocIndex(ast_class='NameConstant', lineno=74, col_offset=32, op_type=None, end_lineno=74, end_col_offset=36)
+2023-03-05 01:42:22,020: [92mResult: Detected at queue3.py: (74, 32)[0m
+2023-03-05 01:42:23,299: [92mResult: Detected at queue3.py: (74, 32)[0m
+2023-03-05 01:42:23,300: Current target location: queue3.py, LocIndex(ast_class='NameConstant', lineno=40, col_offset=37, op_type=None, end_lineno=40, end_col_offset=41)
+2023-03-05 01:42:24,374: [91mResult: Survived at queue3.py: (40, 37)[0m
+2023-03-05 01:42:25,471: [91mResult: Survived at queue3.py: (40, 37)[0m
+2023-03-05 01:42:25,472: Current target location: queue3.py, LocIndex(ast_class='Compare', lineno=112, col_offset=11, op_type=<class 'ast.Eq'>, end_lineno=112, end_col_offset=27)
+2023-03-05 01:42:27,459: [92mResult: Detected at queue3.py: (112, 11)[0m
+2023-03-05 01:42:28,599: [91mResult: Survived at queue3.py: (112, 11)[0m
+2023-03-05 01:42:30,160: [92mResult: Detected at queue3.py: (112, 11)[0m
+2023-03-05 01:42:31,935: [92mResult: Detected at queue3.py: (112, 11)[0m
+2023-03-05 01:42:33,334: [92mResult: Detected at queue3.py: (112, 11)[0m
+2023-03-05 01:42:33,334: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue3
+collected 20 items
+
+MOSA/test_queue3_MOSA.py ....................                            [100%]
+
+============================== 20 passed in 0.22s ==============================
+2023-03-05 01:42:34,466: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/queue3/queue3.py
+ - Test commands: ['python', '-m', 'pytest', './MOSA']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 44
+ - Location sample coverage: 22.73 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.590187
+ - Clean trial 2 run time: 0:00:01.130768
+ - Mutation trials total run time: 0:00:33.222943
+
+2023-03-05 01:42:34,466: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - SURVIVED: 13
+ - DETECTED: 13
+ - TOTAL RUNS: 26
+ - RUN DATETIME: 2023-03-05 01:42:34.466244
+
+2023-03-05 01:42:34,466: Detected mutations:[92m
+
+DETECTED
+--------
+ - queue3.py: (l: 66, c: 32) - mutation from None to False
+ - queue3.py: (l: 66, c: 32) - mutation from None to True
+ - queue3.py: (l: 74, c: 32) - mutation from None to True
+ - queue3.py: (l: 74, c: 32) - mutation from None to False
+ - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - queue3.py: (l: 106, c: 45) - mutation from False to True
+ - queue3.py: (l: 106, c: 45) - mutation from False to None
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>[0m
+
+2023-03-05 01:42:34,466: Timedout mutations:
+
+2023-03-05 01:42:34,467: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - queue3.py: (l: 11, c: 20) - mutation from None to False
+ - queue3.py: (l: 11, c: 20) - mutation from None to True
+ - queue3.py: (l: 40, c: 37) - mutation from None to True
+ - queue3.py: (l: 40, c: 37) - mutation from None to False
+ - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - queue3.py: (l: 88, c: 35) - mutation from None to True
+ - queue3.py: (l: 88, c: 35) - mutation from None to False
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - queue3.py: (l: 168, c: 35) - mutation from None to False
+ - queue3.py: (l: 168, c: 35) - mutation from None to True
+ - queue3.py: (l: 193, c: 0) - mutation from If_Statement to If_True
+ - queue3.py: (l: 193, c: 0) - mutation from If_Statement to If_False[0m
+
+2023-03-05 01:42:34,467: Writing output report to: /home/auri/temp/lucca/python_experiments/queue3/MOSA/mutatest/MOSA-report.rst

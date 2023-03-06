@@ -1,0 +1,184 @@
+2023-03-03 16:27:50,332: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 2308 items
+
+RANDOM/test_linkedList2_RANDOM.py ...................................... [  1%]
+........................................................................ [  4%]
+........................................................................ [  7%]
+........................................................................ [ 11%]
+........................................................................ [ 14%]
+........................................................................ [ 17%]
+........................................................................ [ 20%]
+........................................................................ [ 23%]
+........................................................................ [ 26%]
+........................................................................ [ 29%]
+........................................................................ [ 32%]
+........................................................................ [ 35%]
+........................................................................ [ 39%]
+........................................................................ [ 42%]
+........................................................................ [ 45%]
+........................................................................ [ 48%]
+........................................................................ [ 51%]
+........................................................................ [ 54%]
+........................................................................ [ 57%]
+........................................................................ [ 60%]
+........................................................................ [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 70%]
+........................................................................ [ 73%]
+........................................................................ [ 76%]
+........................................................................ [ 79%]
+........................................................................ [ 82%]
+........................................................................ [ 85%]
+........................................................................ [ 88%]
+........................................................................ [ 92%]
+........................................................................ [ 95%]
+........................................................................ [ 98%]
+......................................                                   [100%]
+
+============================ 2308 passed in 24.52s =============================
+2023-03-03 16:28:15,064: [92m36 mutation targets found in linkedList2.py AST.[0m
+2023-03-03 16:28:15,064: Setting random.seed to: None
+2023-03-03 16:28:15,064: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-03 16:28:15,064: Total sample space size: 36
+2023-03-03 16:28:15,064: [92mSelecting 10 locations from 36 potentials.[0m
+2023-03-03 16:28:15,064: Starting individual mutation trials!
+2023-03-03 16:28:15,064: Running serial (single processor) dispatch mode.
+2023-03-03 16:28:15,064: Current target location: linkedList2.py, LocIndex(ast_class='NameConstant', lineno=27, col_offset=21, op_type=None, end_lineno=27, end_col_offset=25)
+2023-03-03 16:30:18,744: [93mResult: Timeout at linkedList2.py: (27, 21)[0m
+2023-03-03 16:30:18,744: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 16:30:18,744: Current target location: linkedList2.py, LocIndex(ast_class='If', lineno=16, col_offset=12, op_type='If_Statement', end_lineno=16, end_col_offset=44)
+2023-03-03 16:30:20,696: [91mResult: Survived at linkedList2.py: (16, 12)[0m
+2023-03-03 16:32:24,375: [93mResult: Timeout at linkedList2.py: (16, 12)[0m
+2023-03-03 16:32:24,375: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 16:32:24,375: Current target location: linkedList2.py, LocIndex(ast_class='BoolOp', lineno=15, col_offset=14, op_type=<class 'ast.And'>, end_lineno=15, end_col_offset=39)
+2023-03-03 16:32:26,484: [91mResult: Survived at linkedList2.py: (15, 14)[0m
+2023-03-03 16:32:26,484: Current target location: linkedList2.py, LocIndex(ast_class='NameConstant', lineno=37, col_offset=24, op_type=None, end_lineno=37, end_col_offset=28)
+2023-03-03 16:32:28,600: [91mResult: Survived at linkedList2.py: (37, 24)[0m
+2023-03-03 16:32:30,699: [91mResult: Survived at linkedList2.py: (37, 24)[0m
+2023-03-03 16:32:30,699: Current target location: linkedList2.py, LocIndex(ast_class='Compare', lineno=15, col_offset=29, op_type=<class 'ast.NotEq'>, end_lineno=15, end_col_offset=39)
+2023-03-03 16:34:34,378: [93mResult: Timeout at linkedList2.py: (15, 29)[0m
+2023-03-03 16:34:34,378: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 16:34:34,378: Current target location: linkedList2.py, LocIndex(ast_class='NameConstant', lineno=21, col_offset=32, op_type=True, end_lineno=21, end_col_offset=36)
+2023-03-03 16:34:36,440: [91mResult: Survived at linkedList2.py: (21, 32)[0m
+2023-03-03 16:34:38,469: [91mResult: Survived at linkedList2.py: (21, 32)[0m
+2023-03-03 16:34:38,469: Current target location: linkedList2.py, LocIndex(ast_class='NameConstant', lineno=53, col_offset=23, op_type=True, end_lineno=53, end_col_offset=27)
+2023-03-03 16:36:19,633: [92mResult: Detected at linkedList2.py: (53, 23)[0m
+2023-03-03 16:38:00,377: [92mResult: Detected at linkedList2.py: (53, 23)[0m
+2023-03-03 16:38:00,377: Current target location: linkedList2.py, LocIndex(ast_class='CompareIs', lineno=37, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=37, end_col_offset=28)
+2023-03-03 16:40:04,057: [93mResult: Timeout at linkedList2.py: (37, 11)[0m
+2023-03-03 16:40:04,057: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 16:40:04,057: Current target location: linkedList2.py, LocIndex(ast_class='NameConstant', lineno=22, col_offset=15, op_type=False, end_lineno=22, end_col_offset=20)
+2023-03-03 16:40:06,007: [91mResult: Survived at linkedList2.py: (22, 15)[0m
+2023-03-03 16:40:08,104: [91mResult: Survived at linkedList2.py: (22, 15)[0m
+2023-03-03 16:40:08,104: Current target location: linkedList2.py, LocIndex(ast_class='CompareIs', lineno=66, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=66, end_col_offset=28)
+2023-03-03 16:42:11,786: [93mResult: Timeout at linkedList2.py: (66, 11)[0m
+2023-03-03 16:42:11,786: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 16:42:11,786: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList2
+collected 2308 items
+
+RANDOM/test_linkedList2_RANDOM.py ...................................... [  1%]
+........................................................................ [  4%]
+........................................................................ [  7%]
+........................................................................ [ 11%]
+........................................................................ [ 14%]
+........................................................................ [ 17%]
+........................................................................ [ 20%]
+........................................................................ [ 23%]
+........................................................................ [ 26%]
+........................................................................ [ 29%]
+........................................................................ [ 32%]
+........................................................................ [ 35%]
+........................................................................ [ 39%]
+........................................................................ [ 42%]
+........................................................................ [ 45%]
+........................................................................ [ 48%]
+........................................................................ [ 51%]
+........................................................................ [ 54%]
+........................................................................ [ 57%]
+........................................................................ [ 60%]
+........................................................................ [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 70%]
+........................................................................ [ 73%]
+........................................................................ [ 76%]
+........................................................................ [ 79%]
+........................................................................ [ 82%]
+........................................................................ [ 85%]
+........................................................................ [ 88%]
+........................................................................ [ 92%]
+........................................................................ [ 95%]
+........................................................................ [ 98%]
+......................................                                   [100%]
+
+============================= 2308 passed in 1.73s =============================
+2023-03-03 16:42:13,703: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/linkedList2/linkedList2.py
+ - Test commands: ['python', '-m', 'pytest', './RANDOM']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 36
+ - Location sample coverage: 27.78 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:24.730454
+ - Clean trial 2 run time: 0:00:01.916690
+ - Mutation trials total run time: 0:13:56.723727
+
+2023-03-03 16:42:13,703: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - TIMEOUT: 5
+ - SURVIVED: 8
+ - DETECTED: 2
+ - TOTAL RUNS: 15
+ - RUN DATETIME: 2023-03-03 16:42:13.703398
+
+2023-03-03 16:42:13,703: Detected mutations:[92m
+
+DETECTED
+--------
+ - linkedList2.py: (l: 53, c: 23) - mutation from True to False
+ - linkedList2.py: (l: 53, c: 23) - mutation from True to None[0m
+
+2023-03-03 16:42:13,703: Timedout mutations:[93m
+
+TIMEOUT
+-------
+ - linkedList2.py: (l: 15, c: 29) - mutation from <class 'ast.NotEq'> to <class 'ast.Gt'>
+ - linkedList2.py: (l: 16, c: 12) - mutation from If_Statement to If_False
+ - linkedList2.py: (l: 27, c: 21) - mutation from None to False
+ - linkedList2.py: (l: 37, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - linkedList2.py: (l: 66, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>[0m
+
+2023-03-03 16:42:13,703: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - linkedList2.py: (l: 15, c: 14) - mutation from <class 'ast.And'> to <class 'ast.Or'>
+ - linkedList2.py: (l: 16, c: 12) - mutation from If_Statement to If_True
+ - linkedList2.py: (l: 21, c: 32) - mutation from True to None
+ - linkedList2.py: (l: 21, c: 32) - mutation from True to False
+ - linkedList2.py: (l: 22, c: 15) - mutation from False to True
+ - linkedList2.py: (l: 22, c: 15) - mutation from False to None
+ - linkedList2.py: (l: 37, c: 24) - mutation from None to True
+ - linkedList2.py: (l: 37, c: 24) - mutation from None to False[0m
+
+2023-03-03 16:42:13,703: Writing output report to: /home/auri/temp/lucca/python_experiments/linkedList2/RANDOM/mutatest/RANDOM-report.rst

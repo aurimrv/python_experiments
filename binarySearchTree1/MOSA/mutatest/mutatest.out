@@ -1,0 +1,133 @@
+2023-03-05 01:33:49,966: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree1
+collected 33 items
+
+MOSA/test_binarySearchTree1_MOSA.py .................................    [100%]
+
+============================== 33 passed in 0.82s ==============================
+2023-03-05 01:33:51,666: [92m67 mutation targets found in binarySearchTree1.py AST.[0m
+2023-03-05 01:33:51,667: Setting random.seed to: None
+2023-03-05 01:33:51,667: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:33:51,667: Total sample space size: 67
+2023-03-05 01:33:51,667: [92mSelecting 10 locations from 67 potentials.[0m
+2023-03-05 01:33:51,668: Starting individual mutation trials!
+2023-03-05 01:33:51,668: Running serial (single processor) dispatch mode.
+2023-03-05 01:33:51,668: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=147, col_offset=12, op_type='If_Statement', end_lineno=150, end_col_offset=29)
+2023-03-05 01:33:52,976: [91mResult: Survived at binarySearchTree1.py: (147, 12)[0m
+2023-03-05 01:33:54,199: [91mResult: Survived at binarySearchTree1.py: (147, 12)[0m
+2023-03-05 01:33:54,200: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=40, col_offset=28, op_type=None, end_lineno=40, end_col_offset=32)
+2023-03-05 01:33:56,691: [92mResult: Detected at binarySearchTree1.py: (40, 28)[0m
+2023-03-05 01:33:59,223: [92mResult: Detected at binarySearchTree1.py: (40, 28)[0m
+2023-03-05 01:33:59,224: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=64, col_offset=8, op_type='If_Statement', end_lineno=65, end_col_offset=34)
+2023-03-05 01:34:01,328: [92mResult: Detected at binarySearchTree1.py: (64, 8)[0m
+2023-03-05 01:34:02,684: [92mResult: Detected at binarySearchTree1.py: (64, 8)[0m
+2023-03-05 01:34:02,684: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=102, col_offset=8, op_type='If_Statement', end_lineno=103, end_col_offset=52)
+2023-03-05 01:34:04,072: [92mResult: Detected at binarySearchTree1.py: (102, 8)[0m
+2023-03-05 01:34:05,750: [92mResult: Detected at binarySearchTree1.py: (102, 8)[0m
+2023-03-05 01:34:05,750: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=12, col_offset=23, op_type=None, end_lineno=12, end_col_offset=27)
+2023-03-05 01:34:08,815: [92mResult: Detected at binarySearchTree1.py: (12, 23)[0m
+2023-03-05 01:34:11,850: [92mResult: Detected at binarySearchTree1.py: (12, 23)[0m
+2023-03-05 01:34:11,851: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=25, col_offset=8, op_type='If_Statement', end_lineno=26, end_col_offset=34)
+2023-03-05 01:34:14,622: [92mResult: Detected at binarySearchTree1.py: (25, 8)[0m
+2023-03-05 01:34:16,899: [92mResult: Detected at binarySearchTree1.py: (25, 8)[0m
+2023-03-05 01:34:16,900: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=137, col_offset=19, op_type=None, end_lineno=137, end_col_offset=23)
+2023-03-05 01:34:18,319: [92mResult: Detected at binarySearchTree1.py: (137, 19)[0m
+2023-03-05 01:34:19,750: [92mResult: Detected at binarySearchTree1.py: (137, 19)[0m
+2023-03-05 01:34:19,750: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=129, col_offset=15, op_type=False, end_lineno=129, end_col_offset=20)
+2023-03-05 01:34:22,335: [92mResult: Detected at binarySearchTree1.py: (129, 15)[0m
+2023-03-05 01:34:24,745: [92mResult: Detected at binarySearchTree1.py: (129, 15)[0m
+2023-03-05 01:34:24,746: Current target location: binarySearchTree1.py, LocIndex(ast_class='Compare', lineno=20, col_offset=13, op_type=<class 'ast.Gt'>, end_lineno=20, end_col_offset=29)
+2023-03-05 01:34:26,719: [92mResult: Detected at binarySearchTree1.py: (20, 13)[0m
+2023-03-05 01:34:27,915: [91mResult: Survived at binarySearchTree1.py: (20, 13)[0m
+2023-03-05 01:34:29,919: [92mResult: Detected at binarySearchTree1.py: (20, 13)[0m
+2023-03-05 01:34:31,350: [91mResult: Survived at binarySearchTree1.py: (20, 13)[0m
+2023-03-05 01:34:33,391: [92mResult: Detected at binarySearchTree1.py: (20, 13)[0m
+2023-03-05 01:34:33,392: Current target location: binarySearchTree1.py, LocIndex(ast_class='Compare', lineno=147, col_offset=17, op_type=<class 'ast.Gt'>, end_lineno=147, end_col_offset=36)
+2023-03-05 01:34:34,619: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-05 01:34:35,878: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-05 01:34:37,083: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-05 01:34:38,269: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-05 01:34:39,428: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-05 01:34:39,428: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree1
+collected 33 items
+
+MOSA/test_binarySearchTree1_MOSA.py .................................    [100%]
+
+============================== 33 passed in 0.30s ==============================
+2023-03-05 01:34:40,602: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/binarySearchTree1/binarySearchTree1.py
+ - Test commands: ['python', '-m', 'pytest', './MOSA']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 67
+ - Location sample coverage: 14.93 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.677761
+ - Clean trial 2 run time: 0:00:01.172700
+ - Mutation trials total run time: 0:00:47.768861
+
+2023-03-05 01:34:40,602: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - SURVIVED: 9
+ - DETECTED: 17
+ - TOTAL RUNS: 26
+ - RUN DATETIME: 2023-03-05 01:34:40.601690
+
+2023-03-05 01:34:40,602: Detected mutations:[92m
+
+DETECTED
+--------
+ - binarySearchTree1.py: (l: 12, c: 23) - mutation from None to False
+ - binarySearchTree1.py: (l: 12, c: 23) - mutation from None to True
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 25, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 25, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 40, c: 28) - mutation from None to True
+ - binarySearchTree1.py: (l: 40, c: 28) - mutation from None to False
+ - binarySearchTree1.py: (l: 64, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 64, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 102, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 102, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 129, c: 15) - mutation from False to True
+ - binarySearchTree1.py: (l: 129, c: 15) - mutation from False to None
+ - binarySearchTree1.py: (l: 137, c: 19) - mutation from None to True
+ - binarySearchTree1.py: (l: 137, c: 19) - mutation from None to False[0m
+
+2023-03-05 01:34:40,602: Timedout mutations:
+
+2023-03-05 01:34:40,602: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 20, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 147, c: 12) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 147, c: 12) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>[0m
+
+2023-03-05 01:34:40,602: Writing output report to: /home/auri/temp/lucca/python_experiments/binarySearchTree1/MOSA/mutatest/MOSA-report.rst

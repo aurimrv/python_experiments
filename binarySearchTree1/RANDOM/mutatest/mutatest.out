@@ -1,0 +1,204 @@
+2023-03-03 15:27:44,434: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree1
+collected 2499 items
+
+RANDOM/test_binarySearchTree1_RANDOM.py ................................ [  1%]
+........................................................................ [  4%]
+........................................................................ [  7%]
+........................................................................ [  9%]
+........................................................................ [ 12%]
+........................................................................ [ 15%]
+........................................................................ [ 18%]
+........................................................................ [ 21%]
+........................................................................ [ 24%]
+........................................................................ [ 27%]
+........................................................................ [ 30%]
+........................................................................ [ 32%]
+........................................................................ [ 35%]
+........................................................................ [ 38%]
+........................................................................ [ 41%]
+........................................................................ [ 44%]
+........................................................................ [ 47%]
+........................................................................ [ 50%]
+........................................................................ [ 53%]
+........................................................................ [ 56%]
+........................................................................ [ 58%]
+........................................................................ [ 61%]
+........................................................................ [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 70%]
+........................................................................ [ 73%]
+........................................................................ [ 76%]
+........................................................................ [ 79%]
+........................................................................ [ 81%]
+........................................................................ [ 84%]
+........................................................................ [ 87%]
+........................................................................ [ 90%]
+........................................................................ [ 93%]
+........................................................................ [ 96%]
+........................................................................ [ 99%]
+...................                                                      [100%]
+
+============================= 2499 passed in 8.43s =============================
+2023-03-03 15:27:53,105: [92m67 mutation targets found in binarySearchTree1.py AST.[0m
+2023-03-03 15:27:53,106: Setting random.seed to: None
+2023-03-03 15:27:53,106: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-03 15:27:53,106: Total sample space size: 67
+2023-03-03 15:27:53,106: [92mSelecting 10 locations from 67 potentials.[0m
+2023-03-03 15:27:53,106: Starting individual mutation trials!
+2023-03-03 15:27:53,106: Running serial (single processor) dispatch mode.
+2023-03-03 15:27:53,106: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=72, col_offset=8, op_type='If_Statement', end_lineno=74, end_col_offset=23)
+2023-03-03 15:27:55,197: [91mResult: Survived at binarySearchTree1.py: (72, 8)[0m
+2023-03-03 15:27:57,355: [91mResult: Survived at binarySearchTree1.py: (72, 8)[0m
+2023-03-03 15:27:57,355: Current target location: binarySearchTree1.py, LocIndex(ast_class='BinOp', lineno=68, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=68, end_col_offset=60)
+2023-03-03 15:28:40,723: [93mResult: Timeout at binarySearchTree1.py: (68, 15)[0m
+2023-03-03 15:28:40,723: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 15:28:40,723: Current target location: binarySearchTree1.py, LocIndex(ast_class='BinOp', lineno=140, col_offset=23, op_type=<class 'ast.Sub'>, end_lineno=140, end_col_offset=47)
+2023-03-03 15:28:42,878: [91mResult: Survived at binarySearchTree1.py: (140, 23)[0m
+2023-03-03 15:28:45,005: [91mResult: Survived at binarySearchTree1.py: (140, 23)[0m
+2023-03-03 15:28:47,142: [91mResult: Survived at binarySearchTree1.py: (140, 23)[0m
+2023-03-03 15:28:49,290: [91mResult: Survived at binarySearchTree1.py: (140, 23)[0m
+2023-03-03 15:28:51,465: [91mResult: Survived at binarySearchTree1.py: (140, 23)[0m
+2023-03-03 15:28:53,611: [91mResult: Survived at binarySearchTree1.py: (140, 23)[0m
+2023-03-03 15:28:53,612: Current target location: binarySearchTree1.py, LocIndex(ast_class='Compare', lineno=147, col_offset=17, op_type=<class 'ast.Gt'>, end_lineno=147, end_col_offset=36)
+2023-03-03 15:28:55,768: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-03 15:28:57,910: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-03 15:29:00,059: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-03 15:29:02,202: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-03 15:29:04,349: [91mResult: Survived at binarySearchTree1.py: (147, 17)[0m
+2023-03-03 15:29:04,349: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=78, col_offset=8, op_type='If_Statement', end_lineno=80, end_col_offset=23)
+2023-03-03 15:29:06,498: [91mResult: Survived at binarySearchTree1.py: (78, 8)[0m
+2023-03-03 15:29:08,651: [91mResult: Survived at binarySearchTree1.py: (78, 8)[0m
+2023-03-03 15:29:08,651: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=86, col_offset=20, op_type=None, end_lineno=86, end_col_offset=24)
+2023-03-03 15:29:52,016: [93mResult: Timeout at binarySearchTree1.py: (86, 20)[0m
+2023-03-03 15:29:52,016: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 15:29:52,016: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=18, col_offset=8, op_type='If_Statement', end_lineno=21, end_col_offset=59)
+2023-03-03 15:30:02,377: [92mResult: Detected at binarySearchTree1.py: (18, 8)[0m
+2023-03-03 15:30:04,524: [91mResult: Survived at binarySearchTree1.py: (18, 8)[0m
+2023-03-03 15:30:04,524: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=111, col_offset=24, op_type=None, end_lineno=111, end_col_offset=28)
+2023-03-03 15:30:47,893: [93mResult: Timeout at binarySearchTree1.py: (111, 24)[0m
+2023-03-03 15:30:47,893: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 15:30:47,893: Current target location: binarySearchTree1.py, LocIndex(ast_class='BinOp', lineno=68, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=68, end_col_offset=52)
+2023-03-03 15:31:31,258: [93mResult: Timeout at binarySearchTree1.py: (68, 15)[0m
+2023-03-03 15:31:31,259: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 15:31:31,259: Current target location: binarySearchTree1.py, LocIndex(ast_class='BinOp', lineno=68, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=68, end_col_offset=75)
+2023-03-03 15:32:14,623: [93mResult: Timeout at binarySearchTree1.py: (68, 15)[0m
+2023-03-03 15:32:14,623: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-03-03 15:32:14,624: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree1
+collected 2499 items
+
+RANDOM/test_binarySearchTree1_RANDOM.py ................................ [  1%]
+........................................................................ [  4%]
+........................................................................ [  7%]
+........................................................................ [  9%]
+........................................................................ [ 12%]
+........................................................................ [ 15%]
+........................................................................ [ 18%]
+........................................................................ [ 21%]
+........................................................................ [ 24%]
+........................................................................ [ 27%]
+........................................................................ [ 30%]
+........................................................................ [ 32%]
+........................................................................ [ 35%]
+........................................................................ [ 38%]
+........................................................................ [ 41%]
+........................................................................ [ 44%]
+........................................................................ [ 47%]
+........................................................................ [ 50%]
+........................................................................ [ 53%]
+........................................................................ [ 56%]
+........................................................................ [ 58%]
+........................................................................ [ 61%]
+........................................................................ [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 70%]
+........................................................................ [ 73%]
+........................................................................ [ 76%]
+........................................................................ [ 79%]
+........................................................................ [ 81%]
+........................................................................ [ 84%]
+........................................................................ [ 87%]
+........................................................................ [ 90%]
+........................................................................ [ 93%]
+........................................................................ [ 96%]
+........................................................................ [ 99%]
+...................                                                      [100%]
+
+============================= 2499 passed in 1.88s =============================
+2023-03-03 15:32:16,698: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/binarySearchTree1/binarySearchTree1.py
+ - Test commands: ['python', '-m', 'pytest', './RANDOM']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 67
+ - Location sample coverage: 14.93 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:08.668412
+ - Clean trial 2 run time: 0:00:02.074238
+ - Mutation trials total run time: 0:04:21.521140
+
+2023-03-03 15:32:16,698: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - SURVIVED: 16
+ - TIMEOUT: 5
+ - DETECTED: 1
+ - TOTAL RUNS: 22
+ - RUN DATETIME: 2023-03-03 15:32:16.698659
+
+2023-03-03 15:32:16,698: Detected mutations:[92m
+
+DETECTED
+--------
+ - binarySearchTree1.py: (l: 18, c: 8) - mutation from If_Statement to If_False[0m
+
+2023-03-03 15:32:16,698: Timedout mutations:[93m
+
+TIMEOUT
+-------
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 68, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 86, c: 20) - mutation from None to False
+ - binarySearchTree1.py: (l: 111, c: 24) - mutation from None to False[0m
+
+2023-03-03 15:32:16,698: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - binarySearchTree1.py: (l: 18, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 72, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 72, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 78, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 78, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Pow'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Mult'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.FloorDiv'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Div'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Add'>
+ - binarySearchTree1.py: (l: 140, c: 23) - mutation from <class 'ast.Sub'> to <class 'ast.Mod'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 147, c: 17) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>[0m
+
+2023-03-03 15:32:16,699: Writing output report to: /home/auri/temp/lucca/python_experiments/binarySearchTree1/RANDOM/mutatest/RANDOM-report.rst

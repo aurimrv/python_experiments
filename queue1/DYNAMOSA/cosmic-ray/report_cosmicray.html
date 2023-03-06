@@ -1,0 +1,1037 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 04/03/2023 21:05:16</p><p>Total jobs: 14</p><p>Complete: 14 (100.00%)</p><p>Surviving mutants: 2 (14.29%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 61022dbfe9bf4c1fafd48eaf24c69689</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 16), end pos: (23, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if self.front is not None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py F..F..FF                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f89f9a76f80&gt;
+item = &lt;queue1.Queue object at 0x7f89f9a76f80&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f89f9a07310&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f89f9a77c70&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f89f9a752a0&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_0 - AttributeError: 'NoneT...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - AttributeError: 'NoneT...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - AttributeError: 'NoneT...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_7 - AttributeError: 'NoneT...
+========================= 4 failed, 4 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID be9d27007f4741f49ea670c9f89bb887</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 16), end pos: (35, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py .F.F..F.                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fb77133eec0&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       var_2 = queue_0.dequeue()
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fb7712d3340&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fb77134cfa0&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_1 - AttributeError: 'NoneT...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - ValueError
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - ValueError
+========================= 3 failed, 5 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 49dcc3ee994a4dc9a443dcd0119317f6</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 16), end pos: (44, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py ..F.....                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f150df4abc0&gt;
+
+    def peek(self):
+    	if self.front is not None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_2 - AttributeError: 'NoneT...
+========================= 1 failed, 7 passed in 0.05s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 565a657377b64d0a9ed0836fc52edf82</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 5), end pos: (23, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if not self.front is None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py F..F..FF                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f50d1e2fdc0&gt;
+item = &lt;queue1.Queue object at 0x7f50d1e2fdc0&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f50d1dbf340&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f50d1e2fa30&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f50d1e2c5e0&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_0 - AttributeError: 'NoneT...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - AttributeError: 'NoneT...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - AttributeError: 'NoneT...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_7 - AttributeError: 'NoneT...
+========================= 4 failed, 4 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 26fa9eaa6e654d62b97c745b0317e0b0</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 5), end pos: (35, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py .F.F..F.                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f1dda882b60&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       var_2 = queue_0.dequeue()
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f1dda8135e0&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f1dda891270&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_1 - AttributeError: 'NoneT...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - ValueError
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - ValueError
+========================= 3 failed, 5 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 3d92f1282c9f436fb1e176c5618568e8</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 5), end pos: (44, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py ..F.....                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f7ed38aece0&gt;
+
+    def peek(self):
+    	if not self.front is None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_2 - AttributeError: 'NoneT...
+========================= 1 failed, 7 passed in 0.05s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 50a5154b49e643c0914b7d2f2efd382a</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = 1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py FFFFFFFF                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fcaf8d22e00&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:7: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fcaf8d2c970&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fcaf8e9ef50&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:21: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fcaf8d2e470&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:31: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fcaf8e9ee00&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:41: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fcaf8cb3760&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:46: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fcaf8e9e380&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:53: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7fcaf8d2fee0&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:64: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_0 - assert 1 == 0
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_1 - assert 1 == 0
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_2 - assert 1 == 0
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - assert 1 == 0
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_4 - assert 1 == 0
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_5 - assert 1 == 0
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - assert 1 == 0
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_7 - assert 1 == 0
+============================== 8 failed in 0.06s ===============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 8cc92c5e885344e69a642190e35218d2</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = -1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py FFFFFFFF                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:7: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:15: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:21: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:31: ValueError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:41: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:46: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:53: ValueError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:64: ValueError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_0 - ValueError: __len__() ...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_1 - ValueError: __len__() ...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_2 - ValueError: __len__() ...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - ValueError: __len__() ...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_4 - ValueError: __len__() ...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_5 - ValueError: __len__() ...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - ValueError: __len__() ...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_7 - ValueError: __len__() ...
+============================== 8 failed in 0.06s ===============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID f797cf01cab04f5ea003455e59adbe8f</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 2
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py F..F..FF                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7fbb1d8ebe80&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:11: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7fbb1d8f8a90&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:33: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7fbb1d8eaa40&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:55: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7fbb1d8fafe0&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:66: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_0 - assert 2 == 1
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - assert 2 == 1
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - assert 2 == 1
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_7 - assert 2 == 1
+========================= 4 failed, 4 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID e1f5007560f4439088876fc3f452716f</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 0
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py F..F..FF                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7f12f70f6f80&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:11: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7f12f7108a90&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:33: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7f12f708bc70&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:55: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7f12f710afe0&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:66: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_0 - assert 0 == 1
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - assert 0 == 1
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - assert 0 == 1
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_7 - assert 0 == 1
+========================= 4 failed, 4 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID 50c469f4ed1046a4812f077c09e83edf</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 2
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py ...F..F.                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:57: ValueError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - ValueError: __len__() ...
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - ValueError: __len__() ...
+========================= 2 failed, 6 passed in 0.05s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID ae1c6323514547d8a38035aa9f2d776d</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 0
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py ...F..F.                                [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f5a5c252f20&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:36: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f5a5c3ce9e0&gt;)
+
+DYNAMOSA/test_queue1_DYNAMOSA.py:57: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_3 - assert 1 == 0
+FAILED DYNAMOSA/test_queue1_DYNAMOSA.py::test_case_6 - assert 1 == 0
+========================= 2 failed, 6 passed in 0.05s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_13_1"><button class="btn btn-outline-danger"><span class="job_id">13 : Job ID b0ca26fdf7074b0cb0ad7beb80137cc8</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = 1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py ........                                [100%]
+
+============================== 8 passed in 0.03s ===============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_14_1"><button class="btn btn-outline-danger"><span class="job_id">14 : Job ID 945b7b6c4775475f90297aac17f50470</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = -1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 8 items
+
+DYNAMOSA/test_queue1_DYNAMOSA.py ........                                [100%]
+
+============================== 8 passed in 0.03s ===============================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

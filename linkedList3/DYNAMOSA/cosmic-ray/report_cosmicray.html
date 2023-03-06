@@ -1,0 +1,2430 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 04/03/2023 21:03:46</p><p>Total jobs: 54</p><p>Complete: 54 (100.00%)</p><p>Surviving mutants: 24 (44.44%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 47b3a184ff5547aa9196359957eda4fb</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size != 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7f3b80a01540&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f3b80a01540&gt; = &lt;linkedList3.Node object at 0x7f3b80a01510&gt;.next
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - assert &lt;linkedLis...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - AssertionError: a...
+========================= 2 failed, 9 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 36090143d7fb4e74b7c82ed2f2723d7d</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f178e5f47c0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f178e5f47c0&gt; = &lt;linkedList3.Node object at 0x7f178e5f4670&gt;.value
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:21: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - AssertionError: a...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert &lt;linkedLis...
+========================= 2 failed, 9 passed in 0.05s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 6123158819c64c47ab5c6b2cad580292</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size != 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.F.....F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:45: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert True is False
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert False is ...
+========================= 3 failed, 8 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_4_1"><button class="btn btn-outline-danger"><span class="job_id">4 : Job ID c6f404d22fde42df845536e467bc7269</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 354748526442410d8d6619ddaa6503c7</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID ea0d3608b7d949daa033a7ff1848e43d</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f881abd9510&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f881abd9510&gt; = &lt;linkedList3.Node object at 0x7f881abd9390&gt;.value
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:21: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert &lt;linkedLis...
+========================= 1 failed, 10 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 16521b32a1de46be801319c105a74854</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt; 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.F.....F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_1 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:48: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert False is ...
+========================= 3 failed, 8 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_8_1"><button class="btn btn-outline-danger"><span class="job_id">8 : Job ID 4a073afa8829434c9ae3373f49b15174</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_9_1"><button class="btn btn-outline-danger"><span class="job_id">9 : Job ID 462d48b210af49b887e5aef2127782fc</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_10_1"><button class="btn btn-outline-danger"><span class="job_id">10 : Job ID de247a5855cf4243832c8ba417c05506</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_11_1"><button class="btn btn-outline-danger"><span class="job_id">11 : Job ID 94ae9d341b4d43f4b5d728c6f23e74ea</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt;= 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_12_1"><button class="btn btn-outline-danger"><span class="job_id">12 : Job ID 29d85d5cc1f84e23af7576849b08210c</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 1ed9892201ac4b038f360e81e3813385</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7f3de26fd540&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f3de26fd540&gt; = &lt;linkedList3.Node object at 0x7f3de26fd510&gt;.next
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - assert &lt;linkedLis...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - AssertionError: a...
+========================= 2 failed, 9 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 5bd1cef879b346fb9d61a9f857d71604</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF.......F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f4ea4d00850&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f4ea4d00850&gt; = &lt;linkedList3.Node object at 0x7f4ea4d00730&gt;.value
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:21: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 3
+        bool_4 = singly_linked_list_0.isEmpty()
+        assert bool_4 is False
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        none_type_3 = singly_linked_list_0.add(singly_linked_list_2)
+        var_0 = singly_linked_list_0.getHead()
+        var_1 = var_0.remove()
+        str_0 = singly_linked_list_0.__str__()
+&gt;       var_2 = var_0.remove()
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;linkedList3.SinglyLinkedList object at 0x7f4ea4cc8850&gt;
+
+    def remove(self):
+    
+        """Remove node from linkedlist."""
+    
+        if self.__size &gt; 0:
+            return None
+        if self.__size &gt;= 1:
+            nodeToRemove = self.__head
+            self.__sentinel.next = None
+            self.__head = self.__sentinel
+            self.__size -= 1
+            return nodeToRemove
+        else:
+            nodeToRemove = self.__head
+&gt;           self.__sentinel.next = self.__head.next
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList3.py:50: AttributeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - AssertionError: a...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert &lt;linkedLis...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - AttributeError: ...
+========================= 3 failed, 8 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID cc29f7b90005495a80fb8d9adb7b52cf</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt; 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.F.....F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:45: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert True is False
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert False is ...
+========================= 3 failed, 8 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_16_1"><button class="btn btn-outline-danger"><span class="job_id">16 : Job ID a50464f7daa4485fbd4470376a149f45</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID a61a20ce107e401983872ace09913276</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - AssertionError: a...
+========================= 1 failed, 10 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID 837760e7deb04631984d65c1c9b99e7e</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .F.........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:13: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - AssertionError: a...
+========================= 1 failed, 10 passed in 0.05s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID 73b97c8bac09404a97aedb25ce15db12</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt;= 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.......F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:45: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_2 is False
+E       assert True is False
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:100: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert True is False
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert True is F...
+========================= 2 failed, 9 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_20_1"><button class="btn btn-outline-danger"><span class="job_id">20 : Job ID f2751c035d794732815902df80f89376</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_21_1"><button class="btn btn-outline-danger"><span class="job_id">21 : Job ID 317834c9e8714032877ec2c4c82f1ef4</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+=============================== warnings summary ===============================
+linkedList3.py:102
+  /home/auri/temp/lucca/python_experiments/linkedList3/linkedList3.py:102: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if __name__ is "__main__":
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 11 passed, 1 warning in 0.03s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_22_1"><button class="btn btn-outline-danger"><span class="job_id">22 : Job ID 332ba2d74cec4597ba5fd1d900a84a33</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is not "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+=============================== warnings summary ===============================
+linkedList3.py:102
+  /home/auri/temp/lucca/python_experiments/linkedList3/linkedList3.py:102: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+    if __name__ is not "__main__":
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 11 passed, 1 warning in 0.03s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_23_1"><button class="btn btn-outline-danger"><span class="job_id">23 : Job ID 03239f2681b14b418a2aaa6f16cb8d9d</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Eq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size == 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_24_1"><button class="btn btn-outline-danger"><span class="job_id">24 : Job ID 7dec9411395e40b98ba233d64e4d8757</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size != 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_25_1"><button class="btn btn-outline-danger"><span class="job_id">25 : Job ID b67e607fef554fac85c178ae42f5924e</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &lt; 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_26_1"><button class="btn btn-outline-danger"><span class="job_id">26 : Job ID 86e8863cf14c42998639057778cda992</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &lt;= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_27_1"><button class="btn btn-outline-danger"><span class="job_id">27 : Job ID 23bfe76d58ae46b88b1eecc6bb2f49e7</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt; 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_28_1"><button class="btn btn-outline-success"><span class="job_id">28 : Job ID 0a0dffc19aee405690abd79418092645</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 11), end pos: (26, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if not self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7f7c8f4c1630&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f7c8f4c1630&gt; = &lt;linkedList3.Node object at 0x7f7c8f4c1480&gt;.next
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - assert &lt;linkedLis...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - AssertionError: a...
+========================= 2 failed, 9 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_29_1"><button class="btn btn-outline-success"><span class="job_id">29 : Job ID cca16b3a70ad406f93bda95fcdd07399</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 11), end pos: (40, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if not self.__size == 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f15445487f0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f15445487f0&gt; = &lt;linkedList3.Node object at 0x7f15445486a0&gt;.value
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:21: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - AssertionError: a...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert &lt;linkedLis...
+========================= 2 failed, 9 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_30_1"><button class="btn btn-outline-danger"><span class="job_id">30 : Job ID 92a88356c2284bfaba6ae85dc3456aef</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 11), end pos: (42, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if not self.__size &gt;= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_31_1"><button class="btn btn-outline-success"><span class="job_id">31 : Job ID fed84e640f0b44b08a8f2ce1c2cbedbb</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 23), end pos: (77, 39)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if not self.__size == 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.F.....F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:45: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert True is False
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert False is ...
+========================= 3 failed, 8 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_32_1"><button class="btn btn-outline-danger"><span class="job_id">32 : Job ID e028b6bfcfc94eb0b51b5b50326066a7</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (85, 14), end pos: (85, 21)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -82,7 +82,7 @@
+ 
+         arr = []
+         current = self.__head
+-        while current:
++        while not current:
+             arr.append(current.value)
+             current = current.next
+         return arr</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_33_1"><button class="btn btn-outline-success"><span class="job_id">33 : Job ID 28a427d01f4c4678a6a589aa3bb34ac4</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=96" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (96, 14), end pos: (96, 21)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -93,7 +93,7 @@
+ 
+         arr = []
+         current = self.__head
+-        while current:
++        while not current:
+             arr.append(current.value)
+             current = current.next
+         return str(arr)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.F.F....                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+&gt;       assert str_0 == '[None]'
+E       AssertionError: assert '[]' == '[None]'
+E         - [None]
+E         + []
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:43: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+&gt;       assert str_0 == '[None]'
+E       AssertionError: assert '[]' == '[None]'
+E         - [None]
+E         + []
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:65: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+&gt;       assert str_0 == '[None]'
+E       AssertionError: assert '[]' == '[None]'
+E         - [None]
+E         + []
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:76: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - AssertionError: a...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - AssertionError: a...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_6 - AssertionError: a...
+========================= 3 failed, 8 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_34_1"><button class="btn btn-outline-danger"><span class="job_id">34 : Job ID 17e3961f261a40de87b4f17d074005ad</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 3), end pos: (102, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if not __name__ == "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID a30830a765384e13a0b5fb89a495e664</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 15), end pos: (77, 19)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return False if self.__size == 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.F.....F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_1 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:48: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert False is ...
+========================= 3 failed, 8 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_36_1"><button class="btn btn-outline-success"><span class="job_id">36 : Job ID c53cb6a00f3748bb9bdd12fa2f777f00</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 45), end pos: (77, 50)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 0 else True
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.......F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:45: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_2 is False
+E       assert True is False
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:100: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert True is False
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert True is F...
+========================= 2 failed, 9 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_37_1"><button class="btn btn-outline-success"><span class="job_id">37 : Job ID cf82ecd715cb448b89077c71431435de</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (19, 22), end pos: (19, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -16,7 +16,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = 1
+ 
+     def add(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF.F.....F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7fa22580d540&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7fa22580d540&gt; = &lt;linkedList3.Node object at 0x7fa22580d510&gt;.next
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7fa2258446d0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7fa2258446d0&gt; = &lt;linkedList3.Node object at 0x7fa225844490&gt;.value
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:21: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - assert &lt;linkedLis...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert &lt;linkedLis...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert False is ...
+========================= 4 failed, 7 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID dc1b395b1b08415bb327fc7cb7025b76</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (19, 22), end pos: (19, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -16,7 +16,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = -1
+ 
+     def add(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF.F.....F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7fc4e79c07f0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7fc4e79c07f0&gt; = &lt;linkedList3.Node object at 0x7fc4e79c06a0&gt;.value
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:21: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - AssertionError: a...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert &lt;linkedLis...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert False is ...
+========================= 4 failed, 7 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID 75571c45f3f6425a8892fa980dcd4c6a</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 26), end pos: (26, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size == 1:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7f1490351630&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f1490351630&gt; = &lt;linkedList3.Node object at 0x7f1490351480&gt;.next
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - assert &lt;linkedLis...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - AssertionError: a...
+========================= 2 failed, 9 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID 4ac62066edc74f29b6ea30726665931c</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 26), end pos: (26, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size == -1:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID 936d87f0f77d4c8eb61f90f121b842c3</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (29, 27), end pos: (29, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -26,7 +26,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 2
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.......F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+&gt;       assert int_0 == 1
+E       assert 2 == 1
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:25: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+&gt;       assert int_0 == 3
+E       assert 4 == 3
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:110: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert 2 == 1
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert 4 == 3
+========================= 2 failed, 9 passed in 0.06s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID 43f0546cb4704ddab8000edc71d0a32c</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (29, 27), end pos: (29, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -26,7 +26,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 0
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF.......F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+&gt;       assert int_0 == 1
+E       assert 0 == 1
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:25: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_2 is False
+E       assert True is False
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:100: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - AssertionError: a...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert 0 == 1
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert True is F...
+========================= 3 failed, 8 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_43_1"><button class="btn btn-outline-success"><span class="job_id">43 : Job ID d95c7566a5034d7a8de45bc5f2b91ed7</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=34" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (34, 27), end pos: (34, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -31,7 +31,7 @@
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 2
+ 
+     def remove(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..........F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+&gt;       assert int_0 == 3
+E       assert 5 == 3
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:110: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert 5 == 3
+========================= 1 failed, 10 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_44_1"><button class="btn btn-outline-success"><span class="job_id">44 : Job ID c953bc6beb384ea2bb41c30afb92810b</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=34" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (34, 27), end pos: (34, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -31,7 +31,7 @@
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 0
+ 
+     def remove(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..........F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+&gt;       assert int_0 == 3
+E       assert 1 == 3
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:110: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert 1 == 3
+========================= 1 failed, 10 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_45_1"><button class="btn btn-outline-success"><span class="job_id">45 : Job ID 430a58d492f1417b9723101ef3c8046d</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 26), end pos: (40, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py .FF.......F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f093f174820&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f093f174820&gt; = &lt;linkedList3.Node object at 0x7f093f174700&gt;.value
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:21: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 3
+        bool_4 = singly_linked_list_0.isEmpty()
+        assert bool_4 is False
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        none_type_3 = singly_linked_list_0.add(singly_linked_list_2)
+        var_0 = singly_linked_list_0.getHead()
+        var_1 = var_0.remove()
+        str_0 = singly_linked_list_0.__str__()
+&gt;       var_2 = var_0.remove()
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;linkedList3.SinglyLinkedList object at 0x7f093f13c7f0&gt;
+
+    def remove(self):
+    
+        """Remove node from linkedlist."""
+    
+        if self.__size == 1:
+            return None
+        if self.__size &gt;= 1:
+            nodeToRemove = self.__head
+            self.__sentinel.next = None
+            self.__head = self.__sentinel
+            self.__size -= 1
+            return nodeToRemove
+        else:
+            nodeToRemove = self.__head
+&gt;           self.__sentinel.next = self.__head.next
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList3.py:50: AttributeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_1 - AssertionError: a...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert &lt;linkedLis...
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - AttributeError: ...
+========================= 3 failed, 8 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_46_1"><button class="btn btn-outline-success"><span class="job_id">46 : Job ID f37e54fe7be849aabccfa74417470ad7</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 26), end pos: (40, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 9</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size == -1:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F........                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f89f3889480&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f89f3889480&gt; = &lt;linkedList3.Node object at 0x7f89f38893f0&gt;.value
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:21: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert &lt;linkedLis...
+========================= 1 failed, 10 passed in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_47_1"><button class="btn btn-outline-danger"><span class="job_id">47 : Job ID 7c60a5643aa1475088eaaa882a87597d</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 26), end pos: (42, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 10</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt;= 2:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_48_1"><button class="btn btn-outline-danger"><span class="job_id">48 : Job ID b3b0013a9a914d0c815a25d044990c28</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 26), end pos: (42, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 11</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt;= 0:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_49_1"><button class="btn btn-outline-danger"><span class="job_id">49 : Job ID 9b7f490eb6d44ca39ca4f592dafc9b07</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=46" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (46, 27), end pos: (46, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 12</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -43,7 +43,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_50_1"><button class="btn btn-outline-danger"><span class="job_id">50 : Job ID 6103c7c84a2c4b409cedff4b7279b5c1</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=46" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (46, 27), end pos: (46, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 13</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -43,7 +43,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_51_1"><button class="btn btn-outline-danger"><span class="job_id">51 : Job ID 3edc7d306ca34993887a0fc2e2b86128</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (52, 27), end pos: (52, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 14</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -49,7 +49,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+ 
+     def getHead(self) -&gt; T:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.03s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_52"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_52_1" aria-expanded="false" aria-controls="job_list___sub_collapse_52_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_52_1"><button class="btn btn-outline-danger"><span class="job_id">52 : Job ID 2b47d19566ba442d83e623c85db9b496</span></button></div></a><div aria-labelledby="job_list___sub_heading_52_1" data-parent="#job_list___sub_accordion_52" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_52_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (52, 27), end pos: (52, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 15</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -49,7 +49,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+ 
+     def getHead(self) -&gt; T:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ...........                        [100%]
+
+============================== 11 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_53"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_53_1" aria-expanded="false" aria-controls="job_list___sub_collapse_53_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_53_1"><button class="btn btn-outline-success"><span class="job_id">53 : Job ID 107688f9c9984f28addd3e0f8463439f</span></button></div></a><div aria-labelledby="job_list___sub_heading_53_1" data-parent="#job_list___sub_accordion_53" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_53_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 38), end pos: (77, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 16</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 1 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.F.....F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:45: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert True is False
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert False is ...
+========================= 3 failed, 8 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_54"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_54_1" aria-expanded="false" aria-controls="job_list___sub_collapse_54_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_54_1"><button class="btn btn-outline-success"><span class="job_id">54 : Job ID 35cf05d3c66d4df7857f726eb1e7b1e8</span></button></div></a><div aria-labelledby="job_list___sub_heading_54_1" data-parent="#job_list___sub_accordion_54" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_54_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 38), end pos: (77, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 17</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == -1 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 11 items
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py ..F.F.....F                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_1 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:48: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+DYNAMOSA/test_linkedList3_DYNAMOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_2 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_4 - assert False is True
+FAILED DYNAMOSA/test_linkedList3_DYNAMOSA.py::test_case_10 - assert False is ...
+========================= 3 failed, 8 passed in 0.07s ==========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

@@ -1,9 +1,12 @@
 #!/usr/bin/bash
+#######################################################################
+# Script that runs Mut.Py mutation tool in a set of programs
+#######################################################################
 
 if (($# < 2))
 then
-	echo "error: evalTestOnMutPy.py <project root dir> <test case directory>"
-	echo "Example: evalTestOnMutPy.py /home/auri/temp/lucca/python_experiments DYNAMOSA"
+	echo "error: evalTestOnMutPy.sh <project root dir> <test case directory>"
+	echo "Example: evalTestOnMutPy.sh /home/auri/temp/lucca/python_experiments DYNAMOSA"
 	exit
 fi
 
@@ -26,6 +29,7 @@ do
 
 	# Cleaning previous report
 	rm -rf ./${tcDir}/${tool}
+	mkdir ./${tcDir}/${tool}
 
 	cmd="mut.py -e -m -c --debug -t ${module}.py -u ./${tcDir} --runner pytest --report-html ./${tcDir}/${tool}"
 

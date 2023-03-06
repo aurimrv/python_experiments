@@ -1,0 +1,125 @@
+2023-03-05 01:47:11,845: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree1
+collected 22 items
+
+WHOLE_SUITE/test_binarySearchTree1_WHOLE_SUITE.py ...................... [100%]
+
+============================== 22 passed in 0.46s ==============================
+2023-03-05 01:47:13,095: [92m67 mutation targets found in binarySearchTree1.py AST.[0m
+2023-03-05 01:47:13,095: Setting random.seed to: None
+2023-03-05 01:47:13,096: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:47:13,096: Total sample space size: 67
+2023-03-05 01:47:13,096: [92mSelecting 10 locations from 67 potentials.[0m
+2023-03-05 01:47:13,096: Starting individual mutation trials!
+2023-03-05 01:47:13,096: Running serial (single processor) dispatch mode.
+2023-03-05 01:47:13,096: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=90, col_offset=24, op_type=None, end_lineno=90, end_col_offset=28)
+2023-03-05 01:47:14,652: [92mResult: Detected at binarySearchTree1.py: (90, 24)[0m
+2023-03-05 01:47:16,103: [92mResult: Detected at binarySearchTree1.py: (90, 24)[0m
+2023-03-05 01:47:16,104: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=18, col_offset=8, op_type='If_Statement', end_lineno=21, end_col_offset=59)
+2023-03-05 01:47:17,344: [92mResult: Detected at binarySearchTree1.py: (18, 8)[0m
+2023-03-05 01:47:18,588: [92mResult: Detected at binarySearchTree1.py: (18, 8)[0m
+2023-03-05 01:47:18,588: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=20, col_offset=8, op_type='If_Statement', end_lineno=21, end_col_offset=59)
+2023-03-05 01:47:19,976: [92mResult: Detected at binarySearchTree1.py: (20, 8)[0m
+2023-03-05 01:47:21,039: [91mResult: Survived at binarySearchTree1.py: (20, 8)[0m
+2023-03-05 01:47:21,040: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=78, col_offset=8, op_type='If_Statement', end_lineno=80, end_col_offset=23)
+2023-03-05 01:47:22,263: [91mResult: Survived at binarySearchTree1.py: (78, 8)[0m
+2023-03-05 01:47:23,556: [91mResult: Survived at binarySearchTree1.py: (78, 8)[0m
+2023-03-05 01:47:23,556: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=114, col_offset=25, op_type=None, end_lineno=114, end_col_offset=29)
+2023-03-05 01:47:24,888: [92mResult: Detected at binarySearchTree1.py: (114, 25)[0m
+2023-03-05 01:47:26,235: [92mResult: Detected at binarySearchTree1.py: (114, 25)[0m
+2023-03-05 01:47:26,235: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=156, col_offset=8, op_type='If_Statement', end_lineno=158, end_col_offset=23)
+2023-03-05 01:47:27,375: [91mResult: Survived at binarySearchTree1.py: (156, 8)[0m
+2023-03-05 01:47:28,863: [92mResult: Detected at binarySearchTree1.py: (156, 8)[0m
+2023-03-05 01:47:28,864: Current target location: binarySearchTree1.py, LocIndex(ast_class='CompareIs', lineno=161, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=161, end_col_offset=28)
+2023-03-05 01:47:30,265: [92mResult: Detected at binarySearchTree1.py: (161, 11)[0m
+2023-03-05 01:47:30,265: Current target location: binarySearchTree1.py, LocIndex(ast_class='NameConstant', lineno=102, col_offset=24, op_type=None, end_lineno=102, end_col_offset=28)
+2023-03-05 01:47:31,729: [92mResult: Detected at binarySearchTree1.py: (102, 24)[0m
+2023-03-05 01:47:33,099: [92mResult: Detected at binarySearchTree1.py: (102, 24)[0m
+2023-03-05 01:47:33,100: Current target location: binarySearchTree1.py, LocIndex(ast_class='If', lineno=72, col_offset=8, op_type='If_Statement', end_lineno=74, end_col_offset=23)
+2023-03-05 01:47:34,269: [91mResult: Survived at binarySearchTree1.py: (72, 8)[0m
+2023-03-05 01:47:35,362: [91mResult: Survived at binarySearchTree1.py: (72, 8)[0m
+2023-03-05 01:47:35,362: Current target location: binarySearchTree1.py, LocIndex(ast_class='Compare', lineno=37, col_offset=13, op_type=<class 'ast.Gt'>, end_lineno=37, end_col_offset=29)
+2023-03-05 01:47:36,627: [92mResult: Detected at binarySearchTree1.py: (37, 13)[0m
+2023-03-05 01:47:37,702: [91mResult: Survived at binarySearchTree1.py: (37, 13)[0m
+2023-03-05 01:47:39,015: [92mResult: Detected at binarySearchTree1.py: (37, 13)[0m
+2023-03-05 01:47:40,299: [92mResult: Detected at binarySearchTree1.py: (37, 13)[0m
+2023-03-05 01:47:41,670: [92mResult: Detected at binarySearchTree1.py: (37, 13)[0m
+2023-03-05 01:47:41,671: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree1
+collected 22 items
+
+WHOLE_SUITE/test_binarySearchTree1_WHOLE_SUITE.py ...................... [100%]
+
+============================== 22 passed in 0.26s ==============================
+2023-03-05 01:47:42,887: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/binarySearchTree1/binarySearchTree1.py
+ - Test commands: ['python', '-m', 'pytest', './WHOLE_SUITE']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 67
+ - Location sample coverage: 14.93 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.242347
+ - Clean trial 2 run time: 0:00:01.215799
+ - Mutation trials total run time: 0:00:28.583156
+
+2023-03-05 01:47:42,888: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 15
+ - SURVIVED: 7
+ - TOTAL RUNS: 22
+ - RUN DATETIME: 2023-03-05 01:47:42.887578
+
+2023-03-05 01:47:42,888: Detected mutations:[92m
+
+DETECTED
+--------
+ - binarySearchTree1.py: (l: 18, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 18, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 20, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - binarySearchTree1.py: (l: 90, c: 24) - mutation from None to True
+ - binarySearchTree1.py: (l: 90, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 102, c: 24) - mutation from None to True
+ - binarySearchTree1.py: (l: 102, c: 24) - mutation from None to False
+ - binarySearchTree1.py: (l: 114, c: 25) - mutation from None to True
+ - binarySearchTree1.py: (l: 114, c: 25) - mutation from None to False
+ - binarySearchTree1.py: (l: 156, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 161, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>[0m
+
+2023-03-05 01:47:42,888: Timedout mutations:
+
+2023-03-05 01:47:42,888: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - binarySearchTree1.py: (l: 20, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 37, c: 13) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - binarySearchTree1.py: (l: 72, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 72, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 78, c: 8) - mutation from If_Statement to If_False
+ - binarySearchTree1.py: (l: 78, c: 8) - mutation from If_Statement to If_True
+ - binarySearchTree1.py: (l: 156, c: 8) - mutation from If_Statement to If_False[0m
+
+2023-03-05 01:47:42,888: Writing output report to: /home/auri/temp/lucca/python_experiments/binarySearchTree1/WHOLE_SUITE/mutatest/WHOLE_SUITE-report.rst

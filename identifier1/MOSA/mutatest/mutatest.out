@@ -1,0 +1,143 @@
+2023-03-05 01:36:38,908: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/identifier1
+collected 11 items
+
+MOSA/test_identifier1_MOSA.py ...........                                [100%]
+
+============================== 11 passed in 0.18s ==============================
+2023-03-05 01:36:39,906: [92m39 mutation targets found in identifier1.py AST.[0m
+2023-03-05 01:36:39,906: Setting random.seed to: None
+2023-03-05 01:36:39,907: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:36:39,907: Total sample space size: 39
+2023-03-05 01:36:39,907: [92mSelecting 10 locations from 39 potentials.[0m
+2023-03-05 01:36:39,907: Starting individual mutation trials!
+2023-03-05 01:36:39,907: Running serial (single processor) dispatch mode.
+2023-03-05 01:36:39,907: Current target location: identifier1.py, LocIndex(ast_class='Compare', lineno=14, col_offset=46, op_type=<class 'ast.GtE'>, end_lineno=14, end_col_offset=55)
+2023-03-05 01:36:41,019: [92mResult: Detected at identifier1.py: (14, 46)[0m
+2023-03-05 01:36:41,891: [91mResult: Survived at identifier1.py: (14, 46)[0m
+2023-03-05 01:36:42,892: [92mResult: Detected at identifier1.py: (14, 46)[0m
+2023-03-05 01:36:44,049: [92mResult: Detected at identifier1.py: (14, 46)[0m
+2023-03-05 01:36:45,231: [92mResult: Detected at identifier1.py: (14, 46)[0m
+2023-03-05 01:36:45,232: Current target location: identifier1.py, LocIndex(ast_class='Compare', lineno=23, col_offset=12, op_type=<class 'ast.Gt'>, end_lineno=23, end_col_offset=22)
+2023-03-05 01:36:46,367: [92mResult: Detected at identifier1.py: (23, 12)[0m
+2023-03-05 01:36:47,435: [91mResult: Survived at identifier1.py: (23, 12)[0m
+2023-03-05 01:36:48,658: [92mResult: Detected at identifier1.py: (23, 12)[0m
+2023-03-05 01:36:49,920: [92mResult: Detected at identifier1.py: (23, 12)[0m
+2023-03-05 01:36:51,056: [92mResult: Detected at identifier1.py: (23, 12)[0m
+2023-03-05 01:36:51,057: Current target location: identifier1.py, LocIndex(ast_class='Compare', lineno=7, col_offset=13, op_type=<class 'ast.GtE'>, end_lineno=7, end_col_offset=22)
+2023-03-05 01:36:52,168: [92mResult: Detected at identifier1.py: (7, 13)[0m
+2023-03-05 01:36:53,400: [92mResult: Detected at identifier1.py: (7, 13)[0m
+2023-03-05 01:36:54,710: [92mResult: Detected at identifier1.py: (7, 13)[0m
+2023-03-05 01:36:55,992: [92mResult: Detected at identifier1.py: (7, 13)[0m
+2023-03-05 01:36:57,053: [91mResult: Survived at identifier1.py: (7, 13)[0m
+2023-03-05 01:36:57,053: Current target location: identifier1.py, LocIndex(ast_class='If', lineno=7, col_offset=8, op_type='If_Statement', end_lineno=10, end_col_offset=24)
+2023-03-05 01:36:58,294: [92mResult: Detected at identifier1.py: (7, 8)[0m
+2023-03-05 01:36:59,491: [92mResult: Detected at identifier1.py: (7, 8)[0m
+2023-03-05 01:36:59,492: Current target location: identifier1.py, LocIndex(ast_class='NameConstant', lineno=8, col_offset=19, op_type=True, end_lineno=8, end_col_offset=23)
+2023-03-05 01:37:00,697: [92mResult: Detected at identifier1.py: (8, 19)[0m
+2023-03-05 01:37:01,891: [92mResult: Detected at identifier1.py: (8, 19)[0m
+2023-03-05 01:37:01,892: Current target location: identifier1.py, LocIndex(ast_class='BoolOp', lineno=7, col_offset=12, op_type=<class 'ast.And'>, end_lineno=7, end_col_offset=39)
+2023-03-05 01:37:03,043: [92mResult: Detected at identifier1.py: (7, 12)[0m
+2023-03-05 01:37:03,044: Current target location: identifier1.py, LocIndex(ast_class='NameConstant', lineno=10, col_offset=19, op_type=False, end_lineno=10, end_col_offset=24)
+2023-03-05 01:37:04,247: [92mResult: Detected at identifier1.py: (10, 19)[0m
+2023-03-05 01:37:05,359: [92mResult: Detected at identifier1.py: (10, 19)[0m
+2023-03-05 01:37:05,359: Current target location: identifier1.py, LocIndex(ast_class='NameConstant', lineno=22, col_offset=19, op_type=False, end_lineno=22, end_col_offset=24)
+2023-03-05 01:37:06,423: [91mResult: Survived at identifier1.py: (22, 19)[0m
+2023-03-05 01:37:07,567: [91mResult: Survived at identifier1.py: (22, 19)[0m
+2023-03-05 01:37:07,567: Current target location: identifier1.py, LocIndex(ast_class='Compare', lineno=34, col_offset=47, op_type=<class 'ast.LtE'>, end_lineno=34, end_col_offset=58)
+2023-03-05 01:37:08,529: [91mResult: Survived at identifier1.py: (34, 47)[0m
+2023-03-05 01:37:09,657: [92mResult: Detected at identifier1.py: (34, 47)[0m
+2023-03-05 01:37:10,903: [92mResult: Detected at identifier1.py: (34, 47)[0m
+2023-03-05 01:37:12,135: [92mResult: Detected at identifier1.py: (34, 47)[0m
+2023-03-05 01:37:13,395: [92mResult: Detected at identifier1.py: (34, 47)[0m
+2023-03-05 01:37:13,395: Current target location: identifier1.py, LocIndex(ast_class='If', lineno=14, col_offset=8, op_type='If_Statement', end_lineno=17, end_col_offset=24)
+2023-03-05 01:37:14,632: [92mResult: Detected at identifier1.py: (14, 8)[0m
+2023-03-05 01:37:15,741: [92mResult: Detected at identifier1.py: (14, 8)[0m
+2023-03-05 01:37:15,741: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/identifier1
+collected 11 items
+
+MOSA/test_identifier1_MOSA.py ...........                                [100%]
+
+============================== 11 passed in 0.13s ==============================
+2023-03-05 01:37:16,719: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/identifier1/identifier1.py
+ - Test commands: ['python', '-m', 'pytest', './MOSA']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 39
+ - Location sample coverage: 25.64 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:00.989568
+ - Clean trial 2 run time: 0:00:00.976854
+ - Mutation trials total run time: 0:00:35.837263
+
+2023-03-05 01:37:16,719: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 25
+ - SURVIVED: 6
+ - TOTAL RUNS: 31
+ - RUN DATETIME: 2023-03-05 01:37:16.719094
+
+2023-03-05 01:37:16,719: Detected mutations:[92m
+
+DETECTED
+--------
+ - identifier1.py: (l: 7, c: 8) - mutation from If_Statement to If_True
+ - identifier1.py: (l: 7, c: 8) - mutation from If_Statement to If_False
+ - identifier1.py: (l: 7, c: 12) - mutation from <class 'ast.And'> to <class 'ast.Or'>
+ - identifier1.py: (l: 7, c: 13) - mutation from <class 'ast.GtE'> to <class 'ast.LtE'>
+ - identifier1.py: (l: 7, c: 13) - mutation from <class 'ast.GtE'> to <class 'ast.NotEq'>
+ - identifier1.py: (l: 7, c: 13) - mutation from <class 'ast.GtE'> to <class 'ast.Lt'>
+ - identifier1.py: (l: 7, c: 13) - mutation from <class 'ast.GtE'> to <class 'ast.Eq'>
+ - identifier1.py: (l: 8, c: 19) - mutation from True to None
+ - identifier1.py: (l: 8, c: 19) - mutation from True to False
+ - identifier1.py: (l: 10, c: 19) - mutation from False to True
+ - identifier1.py: (l: 10, c: 19) - mutation from False to None
+ - identifier1.py: (l: 14, c: 8) - mutation from If_Statement to If_True
+ - identifier1.py: (l: 14, c: 8) - mutation from If_Statement to If_False
+ - identifier1.py: (l: 14, c: 46) - mutation from <class 'ast.GtE'> to <class 'ast.NotEq'>
+ - identifier1.py: (l: 14, c: 46) - mutation from <class 'ast.GtE'> to <class 'ast.Eq'>
+ - identifier1.py: (l: 14, c: 46) - mutation from <class 'ast.GtE'> to <class 'ast.Lt'>
+ - identifier1.py: (l: 14, c: 46) - mutation from <class 'ast.GtE'> to <class 'ast.LtE'>
+ - identifier1.py: (l: 23, c: 12) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - identifier1.py: (l: 23, c: 12) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - identifier1.py: (l: 23, c: 12) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>
+ - identifier1.py: (l: 23, c: 12) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>
+ - identifier1.py: (l: 34, c: 47) - mutation from <class 'ast.LtE'> to <class 'ast.NotEq'>
+ - identifier1.py: (l: 34, c: 47) - mutation from <class 'ast.LtE'> to <class 'ast.Eq'>
+ - identifier1.py: (l: 34, c: 47) - mutation from <class 'ast.LtE'> to <class 'ast.Gt'>
+ - identifier1.py: (l: 34, c: 47) - mutation from <class 'ast.LtE'> to <class 'ast.GtE'>[0m
+
+2023-03-05 01:37:16,719: Timedout mutations:
+
+2023-03-05 01:37:16,719: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - identifier1.py: (l: 7, c: 13) - mutation from <class 'ast.GtE'> to <class 'ast.Gt'>
+ - identifier1.py: (l: 14, c: 46) - mutation from <class 'ast.GtE'> to <class 'ast.Gt'>
+ - identifier1.py: (l: 22, c: 19) - mutation from False to None
+ - identifier1.py: (l: 22, c: 19) - mutation from False to True
+ - identifier1.py: (l: 23, c: 12) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - identifier1.py: (l: 34, c: 47) - mutation from <class 'ast.LtE'> to <class 'ast.Lt'>[0m
+
+2023-03-05 01:37:16,720: Writing output report to: /home/auri/temp/lucca/python_experiments/identifier1/MOSA/mutatest/MOSA-report.rst

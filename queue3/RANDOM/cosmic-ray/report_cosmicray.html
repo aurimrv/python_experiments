@@ -1,0 +1,1155 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 03/03/2023 22:36:05</p><p>Total jobs: 91</p><p>Complete: 91 (100.00%)</p><p>Surviving mutants: 1 (1.10%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 678e1e03b08f4b90a6868109cad09bc1</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=25" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (25, 23), end pos: (25, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -22,7 +22,7 @@
+ 
+         """Add node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 36bbc98a51bb4b92a2a614c1f9304f70</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (44, 23), end pos: (44, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -41,7 +41,7 @@
+ 
+         """Add node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue3
+collected 2110 items
+
+RANDOM/test_queue3_RANDOM.py ........................................... [  2%]
+........................................................................ [  5%]
+........................................................................ [  8%]
+........................................................................ [ 12%]
+........................................................................ [ 15%]
+........................................................................ [ 19%]
+........................................................................ [ 22%]
+........................................................................ [ 25%]
+........................................................................ [ 29%]
+........................................................................ [ 32%]
+........................................................................ [ 36%]
+........................................................................ [ 39%]
+........................................................................ [ 42%]
+........................................................................ [ 46%]
+........................................................................ [ 49%]
+........................................................................ [ 53%]
+..................................................................F..... [ 56%]
+........................................................................ [ 60%]
+........................................................................ [ 63%]
+........................................................................ [ 66%]
+........................................................................ [ 70%]
+........................................................................ [ 73%]
+........................................................................ [ 77%]
+........................................................................ [ 80%]
+........................................................................ [ 83%]
+........................................................................ [ 87%]
+........................................................................ [ 90%]
+........................................................................ [ 94%]
+........................................................................ [ 97%]
+...................................................                      [100%]
+
+=================================== FAILURES ===================================
+________________________________ test_case_1189 ________________________________
+
+    def test_case_1189():
+        queue_0 = module_0.Queue()
+        bool_0 = queue_0.isEmpty()
+        assert bool_0 is True
+        doubly_linked_list_0 = module_0.DoublyLinkedList()
+        assert len(doubly_linked_list_0) == 0
+        none_type_0 = doubly_linked_list_0.addAtHead(queue_0)
+        assert len(doubly_linked_list_0) == 1
+        str_0 = queue_0.__str__()
+        assert str_0 == '[]'
+        node_0 = module_0.Node(queue_0)
+        bool_1 = queue_0.isEmpty()
+        assert bool_1 is True
+        queue_1 = module_0.Queue()
+        bool_2 = queue_1.isEmpty()
+        assert bool_2 is True
+        doubly_linked_list_1 = module_0.DoublyLinkedList()
+        none_type_1 = doubly_linked_list_1.addAtHead(queue_1)
+        assert len(doubly_linked_list_1) == 1
+        str_1 = queue_1.__str__()
+        node_1 = module_0.Node(queue_1)
+        bool_3 = queue_1.isEmpty()
+        assert bool_3 is True
+        none_type_2 = doubly_linked_list_1.addAtTail(str_1)
+        assert len(doubly_linked_list_1) == 2
+        queue_2 = module_0.Queue()
+        var_0 = queue_2.getTail()
+        bool_4 = queue_2.isEmpty()
+        assert bool_4 is True
+        var_1 = queue_2.getTail()
+        int_0 = 0
+        node_2 = module_0.Node(int_0)
+        none_type_3 = None
+        node_3 = module_0.Node(none_type_3)
+        doubly_linked_list_2 = module_0.DoublyLinkedList()
+        var_2 = doubly_linked_list_2.removeAtHead()
+        node_4 = module_0.Node(none_type_3)
+        doubly_linked_list_3 = module_0.DoublyLinkedList()
+        var_3 = doubly_linked_list_3.getTail()
+        doubly_linked_list_4 = module_0.DoublyLinkedList()
+        queue_3 = module_0.Queue()
+        var_4 = queue_3.getTail()
+        var_5 = queue_3.dequeue()
+        str_2 = queue_3.__str__()
+        queue_4 = module_0.Queue()
+        var_6 = queue_4.getTail()
+        var_7 = queue_4.dequeue()
+        queue_5 = module_0.Queue()
+        bool_5 = queue_5.isEmpty()
+        assert bool_5 is True
+        doubly_linked_list_5 = module_0.DoublyLinkedList()
+        none_type_4 = doubly_linked_list_5.addAtHead(queue_5)
+        assert len(doubly_linked_list_5) == 1
+        str_3 = doubly_linked_list_5.__str__()
+        var_8 = queue_5.getTail()
+&gt;       var_9 = doubly_linked_list_1.removeAtHead()
+
+RANDOM/test_queue3_RANDOM.py:48710: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue3.DoublyLinkedList object at 0x7f5d18b9cdf0&gt;
+
+    def removeAtHead(self):
+    
+        """Remove node at head end."""
+    
+        if self.__size == 0:
+            return None
+        elif self.__size == 1:
+            nodeToRemove = self.__head.next
+            self.__sentinel.next = None
+            nodeToRemove.prev = None
+            self.__size -= 1
+            return nodeToRemove
+        else:
+            nodeToRemove = self.__head.next
+            nextNode = nodeToRemove.next
+            self.__sentinel.next = nextNode
+&gt;           nextNode.prev = self.__sentinel
+E           AttributeError: 'NoneType' object has no attribute 'prev'
+
+queue3.py:73: AttributeError
+=========================== short test summary info ============================
+FAILED RANDOM/test_queue3_RANDOM.py::test_case_1189 - AttributeError: 'NoneTy...
+======================= 1 failed, 2109 passed in 17.77s ========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 1f0ea41c8b364992bbba24a2d1bdb104</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=61" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (61, 23), end pos: (61, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -58,7 +58,7 @@
+ 
+         """Remove node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID 9ba3b78fb8e742cd93f9399a328778e9</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -60,7 +60,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size != 1:
+             nodeToRemove = self.__head.next
+             self.__sentinel.next = None
+             nodeToRemove.prev = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID bef89caccf2546c3b850ae1157ea37e1</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (83, 23), end pos: (83, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -80,7 +80,7 @@
+ 
+         """Remove node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_6_1"><button class="btn btn-outline-danger"><span class="job_id">6 : Job ID ff62fad96ec9449bbf2e1279060c60e8</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (85, 25), end pos: (85, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -82,7 +82,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size != 1:
+             nodeToRemove = self.__tail
+             nodeToRemove.prev = None
+             self.__sentinel.next = None</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue3
+collected 2110 items
+
+RANDOM/test_queue3_RANDOM.py ........................................... [  2%]
+........................................................................ [  5%]
+........................................................................ [  8%]
+........................................................................ [ 12%]
+........................................................................ [ 15%]
+........................................................................ [ 19%]
+........................................................................ [ 22%]
+........................................................................ [ 25%]
+........................................................................ [ 29%]
+........................................................................ [ 32%]
+........................................................................ [ 36%]
+........................................................................ [ 39%]
+........................................................................ [ 42%]
+........................................................................ [ 46%]
+........................................................................ [ 49%]
+........................................................................ [ 53%]
+........................................................................ [ 56%]
+........................................................................ [ 60%]
+........................................................................ [ 63%]
+........................................................................ [ 66%]
+........................................................................ [ 70%]
+........................................................................ [ 73%]
+........................................................................ [ 77%]
+........................................................................ [ 80%]
+........................................................................ [ 83%]
+........................................................................ [ 87%]
+........................................................................ [ 90%]
+........................................................................ [ 94%]
+........................................................................ [ 97%]
+...................................................                      [100%]
+
+============================ 2110 passed in 18.03s =============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID f9583cb1746548f2a7d08ccad56b828d</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 35), end pos: (106, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size != 0 else False
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID faab9b5e3a494101a1680b60706bc33e</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=112" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (112, 23), end pos: (112, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -109,7 +109,7 @@
+ 
+         """Get value at the front end of the list."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             return None
+         else:
+             return self.__head.next.value</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 9d74f4c072e942d7b24c393159b40df8</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=193" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (193, 12), end pos: (193, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -190,6 +190,6 @@
+         return self.__queue.__str__()
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID e63d67327ab4420b8c06a6f5beb97a2b</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=25" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (25, 23), end pos: (25, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -22,7 +22,7 @@
+ 
+         """Add node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID 50098dc595f045e8a1010d924f9e6a2d</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (44, 23), end pos: (44, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -41,7 +41,7 @@
+ 
+         """Add node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID 6ffadad4efb940d498dc160e6a022db3</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=61" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (61, 23), end pos: (61, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -58,7 +58,7 @@
+ 
+         """Remove node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID da963a328b1c4c9ea8863ab9e4277e6b</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -60,7 +60,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size &lt; 1:
+             nodeToRemove = self.__head.next
+             self.__sentinel.next = None
+             nodeToRemove.prev = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID db5e7ea2731c4f80941612143931ee00</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (83, 23), end pos: (83, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -80,7 +80,7 @@
+ 
+         """Remove node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID a3b7b631f6db4e8493c84c3087c553c0</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (85, 25), end pos: (85, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -82,7 +82,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size &lt; 1:
+             nodeToRemove = self.__tail
+             nodeToRemove.prev = None
+             self.__sentinel.next = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 9d69842c5c8a48f793c39b201c3a32e5</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 35), end pos: (106, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt; 0 else False
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID d24e91cd96e94458a19ca98a5d0469dd</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=112" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (112, 23), end pos: (112, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -109,7 +109,7 @@
+ 
+         """Get value at the front end of the list."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             return None
+         else:
+             return self.__head.next.value</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID 7c99dccc5e0d412aa545e0942d342d08</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=193" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (193, 12), end pos: (193, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -190,6 +190,6 @@
+         return self.__queue.__str__()
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID a9d2c1b3b509498abb97b0b95b294716</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=25" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (25, 23), end pos: (25, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -22,7 +22,7 @@
+ 
+         """Add node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_20_1"><button class="btn btn-outline-success"><span class="job_id">20 : Job ID d1ea282fb9264ee7a8cffad73512f7ed</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (44, 23), end pos: (44, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -41,7 +41,7 @@
+ 
+         """Add node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_21_1"><button class="btn btn-outline-success"><span class="job_id">21 : Job ID a4709337b4884419bbb951d73f6c3357</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=61" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (61, 23), end pos: (61, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -58,7 +58,7 @@
+ 
+         """Remove node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_22_1"><button class="btn btn-outline-success"><span class="job_id">22 : Job ID 9102f9f8e91747dbbde87609ee104196</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -60,7 +60,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size &lt;= 1:
+             nodeToRemove = self.__head.next
+             self.__sentinel.next = None
+             nodeToRemove.prev = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_23_1"><button class="btn btn-outline-success"><span class="job_id">23 : Job ID 2457e8cc8c7644e9bda4dda14d684edd</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (83, 23), end pos: (83, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -80,7 +80,7 @@
+ 
+         """Remove node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_24_1"><button class="btn btn-outline-success"><span class="job_id">24 : Job ID 84f0fd96e66840a9bdb4d837b91e797e</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (85, 25), end pos: (85, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -82,7 +82,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size &lt;= 1:
+             nodeToRemove = self.__tail
+             nodeToRemove.prev = None
+             self.__sentinel.next = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_25_1"><button class="btn btn-outline-success"><span class="job_id">25 : Job ID 99a4c91d7f1d41a5b7e8eafbc9471277</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 35), end pos: (106, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt;= 0 else False
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_26_1"><button class="btn btn-outline-success"><span class="job_id">26 : Job ID b2153371d75249e8bd44e02df025ec75</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=112" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (112, 23), end pos: (112, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -109,7 +109,7 @@
+ 
+         """Get value at the front end of the list."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             return None
+         else:
+             return self.__head.next.value</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_27_1"><button class="btn btn-outline-success"><span class="job_id">27 : Job ID a5104d693b2d4a3b97e493390e07b6ea</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=193" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (193, 12), end pos: (193, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -190,6 +190,6 @@
+         return self.__queue.__str__()
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_28_1"><button class="btn btn-outline-success"><span class="job_id">28 : Job ID c31c41e3bb7a4cd494dfb6902ec30f05</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=25" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (25, 23), end pos: (25, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -22,7 +22,7 @@
+ 
+         """Add node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_29_1"><button class="btn btn-outline-success"><span class="job_id">29 : Job ID f170fadd85c24e1eb75527a43614b5cc</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (44, 23), end pos: (44, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -41,7 +41,7 @@
+ 
+         """Add node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_30_1"><button class="btn btn-outline-success"><span class="job_id">30 : Job ID 72ae2d1b70ef4a9485d15a8130e61e66</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=61" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (61, 23), end pos: (61, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -58,7 +58,7 @@
+ 
+         """Remove node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_31_1"><button class="btn btn-outline-success"><span class="job_id">31 : Job ID b93989b9253648d3b94e764699c115b3</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -60,7 +60,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size &gt; 1:
+             nodeToRemove = self.__head.next
+             self.__sentinel.next = None
+             nodeToRemove.prev = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_32_1"><button class="btn btn-outline-success"><span class="job_id">32 : Job ID ea352c15cbd44a46b373233ac5abcd66</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (83, 23), end pos: (83, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -80,7 +80,7 @@
+ 
+         """Remove node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_33_1"><button class="btn btn-outline-success"><span class="job_id">33 : Job ID 8f923d4b7bc542b7a3b7ee38c750e1ee</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (85, 25), end pos: (85, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -82,7 +82,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size &gt; 1:
+             nodeToRemove = self.__tail
+             nodeToRemove.prev = None
+             self.__sentinel.next = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_34_1"><button class="btn btn-outline-success"><span class="job_id">34 : Job ID 7c97ec2ef35f4438b428e522951394fd</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 35), end pos: (106, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt; 0 else False
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID fe6996b0fe2d45c48caebbe757f0c7c6</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=112" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (112, 23), end pos: (112, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -109,7 +109,7 @@
+ 
+         """Get value at the front end of the list."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             return None
+         else:
+             return self.__head.next.value</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_36_1"><button class="btn btn-outline-success"><span class="job_id">36 : Job ID be636a687c0b4de799bcb706867ee510</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=193" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (193, 12), end pos: (193, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -190,6 +190,6 @@
+         return self.__queue.__str__()
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_37_1"><button class="btn btn-outline-success"><span class="job_id">37 : Job ID 89ad0ff98d8241fc8f638b90663f2293</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=25" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (25, 23), end pos: (25, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -22,7 +22,7 @@
+ 
+         """Add node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID 04820a217341452392025745a448376b</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (44, 23), end pos: (44, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -41,7 +41,7 @@
+ 
+         """Add node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID e0668a2a03324f90bce7712d9dd56724</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=61" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (61, 23), end pos: (61, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -58,7 +58,7 @@
+ 
+         """Remove node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID 640507228a0a4a70895ca49b0118225f</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (63, 25), end pos: (63, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -60,7 +60,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size &gt;= 1:
+             nodeToRemove = self.__head.next
+             self.__sentinel.next = None
+             nodeToRemove.prev = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID 503e0310ec774c79b9218f9fb780dc78</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (83, 23), end pos: (83, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -80,7 +80,7 @@
+ 
+         """Remove node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID 68f41e5339af48589c2c727f8ed0cded</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (85, 25), end pos: (85, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -82,7 +82,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size &gt;= 1:
+             nodeToRemove = self.__tail
+             nodeToRemove.prev = None
+             self.__sentinel.next = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_43_1"><button class="btn btn-outline-success"><span class="job_id">43 : Job ID 6bf356e6690c4902b4850c584ed1a9d2</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 35), end pos: (106, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt;= 0 else False
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_44_1"><button class="btn btn-outline-success"><span class="job_id">44 : Job ID f5123270b3f043bca5d1813e7099b28c</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=112" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (112, 23), end pos: (112, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -109,7 +109,7 @@
+ 
+         """Get value at the front end of the list."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             return None
+         else:
+             return self.__head.next.value</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_45_1"><button class="btn btn-outline-success"><span class="job_id">45 : Job ID 148b22675c834a9fbd4336610f66a8a3</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=193" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (193, 12), end pos: (193, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -190,6 +190,6 @@
+         return self.__queue.__str__()
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_46_1"><button class="btn btn-outline-success"><span class="job_id">46 : Job ID a52a7a086b6e4b4982c5b0ee3628cf71</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=193" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (193, 12), end pos: (193, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -190,6 +190,6 @@
+         return self.__queue.__str__()
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_47_1"><button class="btn btn-outline-success"><span class="job_id">47 : Job ID d764b411ded547aba3dd0ee5862ede7e</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=193" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (193, 12), end pos: (193, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -190,6 +190,6 @@
+         return self.__queue.__str__()
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is not "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_48_1"><button class="btn btn-outline-success"><span class="job_id">48 : Job ID d74efbde32b1403ab678fdbb64004e3b</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=25" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (25, 11), end pos: (25, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -22,7 +22,7 @@
+ 
+         """Add node at head end."""
+ 
+-        if self.__size == 0:
++        if not self.__size == 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_49_1"><button class="btn btn-outline-success"><span class="job_id">49 : Job ID 51a8827b574949a39d299a50442e6eed</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (44, 11), end pos: (44, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -41,7 +41,7 @@
+ 
+         """Add node at tail end."""
+ 
+-        if self.__size == 0:
++        if not self.__size == 0:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_50_1"><button class="btn btn-outline-success"><span class="job_id">50 : Job ID b2f287fed46c4264ab01cc5fa1e4b965</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=61" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (61, 11), end pos: (61, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -58,7 +58,7 @@
+ 
+         """Remove node at head end."""
+ 
+-        if self.__size == 0:
++        if not self.__size == 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_51_1"><button class="btn btn-outline-success"><span class="job_id">51 : Job ID 1a9813b91acc447d8ec70e8246819e21</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (83, 11), end pos: (83, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -80,7 +80,7 @@
+ 
+         """Remove node at tail end."""
+ 
+-        if self.__size == 0:
++        if not self.__size == 0:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_52"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_52_1" aria-expanded="false" aria-controls="job_list___sub_collapse_52_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_52_1"><button class="btn btn-outline-success"><span class="job_id">52 : Job ID 2876e5536a084cd2990d0429047fa28c</span></button></div></a><div aria-labelledby="job_list___sub_heading_52_1" data-parent="#job_list___sub_accordion_52" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_52_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 23), end pos: (106, 39)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return True if not self.__size == 0 else False
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_53"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_53_1" aria-expanded="false" aria-controls="job_list___sub_collapse_53_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_53_1"><button class="btn btn-outline-success"><span class="job_id">53 : Job ID 8bc3a4d7d18848d4aaa2f53c0449e0b3</span></button></div></a><div aria-labelledby="job_list___sub_heading_53_1" data-parent="#job_list___sub_accordion_53" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_53_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=112" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (112, 11), end pos: (112, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -109,7 +109,7 @@
+ 
+         """Get value at the front end of the list."""
+ 
+-        if self.__size == 0:
++        if not self.__size == 0:
+             return None
+         else:
+             return self.__head.next.value</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_54"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_54_1" aria-expanded="false" aria-controls="job_list___sub_collapse_54_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_54_1"><button class="btn btn-outline-success"><span class="job_id">54 : Job ID 73d0286f76ee46929b272e11ef3d49be</span></button></div></a><div aria-labelledby="job_list___sub_heading_54_1" data-parent="#job_list___sub_accordion_54" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_54_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=141" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (141, 14), end pos: (141, 21)</button></a></pre><pre>operator: core/AddNot, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -138,7 +138,7 @@
+ 
+         arr = []
+         current = self.__head.next
+-        while current:
++        while not current:
+             arr.append(current.value)
+             current = current.next
+         return str(arr)</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_55"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_55_1" aria-expanded="false" aria-controls="job_list___sub_collapse_55_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_55_1"><button class="btn btn-outline-success"><span class="job_id">55 : Job ID 98a496427d1c4bc5b28f083fc207815f</span></button></div></a><div aria-labelledby="job_list___sub_heading_55_1" data-parent="#job_list___sub_accordion_55" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_55_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=193" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (193, 3), end pos: (193, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -190,6 +190,6 @@
+         return self.__queue.__str__()
+ 
+ 
+-if __name__ == "__main__":
++if not __name__ == "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_56"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_56_1" aria-expanded="false" aria-controls="job_list___sub_collapse_56_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_56_1"><button class="btn btn-outline-success"><span class="job_id">56 : Job ID 276f8a6d1b27439dbc456336f67c27a4</span></button></div></a><div aria-labelledby="job_list___sub_heading_56_1" data-parent="#job_list___sub_accordion_56" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_56_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 15), end pos: (106, 19)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return False if self.__size == 0 else False
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_57"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_57_1" aria-expanded="false" aria-controls="job_list___sub_collapse_57_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_57_1"><button class="btn btn-outline-success"><span class="job_id">57 : Job ID b842b1ce1cb346aa83e7da9c7087bce6</span></button></div></a><div aria-labelledby="job_list___sub_heading_57_1" data-parent="#job_list___sub_accordion_57" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_57_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 45), end pos: (106, 50)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 0 else True
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_58"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_58_1" aria-expanded="false" aria-controls="job_list___sub_collapse_58_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_58_1"><button class="btn btn-outline-success"><span class="job_id">58 : Job ID 9e5e76190648440fab57e3a864aa14cd</span></button></div></a><div aria-labelledby="job_list___sub_heading_58_1" data-parent="#job_list___sub_accordion_58" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_58_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (19, 22), end pos: (19, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -16,7 +16,7 @@
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+         self.__tail = self.__sentinel
+-        self.__size = 0
++        self.__size = 1
+ 
+     def addAtHead(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_59"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_59_1" aria-expanded="false" aria-controls="job_list___sub_collapse_59_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_59_1"><button class="btn btn-outline-success"><span class="job_id">59 : Job ID ade8a92334a24fc4ac05ab3637c39681</span></button></div></a><div aria-labelledby="job_list___sub_heading_59_1" data-parent="#job_list___sub_accordion_59" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_59_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (19, 22), end pos: (19, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -16,7 +16,7 @@
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+         self.__tail = self.__sentinel
+-        self.__size = 0
++        self.__size = -1
+ 
+     def addAtHead(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_60"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_60_1" aria-expanded="false" aria-controls="job_list___sub_collapse_60_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_60_1"><button class="btn btn-outline-success"><span class="job_id">60 : Job ID f1c0d1eed5b74962ac435c2835c6b53d</span></button></div></a><div aria-labelledby="job_list___sub_heading_60_1" data-parent="#job_list___sub_accordion_60" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_60_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=25" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (25, 26), end pos: (25, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -22,7 +22,7 @@
+ 
+         """Add node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_61"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_61_1" aria-expanded="false" aria-controls="job_list___sub_collapse_61_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_61_1"><button class="btn btn-outline-success"><span class="job_id">61 : Job ID 982a1c13d02449a4bd235a322a0a49cd</span></button></div></a><div aria-labelledby="job_list___sub_heading_61_1" data-parent="#job_list___sub_accordion_61" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_61_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=25" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (25, 26), end pos: (25, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -22,7 +22,7 @@
+ 
+         """Add node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size == -1:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_62"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_62_1" aria-expanded="false" aria-controls="job_list___sub_collapse_62_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_62_1"><button class="btn btn-outline-success"><span class="job_id">62 : Job ID 80a4d49e76fc451f8866e8b825a339d3</span></button></div></a><div aria-labelledby="job_list___sub_heading_62_1" data-parent="#job_list___sub_accordion_62" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_62_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (30, 27), end pos: (30, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -27,7 +27,7 @@
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel
+             self.__tail = newNode
+-            self.__size += 1
++            self.__size += 2
+         else:
+             newNode = Node(value)
+             nextNode = self.__sentinel.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_63"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_63_1" aria-expanded="false" aria-controls="job_list___sub_collapse_63_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_63_1"><button class="btn btn-outline-success"><span class="job_id">63 : Job ID a847b5738857433ca8344abd7adfe94a</span></button></div></a><div aria-labelledby="job_list___sub_heading_63_1" data-parent="#job_list___sub_accordion_63" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_63_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (30, 27), end pos: (30, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -27,7 +27,7 @@
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel
+             self.__tail = newNode
+-            self.__size += 1
++            self.__size += 0
+         else:
+             newNode = Node(value)
+             nextNode = self.__sentinel.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_64"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_64_1" aria-expanded="false" aria-controls="job_list___sub_collapse_64_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_64_1"><button class="btn btn-outline-success"><span class="job_id">64 : Job ID eaea321f5ec246948af1115ec31f2c96</span></button></div></a><div aria-labelledby="job_list___sub_heading_64_1" data-parent="#job_list___sub_accordion_64" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_64_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (38, 27), end pos: (38, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -35,7 +35,7 @@
+             newNode.prev = self.__sentinel
+             newNode.next = nextNode
+             nextNode.prev = newNode
+-            self.__size += 1
++            self.__size += 2
+ 
+     def addAtTail(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_65"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_65_1" aria-expanded="false" aria-controls="job_list___sub_collapse_65_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_65_1"><button class="btn btn-outline-success"><span class="job_id">65 : Job ID cb77250f76a74338a8f5cd92b9948d8f</span></button></div></a><div aria-labelledby="job_list___sub_heading_65_1" data-parent="#job_list___sub_accordion_65" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_65_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=38" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (38, 27), end pos: (38, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -35,7 +35,7 @@
+             newNode.prev = self.__sentinel
+             newNode.next = nextNode
+             nextNode.prev = newNode
+-            self.__size += 1
++            self.__size += 0
+ 
+     def addAtTail(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_66"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_66_1" aria-expanded="false" aria-controls="job_list___sub_collapse_66_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_66_1"><button class="btn btn-outline-success"><span class="job_id">66 : Job ID 3b476360184b4eaba98d46ae1b43f641</span></button></div></a><div aria-labelledby="job_list___sub_heading_66_1" data-parent="#job_list___sub_accordion_66" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_66_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (44, 26), end pos: (44, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -41,7 +41,7 @@
+ 
+         """Add node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_67"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_67_1" aria-expanded="false" aria-controls="job_list___sub_collapse_67_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_67_1"><button class="btn btn-outline-success"><span class="job_id">67 : Job ID d2d5f60a260240209c838bd8e6682827</span></button></div></a><div aria-labelledby="job_list___sub_heading_67_1" data-parent="#job_list___sub_accordion_67" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_67_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (44, 26), end pos: (44, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 9</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -41,7 +41,7 @@
+ 
+         """Add node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size == -1:
+             newNode = Node(value)
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_68"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_68_1" aria-expanded="false" aria-controls="job_list___sub_collapse_68_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_68_1"><button class="btn btn-outline-success"><span class="job_id">68 : Job ID 86577233081d466880b0a38bf2bff3ce</span></button></div></a><div aria-labelledby="job_list___sub_heading_68_1" data-parent="#job_list___sub_accordion_68" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_68_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (49, 27), end pos: (49, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 10</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -46,7 +46,7 @@
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel
+             self.__tail = newNode
+-            self.__size += 1
++            self.__size += 2
+         else:
+             newNode = Node(value)
+             self.__tail.next = newNode</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_69"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_69_1" aria-expanded="false" aria-controls="job_list___sub_collapse_69_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_69_1"><button class="btn btn-outline-success"><span class="job_id">69 : Job ID df79ce1fe2fb409fa9cf847621c8439e</span></button></div></a><div aria-labelledby="job_list___sub_heading_69_1" data-parent="#job_list___sub_accordion_69" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_69_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (49, 27), end pos: (49, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 11</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -46,7 +46,7 @@
+             self.__sentinel.next = newNode
+             newNode.prev = self.__sentinel
+             self.__tail = newNode
+-            self.__size += 1
++            self.__size += 0
+         else:
+             newNode = Node(value)
+             self.__tail.next = newNode</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_70"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_70_1" aria-expanded="false" aria-controls="job_list___sub_collapse_70_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_70_1"><button class="btn btn-outline-success"><span class="job_id">70 : Job ID 1cd98d266ae8461584d9bffbdf01cda2</span></button></div></a><div aria-labelledby="job_list___sub_heading_70_1" data-parent="#job_list___sub_accordion_70" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_70_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=55" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (55, 27), end pos: (55, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 12</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -52,7 +52,7 @@
+             self.__tail.next = newNode
+             newNode.prev = self.__tail
+             self.__tail = newNode
+-            self.__size += 1
++            self.__size += 2
+ 
+     def removeAtHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_71"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_71_1" aria-expanded="false" aria-controls="job_list___sub_collapse_71_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_71_1"><button class="btn btn-outline-success"><span class="job_id">71 : Job ID ee687e7537364a5d8dec538a3b877f07</span></button></div></a><div aria-labelledby="job_list___sub_heading_71_1" data-parent="#job_list___sub_accordion_71" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_71_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=55" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (55, 27), end pos: (55, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 13</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -52,7 +52,7 @@
+             self.__tail.next = newNode
+             newNode.prev = self.__tail
+             self.__tail = newNode
+-            self.__size += 1
++            self.__size += 0
+ 
+     def removeAtHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_72"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_72_1" aria-expanded="false" aria-controls="job_list___sub_collapse_72_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_72_1"><button class="btn btn-outline-success"><span class="job_id">72 : Job ID df3ad8f2417f4290abb72fedde262bae</span></button></div></a><div aria-labelledby="job_list___sub_heading_72_1" data-parent="#job_list___sub_accordion_72" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_72_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=61" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (61, 26), end pos: (61, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 14</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -58,7 +58,7 @@
+ 
+         """Remove node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_73"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_73_1" aria-expanded="false" aria-controls="job_list___sub_collapse_73_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_73_1"><button class="btn btn-outline-success"><span class="job_id">73 : Job ID cdae50ea914a4af7a873d5126f2b009d</span></button></div></a><div aria-labelledby="job_list___sub_heading_73_1" data-parent="#job_list___sub_accordion_73" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_73_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=61" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (61, 26), end pos: (61, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 15</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -58,7 +58,7 @@
+ 
+         """Remove node at head end."""
+ 
+-        if self.__size == 0:
++        if self.__size == -1:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_74"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_74_1" aria-expanded="false" aria-controls="job_list___sub_collapse_74_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_74_1"><button class="btn btn-outline-success"><span class="job_id">74 : Job ID dd88d6d68bff4f8e900a686b795ba8d8</span></button></div></a><div aria-labelledby="job_list___sub_heading_74_1" data-parent="#job_list___sub_accordion_74" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_74_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (63, 28), end pos: (63, 29)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 16</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -60,7 +60,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size == 2:
+             nodeToRemove = self.__head.next
+             self.__sentinel.next = None
+             nodeToRemove.prev = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_75"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_75_1" aria-expanded="false" aria-controls="job_list___sub_collapse_75_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_75_1"><button class="btn btn-outline-success"><span class="job_id">75 : Job ID 4a312381898a4bde8196f3a0ad125b5c</span></button></div></a><div aria-labelledby="job_list___sub_heading_75_1" data-parent="#job_list___sub_accordion_75" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_75_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=63" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (63, 28), end pos: (63, 29)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 17</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -60,7 +60,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size == 0:
+             nodeToRemove = self.__head.next
+             self.__sentinel.next = None
+             nodeToRemove.prev = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_76"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_76_1" aria-expanded="false" aria-controls="job_list___sub_collapse_76_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_76_1"><button class="btn btn-outline-success"><span class="job_id">76 : Job ID ec6ec4c7531646de9522de1184c2d436</span></button></div></a><div aria-labelledby="job_list___sub_heading_76_1" data-parent="#job_list___sub_accordion_76" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_76_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=67" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (67, 27), end pos: (67, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 18</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -64,7 +64,7 @@
+             nodeToRemove = self.__head.next
+             self.__sentinel.next = None
+             nodeToRemove.prev = None
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_77"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_77_1" aria-expanded="false" aria-controls="job_list___sub_collapse_77_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_77_1"><button class="btn btn-outline-success"><span class="job_id">77 : Job ID 4247d5b788394e13b4a2565fa7b6ebe1</span></button></div></a><div aria-labelledby="job_list___sub_heading_77_1" data-parent="#job_list___sub_accordion_77" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_77_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=67" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (67, 27), end pos: (67, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 19</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -64,7 +64,7 @@
+             nodeToRemove = self.__head.next
+             self.__sentinel.next = None
+             nodeToRemove.prev = None
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head.next</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_78"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_78_1" aria-expanded="false" aria-controls="job_list___sub_collapse_78_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_78_1"><button class="btn btn-outline-success"><span class="job_id">78 : Job ID 8b0db7590fcf4dfd8e95b83fb5d75585</span></button></div></a><div aria-labelledby="job_list___sub_heading_78_1" data-parent="#job_list___sub_accordion_78" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_78_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (76, 27), end pos: (76, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 20</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -73,7 +73,7 @@
+             nextNode.prev = self.__sentinel
+             nodeToRemove.next = None
+             nodeToRemove.prev = None
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+ 
+     def removeAtTail(self):</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_79"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_79_1" aria-expanded="false" aria-controls="job_list___sub_collapse_79_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_79_1"><button class="btn btn-outline-success"><span class="job_id">79 : Job ID ce1dbf7b34b045b7a4d166a2b33a2a35</span></button></div></a><div aria-labelledby="job_list___sub_heading_79_1" data-parent="#job_list___sub_accordion_79" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_79_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=76" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (76, 27), end pos: (76, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 21</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -73,7 +73,7 @@
+             nextNode.prev = self.__sentinel
+             nodeToRemove.next = None
+             nodeToRemove.prev = None
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+ 
+     def removeAtTail(self):</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_80"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_80_1" aria-expanded="false" aria-controls="job_list___sub_collapse_80_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_80_1"><button class="btn btn-outline-success"><span class="job_id">80 : Job ID 6c02ece00f5949b4904c957e5614d71f</span></button></div></a><div aria-labelledby="job_list___sub_heading_80_1" data-parent="#job_list___sub_accordion_80" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_80_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (83, 26), end pos: (83, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 22</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -80,7 +80,7 @@
+ 
+         """Remove node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_81"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_81_1" aria-expanded="false" aria-controls="job_list___sub_collapse_81_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_81_1"><button class="btn btn-outline-success"><span class="job_id">81 : Job ID 4aa15bcc2c8a46a3b4f07ffddf1de5b3</span></button></div></a><div aria-labelledby="job_list___sub_heading_81_1" data-parent="#job_list___sub_accordion_81" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_81_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=83" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (83, 26), end pos: (83, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 23</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -80,7 +80,7 @@
+ 
+         """Remove node at tail end."""
+ 
+-        if self.__size == 0:
++        if self.__size == -1:
+             return None
+         elif self.__size == 1:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_82"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_82_1" aria-expanded="false" aria-controls="job_list___sub_collapse_82_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_82_1"><button class="btn btn-outline-success"><span class="job_id">82 : Job ID aee1fe6e452840ba8be99dce6012bed5</span></button></div></a><div aria-labelledby="job_list___sub_heading_82_1" data-parent="#job_list___sub_accordion_82" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_82_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (85, 28), end pos: (85, 29)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 24</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -82,7 +82,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size == 2:
+             nodeToRemove = self.__tail
+             nodeToRemove.prev = None
+             self.__sentinel.next = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_83"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_83_1" aria-expanded="false" aria-controls="job_list___sub_collapse_83_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_83_1"><button class="btn btn-outline-success"><span class="job_id">83 : Job ID e6062ff44a1e4cbabc3d43eecf2c329b</span></button></div></a><div aria-labelledby="job_list___sub_heading_83_1" data-parent="#job_list___sub_accordion_83" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_83_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (85, 28), end pos: (85, 29)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 25</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -82,7 +82,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        elif self.__size == 1:
++        elif self.__size == 0:
+             nodeToRemove = self.__tail
+             nodeToRemove.prev = None
+             self.__sentinel.next = None</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_84"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_84_1" aria-expanded="false" aria-controls="job_list___sub_collapse_84_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_84_1"><button class="btn btn-outline-success"><span class="job_id">84 : Job ID c59a57966553448a89df46d49ff51e18</span></button></div></a><div aria-labelledby="job_list___sub_heading_84_1" data-parent="#job_list___sub_accordion_84" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_84_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=91" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (91, 27), end pos: (91, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 26</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -88,7 +88,7 @@
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+             self.__tail = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_85"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_85_1" aria-expanded="false" aria-controls="job_list___sub_collapse_85_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_85_1"><button class="btn btn-outline-success"><span class="job_id">85 : Job ID 30352a2c3d89428b831a661883ec834a</span></button></div></a><div aria-labelledby="job_list___sub_heading_85_1" data-parent="#job_list___sub_accordion_85" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_85_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=91" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (91, 27), end pos: (91, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 27</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -88,7 +88,7 @@
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+             self.__tail = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__tail</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_86"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_86_1" aria-expanded="false" aria-controls="job_list___sub_collapse_86_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_86_1"><button class="btn btn-outline-success"><span class="job_id">86 : Job ID 7dc9bf70ae904054bdd8f1d616ca486b</span></button></div></a><div aria-labelledby="job_list___sub_heading_86_1" data-parent="#job_list___sub_accordion_86" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_86_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=99" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (99, 27), end pos: (99, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 28</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -96,7 +96,7 @@
+             nodeToRemove.prev = None
+             previous.next = None
+             self.__tail = previous
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+ 
+     def isEmpty(self) -&gt; bool:</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_87"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_87_1" aria-expanded="false" aria-controls="job_list___sub_collapse_87_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_87_1"><button class="btn btn-outline-success"><span class="job_id">87 : Job ID c3d53caeb6c94e268b13ca0137be3339</span></button></div></a><div aria-labelledby="job_list___sub_heading_87_1" data-parent="#job_list___sub_accordion_87" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_87_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=99" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (99, 27), end pos: (99, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 29</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -96,7 +96,7 @@
+             nodeToRemove.prev = None
+             previous.next = None
+             self.__tail = previous
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+ 
+     def isEmpty(self) -&gt; bool:</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_88"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_88_1" aria-expanded="false" aria-controls="job_list___sub_collapse_88_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_88_1"><button class="btn btn-outline-success"><span class="job_id">88 : Job ID 8d5de43a447b4c68b7d1efec0c55ba39</span></button></div></a><div aria-labelledby="job_list___sub_heading_88_1" data-parent="#job_list___sub_accordion_88" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_88_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 38), end pos: (106, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 30</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 1 else False
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_89"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_89_1" aria-expanded="false" aria-controls="job_list___sub_collapse_89_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_89_1"><button class="btn btn-outline-success"><span class="job_id">89 : Job ID a88b509c575c49c68ad2a3e07e3f583c</span></button></div></a><div aria-labelledby="job_list___sub_heading_89_1" data-parent="#job_list___sub_accordion_89" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_89_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=106" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (106, 38), end pos: (106, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 31</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -103,7 +103,7 @@
+ 
+         """Check if linkedlist is empty"""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == -1 else False
+ 
+     def getHead(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_90"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_90_1" aria-expanded="false" aria-controls="job_list___sub_collapse_90_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_90_1"><button class="btn btn-outline-success"><span class="job_id">90 : Job ID 754ce00ec4a84e86bd813d37bb3414b7</span></button></div></a><div aria-labelledby="job_list___sub_heading_90_1" data-parent="#job_list___sub_accordion_90" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_90_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=112" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (112, 26), end pos: (112, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 32</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -109,7 +109,7 @@
+ 
+         """Get value at the front end of the list."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             return None
+         else:
+             return self.__head.next.value</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_91"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_91_1" aria-expanded="false" aria-controls="job_list___sub_collapse_91_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_91_1"><button class="btn btn-outline-success"><span class="job_id">91 : Job ID fb5954b21f154b7ba62496610a57c0dc</span></button></div></a><div aria-labelledby="job_list___sub_heading_91_1" data-parent="#job_list___sub_accordion_91" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_91_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue3.py&amp;line=112" class="text-secondary"><button class="btn btn-outline-dark">queue3.py, start pos: (112, 26), end pos: (112, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 33</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue3.py
++++ bqueue3.py
+@@ -109,7 +109,7 @@
+ 
+         """Get value at the front end of the list."""
+ 
+-        if self.__size == 0:
++        if self.__size == -1:
+             return None
+         else:
+             return self.__head.next.value</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

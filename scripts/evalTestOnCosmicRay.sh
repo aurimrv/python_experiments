@@ -1,9 +1,12 @@
 #!/usr/bin/bash
+#######################################################################
+# Script that runs Cosmic.Ray mutation tool in a set of programs
+#######################################################################
 
 if (($# < 2))
 then
-	echo "error: evalTestOnMutatest.py <project root dir> <test case directory>"
-	echo "Example: evalTestOnMutatest.py /home/auri/temp/lucca/python_experiments DYNAMOSA"
+	echo "error: evalTestOnCosmicRay.sh <project root dir> <test case directory>"
+	echo "Example: evalTestOnCosmicRay.sh /home/auri/temp/lucca/python_experiments DYNAMOSA"
 	exit
 fi
 
@@ -26,13 +29,12 @@ do
 
 	# Cleaning previous report
 	rm -rf ./${tcDir}/${tool}
-
 	mkdir ./${tcDir}/${tool}
 
 	# Generating cosmic configuration file
 	echo "[cosmic-ray]" > ${module}.toml
 	echo "module-path = \"${module}.py\"" >> ${module}.toml
-	echo "timeout = 20.0" >> ${module}.toml
+	echo "timeout = 60.0" >> ${module}.toml
 	echo "excluded-modules = []" >> ${module}.toml
 	echo "test-command = \"python -m pytest ./${tcDir}\"" >> ${module}.toml
 	echo "" >> ${module}.toml
