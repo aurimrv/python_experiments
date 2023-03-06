@@ -16,16 +16,16 @@ Random sample details
 
 Running time details
 --------------------
- - Clean trial 1 run time: 0:00:00.218347
- - Clean trial 2 run time: 0:00:00.220556
- - Mutation trials total run time: 0:00:04.087565
+ - Clean trial 1 run time: 0:00:00.935283
+ - Clean trial 2 run time: 0:00:00.899796
+ - Mutation trials total run time: 0:00:18.275187
 
 Overall mutation trial summary
 ==============================
- - DETECTED: 9
- - SURVIVED: 8
+ - SURVIVED: 7
+ - DETECTED: 10
  - TOTAL RUNS: 17
- - RUN DATETIME: 2023-02-28 09:24:48.979170
+ - RUN DATETIME: 2023-03-05 01:20:47.324503
 
 
 Mutations by result status
@@ -34,12 +34,11 @@ Mutations by result status
 
 SURVIVED
 --------
- - stack5.py: (l: 10, c: 8) - mutation from If_Statement to If_True
- - stack5.py: (l: 11, c: 19) - mutation from None to True
- - stack5.py: (l: 11, c: 19) - mutation from None to False
- - stack5.py: (l: 17, c: 58) - mutation from None to False
  - stack5.py: (l: 17, c: 58) - mutation from None to True
+ - stack5.py: (l: 17, c: 58) - mutation from None to False
  - stack5.py: (l: 20, c: 15) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - stack5.py: (l: 20, c: 30) - mutation from None to True
+ - stack5.py: (l: 20, c: 30) - mutation from None to False
  - stack5.py: (l: 24, c: 34) - mutation from None to False
  - stack5.py: (l: 24, c: 34) - mutation from None to True
 
@@ -49,9 +48,10 @@ DETECTED
  - stack5.py: (l: 3, c: 27) - mutation from None to False
  - stack5.py: (l: 3, c: 27) - mutation from None to True
  - stack5.py: (l: 10, c: 8) - mutation from If_Statement to If_False
+ - stack5.py: (l: 10, c: 8) - mutation from If_Statement to If_True
  - stack5.py: (l: 10, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
  - stack5.py: (l: 10, c: 23) - mutation from None to True
  - stack5.py: (l: 10, c: 23) - mutation from None to False
  - stack5.py: (l: 17, c: 32) - mutation from <class 'ast.IsNot'> to <class 'ast.Is'>
- - stack5.py: (l: 17, c: 48) - mutation from None to True
  - stack5.py: (l: 17, c: 48) - mutation from None to False
+ - stack5.py: (l: 17, c: 48) - mutation from None to True

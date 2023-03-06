@@ -1,0 +1,131 @@
+2023-03-05 01:31:15,522: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack1
+collected 15 items
+
+MIO/test_stack1_MIO.py ...............                                   [100%]
+
+============================== 15 passed in 0.23s ==============================
+2023-03-05 01:31:16,584: [92m35 mutation targets found in stack1.py AST.[0m
+2023-03-05 01:31:16,584: Setting random.seed to: None
+2023-03-05 01:31:16,585: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:31:16,585: Total sample space size: 35
+2023-03-05 01:31:16,585: [92mSelecting 10 locations from 35 potentials.[0m
+2023-03-05 01:31:16,585: Starting individual mutation trials!
+2023-03-05 01:31:16,585: Running serial (single processor) dispatch mode.
+2023-03-05 01:31:16,585: Current target location: stack1.py, LocIndex(ast_class='NameConstant', lineno=29, col_offset=23, op_type=None, end_lineno=29, end_col_offset=27)
+2023-03-05 01:31:17,722: [92mResult: Detected at stack1.py: (29, 23)[0m
+2023-03-05 01:31:18,741: [92mResult: Detected at stack1.py: (29, 23)[0m
+2023-03-05 01:31:18,741: Current target location: stack1.py, LocIndex(ast_class='NameConstant', lineno=73, col_offset=15, op_type=False, end_lineno=73, end_col_offset=20)
+2023-03-05 01:31:19,733: [92mResult: Detected at stack1.py: (73, 15)[0m
+2023-03-05 01:31:20,883: [92mResult: Detected at stack1.py: (73, 15)[0m
+2023-03-05 01:31:20,884: Current target location: stack1.py, LocIndex(ast_class='CompareIn', lineno=61, col_offset=11, op_type=<class 'ast.In'>, end_lineno=61, end_col_offset=41)
+2023-03-05 01:31:22,051: [92mResult: Detected at stack1.py: (61, 11)[0m
+2023-03-05 01:31:22,051: Current target location: stack1.py, LocIndex(ast_class='CompareIs', lineno=29, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=29, end_col_offset=27)
+2023-03-05 01:31:23,283: [92mResult: Detected at stack1.py: (29, 11)[0m
+2023-03-05 01:31:23,284: Current target location: stack1.py, LocIndex(ast_class='BinOp', lineno=97, col_offset=29, op_type=<class 'ast.Div'>, end_lineno=97, end_col_offset=34)
+2023-03-05 01:31:24,303: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-03-05 01:31:25,483: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-03-05 01:31:26,623: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-03-05 01:31:27,701: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-03-05 01:31:28,871: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-03-05 01:31:29,938: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-03-05 01:31:29,938: Current target location: stack1.py, LocIndex(ast_class='AugAssign', lineno=35, col_offset=12, op_type='AugAssign_Sub', end_lineno=35, end_col_offset=26)
+2023-03-05 01:31:31,187: [92mResult: Detected at stack1.py: (35, 12)[0m
+2023-03-05 01:31:32,559: [92mResult: Detected at stack1.py: (35, 12)[0m
+2023-03-05 01:31:33,979: [92mResult: Detected at stack1.py: (35, 12)[0m
+2023-03-05 01:31:33,980: Current target location: stack1.py, LocIndex(ast_class='If', lineno=106, col_offset=8, op_type='If_Statement', end_lineno=127, end_col_offset=23)
+2023-03-05 01:31:35,042: [92mResult: Detected at stack1.py: (106, 8)[0m
+2023-03-05 01:31:36,063: [91mResult: Survived at stack1.py: (106, 8)[0m
+2023-03-05 01:31:36,063: Current target location: stack1.py, LocIndex(ast_class='If', lineno=15, col_offset=8, op_type='If_Statement', end_lineno=24, end_col_offset=30)
+2023-03-05 01:31:37,091: [91mResult: Survived at stack1.py: (15, 8)[0m
+2023-03-05 01:31:38,095: [91mResult: Survived at stack1.py: (15, 8)[0m
+2023-03-05 01:31:38,096: Current target location: stack1.py, LocIndex(ast_class='Compare', lineno=130, col_offset=7, op_type=<class 'ast.Gt'>, end_lineno=130, end_col_offset=21)
+2023-03-05 01:31:39,207: [92mResult: Detected at stack1.py: (130, 7)[0m
+2023-03-05 01:31:40,396: [91mResult: Survived at stack1.py: (130, 7)[0m
+2023-03-05 01:31:41,579: [92mResult: Detected at stack1.py: (130, 7)[0m
+2023-03-05 01:31:42,531: [91mResult: Survived at stack1.py: (130, 7)[0m
+2023-03-05 01:31:43,731: [92mResult: Detected at stack1.py: (130, 7)[0m
+2023-03-05 01:31:43,732: Current target location: stack1.py, LocIndex(ast_class='CompareIn', lineno=106, col_offset=11, op_type=<class 'ast.In'>, end_lineno=106, end_col_offset=34)
+2023-03-05 01:31:45,061: [92mResult: Detected at stack1.py: (106, 11)[0m
+2023-03-05 01:31:45,061: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack1
+collected 15 items
+
+MIO/test_stack1_MIO.py ...............                                   [100%]
+
+============================== 15 passed in 0.10s ==============================
+2023-03-05 01:31:46,032: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/stack1/stack1.py
+ - Test commands: ['python', '-m', 'pytest', './MIO']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 35
+ - Location sample coverage: 28.57 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.055934
+ - Clean trial 2 run time: 0:00:00.969632
+ - Mutation trials total run time: 0:00:28.480794
+
+2023-03-05 01:31:46,032: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 14
+ - SURVIVED: 11
+ - TOTAL RUNS: 25
+ - RUN DATETIME: 2023-03-05 01:31:46.031719
+
+2023-03-05 01:31:46,032: Detected mutations:[92m
+
+DETECTED
+--------
+ - stack1.py: (l: 29, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - stack1.py: (l: 29, c: 23) - mutation from None to False
+ - stack1.py: (l: 29, c: 23) - mutation from None to True
+ - stack1.py: (l: 35, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
+ - stack1.py: (l: 35, c: 12) - mutation from AugAssign_Sub to AugAssign_Div
+ - stack1.py: (l: 35, c: 12) - mutation from AugAssign_Sub to AugAssign_Mult
+ - stack1.py: (l: 61, c: 11) - mutation from <class 'ast.In'> to <class 'ast.NotIn'>
+ - stack1.py: (l: 73, c: 15) - mutation from False to None
+ - stack1.py: (l: 73, c: 15) - mutation from False to True
+ - stack1.py: (l: 106, c: 8) - mutation from If_Statement to If_True
+ - stack1.py: (l: 106, c: 11) - mutation from <class 'ast.In'> to <class 'ast.NotIn'>
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>[0m
+
+2023-03-05 01:31:46,032: Timedout mutations:
+
+2023-03-05 01:31:46,032: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - stack1.py: (l: 15, c: 8) - mutation from If_Statement to If_False
+ - stack1.py: (l: 15, c: 8) - mutation from If_Statement to If_True
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Sub'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Pow'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Mod'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.FloorDiv'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Add'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Mult'>
+ - stack1.py: (l: 106, c: 8) - mutation from If_Statement to If_False
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>[0m
+
+2023-03-05 01:31:46,032: Writing output report to: /home/auri/temp/lucca/python_experiments/stack1/MIO/mutatest/MIO-report.rst

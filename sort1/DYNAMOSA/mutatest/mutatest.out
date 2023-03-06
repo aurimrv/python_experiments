@@ -1,0 +1,155 @@
+2023-03-05 01:17:25,286: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/sort1
+collected 15 items
+
+DYNAMOSA/test_sort1_DYNAMOSA.py ...............                          [100%]
+
+============================== 15 passed in 0.15s ==============================
+2023-03-05 01:17:26,358: [92m32 mutation targets found in sort1.py AST.[0m
+2023-03-05 01:17:26,358: Setting random.seed to: None
+2023-03-05 01:17:26,359: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:17:26,359: Total sample space size: 32
+2023-03-05 01:17:26,362: [92mSelecting 10 locations from 32 potentials.[0m
+2023-03-05 01:17:26,362: Starting individual mutation trials!
+2023-03-05 01:17:26,362: Running serial (single processor) dispatch mode.
+2023-03-05 01:17:26,362: Current target location: sort1.py, LocIndex(ast_class='SliceUS', lineno=72, col_offset=23, op_type='Slice_UnboundUpper', end_lineno=72, end_col_offset=41)
+2023-03-05 01:17:27,396: [91mResult: Survived at sort1.py: (72, 23)[0m
+2023-03-05 01:17:28,578: [91mResult: Survived at sort1.py: (72, 23)[0m
+2023-03-05 01:17:28,579: Current target location: sort1.py, LocIndex(ast_class='BinOp', lineno=33, col_offset=31, op_type=<class 'ast.Sub'>, end_lineno=33, end_col_offset=36)
+2023-03-05 01:17:29,919: [92mResult: Detected at sort1.py: (33, 31)[0m
+2023-03-05 01:17:30,955: [91mResult: Survived at sort1.py: (33, 31)[0m
+2023-03-05 01:17:32,075: [91mResult: Survived at sort1.py: (33, 31)[0m
+2023-03-05 01:17:32,981: [91mResult: Survived at sort1.py: (33, 31)[0m
+2023-03-05 01:17:34,151: [92mResult: Detected at sort1.py: (33, 31)[0m
+2023-03-05 01:17:35,338: [91mResult: Survived at sort1.py: (33, 31)[0m
+2023-03-05 01:17:35,338: Current target location: sort1.py, LocIndex(ast_class='If', lineno=73, col_offset=8, op_type='If_Statement', end_lineno=74, end_col_offset=44)
+2023-03-05 01:17:36,601: [92mResult: Detected at sort1.py: (73, 8)[0m
+2023-03-05 01:17:37,643: [91mResult: Survived at sort1.py: (73, 8)[0m
+2023-03-05 01:17:37,643: Current target location: sort1.py, LocIndex(ast_class='If', lineno=82, col_offset=8, op_type='If_Statement', end_lineno=86, end_col_offset=45)
+2023-03-05 01:17:38,763: [91mResult: Survived at sort1.py: (82, 8)[0m
+2023-03-05 01:17:40,095: [92mResult: Detected at sort1.py: (82, 8)[0m
+2023-03-05 01:17:40,096: Current target location: sort1.py, LocIndex(ast_class='If', lineno=71, col_offset=8, op_type='If_Statement', end_lineno=72, end_col_offset=42)
+2023-03-05 01:17:41,459: [92mResult: Detected at sort1.py: (71, 8)[0m
+2023-03-05 01:17:42,479: [91mResult: Survived at sort1.py: (71, 8)[0m
+2023-03-05 01:17:42,480: Current target location: sort1.py, LocIndex(ast_class='Compare', lineno=17, col_offset=19, op_type=<class 'ast.Lt'>, end_lineno=17, end_col_offset=40)
+2023-03-05 01:17:43,609: [91mResult: Survived at sort1.py: (17, 19)[0m
+2023-03-05 01:17:44,699: [91mResult: Survived at sort1.py: (17, 19)[0m
+2023-03-05 01:17:45,831: [91mResult: Survived at sort1.py: (17, 19)[0m
+2023-03-05 01:17:46,906: [91mResult: Survived at sort1.py: (17, 19)[0m
+2023-03-05 01:17:47,867: [91mResult: Survived at sort1.py: (17, 19)[0m
+2023-03-05 01:17:47,867: Current target location: sort1.py, LocIndex(ast_class='BinOp', lineno=45, col_offset=15, op_type=<class 'ast.FloorDiv'>, end_lineno=45, end_col_offset=22)
+2023-03-05 01:17:49,179: [92mResult: Detected at sort1.py: (45, 15)[0m
+2023-03-05 01:17:50,499: [92mResult: Detected at sort1.py: (45, 15)[0m
+2023-03-05 01:17:51,735: [92mResult: Detected at sort1.py: (45, 15)[0m
+2023-03-05 01:17:52,928: [92mResult: Detected at sort1.py: (45, 15)[0m
+2023-03-05 01:17:54,171: [92mResult: Detected at sort1.py: (45, 15)[0m
+2023-03-05 01:17:55,502: [92mResult: Detected at sort1.py: (45, 15)[0m
+2023-03-05 01:17:55,502: Current target location: sort1.py, LocIndex(ast_class='Compare', lineno=47, col_offset=11, op_type=<class 'ast.LtE'>, end_lineno=47, end_col_offset=20)
+2023-03-05 01:17:56,566: [91mResult: Survived at sort1.py: (47, 11)[0m
+2023-03-05 01:17:57,879: [92mResult: Detected at sort1.py: (47, 11)[0m
+2023-03-05 01:17:59,009: [91mResult: Survived at sort1.py: (47, 11)[0m
+2023-03-05 01:18:00,161: [91mResult: Survived at sort1.py: (47, 11)[0m
+2023-03-05 01:18:01,307: [91mResult: Survived at sort1.py: (47, 11)[0m
+2023-03-05 01:18:01,307: Current target location: sort1.py, LocIndex(ast_class='Compare', lineno=62, col_offset=42, op_type=<class 'ast.Lt'>, end_lineno=62, end_col_offset=67)
+2023-03-05 01:18:02,366: [91mResult: Survived at sort1.py: (62, 42)[0m
+2023-03-05 01:18:03,624: [92mResult: Detected at sort1.py: (62, 42)[0m
+2023-03-05 01:18:04,938: [92mResult: Detected at sort1.py: (62, 42)[0m
+2023-03-05 01:18:06,003: [92mResult: Detected at sort1.py: (62, 42)[0m
+2023-03-05 01:18:07,009: [91mResult: Survived at sort1.py: (62, 42)[0m
+2023-03-05 01:18:07,009: Current target location: sort1.py, LocIndex(ast_class='SliceUS', lineno=74, col_offset=23, op_type='Slice_UnboundUpper', end_lineno=74, end_col_offset=43)
+2023-03-05 01:18:07,843: [91mResult: Survived at sort1.py: (74, 23)[0m
+2023-03-05 01:18:08,875: [91mResult: Survived at sort1.py: (74, 23)[0m
+2023-03-05 01:18:08,876: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/sort1
+collected 15 items
+
+DYNAMOSA/test_sort1_DYNAMOSA.py ...............                          [100%]
+
+============================== 15 passed in 0.15s ==============================
+2023-03-05 01:18:09,997: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/sort1/sort1.py
+ - Test commands: ['python', '-m', 'pytest', './DYNAMOSA']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 32
+ - Location sample coverage: 31.25 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.051026
+ - Clean trial 2 run time: 0:00:01.119845
+ - Mutation trials total run time: 0:00:42.523479
+
+2023-03-05 01:18:09,997: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - SURVIVED: 22
+ - DETECTED: 15
+ - TOTAL RUNS: 37
+ - RUN DATETIME: 2023-03-05 01:18:09.996683
+
+2023-03-05 01:18:09,997: Detected mutations:[92m
+
+DETECTED
+--------
+ - sort1.py: (l: 33, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Div'>
+ - sort1.py: (l: 33, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Add'>
+ - sort1.py: (l: 45, c: 15) - mutation from <class 'ast.FloorDiv'> to <class 'ast.Pow'>
+ - sort1.py: (l: 45, c: 15) - mutation from <class 'ast.FloorDiv'> to <class 'ast.Mult'>
+ - sort1.py: (l: 45, c: 15) - mutation from <class 'ast.FloorDiv'> to <class 'ast.Mod'>
+ - sort1.py: (l: 45, c: 15) - mutation from <class 'ast.FloorDiv'> to <class 'ast.Add'>
+ - sort1.py: (l: 45, c: 15) - mutation from <class 'ast.FloorDiv'> to <class 'ast.Div'>
+ - sort1.py: (l: 45, c: 15) - mutation from <class 'ast.FloorDiv'> to <class 'ast.Sub'>
+ - sort1.py: (l: 47, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.Lt'>
+ - sort1.py: (l: 62, c: 42) - mutation from <class 'ast.Lt'> to <class 'ast.LtE'>
+ - sort1.py: (l: 62, c: 42) - mutation from <class 'ast.Lt'> to <class 'ast.GtE'>
+ - sort1.py: (l: 62, c: 42) - mutation from <class 'ast.Lt'> to <class 'ast.Eq'>
+ - sort1.py: (l: 71, c: 8) - mutation from If_Statement to If_True
+ - sort1.py: (l: 73, c: 8) - mutation from If_Statement to If_True
+ - sort1.py: (l: 82, c: 8) - mutation from If_Statement to If_True[0m
+
+2023-03-05 01:18:09,997: Timedout mutations:
+
+2023-03-05 01:18:09,997: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - sort1.py: (l: 17, c: 19) - mutation from <class 'ast.Lt'> to <class 'ast.GtE'>
+ - sort1.py: (l: 17, c: 19) - mutation from <class 'ast.Lt'> to <class 'ast.Gt'>
+ - sort1.py: (l: 17, c: 19) - mutation from <class 'ast.Lt'> to <class 'ast.Eq'>
+ - sort1.py: (l: 17, c: 19) - mutation from <class 'ast.Lt'> to <class 'ast.NotEq'>
+ - sort1.py: (l: 17, c: 19) - mutation from <class 'ast.Lt'> to <class 'ast.LtE'>
+ - sort1.py: (l: 33, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.FloorDiv'>
+ - sort1.py: (l: 33, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Pow'>
+ - sort1.py: (l: 33, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Mod'>
+ - sort1.py: (l: 33, c: 31) - mutation from <class 'ast.Sub'> to <class 'ast.Mult'>
+ - sort1.py: (l: 47, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.GtE'>
+ - sort1.py: (l: 47, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.Gt'>
+ - sort1.py: (l: 47, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.NotEq'>
+ - sort1.py: (l: 47, c: 11) - mutation from <class 'ast.LtE'> to <class 'ast.Eq'>
+ - sort1.py: (l: 62, c: 42) - mutation from <class 'ast.Lt'> to <class 'ast.Gt'>
+ - sort1.py: (l: 62, c: 42) - mutation from <class 'ast.Lt'> to <class 'ast.NotEq'>
+ - sort1.py: (l: 71, c: 8) - mutation from If_Statement to If_False
+ - sort1.py: (l: 72, c: 23) - mutation from Slice_UnboundUpper to Slice_UnboundLower
+ - sort1.py: (l: 72, c: 23) - mutation from Slice_UnboundUpper to Slice_Unbounded
+ - sort1.py: (l: 73, c: 8) - mutation from If_Statement to If_False
+ - sort1.py: (l: 74, c: 23) - mutation from Slice_UnboundUpper to Slice_Unbounded
+ - sort1.py: (l: 74, c: 23) - mutation from Slice_UnboundUpper to Slice_UnboundLower
+ - sort1.py: (l: 82, c: 8) - mutation from If_Statement to If_False[0m
+
+2023-03-05 01:18:09,998: Writing output report to: /home/auri/temp/lucca/python_experiments/sort1/DYNAMOSA/mutatest/DYNAMOSA-report.rst

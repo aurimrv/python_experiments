@@ -1,0 +1,60 @@
+[job-id] 76f3c89bf1d94319b16de38b21a8cc6d
+stack2.py core/ReplaceBinaryOperator_Add_Sub 0
+worker outcome: normal, test outcome: killed
+[job-id] eccb43300c5d44048bbdb5dd3a9b9144
+stack2.py core/ReplaceBinaryOperator_Add_Mul 0
+worker outcome: normal, test outcome: killed
+[job-id] 89e238a9065343b0bf8b07048984251b
+stack2.py core/ReplaceBinaryOperator_Add_Div 0
+worker outcome: normal, test outcome: killed
+[job-id] f6fab85a2245496db22447c1bf20d702
+stack2.py core/ReplaceBinaryOperator_Add_FloorDiv 0
+worker outcome: normal, test outcome: killed
+[job-id] b9be0d0c994241568ea400c952c7298c
+stack2.py core/ReplaceBinaryOperator_Add_Mod 0
+worker outcome: normal, test outcome: killed
+[job-id] c7f4911a093f41e19b11d7c87232a53d
+stack2.py core/ReplaceBinaryOperator_Add_Pow 0
+worker outcome: normal, test outcome: killed
+[job-id] 9d9e7935c2af4ac8b418ff0d265f05bb
+stack2.py core/ReplaceBinaryOperator_Add_RShift 0
+worker outcome: normal, test outcome: killed
+[job-id] dc85068d9eaa45ce9a0ab2063a977f02
+stack2.py core/ReplaceBinaryOperator_Add_LShift 0
+worker outcome: normal, test outcome: killed
+[job-id] ba1350c9231d4de2a49a9b8eb57156aa
+stack2.py core/ReplaceBinaryOperator_Add_BitOr 0
+worker outcome: normal, test outcome: killed
+[job-id] ca94c57c8f714c2e9f3ec0ab944d860f
+stack2.py core/ReplaceBinaryOperator_Add_BitAnd 0
+worker outcome: normal, test outcome: killed
+[job-id] 67867a0ed81d445dbbb0f899df37688f
+stack2.py core/ReplaceBinaryOperator_Add_BitXor 0
+worker outcome: normal, test outcome: killed
+[job-id] 7ee6c064b8ed40eba93988ba71016762
+stack2.py core/ReplaceComparisonOperator_Eq_NotEq 0
+worker outcome: normal, test outcome: killed
+[job-id] 96f23a5b2967459bb76c997ae00303e9
+stack2.py core/ReplaceComparisonOperator_Eq_Lt 0
+worker outcome: normal, test outcome: killed
+[job-id] 20f7c1d3635943f8b4b2e5350b2da0be
+stack2.py core/ReplaceComparisonOperator_Eq_LtE 0
+worker outcome: normal, test outcome: survived
+[job-id] 794a49c05ccc4ffa901f3a2ec9c825c3
+stack2.py core/ReplaceComparisonOperator_Eq_Gt 0
+worker outcome: normal, test outcome: killed
+[job-id] ea6486acd52a4a1f8f54800989936a97
+stack2.py core/ReplaceComparisonOperator_Eq_GtE 0
+worker outcome: normal, test outcome: killed
+[job-id] 6e76f5fae3614fa3978558fda95df65d
+stack2.py core/AddNot 0
+worker outcome: normal, test outcome: killed
+[job-id] 249c67e15d6044a8950fff4e18561fcc
+stack2.py core/NumberReplacer 0
+worker outcome: normal, test outcome: killed
+[job-id] 8178dacf035847879f72ecee1257fd51
+stack2.py core/NumberReplacer 1
+worker outcome: normal, test outcome: killed
+total jobs: 19
+complete: 19 (100.00%)
+surviving mutants: 1 (5.26%)

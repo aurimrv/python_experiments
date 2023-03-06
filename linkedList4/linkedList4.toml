@@ -2,7 +2,7 @@
 module-path = "linkedList4.py"
 timeout = 60.0
 excluded-modules = []
-test-command = "python -m pytest ./WHOLE_SUITE"
+test-command = "python -m pytest ./DYNAMOSA-MOSA"
 
 [cosmic-ray.distributor]
 name = "local"

@@ -1,0 +1,119 @@
+2023-03-05 01:54:41,107: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue4
+collected 13 items
+
+WHOLE_SUITE/test_queue4_WHOLE_SUITE.py .............                     [100%]
+
+============================== 13 passed in 0.34s ==============================
+2023-03-05 01:54:42,358: [92m50 mutation targets found in queue4.py AST.[0m
+2023-03-05 01:54:42,358: Setting random.seed to: None
+2023-03-05 01:54:42,362: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:54:42,362: Total sample space size: 50
+2023-03-05 01:54:42,362: [92mSelecting 10 locations from 50 potentials.[0m
+2023-03-05 01:54:42,363: Starting individual mutation trials!
+2023-03-05 01:54:42,363: Running serial (single processor) dispatch mode.
+2023-03-05 01:54:42,363: Current target location: queue4.py, LocIndex(ast_class='CompareIs', lineno=99, col_offset=47, op_type=<class 'ast.IsNot'>, end_lineno=99, end_col_offset=68)
+2023-03-05 01:54:43,766: [92mResult: Detected at queue4.py: (99, 47)[0m
+2023-03-05 01:54:43,766: Current target location: queue4.py, LocIndex(ast_class='NameConstant', lineno=7, col_offset=55, op_type=None, end_lineno=7, end_col_offset=59)
+2023-03-05 01:54:45,040: [91mResult: Survived at queue4.py: (7, 55)[0m
+2023-03-05 01:54:46,031: [91mResult: Survived at queue4.py: (7, 55)[0m
+2023-03-05 01:54:46,032: Current target location: queue4.py, LocIndex(ast_class='AugAssign', lineno=105, col_offset=16, op_type='AugAssign_Sub', end_lineno=105, end_col_offset=33)
+2023-03-05 01:54:47,149: [91mResult: Survived at queue4.py: (105, 16)[0m
+2023-03-05 01:54:48,503: [91mResult: Survived at queue4.py: (105, 16)[0m
+2023-03-05 01:54:49,583: [91mResult: Survived at queue4.py: (105, 16)[0m
+2023-03-05 01:54:49,584: Current target location: queue4.py, LocIndex(ast_class='BoolOp', lineno=99, col_offset=21, op_type=<class 'ast.And'>, end_lineno=99, end_col_offset=68)
+2023-03-05 01:54:50,959: [92mResult: Detected at queue4.py: (99, 21)[0m
+2023-03-05 01:54:50,960: Current target location: queue4.py, LocIndex(ast_class='NameConstant', lineno=152, col_offset=19, op_type=None, end_lineno=152, end_col_offset=23)
+2023-03-05 01:54:52,009: [91mResult: Survived at queue4.py: (152, 19)[0m
+2023-03-05 01:54:53,304: [91mResult: Survived at queue4.py: (152, 19)[0m
+2023-03-05 01:54:53,304: Current target location: queue4.py, LocIndex(ast_class='If', lineno=96, col_offset=12, op_type='If_Statement', end_lineno=106, end_col_offset=22)
+2023-03-05 01:54:54,800: [92mResult: Detected at queue4.py: (96, 12)[0m
+2023-03-05 01:54:55,979: [92mResult: Detected at queue4.py: (96, 12)[0m
+2023-03-05 01:54:55,980: Current target location: queue4.py, LocIndex(ast_class='NameConstant', lineno=135, col_offset=28, op_type=None, end_lineno=135, end_col_offset=32)
+2023-03-05 01:54:56,774: [91mResult: Survived at queue4.py: (135, 28)[0m
+2023-03-05 01:54:57,987: [91mResult: Survived at queue4.py: (135, 28)[0m
+2023-03-05 01:54:57,988: Current target location: queue4.py, LocIndex(ast_class='NameConstant', lineno=60, col_offset=28, op_type=None, end_lineno=60, end_col_offset=32)
+2023-03-05 01:54:59,095: [91mResult: Survived at queue4.py: (60, 28)[0m
+2023-03-05 01:55:00,271: [91mResult: Survived at queue4.py: (60, 28)[0m
+2023-03-05 01:55:00,272: Current target location: queue4.py, LocIndex(ast_class='If', lineno=55, col_offset=8, op_type='If_Statement', end_lineno=56, end_col_offset=62)
+2023-03-05 01:55:01,455: [92mResult: Detected at queue4.py: (55, 8)[0m
+2023-03-05 01:55:02,703: [92mResult: Detected at queue4.py: (55, 8)[0m
+2023-03-05 01:55:02,704: Current target location: queue4.py, LocIndex(ast_class='NameConstant', lineno=30, col_offset=28, op_type=None, end_lineno=30, end_col_offset=32)
+2023-03-05 01:55:03,738: [91mResult: Survived at queue4.py: (30, 28)[0m
+2023-03-05 01:55:05,191: [92mResult: Detected at queue4.py: (30, 28)[0m
+2023-03-05 01:55:05,192: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue4
+collected 13 items
+
+WHOLE_SUITE/test_queue4_WHOLE_SUITE.py .............                     [100%]
+
+============================== 13 passed in 0.23s ==============================
+2023-03-05 01:55:06,354: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/queue4/queue4.py
+ - Test commands: ['python', '-m', 'pytest', './WHOLE_SUITE']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 50
+ - Location sample coverage: 20.00 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:01.230014
+ - Clean trial 2 run time: 0:00:01.161124
+ - Mutation trials total run time: 0:00:22.840510
+
+2023-03-05 01:55:06,354: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 7
+ - SURVIVED: 12
+ - TOTAL RUNS: 19
+ - RUN DATETIME: 2023-03-05 01:55:06.354004
+
+2023-03-05 01:55:06,354: Detected mutations:[92m
+
+DETECTED
+--------
+ - queue4.py: (l: 30, c: 28) - mutation from None to True
+ - queue4.py: (l: 55, c: 8) - mutation from If_Statement to If_True
+ - queue4.py: (l: 55, c: 8) - mutation from If_Statement to If_False
+ - queue4.py: (l: 96, c: 12) - mutation from If_Statement to If_False
+ - queue4.py: (l: 96, c: 12) - mutation from If_Statement to If_True
+ - queue4.py: (l: 99, c: 21) - mutation from <class 'ast.And'> to <class 'ast.Or'>
+ - queue4.py: (l: 99, c: 47) - mutation from <class 'ast.IsNot'> to <class 'ast.Is'>[0m
+
+2023-03-05 01:55:06,354: Timedout mutations:
+
+2023-03-05 01:55:06,354: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - queue4.py: (l: 7, c: 55) - mutation from None to True
+ - queue4.py: (l: 7, c: 55) - mutation from None to False
+ - queue4.py: (l: 30, c: 28) - mutation from None to False
+ - queue4.py: (l: 60, c: 28) - mutation from None to False
+ - queue4.py: (l: 60, c: 28) - mutation from None to True
+ - queue4.py: (l: 105, c: 16) - mutation from AugAssign_Sub to AugAssign_Mult
+ - queue4.py: (l: 105, c: 16) - mutation from AugAssign_Sub to AugAssign_Div
+ - queue4.py: (l: 105, c: 16) - mutation from AugAssign_Sub to AugAssign_Add
+ - queue4.py: (l: 135, c: 28) - mutation from None to True
+ - queue4.py: (l: 135, c: 28) - mutation from None to False
+ - queue4.py: (l: 152, c: 19) - mutation from None to False
+ - queue4.py: (l: 152, c: 19) - mutation from None to True[0m
+
+2023-03-05 01:55:06,355: Writing output report to: /home/auri/temp/lucca/python_experiments/queue4/WHOLE_SUITE/mutatest/WHOLE_SUITE-report.rst

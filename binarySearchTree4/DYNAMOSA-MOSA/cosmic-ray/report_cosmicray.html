@@ -1,0 +1,3307 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 05/03/2023 19:54:44</p><p>Total jobs: 18</p><p>Complete: 18 (100.00%)</p><p>Surviving mutants: 0 (0.00%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 1289478798204d5d8abe802aa1345c31</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_Eq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data == node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ..F......F              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:33: Failed
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = bst_1.insert(var_0)
+        assert f'{type(bst_1.root).__module__}.{type(bst_1.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_3 = var_1.__repr__()
+        str_0 = 'fRiH'
+        node_0 = module_0.Node(bool_0)
+        var_4 = var_0.__repr__()
+        node_1 = module_0.Node(var_0)
+        node_2 = module_0.Node(str_0)
+        var_5 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:145: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_4.parent).__module__}.{type(var_4.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bst_1 = module_0.Bst()
+        bool_2 = True
+        var_5 = bst_0.insert(bool_2)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_5.parent).__module__}.{type(var_5.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_6 = node_1.__repr__()
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:77: Failed
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:95: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bst_1 = module_0.Bst()
+        bool_1 = True
+        var_2 = bst_0.insert(bool_1)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_2.parent).__module__}.{type(var_2.parent).__qualname__}' == 'binarySearchTree4.Node'
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:125: Failed
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - Failed...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - Failed: DI...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - Failed: DI...
+========================= 5 failed, 14 passed in 0.73s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 0fbe983b651c485a9d8fc78366ce4ccb</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data != node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ..F...FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:33: Failed
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:110: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:134: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:68: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_2.parent).__module__}.{type(var_2.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bool_2 = True
+        var_3 = bst_0.insert(bool_2)
+&gt;       assert f'{type(var_2.right).__module__}.{type(var_2.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:100: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - Failed...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 8 failed, 11 passed in 0.98s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 2d66b640ce614aa2bd97f4ebe0dc1b9c</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data &lt; node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py .......FF.              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FF.                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:110: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:68: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_2.parent).__module__}.{type(var_2.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bool_2 = True
+        var_3 = bst_0.insert(bool_2)
+&gt;       assert f'{type(var_2.right).__module__}.{type(var_2.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:100: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+========================= 4 failed, 15 passed in 0.85s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID ec498347a1164123b14024a6d82c8b2b</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data &gt; node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ......FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:110: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:134: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:68: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:95: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 7 failed, 12 passed in 0.99s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID c04afe2f87374ea0a85cbcd2aaa8c368</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data &gt;= node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ......F..F              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:134: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_4.parent).__module__}.{type(var_4.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bst_1 = module_0.Bst()
+        bool_2 = True
+        var_5 = bst_0.insert(bool_2)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:74: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:95: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 5 failed, 14 passed in 0.89s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 72c72ebefc8c4ec3b5865b4bac8a59e9</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data is node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ..F......F              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:33: Failed
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = bst_1.insert(var_0)
+        assert f'{type(bst_1.root).__module__}.{type(bst_1.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_3 = var_1.__repr__()
+        str_0 = 'fRiH'
+        node_0 = module_0.Node(bool_0)
+        var_4 = var_0.__repr__()
+        node_1 = module_0.Node(var_0)
+        node_2 = module_0.Node(str_0)
+        var_5 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:145: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_4.parent).__module__}.{type(var_4.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bst_1 = module_0.Bst()
+        bool_2 = True
+        var_5 = bst_0.insert(bool_2)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_5.parent).__module__}.{type(var_5.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_6 = node_1.__repr__()
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:77: Failed
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:95: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bst_1 = module_0.Bst()
+        bool_1 = True
+        var_2 = bst_0.insert(bool_1)
+        assert f'{type(var_1.right).__module__}.{type(var_1.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_2.parent).__module__}.{type(var_2.parent).__qualname__}' == 'binarySearchTree4.Node'
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:125: Failed
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - Failed...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - Failed: DI...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - Failed: DI...
+========================= 5 failed, 14 passed in 0.94s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 7c179101dead48698e0abcf50eac9a1e</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 16), end pos: (29, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_LtE_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if data is not node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ..F...FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:33: Failed
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:110: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:134: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:68: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_2.parent).__module__}.{type(var_2.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bool_2 = True
+        var_3 = bst_0.insert(bool_2)
+&gt;       assert f'{type(var_2.right).__module__}.{type(var_2.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:100: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - Failed...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 8 failed, 11 passed in 1.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 45fc7c4b7d1c4a3e8b002a448b351d33</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=18" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (18, 16), end pos: (18, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -15,7 +15,7 @@
+         self.root = root
+ 
+     def insert(self, data):
+-        if data is None:
++        if data is not None:
+             raise TypeError('data cannot be None')
+         if self.root is None:
+             self.root = Node(data)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py FFF.F.FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py F.F.F.FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        none_type_0 = None
+        bst_0 = module_0.Bst()
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:8: Failed
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(bst_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c3c2da0&gt;
+data = &lt;binarySearchTree4.Bst object at 0x7f2b3c3c2da0&gt;
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+&gt;       var_0 = bst_0.insert(str_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c26c7f0&gt;
+data = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+&gt;       var_0 = bst_0.insert(str_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c230760&gt;
+data = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+&gt;       var_0 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c3c19f0&gt;, data = False
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+&gt;       var_1 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c2387f0&gt;, data = False
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(tuple_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3d035a80&gt;, data = ()
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(int_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c3c2920&gt;, data = -2088
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(bst_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c26c460&gt;
+data = &lt;binarySearchTree4.Bst object at 0x7f2b3c26c460&gt;
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        none_type_0 = None
+        bst_0 = module_0.Bst()
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:26: Failed
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+&gt;       var_0 = bst_0.insert(str_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c23d900&gt;
+data = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c26d9f0&gt;, data = False
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c3c2bf0&gt;, data = True
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+&gt;       var_0 = bst_0.insert(int_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2b3c21d630&gt;, data = -1820
+
+    def insert(self, data):
+        if data is not None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_0 - Failed...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_4 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_0 - TypeError:...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_2 - Failed: DI...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - TypeError:...
+========================= 14 failed, 5 passed in 1.35s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 92659c50aaac48a5a869a0d91bbcee3d</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (20, 21), end pos: (20, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -17,7 +17,7 @@
+     def insert(self, data):
+         if data is None:
+             raise TypeError('data cannot be None')
+-        if self.root is None:
++        if self.root is not None:
+             self.root = Node(data)
+             return self.root
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py .FF.F.FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py F...F.FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:16: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:27: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:44: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:62: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:81: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:103: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:125: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:11: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:37: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:54: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:84: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:109: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_4 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_0 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_4 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 12 failed, 7 passed in 1.20s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID cec0c986ccdf428cbf7db1dfcb9a1712</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (27, 16), end pos: (27, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -24,7 +24,7 @@
+             return self._insert(self.root, data)
+ 
+     def _insert(self, node, data):
+-        if node is None:
++        if node is not None:
+             return Node(data)
+         if data &lt;= node.data:
+             if node.left is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ..F...FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:33: Failed
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:110: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:134: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:68: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:95: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - Failed...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 8 failed, 11 passed in 0.95s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID c9072c9726c04145a138110e7a94641a</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (30, 25), end pos: (30, 27)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -27,7 +27,7 @@
+         if node is None:
+             return Node(data)
+         if data &lt;= node.data:
+-            if node.left is None:
++            if node.left is not None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node
+                 return node.left</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py .......FFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FF.                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:110: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = bst_1.insert(var_0)
+        assert f'{type(bst_1.root).__module__}.{type(bst_1.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_3 = var_1.__repr__()
+        str_0 = 'fRiH'
+        node_0 = module_0.Node(bool_0)
+        var_4 = var_0.__repr__()
+        node_1 = module_0.Node(var_0)
+        node_2 = module_0.Node(str_0)
+        var_5 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:145: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:68: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:95: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+========================= 5 failed, 14 passed in 0.80s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID 813eea3f8a72409cb331be2208a1bfdf</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (37, 26), end pos: (37, 28)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -34,7 +34,7 @@
+             else:
+                 return self._insert(node.left, data)
+         else:
+-            if node.right is None:
++            if node.right is not None:
+                 node.right = self._insert(node.right, data)
+                 node.right.parent = node
+                 return node.right</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ......F..F              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:134: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_4.parent).__module__}.{type(var_4.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bst_1 = module_0.Bst()
+        bool_2 = True
+        var_5 = bst_0.insert(bool_2)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:74: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_2.parent).__module__}.{type(var_2.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bool_2 = True
+        var_3 = bst_0.insert(bool_2)
+&gt;       assert f'{type(var_2.right).__module__}.{type(var_2.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:100: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 5 failed, 14 passed in 0.89s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 54820e3f306544b798666fee1ebd963c</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=18" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (18, 11), end pos: (18, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -15,7 +15,7 @@
+         self.root = root
+ 
+     def insert(self, data):
+-        if data is None:
++        if not data is None:
+             raise TypeError('data cannot be None')
+         if self.root is None:
+             self.root = Node(data)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py FFF.F.FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py F.F.F.FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        none_type_0 = None
+        bst_0 = module_0.Bst()
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:8: Failed
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(bst_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d6a6c80&gt;
+data = &lt;binarySearchTree4.Bst object at 0x7f2c4d6a6c80&gt;
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+&gt;       var_0 = bst_0.insert(str_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d5f8c10&gt;
+data = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+&gt;       var_0 = bst_0.insert(str_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d852d70&gt;
+data = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+&gt;       var_0 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d5f8520&gt;, data = False
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+&gt;       var_1 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d6f78e0&gt;, data = False
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(tuple_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4e4b5060&gt;, data = ()
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(int_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d8524d0&gt;, data = -2088
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(bst_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d5996c0&gt;
+data = &lt;binarySearchTree4.Bst object at 0x7f2c4d5996c0&gt;
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        none_type_0 = None
+        bst_0 = module_0.Bst()
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:26: Failed
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+&gt;       var_0 = bst_0.insert(str_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d6a7ee0&gt;
+data = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d852500&gt;, data = False
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+&gt;       var_0 = bst_0.insert(bool_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d6cf460&gt;, data = True
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+&gt;       var_0 = bst_0.insert(int_0)
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;binarySearchTree4.Bst object at 0x7f2c4d8502b0&gt;, data = -1820
+
+    def insert(self, data):
+        if not data is None:
+&gt;           raise TypeError('data cannot be None')
+E           TypeError: data cannot be None
+
+binarySearchTree4.py:19: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_0 - Failed...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_4 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - TypeEr...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_0 - TypeError:...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_2 - Failed: DI...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - TypeError:...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - TypeError:...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - TypeError:...
+========================= 14 failed, 5 passed in 1.23s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID e927b83b01d2456c9d6ee43f5d5c2cb0</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=20" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (20, 11), end pos: (20, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -17,7 +17,7 @@
+     def insert(self, data):
+         if data is None:
+             raise TypeError('data cannot be None')
+-        if self.root is None:
++        if not self.root is None:
+             self.root = Node(data)
+             return self.root
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py .FF.F.FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py F...F.FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:16: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:27: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:44: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:62: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:81: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:103: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:125: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        none_type_0 = None
+        node_0 = module_0.Node(none_type_0)
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bst_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:11: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:37: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:54: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:84: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+&gt;       assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:109: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_1 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_4 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_0 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_4 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 12 failed, 7 passed in 1.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID f2bcaee638b54a82af6a4843a486be8f</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (27, 11), end pos: (27, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -24,7 +24,7 @@
+             return self._insert(self.root, data)
+ 
+     def _insert(self, node, data):
+-        if node is None:
++        if not node is None:
+             return Node(data)
+         if data &lt;= node.data:
+             if node.left is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ..F...FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        bst_0 = module_0.Bst()
+        str_0 = 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        var_0 = bst_0.insert(str_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == 'Eq$Iy6fg;+)U &lt;2SrvUq'
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+&gt;       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE &lt;class 'TypeError'&gt;
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:33: Failed
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:110: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:134: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:68: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:95: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_2 - Failed...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 8 failed, 11 passed in 0.98s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 724ef89e84e445559f3b09768b732eee</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (29, 11), end pos: (29, 28)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -26,7 +26,7 @@
+     def _insert(self, node, data):
+         if node is None:
+             return Node(data)
+-        if data &lt;= node.data:
++        if not data &lt;= node.data:
+             if node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ......FFFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:110: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:134: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:68: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:95: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 7 failed, 12 passed in 0.97s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID 9b7b307ea863451d88fa4ee25a296679</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (30, 15), end pos: (30, 32)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -27,7 +27,7 @@
+         if node is None:
+             return Node(data)
+         if data &lt;= node.data:
+-            if node.left is None:
++            if not node.left is None:
+                 node.left = self._insert(node.left, data)
+                 node.left.parent = node
+                 return node.left</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py .......FFF              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FF.                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        node_0 = module_0.Node(bool_0)
+        var_0 = node_0.__repr__()
+        bst_0 = module_0.Bst()
+        var_1 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_1.data is False
+        assert var_1.left is None
+        assert var_1.right is None
+        assert var_1.parent is None
+        var_2 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:88: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        tuple_0 = ()
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(tuple_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == ()
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        var_1 = bst_0.insert(tuple_0)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:110: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+        assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_1.parent).__module__}.{type(var_1.parent).__qualname__}' == 'binarySearchTree4.Node'
+        var_2 = bst_1.insert(var_0)
+        assert f'{type(bst_1.root).__module__}.{type(bst_1.root).__qualname__}' == 'binarySearchTree4.Node'
+        var_3 = var_1.__repr__()
+        str_0 = 'fRiH'
+        node_0 = module_0.Node(bool_0)
+        var_4 = var_0.__repr__()
+        node_1 = module_0.Node(var_0)
+        node_2 = module_0.Node(str_0)
+        var_5 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_1.left).__module__}.{type(var_1.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:145: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:68: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:95: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_7 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_8 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+========================= 5 failed, 14 passed in 0.85s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID 5b7c8313bc40401a96382d050c075c93</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=binarySearchTree4.py&amp;line=37" class="text-secondary"><button class="btn btn-outline-dark">binarySearchTree4.py, start pos: (37, 15), end pos: (37, 33)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- abinarySearchTree4.py
++++ bbinarySearchTree4.py
+@@ -34,7 +34,7 @@
+             else:
+                 return self._insert(node.left, data)
+         else:
+-            if node.right is None:
++            if not node.right is None:
+                 node.right = self._insert(node.right, data)
+                 node.right.parent = node
+                 return node.right</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/binarySearchTree4
+collected 19 items
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py ......F..F              [ 52%]
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py ......FFF                   [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        bst_1 = module_0.Bst(bst_0)
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(bool_0)
+        bst_2 = module_0.Bst()
+        bool_1 = True
+        var_1 = bst_0.insert(bool_1)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:72: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        bool_0 = False
+        int_0 = -2088
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -2088
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bst_1 = module_0.Bst()
+        float_0 = 3874.2
+        var_1 = bst_0.insert(float_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py:134: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        bool_0 = False
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is False
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_1 = var_0.__repr__()
+        node_1 = module_0.Node(node_0)
+        var_2 = node_1.__repr__()
+        var_3 = var_2.__repr__()
+        bool_1 = False
+        var_4 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_4.parent).__module__}.{type(var_4.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bst_1 = module_0.Bst()
+        bool_2 = True
+        var_5 = bst_0.insert(bool_2)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:74: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = True
+        bst_0 = module_0.Bst()
+        var_0 = bst_0.insert(bool_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data is True
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        node_0 = module_0.Node(var_0)
+        node_1 = module_0.Node(node_0)
+        var_1 = module_0.Node(node_0)
+        bool_1 = False
+        var_2 = bst_0.insert(bool_1)
+        assert f'{type(var_0.left).__module__}.{type(var_0.left).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_2.parent).__module__}.{type(var_2.parent).__qualname__}' == 'binarySearchTree4.Node'
+        object_0 = module_1.object()
+        bool_2 = True
+        var_3 = bst_0.insert(bool_2)
+&gt;       assert f'{type(var_2.right).__module__}.{type(var_2.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:100: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        bst_0 = module_0.Bst()
+        int_0 = -1820
+        node_0 = module_0.Node(int_0)
+        var_0 = bst_0.insert(int_0)
+        assert f'{type(bst_0.root).__module__}.{type(bst_0.root).__qualname__}' == 'binarySearchTree4.Node'
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'binarySearchTree4.Node'
+        assert var_0.data == -1820
+        assert var_0.left is None
+        assert var_0.right is None
+        assert var_0.parent is None
+        bool_0 = False
+        var_1 = bst_0.insert(bool_0)
+&gt;       assert f'{type(var_0.right).__module__}.{type(var_0.right).__qualname__}' == 'binarySearchTree4.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'binarySearchTree4.Node'
+E         - binarySearchTree4.Node
+E         + builtins.NoneType
+
+DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_6 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_DYNAMOSA.py::test_case_9 - Assert...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_6 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_7 - AssertionE...
+FAILED DYNAMOSA-MOSA/test_binarySearchTree4_MOSA.py::test_case_8 - AssertionE...
+========================= 5 failed, 14 passed in 0.72s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

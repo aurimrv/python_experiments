@@ -1,0 +1,100 @@
+2023-03-05 01:31:48,327: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 4 items
+
+MIO/test_stack2_MIO.py ....                                              [100%]
+
+============================== 4 passed in 0.09s ===============================
+2023-03-05 01:31:49,316: [92m3 mutation targets found in stack2.py AST.[0m
+2023-03-05 01:31:49,316: Setting random.seed to: None
+2023-03-05 01:31:49,317: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-05 01:31:49,317: Total sample space size: 3
+2023-03-05 01:31:49,317: [93m10 exceeds sample space, using full sample: 3.[0m
+2023-03-05 01:31:49,317: Starting individual mutation trials!
+2023-03-05 01:31:49,317: Running serial (single processor) dispatch mode.
+2023-03-05 01:31:49,317: Current target location: stack2.py, LocIndex(ast_class='Compare', lineno=13, col_offset=15, op_type=<class 'ast.Eq'>, end_lineno=13, end_col_offset=35)
+2023-03-05 01:31:50,407: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-03-05 01:31:51,397: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-03-05 01:31:52,471: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-03-05 01:31:53,643: [92mResult: Detected at stack2.py: (13, 15)[0m
+2023-03-05 01:31:54,544: [91mResult: Survived at stack2.py: (13, 15)[0m
+2023-03-05 01:31:54,544: Current target location: stack2.py, LocIndex(ast_class='If', lineno=21, col_offset=8, op_type='If_Statement', end_lineno=22, end_col_offset=46)
+2023-03-05 01:31:55,505: [92mResult: Detected at stack2.py: (21, 8)[0m
+2023-03-05 01:31:56,393: [91mResult: Survived at stack2.py: (21, 8)[0m
+2023-03-05 01:31:56,393: Current target location: stack2.py, LocIndex(ast_class='BinOp', lineno=27, col_offset=15, op_type=<class 'ast.Add'>, end_lineno=27, end_col_offset=41)
+2023-03-05 01:31:57,518: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-05 01:31:58,655: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-05 01:31:59,650: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-05 01:32:00,701: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-05 01:32:01,627: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-05 01:32:02,753: [92mResult: Detected at stack2.py: (27, 15)[0m
+2023-03-05 01:32:02,753: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 4 items
+
+MIO/test_stack2_MIO.py ....                                              [100%]
+
+============================== 4 passed in 0.06s ===============================
+2023-03-05 01:32:03,673: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/stack2/stack2.py
+ - Test commands: ['python', '-m', 'pytest', './MIO']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 3
+ - Total locations identified: 3
+ - Location sample coverage: 100.00 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:00.967857
+ - Clean trial 2 run time: 0:00:00.919219
+ - Mutation trials total run time: 0:00:13.437865
+
+2023-03-05 01:32:03,673: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 11
+ - SURVIVED: 2
+ - TOTAL RUNS: 13
+ - RUN DATETIME: 2023-03-05 01:32:03.673324
+
+2023-03-05 01:32:03,673: Detected mutations:[92m
+
+DETECTED
+--------
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - stack2.py: (l: 21, c: 8) - mutation from If_Statement to If_True
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - stack2.py: (l: 27, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>[0m
+
+2023-03-05 01:32:03,673: Timedout mutations:
+
+2023-03-05 01:32:03,673: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - stack2.py: (l: 13, c: 15) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - stack2.py: (l: 21, c: 8) - mutation from If_Statement to If_False[0m
+
+2023-03-05 01:32:03,674: Writing output report to: /home/auri/temp/lucca/python_experiments/stack2/MIO/mutatest/MIO-report.rst

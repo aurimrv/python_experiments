@@ -1,0 +1,18 @@
+[job-id] 416569308341438894082ee3f109ed3a
+stack5.py core/ReplaceComparisonOperator_Is_IsNot 0
+worker outcome: normal, test outcome: killed
+[job-id] 3d63a1b0cd684b2abe172e497db84470
+stack5.py core/ReplaceComparisonOperator_Is_IsNot 1
+worker outcome: normal, test outcome: survived
+[job-id] 783434d782934d6ea9038a6e0b0924d8
+stack5.py core/ReplaceComparisonOperator_IsNot_Is 0
+worker outcome: normal, test outcome: killed
+[job-id] eb5faba8c09342e6a9247271a4a34fcf
+stack5.py core/AddNot 0
+worker outcome: normal, test outcome: killed
+[job-id] 3c24f6fec07d4ff9ba4795d75d56df79
+stack5.py core/AddNot 1
+worker outcome: normal, test outcome: killed
+total jobs: 5
+complete: 5 (100.00%)
+surviving mutants: 1 (20.00%)
