@@ -1,0 +1,538 @@
+<html><body><h1>stack3.py</h1>Killed 8 out of 57 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 3</h3><pre>--- stack3.py
++++ stack3.py
+@@ -6,7 +6,7 @@
+ 
+ class Node:
+     def __init__(self, value: T):
+-        self.value = value
++        self.value = None
+         self.next = None
+ 
+ 
+</pre><h3>Mutant 4</h3><pre>--- stack3.py
++++ stack3.py
+@@ -7,7 +7,7 @@
+ class Node:
+     def __init__(self, value: T):
+         self.value = value
+-        self.next = None
++        self.next = ""
+ 
+ 
+ class SinglyLinkedList:
+</pre><h3>Mutant 5</h3><pre>--- stack3.py
++++ stack3.py
+@@ -12,7 +12,7 @@
+ 
+ class SinglyLinkedList:
+     def __init__(self):
+-        self.__sentinel = Node(None)
++        self.__sentinel = None
+         self.__head = self.__sentinel
+         self.__size = 0
+ 
+</pre><h3>Mutant 6</h3><pre>--- stack3.py
++++ stack3.py
+@@ -13,7 +13,7 @@
+ class SinglyLinkedList:
+     def __init__(self):
+         self.__sentinel = Node(None)
+-        self.__head = self.__sentinel
++        self.__head = None
+         self.__size = 0
+ 
+     def add(self, value: T) -> None:
+</pre><h3>Mutant 7</h3><pre>--- stack3.py
++++ stack3.py
+@@ -14,7 +14,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = 1
+ 
+     def add(self, value: T) -> None:
+ 
+</pre><h3>Mutant 8</h3><pre>--- stack3.py
++++ stack3.py
+@@ -14,7 +14,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = None
+ 
+     def add(self, value: T) -> None:
+ 
+</pre><h3>Mutant 9</h3><pre>--- stack3.py
++++ stack3.py
+@@ -20,7 +20,7 @@
+ 
+         """Add element to linked list."""
+ 
+-        newNode = Node(value)
++        newNode = None
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+</pre><h3>Mutant 10</h3><pre>--- stack3.py
++++ stack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size != 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1
+</pre><h3>Mutant 11</h3><pre>--- stack3.py
++++ stack3.py
+@@ -21,7 +21,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size == 1:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1
+</pre><h3>Mutant 13</h3><pre>--- stack3.py
++++ stack3.py
+@@ -23,7 +23,7 @@
+         newNode = Node(value)
+         if self.__size == 0:
+             self.__head.next = newNode
+-            self.__head = newNode
++            self.__head = None
+             self.__size += 1
+         else:
+             self.__sentinel.next = newNode
+</pre><h3>Mutant 15</h3><pre>--- stack3.py
++++ stack3.py
+@@ -24,7 +24,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size -= 1
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+</pre><h3>Mutant 16</h3><pre>--- stack3.py
++++ stack3.py
+@@ -24,7 +24,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 2
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+</pre><h3>Mutant 23</h3><pre>--- stack3.py
++++ stack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             return None
+         if self.__size >= 1:
+             nodeToRemove = self.__head
+</pre><h3>Mutant 24</h3><pre>--- stack3.py
++++ stack3.py
+@@ -35,7 +35,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             return None
+         if self.__size >= 1:
+             nodeToRemove = self.__head
+</pre><h3>Mutant 27</h3><pre>--- stack3.py
++++ stack3.py
+@@ -38,7 +38,7 @@
+         if self.__size == 0:
+             return None
+         if self.__size >= 1:
+-            nodeToRemove = self.__head
++            nodeToRemove = None
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+             self.__size -= 1
+</pre><h3>Mutant 39</h3><pre>--- stack3.py
++++ stack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return False if self.__size == 0 else False
+ 
+     def toArray(self) -> list:
+ 
+</pre><h3>Mutant 40</h3><pre>--- stack3.py
++++ stack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size != 0 else False
+ 
+     def toArray(self) -> list:
+ 
+</pre><h3>Mutant 41</h3><pre>--- stack3.py
++++ stack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 1 else False
+ 
+     def toArray(self) -> list:
+ 
+</pre><h3>Mutant 42</h3><pre>--- stack3.py
++++ stack3.py
+@@ -72,7 +72,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 0 else True
+ 
+     def toArray(self) -> list:
+ 
+</pre><h3>Mutant 43</h3><pre>--- stack3.py
++++ stack3.py
+@@ -78,7 +78,7 @@
+ 
+         """Converts linkedlist to list."""
+ 
+-        arr = []
++        arr = None
+         current = self.__head
+         while current:
+             arr.append(current.value)
+</pre><h3>Mutant 44</h3><pre>--- stack3.py
++++ stack3.py
+@@ -79,7 +79,7 @@
+         """Converts linkedlist to list."""
+ 
+         arr = []
+-        current = self.__head
++        current = None
+         while current:
+             arr.append(current.value)
+             current = current.next
+</pre><h3>Mutant 46</h3><pre>--- stack3.py
++++ stack3.py
+@@ -89,7 +89,7 @@
+ 
+         """Return String representation of linkedlist values."""
+ 
+-        arr = []
++        arr = None
+         current = self.__head
+         while current:
+             arr.append(current.value)
+</pre><h3>Mutant 47</h3><pre>--- stack3.py
++++ stack3.py
+@@ -90,7 +90,7 @@
+         """Return String representation of linkedlist values."""
+ 
+         arr = []
+-        current = self.__head
++        current = None
+         while current:
+             arr.append(current.value)
+             current = current.next
+</pre><h3>Mutant 49</h3><pre>--- stack3.py
++++ stack3.py
+@@ -98,7 +98,7 @@
+ 
+ class Stack:
+     def __init__(self):
+-        self.__stack = SinglyLinkedList()
++        self.__stack = None
+ 
+     def push(self, value: T) -> None:
+ 
+</pre><h3>Mutant 50</h3><pre>--- stack3.py
++++ stack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return False if self.__stack.getSize() == 0 else False
+ 
+     def getSize(self) -> int:
+ 
+</pre><h3>Mutant 51</h3><pre>--- stack3.py
++++ stack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() != 0 else False
+ 
+     def getSize(self) -> int:
+ 
+</pre><h3>Mutant 52</h3><pre>--- stack3.py
++++ stack3.py
+@@ -122,7 +122,7 @@
+ 
+         """Check if stack is empty."""
+ 
+-        return True if self.__stack.getSize() == 0 else False
++        return True if self.__stack.getSize() == 1 else False
+ 
+     def getSize(self) -> int:
+ 
+</pre><h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- stack3.py
++++ stack3.py
+@@ -2,7 +2,7 @@
+ 
+ from typing import TypeVar
+ 
+-T = TypeVar("T")
++T = TypeVar("XXTXX")
+ 
+ class Node:
+     def __init__(self, value: T):
+</pre><h3>Mutant 2</h3><pre>--- stack3.py
++++ stack3.py
+@@ -2,7 +2,7 @@
+ 
+ from typing import TypeVar
+ 
+-T = TypeVar("T")
++T = None
+ 
+ class Node:
+     def __init__(self, value: T):
+</pre><h3>Mutant 12</h3><pre>--- stack3.py
++++ stack3.py
+@@ -22,7 +22,7 @@
+ 
+         newNode = Node(value)
+         if self.__size == 0:
+-            self.__head.next = newNode
++            self.__head.next = None
+             self.__head = newNode
+             self.__size += 1
+         else:
+</pre><h3>Mutant 14</h3><pre>--- stack3.py
++++ stack3.py
+@@ -24,7 +24,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size = 1
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+</pre><h3>Mutant 17</h3><pre>--- stack3.py
++++ stack3.py
+@@ -26,7 +26,7 @@
+             self.__head = newNode
+             self.__size += 1
+         else:
+-            self.__sentinel.next = newNode
++            self.__sentinel.next = None
+             newNode.next = self.__head
+             self.__head = newNode
+             self.__size += 1
+</pre><h3>Mutant 28</h3><pre>--- stack3.py
++++ stack3.py
+@@ -39,7 +39,7 @@
+             return None
+         if self.__size >= 1:
+             nodeToRemove = self.__head
+-            self.__sentinel.next = None
++            self.__sentinel.next = ""
+             self.__head = self.__sentinel
+             self.__size -= 1
+             return nodeToRemove
+</pre><h3>Mutant 33</h3><pre>--- stack3.py
++++ stack3.py
+@@ -44,7 +44,7 @@
+             self.__size -= 1
+             return nodeToRemove
+         else:
+-            nodeToRemove = self.__head
++            nodeToRemove = None
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+             self.__size -= 1
+</pre><h3>Mutant 34</h3><pre>--- stack3.py
++++ stack3.py
+@@ -45,7 +45,7 @@
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head
+-            self.__sentinel.next = self.__head.next
++            self.__sentinel.next = None
+             self.__head = self.__sentinel.next
+             self.__size -= 1
+             return nodeToRemove
+</pre><h3>Mutant 35</h3><pre>--- stack3.py
++++ stack3.py
+@@ -46,7 +46,7 @@
+         else:
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+-            self.__head = self.__sentinel.next
++            self.__head = None
+             self.__size -= 1
+             return nodeToRemove
+ 
+</pre><h3>Mutant 36</h3><pre>--- stack3.py
++++ stack3.py
+@@ -47,7 +47,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size = 1
+             return nodeToRemove
+ 
+     def getHead(self) -> T:
+</pre><h3>Mutant 37</h3><pre>--- stack3.py
++++ stack3.py
+@@ -47,7 +47,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size += 1
+             return nodeToRemove
+ 
+     def getHead(self) -> T:
+</pre><h3>Mutant 38</h3><pre>--- stack3.py
++++ stack3.py
+@@ -47,7 +47,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+ 
+     def getHead(self) -> T:
+</pre><h3>Mutant 45</h3><pre>--- stack3.py
++++ stack3.py
+@@ -82,7 +82,7 @@
+         current = self.__head
+         while current:
+             arr.append(current.value)
+-            current = current.next
++            current = None
+         return arr
+ 
+     def __str__(self) -> str:
+</pre><h3>Mutant 48</h3><pre>--- stack3.py
++++ stack3.py
+@@ -93,7 +93,7 @@
+         current = self.__head
+         while current:
+             arr.append(current.value)
+-            current = current.next
++            current = None
+         return str(arr)
+ 
+ class Stack:
+</pre><h3>Mutant 54</h3><pre>--- stack3.py
++++ stack3.py
+@@ -134,7 +134,7 @@
+ 
+         """Get string representation of the stack."""
+ 
+-        return str(self.__stack.toArray()[::-1])
++        return str(self.__stack.toArray()[::+1])
+ 
+ 
+ if __name__ == "__main__":
+</pre><h3>Mutant 55</h3><pre>--- stack3.py
++++ stack3.py
+@@ -134,7 +134,7 @@
+ 
+         """Get string representation of the stack."""
+ 
+-        return str(self.__stack.toArray()[::-1])
++        return str(self.__stack.toArray()[::-2])
+ 
+ 
+ if __name__ == "__main__":
+</pre><h3>Mutant 56</h3><pre>--- stack3.py
++++ stack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     pass
+ 
+</pre><h3>Mutant 57</h3><pre>--- stack3.py
++++ stack3.py
+@@ -137,6 +137,6 @@
+         return str(self.__stack.toArray()[::-1])
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == "XX__main__XX":
+     pass
+ 
+</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 19</h3><pre>--- stack3.py
++++ stack3.py
+@@ -28,7 +28,7 @@
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+-            self.__head = newNode
++            self.__head = None
+             self.__size += 1
+ 
+     def remove(self):
+</pre><h3>Mutant 25</h3><pre>--- stack3.py
++++ stack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size >= 1:
++        if self.__size > 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+</pre><h3>Mutant 26</h3><pre>--- stack3.py
++++ stack3.py
+@@ -37,7 +37,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size >= 1:
++        if self.__size >= 2:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+</pre><h3>Mutant 29</h3><pre>--- stack3.py
++++ stack3.py
+@@ -40,7 +40,7 @@
+         if self.__size >= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+-            self.__head = self.__sentinel
++            self.__head = None
+             self.__size -= 1
+             return nodeToRemove
+         else:
+</pre></body></html>

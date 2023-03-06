@@ -1,0 +1,650 @@
+<html><body><h1>stack1.py</h1>Killed 9 out of 68 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 1</h3><pre>--- stack1.py
++++ stack1.py
+@@ -5,7 +5,7 @@
+ 
+ class Stack(object):
+     def __init__(self):
+-        self.size = 0
++        self.size = 1
+         self.top  = None
+ 
+     def __len__(self):
+</pre><h3>Mutant 2</h3><pre>--- stack1.py
++++ stack1.py
+@@ -5,7 +5,7 @@
+ 
+ class Stack(object):
+     def __init__(self):
+-        self.size = 0
++        self.size = None
+         self.top  = None
+ 
+     def __len__(self):
+</pre><h3>Mutant 3</h3><pre>--- stack1.py
++++ stack1.py
+@@ -6,7 +6,7 @@
+ class Stack(object):
+     def __init__(self):
+         self.size = 0
+-        self.top  = None
++        self.top  = ""
+ 
+     def __len__(self):
+         return self.size
+</pre><h3>Mutant 11</h3><pre>--- stack1.py
++++ stack1.py
+@@ -23,7 +23,7 @@
+             self.top = item2
+             item2.next = item1
+ 
+-        self.size += 1
++        self.size -= 1
+ 
+     def pop(self):
+         if self.top is None:
+</pre><h3>Mutant 12</h3><pre>--- stack1.py
++++ stack1.py
+@@ -23,7 +23,7 @@
+             self.top = item2
+             item2.next = item1
+ 
+-        self.size += 1
++        self.size += 2
+ 
+     def pop(self):
+         if self.top is None:
+</pre><h3>Mutant 13</h3><pre>--- stack1.py
++++ stack1.py
+@@ -26,7 +26,7 @@
+         self.size += 1
+ 
+     def pop(self):
+-        if self.top is None:
++        if self.top is not None:
+             raise ValueError()
+         else:
+             top_data = self.top.data
+</pre><h3>Mutant 19</h3><pre>--- stack1.py
++++ stack1.py
+@@ -36,7 +36,7 @@
+             return top_data
+ 
+     def peek(self):
+-        if self.top is None:
++        if self.top is not None:
+             raise ValueError()
+         else:
+             return self.top.data
+</pre><h3>Mutant 20</h3><pre>--- stack1.py
++++ stack1.py
+@@ -44,7 +44,7 @@
+ class StackNode(object):
+     """ Look familiar? """
+     def __init__(self, item):
+-        self.data = item
++        self.data = None
+         self.next = None
+ 
+ def check_parenthesis(string):
+</pre><h3>Mutant 22</h3><pre>--- stack1.py
++++ stack1.py
+@@ -48,7 +48,7 @@
+         self.next = None
+ 
+ def check_parenthesis(string):
+-    stack = Stack()
++    stack = None
+     # We're using a dict which allows us to do some fun things!
+     brackets = {'{':'}', '[':']', '(':')'}
+ 
+</pre><h3>Mutant 29</h3><pre>--- stack1.py
++++ stack1.py
+@@ -50,7 +50,7 @@
+ def check_parenthesis(string):
+     stack = Stack()
+     # We're using a dict which allows us to do some fun things!
+-    brackets = {'{':'}', '[':']', '(':')'}
++    brackets = None
+ 
+     for character in string:
+         # Keys being the left-side brackets
+</pre><h3>Mutant 30</h3><pre>--- stack1.py
++++ stack1.py
+@@ -54,7 +54,7 @@
+ 
+     for character in string:
+         # Keys being the left-side brackets
+-        if character in brackets.keys():
++        if character not in brackets.keys():
+             stack.push(character)
+ 
+         # Values being the right-side brackets
+</pre><h3>Mutant 31</h3><pre>--- stack1.py
++++ stack1.py
+@@ -58,7 +58,7 @@
+             stack.push(character)
+ 
+         # Values being the right-side brackets
+-        if character in brackets.values():
++        if character not in brackets.values():
+             try:
+                 other = stack.pop()
+ 
+</pre><h3>Mutant 36</h3><pre>--- stack1.py
++++ stack1.py
+@@ -69,7 +69,7 @@
+             except ValueError:
+                 return False
+     # Make one last check that we don't have any extras
+-    if stack.size != 0:
++    if stack.size == 0:
+         return False
+     else:
+         # If we've made it all the way through without incident
+</pre><h3>Mutant 37</h3><pre>--- stack1.py
++++ stack1.py
+@@ -69,7 +69,7 @@
+             except ValueError:
+                 return False
+     # Make one last check that we don't have any extras
+-    if stack.size != 0:
++    if stack.size != 1:
+         return False
+     else:
+         # If we've made it all the way through without incident
+</pre><h3>Mutant 39</h3><pre>--- stack1.py
++++ stack1.py
+@@ -73,7 +73,7 @@
+         return False
+     else:
+         # If we've made it all the way through without incident
+-        return True
++        return False
+ 
+ def postfix_eval(string):
+     ''' Here we setup a dictionary relating the characters of 
+</pre><h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 4</h3><pre>--- stack1.py
++++ stack1.py
+@@ -12,7 +12,7 @@
+         return self.size
+ 
+     def push(self, item):
+-        if self.top is None:
++        if self.top is not None:
+             self.top = StackNode(item)
+         else:
+             #self.top->[item1]->None
+</pre><h3>Mutant 6</h3><pre>--- stack1.py
++++ stack1.py
+@@ -16,7 +16,7 @@
+             self.top = StackNode(item)
+         else:
+             #self.top->[item1]->None
+-            item1 = self.top
++            item1 = None
+             item2 = StackNode(item)
+ 
+             #self.top->[item2]->[item1]->None
+</pre><h3>Mutant 9</h3><pre>--- stack1.py
++++ stack1.py
+@@ -21,7 +21,7 @@
+ 
+             #self.top->[item2]->[item1]->None
+             self.top = item2
+-            item2.next = item1
++            item2.next = None
+ 
+         self.size += 1
+ 
+</pre><h3>Mutant 15</h3><pre>--- stack1.py
++++ stack1.py
+@@ -31,7 +31,7 @@
+         else:
+             top_data = self.top.data
+             # Skip over the top and set the next to the top
+-            self.top = self.top.next
++            self.top = None
+             self.size -= 1
+             return top_data
+ 
+</pre><h3>Mutant 23</h3><pre>--- stack1.py
++++ stack1.py
+@@ -50,7 +50,7 @@
+ def check_parenthesis(string):
+     stack = Stack()
+     # We're using a dict which allows us to do some fun things!
+-    brackets = {'{':'}', '[':']', '(':')'}
++    brackets = {'XX{XX':'}', '[':']', '(':')'}
+ 
+     for character in string:
+         # Keys being the left-side brackets
+</pre><h3>Mutant 24</h3><pre>--- stack1.py
++++ stack1.py
+@@ -50,7 +50,7 @@
+ def check_parenthesis(string):
+     stack = Stack()
+     # We're using a dict which allows us to do some fun things!
+-    brackets = {'{':'}', '[':']', '(':')'}
++    brackets = {'{':'XX}XX', '[':']', '(':')'}
+ 
+     for character in string:
+         # Keys being the left-side brackets
+</pre><h3>Mutant 26</h3><pre>--- stack1.py
++++ stack1.py
+@@ -50,7 +50,7 @@
+ def check_parenthesis(string):
+     stack = Stack()
+     # We're using a dict which allows us to do some fun things!
+-    brackets = {'{':'}', '[':']', '(':')'}
++    brackets = {'{':'}', '[':'XX]XX', '(':')'}
+ 
+     for character in string:
+         # Keys being the left-side brackets
+</pre><h3>Mutant 27</h3><pre>--- stack1.py
++++ stack1.py
+@@ -50,7 +50,7 @@
+ def check_parenthesis(string):
+     stack = Stack()
+     # We're using a dict which allows us to do some fun things!
+-    brackets = {'{':'}', '[':']', '(':')'}
++    brackets = {'{':'}', '[':']', 'XX(XX':')'}
+ 
+     for character in string:
+         # Keys being the left-side brackets
+</pre><h3>Mutant 33</h3><pre>--- stack1.py
++++ stack1.py
+@@ -63,7 +63,7 @@
+                 other = stack.pop()
+ 
+                 # Check for it's pair using the dict earlier
+-                if brackets[other] != character:
++                if brackets[other] == character:
+                     return False
+ 
+             except ValueError:
+</pre><h3>Mutant 34</h3><pre>--- stack1.py
++++ stack1.py
+@@ -64,7 +64,7 @@
+ 
+                 # Check for it's pair using the dict earlier
+                 if brackets[other] != character:
+-                    return False
++                    return True
+ 
+             except ValueError:
+                 return False
+</pre><h3>Mutant 40</h3><pre>--- stack1.py
++++ stack1.py
+@@ -90,7 +90,7 @@
+         The add function can also be accessed via the ``operator``
+         module.
+     '''
+-    stack = Stack()
++    stack = None
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+</pre><h3>Mutant 41</h3><pre>--- stack1.py
++++ stack1.py
+@@ -91,7 +91,7 @@
+         module.
+     '''
+     stack = Stack()
+-    ops = {'+': lambda a, b: a + b,
++    ops = {'XX+XX': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+</pre><h3>Mutant 42</h3><pre>--- stack1.py
++++ stack1.py
+@@ -91,7 +91,7 @@
+         module.
+     '''
+     stack = Stack()
+-    ops = {'+': lambda a, b: a + b,
++    ops = {'+': lambda a, b: a - b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+</pre><h3>Mutant 43</h3><pre>--- stack1.py
++++ stack1.py
+@@ -91,7 +91,7 @@
+         module.
+     '''
+     stack = Stack()
+-    ops = {'+': lambda a, b: a + b,
++    ops = {'+': lambda a, b: None,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+</pre><h3>Mutant 44</h3><pre>--- stack1.py
++++ stack1.py
+@@ -92,7 +92,7 @@
+     '''
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+-           '-': lambda a, b: a - b,
++           'XX-XX': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+</pre><h3>Mutant 45</h3><pre>--- stack1.py
++++ stack1.py
+@@ -92,7 +92,7 @@
+     '''
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+-           '-': lambda a, b: a - b,
++           '-': lambda a, b: a + b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+</pre><h3>Mutant 46</h3><pre>--- stack1.py
++++ stack1.py
+@@ -92,7 +92,7 @@
+     '''
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+-           '-': lambda a, b: a - b,
++           '-': lambda a, b: None,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+</pre><h3>Mutant 47</h3><pre>--- stack1.py
++++ stack1.py
+@@ -93,7 +93,7 @@
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+-           '*': lambda a, b: a * b, 
++           'XX*XX': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+</pre><h3>Mutant 48</h3><pre>--- stack1.py
++++ stack1.py
+@@ -93,7 +93,7 @@
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+-           '*': lambda a, b: a * b, 
++           '*': lambda a, b: a / b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+</pre><h3>Mutant 49</h3><pre>--- stack1.py
++++ stack1.py
+@@ -93,7 +93,7 @@
+     stack = Stack()
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+-           '*': lambda a, b: a * b, 
++           '*': lambda a, b: None, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+</pre><h3>Mutant 50</h3><pre>--- stack1.py
++++ stack1.py
+@@ -94,7 +94,7 @@
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+-           '/': lambda a, b: a / b,
++           'XX/XX': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+ 
+</pre><h3>Mutant 51</h3><pre>--- stack1.py
++++ stack1.py
+@@ -94,7 +94,7 @@
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+-           '/': lambda a, b: a / b,
++           '/': lambda a, b: a * b,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+ 
+</pre><h3>Mutant 52</h3><pre>--- stack1.py
++++ stack1.py
+@@ -94,7 +94,7 @@
+     ops = {'+': lambda a, b: a + b,
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+-           '/': lambda a, b: a / b,
++           '/': lambda a, b: None,
+            '%': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+ 
+</pre><h3>Mutant 53</h3><pre>--- stack1.py
++++ stack1.py
+@@ -95,7 +95,7 @@
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+-           '%': lambda a, b: a % b,
++           'XX%XX': lambda a, b: a % b,
+            '^': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+</pre><h3>Mutant 54</h3><pre>--- stack1.py
++++ stack1.py
+@@ -95,7 +95,7 @@
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+-           '%': lambda a, b: a % b,
++           '%': lambda a, b: a / b,
+            '^': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+</pre><h3>Mutant 55</h3><pre>--- stack1.py
++++ stack1.py
+@@ -95,7 +95,7 @@
+            '-': lambda a, b: a - b,
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+-           '%': lambda a, b: a % b,
++           '%': lambda a, b: None,
+            '^': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+</pre><h3>Mutant 56</h3><pre>--- stack1.py
++++ stack1.py
+@@ -96,7 +96,7 @@
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+-           '^': lambda a, b: a ** b,}
++           'XX^XX': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+     tokens = string.split(' ') 
+</pre><h3>Mutant 57</h3><pre>--- stack1.py
++++ stack1.py
+@@ -96,7 +96,7 @@
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+-           '^': lambda a, b: a ** b,}
++           '^': lambda a, b: a * b,}
+ 
+     # Split the string into a list using spaces
+     tokens = string.split(' ') 
+</pre><h3>Mutant 58</h3><pre>--- stack1.py
++++ stack1.py
+@@ -96,7 +96,7 @@
+            '*': lambda a, b: a * b, 
+            '/': lambda a, b: a / b,
+            '%': lambda a, b: a % b,
+-           '^': lambda a, b: a ** b,}
++           '^': lambda a, b: None,}
+ 
+     # Split the string into a list using spaces
+     tokens = string.split(' ') 
+</pre><h3>Mutant 60</h3><pre>--- stack1.py
++++ stack1.py
+@@ -99,7 +99,7 @@
+            '^': lambda a, b: a ** b,}
+ 
+     # Split the string into a list using spaces
+-    tokens = string.split(' ') 
++    tokens = string.split('XX XX') 
+ 
+     for character in tokens:
+         # Check if it's an operator
+</pre><h3>Mutant 62</h3><pre>--- stack1.py
++++ stack1.py
+@@ -103,7 +103,7 @@
+ 
+     for character in tokens:
+         # Check if it's an operator
+-        if character in ops.keys():
++        if character not in ops.keys():
+             try:
+                 # Get our last two values
+                 right = stack.pop()
+</pre><h3>Mutant 63</h3><pre>--- stack1.py
++++ stack1.py
+@@ -106,7 +106,7 @@
+         if character in ops.keys():
+             try:
+                 # Get our last two values
+-                right = stack.pop()
++                right = None
+                 left = stack.pop()
+ 
+                 # Calculate and accumulate it
+</pre><h3>Mutant 64</h3><pre>--- stack1.py
++++ stack1.py
+@@ -107,7 +107,7 @@
+             try:
+                 # Get our last two values
+                 right = stack.pop()
+-                left = stack.pop()
++                left = None
+ 
+                 # Calculate and accumulate it
+                 result = ops[character](left, right)
+</pre><h3>Mutant 65</h3><pre>--- stack1.py
++++ stack1.py
+@@ -110,7 +110,7 @@
+                 left = stack.pop()
+ 
+                 # Calculate and accumulate it
+-                result = ops[character](left, right)
++                result = None
+                 stack.push(result)
+ 
+             # If there aren't enough operands, raise it.
+</pre><h3>Mutant 67</h3><pre>--- stack1.py
++++ stack1.py
+@@ -127,7 +127,7 @@
+                 raise e
+ 
+     # If we have too many operands or operators
+-    if stack.size > 1:
++    if stack.size >= 1:
+         raise ValueError()
+ 
+     return stack.pop()
+</pre><h3>Mutant 68</h3><pre>--- stack1.py
++++ stack1.py
+@@ -127,7 +127,7 @@
+                 raise e
+ 
+     # If we have too many operands or operators
+-    if stack.size > 1:
++    if stack.size > 2:
+         raise ValueError()
+ 
+     return stack.pop()
+</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 5</h3><pre>--- stack1.py
++++ stack1.py
+@@ -13,7 +13,7 @@
+ 
+     def push(self, item):
+         if self.top is None:
+-            self.top = StackNode(item)
++            self.top = None
+         else:
+             #self.top->[item1]->None
+             item1 = self.top
+</pre><h3>Mutant 7</h3><pre>--- stack1.py
++++ stack1.py
+@@ -17,7 +17,7 @@
+         else:
+             #self.top->[item1]->None
+             item1 = self.top
+-            item2 = StackNode(item)
++            item2 = None
+ 
+             #self.top->[item2]->[item1]->None
+             self.top = item2
+</pre><h3>Mutant 10</h3><pre>--- stack1.py
++++ stack1.py
+@@ -23,7 +23,7 @@
+             self.top = item2
+             item2.next = item1
+ 
+-        self.size += 1
++        self.size = 1
+ 
+     def pop(self):
+         if self.top is None:
+</pre><h3>Mutant 16</h3><pre>--- stack1.py
++++ stack1.py
+@@ -32,7 +32,7 @@
+             top_data = self.top.data
+             # Skip over the top and set the next to the top
+             self.top = self.top.next
+-            self.size -= 1
++            self.size = 1
+             return top_data
+ 
+     def peek(self):
+</pre><h3>Mutant 17</h3><pre>--- stack1.py
++++ stack1.py
+@@ -32,7 +32,7 @@
+             top_data = self.top.data
+             # Skip over the top and set the next to the top
+             self.top = self.top.next
+-            self.size -= 1
++            self.size += 1
+             return top_data
+ 
+     def peek(self):
+</pre><h3>Mutant 18</h3><pre>--- stack1.py
++++ stack1.py
+@@ -32,7 +32,7 @@
+             top_data = self.top.data
+             # Skip over the top and set the next to the top
+             self.top = self.top.next
+-            self.size -= 1
++            self.size -= 2
+             return top_data
+ 
+     def peek(self):
+</pre><h3>Mutant 25</h3><pre>--- stack1.py
++++ stack1.py
+@@ -50,7 +50,7 @@
+ def check_parenthesis(string):
+     stack = Stack()
+     # We're using a dict which allows us to do some fun things!
+-    brackets = {'{':'}', '[':']', '(':')'}
++    brackets = {'{':'}', 'XX[XX':']', '(':')'}
+ 
+     for character in string:
+         # Keys being the left-side brackets
+</pre><h3>Mutant 38</h3><pre>--- stack1.py
++++ stack1.py
+@@ -70,7 +70,7 @@
+                 return False
+     # Make one last check that we don't have any extras
+     if stack.size != 0:
+-        return False
++        return True
+     else:
+         # If we've made it all the way through without incident
+         return True
+</pre></body></html>
