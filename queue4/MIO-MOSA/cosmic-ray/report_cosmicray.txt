@@ -1,0 +1,339 @@
+[job-id] 2c3a0fa9b45642409b6e6aced4716554
+queue4.py core/ReplaceComparisonOperator_Eq_NotEq 0
+worker outcome: normal, test outcome: killed
+[job-id] 728c33bba42b43ed8522d52490ef12d2
+queue4.py core/ReplaceComparisonOperator_Eq_Lt 0
+worker outcome: normal, test outcome: killed
+[job-id] 3705d532e04340fc95ef5b0af53deafe
+queue4.py core/ReplaceComparisonOperator_Eq_LtE 0
+worker outcome: normal, test outcome: survived
+[job-id] 55068dbf40f247a3ab645b0d279a2a28
+queue4.py core/ReplaceComparisonOperator_Eq_Gt 0
+worker outcome: normal, test outcome: killed
+[job-id] 8b6b5c0eda264f4abe2e59f8a9155a6b
+queue4.py core/ReplaceComparisonOperator_Eq_GtE 0
+worker outcome: normal, test outcome: killed
+[job-id] 381756da10f34d129fee989173736059
+queue4.py core/ReplaceComparisonOperator_Lt_Eq 0
+worker outcome: normal, test outcome: killed
+[job-id] bcbbadda1ede4413be42afccb3df8313
+queue4.py core/ReplaceComparisonOperator_Lt_Eq 1
+worker outcome: normal, test outcome: killed
+[job-id] 7591facaf4634518b8424d4123f84eee
+queue4.py core/ReplaceComparisonOperator_Lt_Eq 2
+worker outcome: normal, test outcome: killed
+[job-id] e7516102d4a24dfeb96f27dc5903dd3e
+queue4.py core/ReplaceComparisonOperator_Lt_Eq 3
+worker outcome: normal, test outcome: killed
+[job-id] 89c212aed1d94fd29a6537c3f94075ea
+queue4.py core/ReplaceComparisonOperator_Lt_Eq 4
+worker outcome: normal, test outcome: survived
+[job-id] 61f99a4bcecd4d5d8d5bdd2125719537
+queue4.py core/ReplaceComparisonOperator_Lt_NotEq 0
+worker outcome: normal, test outcome: killed
+[job-id] 381d4180d2844c40add7a945648842fc
+queue4.py core/ReplaceComparisonOperator_Lt_NotEq 1
+worker outcome: normal, test outcome: killed
+[job-id] 2c1f065d881240df926bdb68b46810f3
+queue4.py core/ReplaceComparisonOperator_Lt_NotEq 2
+worker outcome: normal, test outcome: killed
+[job-id] 4da0a7649e194d16963eb4269ca63263
+queue4.py core/ReplaceComparisonOperator_Lt_NotEq 3
+worker outcome: normal, test outcome: killed
+[job-id] 6d65eace423648f9ac25a53ba328428c
+queue4.py core/ReplaceComparisonOperator_Lt_NotEq 4
+worker outcome: normal, test outcome: survived
+[job-id] 3e3494b8e28d428eb541daa443fe52db
+queue4.py core/ReplaceComparisonOperator_Lt_LtE 0
+worker outcome: normal, test outcome: killed
+[job-id] 3f6001b7c43c4956a90f3164d9d8ecf3
+queue4.py core/ReplaceComparisonOperator_Lt_LtE 1
+worker outcome: normal, test outcome: survived
+[job-id] 40c6d4476a1a4fe3a177fa60f1c017c9
+queue4.py core/ReplaceComparisonOperator_Lt_LtE 2
+worker outcome: normal, test outcome: killed
+[job-id] e607ce62b60a4c04982f0b1f457c5fa5
+queue4.py core/ReplaceComparisonOperator_Lt_LtE 3
+worker outcome: normal, test outcome: killed
+[job-id] e1a466a1a7534a5fbf9d5512fa8bec63
+queue4.py core/ReplaceComparisonOperator_Lt_LtE 4
+worker outcome: normal, test outcome: survived
+[job-id] f57e453a187e46dab353d3412514c15b
+queue4.py core/ReplaceComparisonOperator_Lt_Gt 0
+worker outcome: normal, test outcome: killed
+[job-id] 8841a42d7dd7418ca3c8850151769322
+queue4.py core/ReplaceComparisonOperator_Lt_Gt 1
+worker outcome: normal, test outcome: killed
+[job-id] e0614b09f3ab47b895e026f55254ac3d
+queue4.py core/ReplaceComparisonOperator_Lt_Gt 2
+worker outcome: normal, test outcome: killed
+[job-id] 2a728d4099234750a888349eca31ae14
+queue4.py core/ReplaceComparisonOperator_Lt_Gt 3
+worker outcome: normal, test outcome: killed
+[job-id] c2c5b9d4ea604194a300176e263cc7ff
+queue4.py core/ReplaceComparisonOperator_Lt_Gt 4
+worker outcome: normal, test outcome: survived
+[job-id] 618f76f3e79e40bb995ed608966f4975
+queue4.py core/ReplaceComparisonOperator_Lt_GtE 0
+worker outcome: normal, test outcome: killed
+[job-id] 82a796c8986246dc94c58aa4b5379019
+queue4.py core/ReplaceComparisonOperator_Lt_GtE 1
+worker outcome: normal, test outcome: killed
+[job-id] 45eda81ef0594ba98030d93da61595f5
+queue4.py core/ReplaceComparisonOperator_Lt_GtE 2
+worker outcome: normal, test outcome: killed
+[job-id] 8c4b4873ed8a47b0921353e01fa97150
+queue4.py core/ReplaceComparisonOperator_Lt_GtE 3
+worker outcome: normal, test outcome: killed
+[job-id] db9a4e75439c471dadca6945d1559192
+queue4.py core/ReplaceComparisonOperator_Lt_GtE 4
+worker outcome: normal, test outcome: survived
+[job-id] b2bc310d3d1349759b853dc8feda92c3
+queue4.py core/ReplaceComparisonOperator_Is_Eq 0
+worker outcome: normal, test outcome: survived
+[job-id] 0bcc08455202496ab07153f2fa14fa71
+queue4.py core/ReplaceComparisonOperator_Is_Eq 1
+worker outcome: normal, test outcome: survived
+[job-id] 30777c2f85014683b7d88b5b7e0b40d9
+queue4.py core/ReplaceComparisonOperator_Is_Eq 2
+worker outcome: normal, test outcome: survived
+[job-id] 47276a3e6c1643f390ae5f96849bf5c0
+queue4.py core/ReplaceComparisonOperator_Is_NotEq 0
+worker outcome: normal, test outcome: killed
+[job-id] 5ae6d322c1204fa1a943f57234c593d0
+queue4.py core/ReplaceComparisonOperator_Is_NotEq 1
+worker outcome: normal, test outcome: killed
+[job-id] f3a83de7e5ae475c882125566365bc31
+queue4.py core/ReplaceComparisonOperator_Is_NotEq 2
+worker outcome: normal, test outcome: killed
+[job-id] c44b121ff35240a69ab662887083bff8
+queue4.py core/ReplaceComparisonOperator_Is_Lt 0
+worker outcome: normal, test outcome: killed
+[job-id] 04b40700ed07442998a305f2444bd35c
+queue4.py core/ReplaceComparisonOperator_Is_Lt 1
+worker outcome: normal, test outcome: killed
+[job-id] 91160077af3d4a98967d33a6dd31f161
+queue4.py core/ReplaceComparisonOperator_Is_Lt 2
+worker outcome: normal, test outcome: killed
+[job-id] c1a378d5d97f442fb9082a89da31a5d0
+queue4.py core/ReplaceComparisonOperator_Is_LtE 0
+worker outcome: normal, test outcome: killed
+[job-id] d9e9e330089a4f33aabf507bf0f7180c
+queue4.py core/ReplaceComparisonOperator_Is_LtE 1
+worker outcome: normal, test outcome: killed
+[job-id] 4412a8821b994ec1b8c861db94c3bdd1
+queue4.py core/ReplaceComparisonOperator_Is_LtE 2
+worker outcome: normal, test outcome: killed
+[job-id] 43da038bc72043cea687c383859ff053
+queue4.py core/ReplaceComparisonOperator_Is_Gt 0
+worker outcome: normal, test outcome: killed
+[job-id] 32d6dcbe55054a10ab36358dea8a4d38
+queue4.py core/ReplaceComparisonOperator_Is_Gt 1
+worker outcome: normal, test outcome: killed
+[job-id] 8f8df95132c942969ab9b3e146bf8d6a
+queue4.py core/ReplaceComparisonOperator_Is_Gt 2
+worker outcome: normal, test outcome: killed
+[job-id] c7b2d829d7d3482aa0347be5f0eef1c3
+queue4.py core/ReplaceComparisonOperator_Is_GtE 0
+worker outcome: normal, test outcome: killed
+[job-id] 62fbf388afb245508fefbe32dc732d02
+queue4.py core/ReplaceComparisonOperator_Is_GtE 1
+worker outcome: normal, test outcome: killed
+[job-id] ebeca49583204b68aa5a401bc658fbb0
+queue4.py core/ReplaceComparisonOperator_Is_GtE 2
+worker outcome: normal, test outcome: killed
+[job-id] b38acb631c7345fb89461b972f8c00b7
+queue4.py core/ReplaceComparisonOperator_Is_IsNot 0
+worker outcome: normal, test outcome: killed
+[job-id] 479bd9a0ceee43ffa2d875758c65b4fe
+queue4.py core/ReplaceComparisonOperator_Is_IsNot 1
+worker outcome: normal, test outcome: killed
+[job-id] bd9a5a3046554f878d0a1a88bb18859a
+queue4.py core/ReplaceComparisonOperator_Is_IsNot 2
+worker outcome: normal, test outcome: killed
+[job-id] f30950d85cd842f894273861cc08b4e4
+queue4.py core/ReplaceComparisonOperator_IsNot_Eq 0
+worker outcome: normal, test outcome: killed
+[job-id] b1a59d0b9b1e492eb43094d84556ba9d
+queue4.py core/ReplaceComparisonOperator_IsNot_Eq 1
+worker outcome: normal, test outcome: killed
+[job-id] 8806b5b4f5e44d96b709476a9876d528
+queue4.py core/ReplaceComparisonOperator_IsNot_NotEq 0
+worker outcome: normal, test outcome: survived
+[job-id] e553cdcba26749bd84bf897ff0c47fc4
+queue4.py core/ReplaceComparisonOperator_IsNot_NotEq 1
+worker outcome: normal, test outcome: survived
+[job-id] 2f3d08ac66564b928c579fb14f668760
+queue4.py core/ReplaceComparisonOperator_IsNot_Lt 0
+worker outcome: normal, test outcome: killed
+[job-id] b39db2b87b814440b112b8ca52ab4092
+queue4.py core/ReplaceComparisonOperator_IsNot_Lt 1
+worker outcome: normal, test outcome: killed
+[job-id] 4071e527a78448bd8a07ffbf286dc8c8
+queue4.py core/ReplaceComparisonOperator_IsNot_LtE 0
+worker outcome: normal, test outcome: killed
+[job-id] dbf5dfa723dc4ecc8be1be7069cba63a
+queue4.py core/ReplaceComparisonOperator_IsNot_LtE 1
+worker outcome: normal, test outcome: killed
+[job-id] 95d1cc614d90461aa7343df7b91657c3
+queue4.py core/ReplaceComparisonOperator_IsNot_Gt 0
+worker outcome: normal, test outcome: killed
+[job-id] 6a73122f3bf442a6a63d0243f7a74062
+queue4.py core/ReplaceComparisonOperator_IsNot_Gt 1
+worker outcome: normal, test outcome: killed
+[job-id] cd97938111234b49808674f54770e87b
+queue4.py core/ReplaceComparisonOperator_IsNot_GtE 0
+worker outcome: normal, test outcome: killed
+[job-id] 82df762f00a641459f11d208b3e13f19
+queue4.py core/ReplaceComparisonOperator_IsNot_GtE 1
+worker outcome: normal, test outcome: killed
+[job-id] 129a2922e20a4faa8a91f1fee035cf80
+queue4.py core/ReplaceComparisonOperator_IsNot_Is 0
+worker outcome: normal, test outcome: killed
+[job-id] 0e0ea061f8ab434e87c7c10ebf689b35
+queue4.py core/ReplaceComparisonOperator_IsNot_Is 1
+worker outcome: normal, test outcome: killed
+[job-id] bccc9ec781374fdead8b43c1c7ff0a0a
+queue4.py core/ReplaceUnaryOperator_Delete_Not 0
+worker outcome: normal, test outcome: killed
+[job-id] c3c67a2ceb9347d3ad92b67303b1fca0
+queue4.py core/AddNot 0
+worker outcome: normal, test outcome: killed
+[job-id] 708394a18649436aae036532ccf427fc
+queue4.py core/AddNot 1
+worker outcome: normal, test outcome: killed
+[job-id] c7e642700ef449bc9f9dba6da08ac270
+queue4.py core/AddNot 2
+worker outcome: normal, test outcome: killed
+[job-id] 49731e4f8bb44f41b0616f0db9047d0d
+queue4.py core/AddNot 3
+worker outcome: normal, test outcome: killed
+[job-id] f75f3cb0206e4baca88e720c955747ab
+queue4.py core/AddNot 4
+worker outcome: normal, test outcome: killed
+[job-id] 278fab27be034950b97c8499c0536895
+queue4.py core/AddNot 5
+worker outcome: normal, test outcome: killed
+[job-id] 7e1f63d88d5b4783aeaff67ff4e11444
+queue4.py core/AddNot 6
+worker outcome: normal, test outcome: killed
+[job-id] 82264ed23a7a4f4aafc8742ddd3d82a1
+queue4.py core/AddNot 7
+worker outcome: normal, test outcome: killed
+[job-id] 3595b418c4f543f4804d7e478f0ac70f
+queue4.py core/AddNot 8
+worker outcome: normal, test outcome: killed
+[job-id] 723c74c07b634c81b99ffbfb7d0b24cb
+queue4.py core/AddNot 9
+worker outcome: normal, test outcome: killed
+[job-id] 1076a54c4eb9433c95022ac1f8cbe2c3
+queue4.py core/AddNot 10
+worker outcome: normal, test outcome: survived
+[job-id] bf51c261ed8b4556ae50a4048847a823
+queue4.py core/AddNot 11
+worker outcome: normal, test outcome: killed
+[job-id] b3c952db519440f588ee194d093d0cab
+queue4.py core/AddNot 12
+worker outcome: normal, test outcome: killed
+[job-id] 7823f9e63f0a4229b03caec20b4d4708
+queue4.py core/AddNot 13
+worker outcome: normal, test outcome: killed
+[job-id] ed012646775c4da8a64aecb64dea64f2
+queue4.py core/AddNot 14
+worker outcome: normal, test outcome: survived
+[job-id] 4e56f10eaad74cacb11211bbf38781d9
+queue4.py core/ReplaceTrueWithFalse 0
+worker outcome: normal, test outcome: survived
+[job-id] 1facf78bda05434d98c06391ae3887ab
+queue4.py core/ReplaceAndWithOr 0
+worker outcome: normal, test outcome: killed
+[job-id] a5088df0e313463787134ef7517f6961
+queue4.py core/ReplaceBreakWithContinue 0
+worker outcome: normal, test outcome: survived
+[job-id] b50609e2858748a5a3a6e5b88c5aa32b
+queue4.py core/ExceptionReplacer 0
+worker outcome: normal, test outcome: killed
+[job-id] f45abad11d934a869bee51ba07be553c
+queue4.py core/ExceptionReplacer 1
+worker outcome: normal, test outcome: survived
+[job-id] acf01e0124044db582e4742b36819485
+queue4.py core/ExceptionReplacer 2
+worker outcome: normal, test outcome: killed
+[job-id] fe07ab9bdba041a8bda13c4242c36f09
+queue4.py core/NumberReplacer 0
+worker outcome: normal, test outcome: killed
+[job-id] 510abb037af744299cf71fdd76784975
+queue4.py core/NumberReplacer 1
+worker outcome: normal, test outcome: killed
+[job-id] 9978b9d61cb34ab38be39c09d4a1cefb
+queue4.py core/NumberReplacer 2
+worker outcome: normal, test outcome: killed
+[job-id] 5fbf7881133f4e948d1bd421d42d7493
+queue4.py core/NumberReplacer 3
+worker outcome: normal, test outcome: killed
+[job-id] 3a9e7c17deeb4d4da89794ab04dc9585
+queue4.py core/NumberReplacer 4
+worker outcome: normal, test outcome: killed
+[job-id] 339706e50b6c4ace84cc940c7f753703
+queue4.py core/NumberReplacer 5
+worker outcome: normal, test outcome: killed
+[job-id] 4941c38b4c6a4ab1842551eefb2f4159
+queue4.py core/NumberReplacer 6
+worker outcome: normal, test outcome: survived
+[job-id] a20aeee1bc8d46a9a849974b6bfb50d3
+queue4.py core/NumberReplacer 7
+worker outcome: normal, test outcome: killed
+[job-id] 0cfe8922be7b4caf9bde7d99bd061d8b
+queue4.py core/NumberReplacer 8
+worker outcome: normal, test outcome: survived
+[job-id] f230ed97ddff469a93b45f52f1a04872
+queue4.py core/NumberReplacer 9
+worker outcome: normal, test outcome: killed
+[job-id] 03c18ca728de453ab79a54c401c92c57
+queue4.py core/NumberReplacer 10
+worker outcome: normal, test outcome: killed
+[job-id] 3c0389550b4d4f23a95aafe02d5946c7
+queue4.py core/NumberReplacer 11
+worker outcome: normal, test outcome: killed
+[job-id] 3c4dd9062e9c4316aa98b2562e2d6bf1
+queue4.py core/NumberReplacer 12
+worker outcome: normal, test outcome: killed
+[job-id] a5617c5db9e6488f9872a6dafeaae714
+queue4.py core/NumberReplacer 13
+worker outcome: normal, test outcome: killed
+[job-id] 06678836d109455bb04078ecef504bb0
+queue4.py core/NumberReplacer 14
+worker outcome: normal, test outcome: killed
+[job-id] a9ab27226066447b91ede2f9978e2690
+queue4.py core/NumberReplacer 15
+worker outcome: normal, test outcome: killed
+[job-id] 5531c8adc4b845ef81555937e0e99277
+queue4.py core/NumberReplacer 16
+worker outcome: normal, test outcome: survived
+[job-id] 79da6d3b30e44540871c60f17e0ad493
+queue4.py core/NumberReplacer 17
+worker outcome: normal, test outcome: survived
+[job-id] fc5e44f45a3c41308864f4b3708a1c10
+queue4.py core/NumberReplacer 18
+worker outcome: normal, test outcome: survived
+[job-id] 35fc72c3b56740deb9e887c3d83a46ca
+queue4.py core/NumberReplacer 19
+worker outcome: normal, test outcome: survived
+[job-id] cc2ca329b2b2470ebd6c39b9f6077eba
+queue4.py core/NumberReplacer 20
+worker outcome: normal, test outcome: killed
+[job-id] 9d02a27e6e104fcd9df47acf2342469a
+queue4.py core/NumberReplacer 21
+worker outcome: normal, test outcome: killed
+[job-id] 9aaea91424e54ba7b5b3821c6185aaeb
+queue4.py core/NumberReplacer 22
+worker outcome: normal, test outcome: survived
+[job-id] 9b3e78b38fc2424b90d2948da3d96cf6
+queue4.py core/NumberReplacer 23
+worker outcome: normal, test outcome: survived
+[job-id] 0e82f25fa31e45e79bce29eae229604e
+queue4.py core/ZeroIterationForLoop 0
+worker outcome: normal, test outcome: killed
+total jobs: 112
+complete: 112 (100.00%)
+surviving mutants: 25 (22.32%)

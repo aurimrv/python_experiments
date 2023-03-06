@@ -1,0 +1,2747 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 06/03/2023 11:59:30</p><p>Total jobs: 54</p><p>Complete: 54 (100.00%)</p><p>Surviving mutants: 24 (44.44%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID ebdece8fb8a44a4fa0c4e1d403f8aae7</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size != 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7f77468cc430&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f77468cc430&gt; = &lt;linkedList3.Node object at 0x7f77467d14e0&gt;.next
+
+MIO-MOSA/test_linkedList3_MIO.py:22: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7f77467d1390&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f77467d1390&gt; = &lt;linkedList3.Node object at 0x7f77467d2650&gt;.next
+
+MIO-MOSA/test_linkedList3_MOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - assert &lt;linkedList3.No...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - assert &lt;linkedList3.N...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - AssertionError: asser...
+========================= 3 failed, 22 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID adfd1431e0624fbb80a6f96a489be661</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size != 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f47ad5c3be0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f47ad5c3be0&gt; = &lt;linkedList3.Node object at 0x7f47ad5c3c10&gt;.value
+
+MIO-MOSA/test_linkedList3_MOSA.py:21: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - AssertionError: assert...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - AssertionError: asser...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert &lt;linkedList3.N...
+========================= 3 failed, 22 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID cd264ff69a38433ea8e40209e49a2a77</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size != 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py .....FF.......                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.F.....F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MIO.py:37: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MOSA.py:45: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_6 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_4 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert False is True
+========================= 5 failed, 20 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_4_1"><button class="btn btn-outline-danger"><span class="job_id">4 : Job ID a44ab7208d364241a35f1665ec718999</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 3c2d1be913ee41d7a4b68380658297a9</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID 12c9975e949744f8ac7165de29b30f04</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt; 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f8fde5ba4a0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f8fde5ba4a0&gt; = &lt;linkedList3.Node object at 0x7f8fde5b9c60&gt;.value
+
+MIO-MOSA/test_linkedList3_MOSA.py:21: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert &lt;linkedList3.N...
+========================= 1 failed, 24 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID d35add63e06944978b6aa9bd76405d08</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt; 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py .....F........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.F.....F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_1 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:48: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_4 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert False is True
+========================= 4 failed, 21 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_8_1"><button class="btn btn-outline-danger"><span class="job_id">8 : Job ID 3fc38a7144e94af39ff486563e75fe6a</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_9_1"><button class="btn btn-outline-danger"><span class="job_id">9 : Job ID 3e152e472aa9424094d6cc8181dcac8d</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_10_1"><button class="btn btn-outline-danger"><span class="job_id">10 : Job ID a85059d939f944409f68a7dfd76b8891</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &lt;= 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_11_1"><button class="btn btn-outline-danger"><span class="job_id">11 : Job ID 51febaba29cb424bad718aa92831e9af</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &lt;= 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_12_1"><button class="btn btn-outline-danger"><span class="job_id">12 : Job ID a8b95b584a9e4145bc08640e8b7c9205</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &lt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 71962fa32fcc47dea7f84a243bce4d15</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7fbaaa12bfd0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7fbaaa12bfd0&gt; = &lt;linkedList3.Node object at 0x7fbaaa1291b0&gt;.next
+
+MIO-MOSA/test_linkedList3_MIO.py:22: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7fbaaa12a3b0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7fbaaa12a3b0&gt; = &lt;linkedList3.Node object at 0x7fbaaa12a590&gt;.next
+
+MIO-MOSA/test_linkedList3_MOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - assert &lt;linkedList3.No...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - assert &lt;linkedList3.N...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - AssertionError: asser...
+========================= 3 failed, 22 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 68b39fb94a1648ad9fd9e27e615b715c</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt; 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF.......F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7ff2d034ac20&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7ff2d034ac20&gt; = &lt;linkedList3.Node object at 0x7ff2d0348bb0&gt;.value
+
+MIO-MOSA/test_linkedList3_MOSA.py:21: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 3
+        bool_4 = singly_linked_list_0.isEmpty()
+        assert bool_4 is False
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        none_type_3 = singly_linked_list_0.add(singly_linked_list_2)
+        var_0 = singly_linked_list_0.getHead()
+        var_1 = var_0.remove()
+        str_0 = singly_linked_list_0.__str__()
+&gt;       var_2 = var_0.remove()
+
+MIO-MOSA/test_linkedList3_MOSA.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;linkedList3.SinglyLinkedList object at 0x7ff2d0365240&gt;
+
+    def remove(self):
+    
+        """Remove node from linkedlist."""
+    
+        if self.__size &gt; 0:
+            return None
+        if self.__size &gt;= 1:
+            nodeToRemove = self.__head
+            self.__sentinel.next = None
+            self.__head = self.__sentinel
+            self.__size -= 1
+            return nodeToRemove
+        else:
+            nodeToRemove = self.__head
+&gt;           self.__sentinel.next = self.__head.next
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList3.py:50: AttributeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - AssertionError: assert...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - AssertionError: asser...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert &lt;linkedList3.N...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - AttributeError: 'Non...
+========================= 4 failed, 21 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID 8ca04f1eaff2434fa3c922aa5fd50244</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt; 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py .....FF.......                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.F.....F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MIO.py:37: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MOSA.py:45: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_6 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_4 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert False is True
+========================= 5 failed, 20 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_16_1"><button class="btn btn-outline-danger"><span class="job_id">16 : Job ID a5e857a18c8c4fb4b4e1d8eb7f77749b</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt; "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID a7cc1470a55e40ada274ff6a6fac8da6</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 23), end pos: (26, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - AssertionError: asser...
+========================= 1 failed, 24 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID 78f693d97f1143e5885499e0cdd75a00</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 23), end pos: (40, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size &gt;= 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .F.........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:13: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - AssertionError: assert...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - AssertionError: asser...
+========================= 2 failed, 23 passed in 0.08s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID 09f06bacc654453d89439017400f0eef</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 35), end pos: (77, 37)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size &gt;= 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ......F.......                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.......F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MIO.py:37: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MOSA.py:45: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_2 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MOSA.py:100: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_6 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert True is False
+========================= 3 failed, 22 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_20"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_20_1" aria-expanded="false" aria-controls="job_list___sub_collapse_20_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_20_1"><button class="btn btn-outline-danger"><span class="job_id">20 : Job ID bffefdaa779a4ead88a74c0b4985384c</span></button></div></a><div aria-labelledby="job_list___sub_heading_20_1" data-parent="#job_list___sub_accordion_20" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_20_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ &gt;= "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_21"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_21_1" aria-expanded="false" aria-controls="job_list___sub_collapse_21_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_21_1"><button class="btn btn-outline-danger"><span class="job_id">21 : Job ID a0d642c496bc4800860accef39328874</span></button></div></a><div aria-labelledby="job_list___sub_heading_21_1" data-parent="#job_list___sub_accordion_21" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_21_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+=============================== warnings summary ===============================
+linkedList3.py:102
+  /home/auri/temp/lucca/python_experiments/linkedList3/linkedList3.py:102: SyntaxWarning: "is" with a literal. Did you mean "=="?
+    if __name__ is "__main__":
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 25 passed, 1 warning in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_22"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_22_1" aria-expanded="false" aria-controls="job_list___sub_collapse_22_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_22_1"><button class="btn btn-outline-danger"><span class="job_id">22 : Job ID 80d23a2466de4076b1e9391cb46761bc</span></button></div></a><div aria-labelledby="job_list___sub_heading_22_1" data-parent="#job_list___sub_accordion_22" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_22_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 12), end pos: (102, 14)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ is not "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+=============================== warnings summary ===============================
+linkedList3.py:102
+  /home/auri/temp/lucca/python_experiments/linkedList3/linkedList3.py:102: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+    if __name__ is not "__main__":
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 25 passed, 1 warning in 0.06s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_23"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_23_1" aria-expanded="false" aria-controls="job_list___sub_collapse_23_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_23_1"><button class="btn btn-outline-danger"><span class="job_id">23 : Job ID c5eab2c6716541979665b03a4e3d11dc</span></button></div></a><div aria-labelledby="job_list___sub_heading_23_1" data-parent="#job_list___sub_accordion_23" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_23_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Eq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size == 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_24"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_24_1" aria-expanded="false" aria-controls="job_list___sub_collapse_24_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_24_1"><button class="btn btn-outline-danger"><span class="job_id">24 : Job ID 307e3e623649495e8d3df342e43c1685</span></button></div></a><div aria-labelledby="job_list___sub_heading_24_1" data-parent="#job_list___sub_accordion_24" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_24_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size != 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_25"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_25_1" aria-expanded="false" aria-controls="job_list___sub_collapse_25_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_25_1"><button class="btn btn-outline-danger"><span class="job_id">25 : Job ID 678a5eabe729482dbdc72f3aa09da2bc</span></button></div></a><div aria-labelledby="job_list___sub_heading_25_1" data-parent="#job_list___sub_accordion_25" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_25_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &lt; 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_26"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_26_1" aria-expanded="false" aria-controls="job_list___sub_collapse_26_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_26_1"><button class="btn btn-outline-danger"><span class="job_id">26 : Job ID 6d15eb8a02a44b5caaad13b059c04cb5</span></button></div></a><div aria-labelledby="job_list___sub_heading_26_1" data-parent="#job_list___sub_accordion_26" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_26_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &lt;= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_27"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_27_1" aria-expanded="false" aria-controls="job_list___sub_collapse_27_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_27_1"><button class="btn btn-outline-danger"><span class="job_id">27 : Job ID 89016d4cf61d40f19dc5df16cd8d256b</span></button></div></a><div aria-labelledby="job_list___sub_heading_27_1" data-parent="#job_list___sub_accordion_27" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_27_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 23), end pos: (42, 25)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_GtE_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt; 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_28"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_28_1" aria-expanded="false" aria-controls="job_list___sub_collapse_28_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_28_1"><button class="btn btn-outline-success"><span class="job_id">28 : Job ID f9d59bd2a9ad44f7806b6f925e701741</span></button></div></a><div aria-labelledby="job_list___sub_heading_28_1" data-parent="#job_list___sub_accordion_28" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_28_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 11), end pos: (26, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if not self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7f0af0fb83d0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f0af0fb83d0&gt; = &lt;linkedList3.Node object at 0x7f0af0ebd390&gt;.next
+
+MIO-MOSA/test_linkedList3_MIO.py:22: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7f0af0ebe3e0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f0af0ebe3e0&gt; = &lt;linkedList3.Node object at 0x7f0af0ebe620&gt;.next
+
+MIO-MOSA/test_linkedList3_MOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - assert &lt;linkedList3.No...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - assert &lt;linkedList3.N...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - AssertionError: asser...
+========================= 3 failed, 22 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_29"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_29_1" aria-expanded="false" aria-controls="job_list___sub_collapse_29_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_29_1"><button class="btn btn-outline-success"><span class="job_id">29 : Job ID 98f6f3b0d07b4053881a0f11ee80b819</span></button></div></a><div aria-labelledby="job_list___sub_heading_29_1" data-parent="#job_list___sub_accordion_29" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_29_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 11), end pos: (40, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if not self.__size == 0:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f62a4adbd90&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f62a4adbd90&gt; = &lt;linkedList3.Node object at 0x7f62a4adbe50&gt;.value
+
+MIO-MOSA/test_linkedList3_MOSA.py:21: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - AssertionError: assert...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - AssertionError: asser...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert &lt;linkedList3.N...
+========================= 3 failed, 22 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_30"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_30_1" aria-expanded="false" aria-controls="job_list___sub_collapse_30_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_30_1"><button class="btn btn-outline-danger"><span class="job_id">30 : Job ID 5e95d6ca042c46b6b69ede8d8df53ae2</span></button></div></a><div aria-labelledby="job_list___sub_heading_30_1" data-parent="#job_list___sub_accordion_30" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_30_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 11), end pos: (42, 27)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if not self.__size &gt;= 1:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_31"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_31_1" aria-expanded="false" aria-controls="job_list___sub_collapse_31_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_31_1"><button class="btn btn-outline-success"><span class="job_id">31 : Job ID 803a0dc2b0aa48e5ba565f07977ec140</span></button></div></a><div aria-labelledby="job_list___sub_heading_31_1" data-parent="#job_list___sub_accordion_31" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_31_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 23), end pos: (77, 39)</button></a></pre><pre>operator: core/AddNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if not self.__size == 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py .....FF.......                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.F.....F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MIO.py:37: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MOSA.py:45: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_6 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_4 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert False is True
+========================= 5 failed, 20 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_32"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_32_1" aria-expanded="false" aria-controls="job_list___sub_collapse_32_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_32_1"><button class="btn btn-outline-danger"><span class="job_id">32 : Job ID 32f0030f8eb0403bb14c3e3fa10ea2e8</span></button></div></a><div aria-labelledby="job_list___sub_heading_32_1" data-parent="#job_list___sub_accordion_32" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_32_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=85" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (85, 14), end pos: (85, 21)</button></a></pre><pre>operator: core/AddNot, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -82,7 +82,7 @@
+ 
+         arr = []
+         current = self.__head
+-        while current:
++        while not current:
+             arr.append(current.value)
+             current = current.next
+         return arr</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_33"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_33_1" aria-expanded="false" aria-controls="job_list___sub_collapse_33_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_33_1"><button class="btn btn-outline-success"><span class="job_id">33 : Job ID 83b6d67f45b84c90a5dc50c06b137d66</span></button></div></a><div aria-labelledby="job_list___sub_heading_33_1" data-parent="#job_list___sub_accordion_33" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_33_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=96" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (96, 14), end pos: (96, 21)</button></a></pre><pre>operator: core/AddNot, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -93,7 +93,7 @@
+ 
+         arr = []
+         current = self.__head
+-        while current:
++        while not current:
+             arr.append(current.value)
+             current = current.next
+         return str(arr)</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..........F...                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.F.F....                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+&gt;       assert str_0 == '[None]'
+E       AssertionError: assert '[]' == '[None]'
+E         - [None]
+E         + []
+
+MIO-MOSA/test_linkedList3_MIO.py:59: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+&gt;       assert str_0 == '[None]'
+E       AssertionError: assert '[]' == '[None]'
+E         - [None]
+E         + []
+
+MIO-MOSA/test_linkedList3_MOSA.py:43: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+&gt;       assert str_0 == '[None]'
+E       AssertionError: assert '[]' == '[None]'
+E         - [None]
+E         + []
+
+MIO-MOSA/test_linkedList3_MOSA.py:65: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        str_0 = singly_linked_list_0.__str__()
+&gt;       assert str_0 == '[None]'
+E       AssertionError: assert '[]' == '[None]'
+E         - [None]
+E         + []
+
+MIO-MOSA/test_linkedList3_MOSA.py:76: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_10 - AssertionError: asser...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - AssertionError: asser...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_4 - AssertionError: asser...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_6 - AssertionError: asser...
+========================= 4 failed, 21 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_34"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_34_1" aria-expanded="false" aria-controls="job_list___sub_collapse_34_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_34_1"><button class="btn btn-outline-danger"><span class="job_id">34 : Job ID 16e022c1bdfd404d9feba500b6e89f64</span></button></div></a><div aria-labelledby="job_list___sub_heading_34_1" data-parent="#job_list___sub_accordion_34" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_34_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=102" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (102, 3), end pos: (102, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -99,6 +99,6 @@
+         return str(arr)
+ 
+ 
+-if __name__ == "__main__":
++if not __name__ == "__main__":
+     pass
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_35"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_35_1" aria-expanded="false" aria-controls="job_list___sub_collapse_35_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_35_1"><button class="btn btn-outline-success"><span class="job_id">35 : Job ID ca1b10e23d60496db26ea2b54c670088</span></button></div></a><div aria-labelledby="job_list___sub_heading_35_1" data-parent="#job_list___sub_accordion_35" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_35_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 15), end pos: (77, 19)</button></a></pre><pre>operator: core/ReplaceTrueWithFalse, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return False if self.__size == 0 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py .....F........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.F.....F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_1 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:48: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_4 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert False is True
+========================= 4 failed, 21 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_36"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_36_1" aria-expanded="false" aria-controls="job_list___sub_collapse_36_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_36_1"><button class="btn btn-outline-success"><span class="job_id">36 : Job ID 4867067864b844969e991e0350f1b4c7</span></button></div></a><div aria-labelledby="job_list___sub_heading_36_1" data-parent="#job_list___sub_accordion_36" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_36_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 45), end pos: (77, 50)</button></a></pre><pre>operator: core/ReplaceFalseWithTrue, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 0 else True
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ......F.......                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.......F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MIO.py:37: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MOSA.py:45: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_2 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MOSA.py:100: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_6 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert True is False
+========================= 3 failed, 22 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_37"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_37_1" aria-expanded="false" aria-controls="job_list___sub_collapse_37_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_37_1"><button class="btn btn-outline-success"><span class="job_id">37 : Job ID bef66dda25c14ed48e78bdab5a9efa1f</span></button></div></a><div aria-labelledby="job_list___sub_heading_37_1" data-parent="#job_list___sub_accordion_37" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_37_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (19, 22), end pos: (19, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -16,7 +16,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = 1
+ 
+     def add(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_38"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_38_1" aria-expanded="false" aria-controls="job_list___sub_collapse_38_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_38_1"><button class="btn btn-outline-success"><span class="job_id">38 : Job ID eecd43b0b4004072b72465d93eaa9a5c</span></button></div></a><div aria-labelledby="job_list___sub_heading_38_1" data-parent="#job_list___sub_accordion_38" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_38_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=19" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (19, 22), end pos: (19, 23)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -16,7 +16,7 @@
+     def __init__(self):
+         self.__sentinel = Node(None)
+         self.__head = self.__sentinel
+-        self.__size = 0
++        self.__size = -1
+ 
+     def add(self, value: T) -&gt; None:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F.FF.......                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF.F.....F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MIO.py:37: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f4c714aba90&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f4c714aba90&gt; = &lt;linkedList3.Node object at 0x7f4c714ab9d0&gt;.value
+
+MIO-MOSA/test_linkedList3_MOSA.py:21: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - AssertionError: assert...
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_6 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - AssertionError: asser...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert &lt;linkedList3.N...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_4 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert False is True
+========================= 7 failed, 18 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_39"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_39_1" aria-expanded="false" aria-controls="job_list___sub_collapse_39_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_39_1"><button class="btn btn-outline-success"><span class="job_id">39 : Job ID 5fc763c5da1b48858f46d82d095f7bd2</span></button></div></a><div aria-labelledby="job_list___sub_heading_39_1" data-parent="#job_list___sub_accordion_39" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_39_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 26), end pos: (26, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size == 1:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert f'{type(var_0.value).__module__}.{type(var_0.value).__qualname__}' == 'linkedList3.SinglyLinkedList'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7fc2fa1a03d0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7fc2fa1a03d0&gt; = &lt;linkedList3.Node object at 0x7fc2fa0a5330&gt;.next
+
+MIO-MOSA/test_linkedList3_MIO.py:22: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+        assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+        assert var_0.value == '+(ff'
+&gt;       assert var_0.next is None
+E       assert &lt;linkedList3.Node object at 0x7fc2fa0a63e0&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7fc2fa0a63e0&gt; = &lt;linkedList3.Node object at 0x7fc2fa0a6620&gt;.next
+
+MIO-MOSA/test_linkedList3_MOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        node_3 = singly_linked_list_1.getHeadNode()
+        assert node_3.value == 1
+&gt;       assert f'{type(node_3.next).__module__}.{type(node_3.next).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - assert &lt;linkedList3.No...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - assert &lt;linkedList3.N...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - AssertionError: asser...
+========================= 3 failed, 22 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_40"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_40_1" aria-expanded="false" aria-controls="job_list___sub_collapse_40_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_40_1"><button class="btn btn-outline-success"><span class="job_id">40 : Job ID 4f13fa8ed390436c96bc512272be99ec</span></button></div></a><div aria-labelledby="job_list___sub_heading_40_1" data-parent="#job_list___sub_accordion_40" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_40_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (26, 26), end pos: (26, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -23,7 +23,7 @@
+         """Add element to linked list."""
+ 
+         newNode = Node(value)
+-        if self.__size == 0:
++        if self.__size == -1:
+             self.__head.next = newNode
+             self.__head = newNode
+             self.__size += 1</pre></div><div class="alert alert-secondary"><pre class="diff">timeout</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_41"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_41_1" aria-expanded="false" aria-controls="job_list___sub_collapse_41_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_41_1"><button class="btn btn-outline-success"><span class="job_id">41 : Job ID b6a3ac4b9af2413bb3aea8b18899df1a</span></button></div></a><div aria-labelledby="job_list___sub_heading_41_1" data-parent="#job_list___sub_accordion_41" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_41_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (29, 27), end pos: (29, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -26,7 +26,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 2
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.......F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+&gt;       assert int_0 == 1
+E       assert 2 == 1
+
+MIO-MOSA/test_linkedList3_MOSA.py:25: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+&gt;       assert int_0 == 3
+E       assert 4 == 3
+
+MIO-MOSA/test_linkedList3_MOSA.py:110: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert 2 == 1
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert 4 == 3
+========================= 2 failed, 23 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_42"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_42_1" aria-expanded="false" aria-controls="job_list___sub_collapse_42_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_42_1"><button class="btn btn-outline-success"><span class="job_id">42 : Job ID d4aacadbb2f04b7e9334b7418e95fdd1</span></button></div></a><div aria-labelledby="job_list___sub_heading_42_1" data-parent="#job_list___sub_accordion_42" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_42_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=29" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (29, 27), end pos: (29, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -26,7 +26,7 @@
+         if self.__size == 0:
+             self.__head.next = newNode
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 0
+         else:
+             self.__sentinel.next = newNode
+             newNode.next = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..F.......                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF.......F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MIO.py:37: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+&gt;       assert int_0 == 1
+E       assert 0 == 1
+
+MIO-MOSA/test_linkedList3_MOSA.py:25: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_2 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MOSA.py:100: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - AssertionError: assert...
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_6 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - AssertionError: asser...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert 0 == 1
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert True is False
+========================= 5 failed, 20 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_43"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_43_1" aria-expanded="false" aria-controls="job_list___sub_collapse_43_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_43_1"><button class="btn btn-outline-success"><span class="job_id">43 : Job ID 63d93eb6a8e74f2fbf3386d72c48a355</span></button></div></a><div aria-labelledby="job_list___sub_heading_43_1" data-parent="#job_list___sub_accordion_43" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_43_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=34" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (34, 27), end pos: (34, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -31,7 +31,7 @@
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 2
+ 
+     def remove(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..........F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+&gt;       assert int_0 == 3
+E       assert 5 == 3
+
+MIO-MOSA/test_linkedList3_MOSA.py:110: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert 5 == 3
+========================= 1 failed, 24 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_44"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_44_1" aria-expanded="false" aria-controls="job_list___sub_collapse_44_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_44_1"><button class="btn btn-outline-success"><span class="job_id">44 : Job ID 9fc05abec87b4f48962c261d871909bb</span></button></div></a><div aria-labelledby="job_list___sub_heading_44_1" data-parent="#job_list___sub_accordion_44" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_44_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=34" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (34, 27), end pos: (34, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -31,7 +31,7 @@
+             self.__sentinel.next = newNode
+             newNode.next = self.__head
+             self.__head = newNode
+-            self.__size += 1
++            self.__size += 0
+ 
+     def remove(self):
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..........F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+&gt;       assert int_0 == 3
+E       assert 1 == 3
+
+MIO-MOSA/test_linkedList3_MOSA.py:110: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert 1 == 3
+========================= 1 failed, 24 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_45"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_45_1" aria-expanded="false" aria-controls="job_list___sub_collapse_45_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_45_1"><button class="btn btn-outline-success"><span class="job_id">45 : Job ID 984076380f024d4a874fdc5a698b0612</span></button></div></a><div aria-labelledby="job_list___sub_heading_45_1" data-parent="#job_list___sub_accordion_45" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_45_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 26), end pos: (40, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 8</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size == 1:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ...F..........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py .FF.......F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MIO.py:20: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        str_0 = '+(ff'
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(str_0)
+        var_0 = singly_linked_list_0.remove()
+&gt;       assert f'{type(var_0).__module__}.{type(var_0).__qualname__}' == 'linkedList3.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'linkedList3.Node'
+E         - linkedList3.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_linkedList3_MOSA.py:13: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f89b51afd60&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f89b51afd60&gt; = &lt;linkedList3.Node object at 0x7f89b51afd30&gt;.value
+
+MIO-MOSA/test_linkedList3_MOSA.py:21: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+        assert bool_0 is True
+        bool_1 = singly_linked_list_0.isEmpty()
+        assert bool_1 is True
+        list_0 = singly_linked_list_0.toArray()
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_2 = singly_linked_list_0.isEmpty()
+        assert bool_2 is False
+        node_0 = module_0.Node(singly_linked_list_0)
+        node_1 = module_0.Node(node_0)
+        none_type_1 = singly_linked_list_0.add(singly_linked_list_0)
+        list_1 = []
+        bool_3 = singly_linked_list_0.isEmpty()
+        assert bool_3 is False
+        none_type_2 = singly_linked_list_0.add(list_1)
+        list_2 = singly_linked_list_0.toArray()
+        int_0 = singly_linked_list_0.getSize()
+        assert int_0 == 3
+        bool_4 = singly_linked_list_0.isEmpty()
+        assert bool_4 is False
+        singly_linked_list_2 = module_0.SinglyLinkedList()
+        none_type_3 = singly_linked_list_0.add(singly_linked_list_2)
+        var_0 = singly_linked_list_0.getHead()
+        var_1 = var_0.remove()
+        str_0 = singly_linked_list_0.__str__()
+&gt;       var_2 = var_0.remove()
+
+MIO-MOSA/test_linkedList3_MOSA.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;linkedList3.SinglyLinkedList object at 0x7f89b5321630&gt;
+
+    def remove(self):
+    
+        """Remove node from linkedlist."""
+    
+        if self.__size == 1:
+            return None
+        if self.__size &gt;= 1:
+            nodeToRemove = self.__head
+            self.__sentinel.next = None
+            self.__head = self.__sentinel
+            self.__size -= 1
+            return nodeToRemove
+        else:
+            nodeToRemove = self.__head
+&gt;           self.__sentinel.next = self.__head.next
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+linkedList3.py:50: AttributeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_3 - AssertionError: assert...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_1 - AssertionError: asser...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert &lt;linkedList3.N...
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - AttributeError: 'Non...
+========================= 4 failed, 21 passed in 0.10s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_46"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_46_1" aria-expanded="false" aria-controls="job_list___sub_collapse_46_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_46_1"><button class="btn btn-outline-success"><span class="job_id">46 : Job ID 15c0475e1d41427db5101b0469ce0f4d</span></button></div></a><div aria-labelledby="job_list___sub_heading_46_1" data-parent="#job_list___sub_accordion_46" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_46_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (40, 26), end pos: (40, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 9</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -37,7 +37,7 @@
+ 
+         """Remove node from linkedlist."""
+ 
+-        if self.__size == 0:
++        if self.__size == -1:
+             return None
+         if self.__size &gt;= 1:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F........                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+&gt;       assert node_0.value is None
+E       assert &lt;linkedList3.Node object at 0x7f444185e470&gt; is None
+E        +  where &lt;linkedList3.Node object at 0x7f444185e470&gt; = &lt;linkedList3.Node object at 0x7f444185e380&gt;.value
+
+MIO-MOSA/test_linkedList3_MOSA.py:21: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert &lt;linkedList3.N...
+========================= 1 failed, 24 passed in 0.09s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_47"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_47_1" aria-expanded="false" aria-controls="job_list___sub_collapse_47_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_47_1"><button class="btn btn-outline-danger"><span class="job_id">47 : Job ID a6d6f106ec954f6a916f9af4c26fae37</span></button></div></a><div aria-labelledby="job_list___sub_heading_47_1" data-parent="#job_list___sub_accordion_47" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_47_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 26), end pos: (42, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 10</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt;= 2:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_48"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_48_1" aria-expanded="false" aria-controls="job_list___sub_collapse_48_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_48_1"><button class="btn btn-outline-danger"><span class="job_id">48 : Job ID ac959501de49428aa850bff69236e1ef</span></button></div></a><div aria-labelledby="job_list___sub_heading_48_1" data-parent="#job_list___sub_accordion_48" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_48_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=42" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (42, 26), end pos: (42, 27)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 11</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -39,7 +39,7 @@
+ 
+         if self.__size == 0:
+             return None
+-        if self.__size &gt;= 1:
++        if self.__size &gt;= 0:
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_49"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_49_1" aria-expanded="false" aria-controls="job_list___sub_collapse_49_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_49_1"><button class="btn btn-outline-danger"><span class="job_id">49 : Job ID 0672183c2c85426e9afb77b325665f22</span></button></div></a><div aria-labelledby="job_list___sub_heading_49_1" data-parent="#job_list___sub_accordion_49" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_49_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=46" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (46, 27), end pos: (46, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 12</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -43,7 +43,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_50"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_50_1" aria-expanded="false" aria-controls="job_list___sub_collapse_50_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_50_1"><button class="btn btn-outline-danger"><span class="job_id">50 : Job ID 0cf5936cb93a456495f04362f140cd24</span></button></div></a><div aria-labelledby="job_list___sub_heading_50_1" data-parent="#job_list___sub_accordion_50" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_50_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=46" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (46, 27), end pos: (46, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 13</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -43,7 +43,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = None
+             self.__head = self.__sentinel
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+         else:
+             nodeToRemove = self.__head</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_51"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_51_1" aria-expanded="false" aria-controls="job_list___sub_collapse_51_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_51_1"><button class="btn btn-outline-danger"><span class="job_id">51 : Job ID dffdad46783b4a89821c622abb0b117b</span></button></div></a><div aria-labelledby="job_list___sub_heading_51_1" data-parent="#job_list___sub_accordion_51" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_51_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (52, 27), end pos: (52, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 14</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -49,7 +49,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 2
+             return nodeToRemove
+ 
+     def getHead(self) -&gt; T:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_52"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_52_1" aria-expanded="false" aria-controls="job_list___sub_collapse_52_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_52_1"><button class="btn btn-outline-danger"><span class="job_id">52 : Job ID 7b0a3f7996f945cdac8a04079e85deae</span></button></div></a><div aria-labelledby="job_list___sub_heading_52_1" data-parent="#job_list___sub_accordion_52" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_52_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=52" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (52, 27), end pos: (52, 28)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 15</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -49,7 +49,7 @@
+             nodeToRemove = self.__head
+             self.__sentinel.next = self.__head.next
+             self.__head = self.__sentinel.next
+-            self.__size -= 1
++            self.__size -= 0
+             return nodeToRemove
+ 
+     def getHead(self) -&gt; T:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py ..............                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ...........                            [100%]
+
+============================== 25 passed in 0.07s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_53"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_53_1" aria-expanded="false" aria-controls="job_list___sub_collapse_53_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_53_1"><button class="btn btn-outline-success"><span class="job_id">53 : Job ID 4f8d3f8815a840dab2643b8de047576e</span></button></div></a><div aria-labelledby="job_list___sub_heading_53_1" data-parent="#job_list___sub_accordion_53" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_53_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 38), end pos: (77, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 16</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == 1 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py .....FF.......                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.F.....F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_0.add(singly_linked_list_0)
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MIO.py:37: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+&gt;       assert bool_0 is False
+E       assert True is False
+
+MIO-MOSA/test_linkedList3_MOSA.py:45: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_6 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert True is False
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_4 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert False is True
+========================= 5 failed, 20 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_54"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_54_1" aria-expanded="false" aria-controls="job_list___sub_collapse_54_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_54_1"><button class="btn btn-outline-success"><span class="job_id">54 : Job ID 21f271772da542bf8aa01aff41fad5a6</span></button></div></a><div aria-labelledby="job_list___sub_heading_54_1" data-parent="#job_list___sub_accordion_54" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_54_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=linkedList3.py&amp;line=77" class="text-secondary"><button class="btn btn-outline-dark">linkedList3.py, start pos: (77, 38), end pos: (77, 39)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 17</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- alinkedList3.py
++++ blinkedList3.py
+@@ -74,7 +74,7 @@
+ 
+         """Checks if linkedlist is empty."""
+ 
+-        return True if self.__size == 0 else False
++        return True if self.__size == -1 else False
+ 
+     def toArray(self) -&gt; list:
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
+collected 25 items
+
+MIO-MOSA/test_linkedList3_MIO.py .....F........                          [ 56%]
+MIO-MOSA/test_linkedList3_MOSA.py ..F.F.....F                            [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MIO.py:31: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        var_0 = singly_linked_list_0.remove()
+        node_0 = module_0.Node(var_0)
+        assert node_0.value is None
+        singly_linked_list_1 = module_0.SinglyLinkedList()
+        none_type_0 = singly_linked_list_1.add(singly_linked_list_1)
+        int_0 = singly_linked_list_1.getSize()
+        assert int_0 == 1
+        int_1 = singly_linked_list_1.getSize()
+        assert int_1 == 1
+        var_1 = singly_linked_list_1.getHead()
+        var_2 = singly_linked_list_1.getHead()
+        node_1 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_1).__module__}.{type(node_1).__qualname__}' == 'linkedList3.Node'
+        assert node_1.value is None
+        assert node_1.next is None
+        node_2 = singly_linked_list_0.getHeadNode()
+        assert f'{type(node_2).__module__}.{type(node_2).__qualname__}' == 'linkedList3.Node'
+        assert node_2.value is None
+        assert node_2.next is None
+        int_2 = singly_linked_list_1.getSize()
+        assert int_2 == 1
+        int_3 = singly_linked_list_1.getSize()
+        assert int_3 == 1
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_1.isEmpty()
+        assert bool_0 is False
+        none_type_1 = var_2.add(int_3)
+        bool_1 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_1 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:48: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        list_0 = singly_linked_list_0.toArray()
+        var_0 = singly_linked_list_0.getHead()
+        str_0 = singly_linked_list_0.__str__()
+        assert str_0 == '[None]'
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:67: AssertionError
+_________________________________ test_case_10 _________________________________
+
+    def test_case_10():
+        singly_linked_list_0 = module_0.SinglyLinkedList()
+        bool_0 = singly_linked_list_0.isEmpty()
+&gt;       assert bool_0 is True
+E       assert False is True
+
+MIO-MOSA/test_linkedList3_MOSA.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_linkedList3_MIO.py::test_case_5 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_2 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_4 - assert False is True
+FAILED MIO-MOSA/test_linkedList3_MOSA.py::test_case_10 - assert False is True
+========================= 4 failed, 21 passed in 0.10s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

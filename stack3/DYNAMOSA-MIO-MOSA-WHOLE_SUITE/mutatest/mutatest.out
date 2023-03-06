@@ -1,0 +1,133 @@
+2023-03-06 08:12:01,651: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 64 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................  [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack3_MIO.py .....................   [ 59%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................      [ 85%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........       [100%]
+
+============================== 64 passed in 0.14s ==============================
+2023-03-06 08:12:02,003: [92m24 mutation targets found in stack3.py AST.[0m
+2023-03-06 08:12:02,003: Setting random.seed to: None
+2023-03-06 08:12:02,003: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-06 08:12:02,003: Total sample space size: 24
+2023-03-06 08:12:02,003: [92mSelecting 10 locations from 24 potentials.[0m
+2023-03-06 08:12:02,003: Starting individual mutation trials!
+2023-03-06 08:12:02,003: Running serial (single processor) dispatch mode.
+2023-03-06 08:12:02,003: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=42, col_offset=35, op_type=None, end_lineno=42, end_col_offset=39)
+2023-03-06 08:12:02,387: [92mResult: Detected at stack3.py: (42, 35)[0m
+2023-03-06 08:12:02,828: [92mResult: Detected at stack3.py: (42, 35)[0m
+2023-03-06 08:12:02,828: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=39, col_offset=19, op_type=None, end_lineno=39, end_col_offset=23)
+2023-03-06 08:12:03,154: [92mResult: Detected at stack3.py: (39, 19)[0m
+2023-03-06 08:12:03,472: [92mResult: Detected at stack3.py: (39, 19)[0m
+2023-03-06 08:12:03,472: Current target location: stack3.py, LocIndex(ast_class='AugAssign', lineno=44, col_offset=12, op_type='AugAssign_Sub', end_lineno=44, end_col_offset=28)
+2023-03-06 08:12:03,791: [92mResult: Detected at stack3.py: (44, 12)[0m
+2023-03-06 08:12:04,108: [92mResult: Detected at stack3.py: (44, 12)[0m
+2023-03-06 08:12:04,422: [92mResult: Detected at stack3.py: (44, 12)[0m
+2023-03-06 08:12:04,422: Current target location: stack3.py, LocIndex(ast_class='AugAssign', lineno=50, col_offset=12, op_type='AugAssign_Sub', end_lineno=50, end_col_offset=28)
+2023-03-06 08:12:04,743: [91mResult: Survived at stack3.py: (50, 12)[0m
+2023-03-06 08:12:05,028: [91mResult: Survived at stack3.py: (50, 12)[0m
+2023-03-06 08:12:05,301: [91mResult: Survived at stack3.py: (50, 12)[0m
+2023-03-06 08:12:05,301: Current target location: stack3.py, LocIndex(ast_class='If', lineno=140, col_offset=0, op_type='If_Statement', end_lineno=141, end_col_offset=8)
+2023-03-06 08:12:05,566: [91mResult: Survived at stack3.py: (140, 0)[0m
+2023-03-06 08:12:05,832: [91mResult: Survived at stack3.py: (140, 0)[0m
+2023-03-06 08:12:05,832: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=10, col_offset=20, op_type=None, end_lineno=10, end_col_offset=24)
+2023-03-06 08:12:06,272: [92mResult: Detected at stack3.py: (10, 20)[0m
+2023-03-06 08:12:06,612: [92mResult: Detected at stack3.py: (10, 20)[0m
+2023-03-06 08:12:06,612: Current target location: stack3.py, LocIndex(ast_class='AugAssign', lineno=27, col_offset=12, op_type='AugAssign_Add', end_lineno=27, end_col_offset=28)
+2023-03-06 08:12:07,005: [92mResult: Detected at stack3.py: (27, 12)[0m
+2023-03-06 08:12:07,360: [92mResult: Detected at stack3.py: (27, 12)[0m
+2023-03-06 08:12:07,721: [92mResult: Detected at stack3.py: (27, 12)[0m
+2023-03-06 08:12:07,721: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=19, col_offset=31, op_type=None, end_lineno=19, end_col_offset=35)
+2023-03-06 08:12:07,990: [91mResult: Survived at stack3.py: (19, 31)[0m
+2023-03-06 08:12:08,263: [91mResult: Survived at stack3.py: (19, 31)[0m
+2023-03-06 08:12:08,264: Current target location: stack3.py, LocIndex(ast_class='If', lineno=38, col_offset=8, op_type='If_Statement', end_lineno=39, end_col_offset=23)
+2023-03-06 08:12:08,639: [92mResult: Detected at stack3.py: (38, 8)[0m
+2023-03-06 08:12:08,956: [92mResult: Detected at stack3.py: (38, 8)[0m
+2023-03-06 08:12:08,956: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=75, col_offset=45, op_type=False, end_lineno=75, end_col_offset=50)
+2023-03-06 08:12:09,303: [92mResult: Detected at stack3.py: (75, 45)[0m
+2023-03-06 08:12:09,621: [92mResult: Detected at stack3.py: (75, 45)[0m
+2023-03-06 08:12:09,621: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack3
+collected 64 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack3_DYNAMOSA.py .................  [ 26%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack3_MIO.py .....................   [ 59%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack3_MOSA.py .................      [ 85%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_stack3_WHOLE_SUITE.py .........       [100%]
+
+============================== 64 passed in 0.08s ==============================
+2023-03-06 08:12:09,886: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/stack3/stack3.py
+ - Test commands: ['python', '-m', 'pytest', './DYNAMOSA-MIO-MOSA-WHOLE_SUITE']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 24
+ - Location sample coverage: 41.67 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:00.349061
+ - Clean trial 2 run time: 0:00:00.263966
+ - Mutation trials total run time: 0:00:07.621361
+
+2023-03-06 08:12:09,886: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 16
+ - SURVIVED: 7
+ - TOTAL RUNS: 23
+ - RUN DATETIME: 2023-03-06 08:12:09.886142
+
+2023-03-06 08:12:09,886: Detected mutations:[92m
+
+DETECTED
+--------
+ - stack3.py: (l: 10, c: 20) - mutation from None to True
+ - stack3.py: (l: 10, c: 20) - mutation from None to False
+ - stack3.py: (l: 27, c: 12) - mutation from AugAssign_Add to AugAssign_Div
+ - stack3.py: (l: 27, c: 12) - mutation from AugAssign_Add to AugAssign_Sub
+ - stack3.py: (l: 27, c: 12) - mutation from AugAssign_Add to AugAssign_Mult
+ - stack3.py: (l: 38, c: 8) - mutation from If_Statement to If_True
+ - stack3.py: (l: 38, c: 8) - mutation from If_Statement to If_False
+ - stack3.py: (l: 39, c: 19) - mutation from None to True
+ - stack3.py: (l: 39, c: 19) - mutation from None to False
+ - stack3.py: (l: 42, c: 35) - mutation from None to True
+ - stack3.py: (l: 42, c: 35) - mutation from None to False
+ - stack3.py: (l: 44, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
+ - stack3.py: (l: 44, c: 12) - mutation from AugAssign_Sub to AugAssign_Div
+ - stack3.py: (l: 44, c: 12) - mutation from AugAssign_Sub to AugAssign_Mult
+ - stack3.py: (l: 75, c: 45) - mutation from False to True
+ - stack3.py: (l: 75, c: 45) - mutation from False to None[0m
+
+2023-03-06 08:12:09,886: Timedout mutations:
+
+2023-03-06 08:12:09,886: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - stack3.py: (l: 19, c: 31) - mutation from None to False
+ - stack3.py: (l: 19, c: 31) - mutation from None to True
+ - stack3.py: (l: 50, c: 12) - mutation from AugAssign_Sub to AugAssign_Mult
+ - stack3.py: (l: 50, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
+ - stack3.py: (l: 50, c: 12) - mutation from AugAssign_Sub to AugAssign_Div
+ - stack3.py: (l: 140, c: 0) - mutation from If_Statement to If_False
+ - stack3.py: (l: 140, c: 0) - mutation from If_Statement to If_True[0m
+
+2023-03-06 08:12:09,886: Writing output report to: /home/auri/temp/lucca/python_experiments/stack3/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/mutatest/DYNAMOSA-MIO-MOSA-WHOLE_SUITE-report.rst

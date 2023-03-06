@@ -1,0 +1,1727 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 06/03/2023 12:03:47</p><p>Total jobs: 16</p><p>Complete: 16 (100.00%)</p><p>Surviving mutants: 3 (18.75%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID d7eb2d620e054699bf28cc76c402413b</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head != self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ...FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py ...FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+&gt;       assert queue_0.tail is None
+E       assert &lt;queue5.Node object at 0x7f0fde89ecb0&gt; is None
+E        +  where &lt;queue5.Node object at 0x7f0fde89ecb0&gt; = &lt;queue5.Queue object at 0x7f0fde89ef50&gt;.tail
+
+MIO-MOSA/test_queue5_MIO.py:28: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+&gt;       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'queue5.Node'
+E         - queue5.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_queue5_MIO.py:41: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+&gt;       assert queue_0.tail is None
+E       assert &lt;queue5.Node object at 0x7f0fde89ee00&gt; is None
+E        +  where &lt;queue5.Node object at 0x7f0fde89ee00&gt; = &lt;queue5.Queue object at 0x7f0fde89f880&gt;.tail
+
+MIO-MOSA/test_queue5_MOSA.py:34: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+&gt;       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'queue5.Node'
+E         - queue5.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_queue5_MOSA.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - assert &lt;queue5.Node object ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - AssertionError: assert 'bui...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - assert &lt;queue5.Node object...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - AssertionError: assert 'bu...
+========================= 4 failed, 7 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID c5d4b3a8449342d381f5c9a09b421111</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head &lt; self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ...FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py ...FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+&gt;       var_1 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7facf5f4ae90&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &lt; self.tail:
+E       TypeError: '&lt;' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       var_2 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7facf5f4aa70&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &lt; self.tail:
+E       TypeError: '&lt;' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+&gt;       var_1 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7facf5f4b970&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &lt; self.tail:
+E       TypeError: '&lt;' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       var_2 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7facf5f66530&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &lt; self.tail:
+E       TypeError: '&lt;' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - TypeError: '&lt;' not supporte...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - TypeError: '&lt;' not supporte...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - TypeError: '&lt;' not support...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - TypeError: '&lt;' not support...
+========================= 4 failed, 7 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID a6737fddb7424ef7b08b4c884429c583</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head &lt;= self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ...FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py ...FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+&gt;       var_1 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7fc6a9bfac20&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &lt;= self.tail:
+E       TypeError: '&lt;=' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       var_2 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7fc6a9bf9ff0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &lt;= self.tail:
+E       TypeError: '&lt;=' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+&gt;       var_1 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7fc6a9bfb0a0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &lt;= self.tail:
+E       TypeError: '&lt;=' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       var_2 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7fc6a9c17e80&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &lt;= self.tail:
+E       TypeError: '&lt;=' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - TypeError: '&lt;=' not support...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - TypeError: '&lt;=' not support...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - TypeError: '&lt;=' not suppor...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - TypeError: '&lt;=' not suppor...
+========================= 4 failed, 7 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID ccfbab7e9a9d441cadb2de187dbb3b6b</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head &gt; self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ...FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py ...FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+&gt;       var_1 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f7ddaa7e1d0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &gt; self.tail:
+E       TypeError: '&gt;' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       var_2 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f7ddaa7e5f0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &gt; self.tail:
+E       TypeError: '&gt;' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+&gt;       var_1 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f7dda93c4f0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &gt; self.tail:
+E       TypeError: '&gt;' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       var_2 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f7ddaa7e380&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &gt; self.tail:
+E       TypeError: '&gt;' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - TypeError: '&gt;' not supporte...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - TypeError: '&gt;' not supporte...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - TypeError: '&gt;' not support...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - TypeError: '&gt;' not support...
+========================= 4 failed, 7 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 05d0a8093808477fb6f97eb1bba21519</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head &gt;= self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ...FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py ...FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+&gt;       var_1 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f75f144ef50&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &gt;= self.tail:
+E       TypeError: '&gt;=' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       var_2 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f75f144e080&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &gt;= self.tail:
+E       TypeError: '&gt;=' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+&gt;       var_1 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f75f144f1c0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &gt;= self.tail:
+E       TypeError: '&gt;=' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       var_2 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f75f1468580&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is None:
+            return None
+        data = self.head.data
+        # Remove only element from a one element list
+&gt;       if self.head &gt;= self.tail:
+E       TypeError: '&gt;=' not supported between instances of 'Node' and 'Node'
+
+queue5.py:30: TypeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - TypeError: '&gt;=' not support...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - TypeError: '&gt;=' not support...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - TypeError: '&gt;=' not suppor...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - TypeError: '&gt;=' not suppor...
+========================= 4 failed, 7 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_6_1"><button class="btn btn-outline-danger"><span class="job_id">6 : Job ID 0b226ad0fa6c40469a79a428ce828353</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Is, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head is self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ......                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py .....                                       [100%]
+
+============================== 11 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID e2934c15c9b0405da0665ba5e0635ed5</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 21), end pos: (30, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if self.head is not self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ...FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py ...FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+&gt;       assert queue_0.tail is None
+E       assert &lt;queue5.Node object at 0x7f770b20bfa0&gt; is None
+E        +  where &lt;queue5.Node object at 0x7f770b20bfa0&gt; = &lt;queue5.Queue object at 0x7f770b20ab90&gt;.tail
+
+MIO-MOSA/test_queue5_MIO.py:28: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+&gt;       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'queue5.Node'
+E         - queue5.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_queue5_MIO.py:41: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+&gt;       assert queue_0.tail is None
+E       assert &lt;queue5.Node object at 0x7f770b20aec0&gt; is None
+E        +  where &lt;queue5.Node object at 0x7f770b20aec0&gt; = &lt;queue5.Queue object at 0x7f770b20b8b0&gt;.tail
+
+MIO-MOSA/test_queue5_MOSA.py:34: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+&gt;       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'queue5.Node'
+E         - queue5.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_queue5_MOSA.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - assert &lt;queue5.Node object ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - AssertionError: assert 'bui...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - assert &lt;queue5.Node object...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - AssertionError: assert 'bu...
+========================= 4 failed, 7 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID d2dc4f9196e14f1bb960b60a1ed4573c</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (17, 21), end pos: (17, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -14,7 +14,7 @@
+     def enqueue(self, data):
+         node = Node(data)
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is not None and self.tail is None:
+             self.head = node
+             self.tail = node
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py FF.FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py FF.FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f39f611dab0&gt;
+data = &lt;queue5.Queue object at 0x7f39f611dab0&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is not None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f39f5f76740&gt;
+data = &lt;queue5.Queue object at 0x7f39f5f76740&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is not None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f39f611ead0&gt;
+data = &lt;queue5.Queue object at 0x7f39f611ead0&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is not None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f39f611e5f0&gt;
+data = &lt;queue5.Queue object at 0x7f39f611e5f0&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is not None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f39f5f77460&gt;
+data = &lt;queue5.Queue object at 0x7f39f5f77460&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is not None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f39f5f76170&gt;
+data = &lt;queue5.Queue object at 0x7f39f5f76170&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is not None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f39f5f77d60&gt;
+data = &lt;queue5.Queue object at 0x7f39f5f77d60&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is not None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f39f5f76cb0&gt;
+data = &lt;queue5.Queue object at 0x7f39f5f76cb0&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is not None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_0 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_1 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_0 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_1 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+========================= 8 failed, 3 passed in 0.08s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 7373dc91af4545b9a399066f0f285706</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (17, 43), end pos: (17, 45)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -14,7 +14,7 @@
+     def enqueue(self, data):
+         node = Node(data)
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None and self.tail is not None:
+             self.head = node
+             self.tail = node
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py FF.FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py FF.FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f54acdb6650&gt;
+data = &lt;queue5.Queue object at 0x7f54acdb6650&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is None and self.tail is not None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f54acdb7760&gt;
+data = &lt;queue5.Queue object at 0x7f54acdb7760&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is None and self.tail is not None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f54acdb5f90&gt;
+data = &lt;queue5.Queue object at 0x7f54acdb5f90&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is None and self.tail is not None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f54acdd06d0&gt;
+data = &lt;queue5.Queue object at 0x7f54acdd06d0&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is None and self.tail is not None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f54acdb7d60&gt;
+data = &lt;queue5.Queue object at 0x7f54acdb7d60&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is None and self.tail is not None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f54ace25c90&gt;
+data = &lt;queue5.Queue object at 0x7f54ace25c90&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is None and self.tail is not None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f54acdb6770&gt;
+data = &lt;queue5.Queue object at 0x7f54acdb6770&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is None and self.tail is not None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f54acf6ad10&gt;
+data = &lt;queue5.Queue object at 0x7f54acf6ad10&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if self.head is None and self.tail is not None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_0 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_1 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_0 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_1 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+========================= 8 failed, 3 passed in 0.08s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID ba2ba5c00b5a4b56bedb78d157402730</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (26, 21), end pos: (26, 23)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -23,7 +23,7 @@
+ 
+     def dequeue(self):
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is not None and self.tail is None:
+             return None
+         data = self.head.data
+         # Remove only element from a one element list</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ..F...                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py .FF..                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7ffa4407eec0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is not None and self.tail is None:
+            return None
+&gt;       data = self.head.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5.py:28: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        node_0 = module_0.Node(bool_0)
+&gt;       var_1 = queue_2.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7ffa43f3d930&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is not None and self.tail is None:
+            return None
+&gt;       data = self.head.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5.py:28: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7ffa43ee85b0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is not None and self.tail is None:
+            return None
+&gt;       data = self.head.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5.py:28: AttributeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_2 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_1 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_2 - AttributeError: 'NoneType'...
+========================= 3 failed, 8 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID 388cca68b2f94b6fa340835d43a4ae22</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (26, 43), end pos: (26, 45)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -23,7 +23,7 @@
+ 
+     def dequeue(self):
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None and self.tail is not None:
+             return None
+         data = self.head.data
+         # Remove only element from a one element list</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ..F...                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py .FF..                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7fc71e486f50&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is not None:
+            return None
+&gt;       data = self.head.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5.py:28: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        node_0 = module_0.Node(bool_0)
+&gt;       var_1 = queue_2.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7fc71e346da0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is not None:
+            return None
+&gt;       data = self.head.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5.py:28: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7fc71e2ec850&gt;
+
+    def dequeue(self):
+        # Empty list
+        if self.head is None and self.tail is not None:
+            return None
+&gt;       data = self.head.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5.py:28: AttributeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_2 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_1 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_2 - AttributeError: 'NoneType'...
+========================= 3 failed, 8 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID 5ae5c63d88424c1a931b8193dba72418</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (17, 11), end pos: (17, 50)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -14,7 +14,7 @@
+     def enqueue(self, data):
+         node = Node(data)
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if not self.head is None and self.tail is None:
+             self.head = node
+             self.tail = node
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py FF.FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py FF.FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f028aa96a70&gt;
+data = &lt;queue5.Queue object at 0x7f028aa96a70&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if not self.head is None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f028aa97af0&gt;
+data = &lt;queue5.Queue object at 0x7f028aa97af0&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if not self.head is None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f028aa97be0&gt;
+data = &lt;queue5.Queue object at 0x7f028aa97be0&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if not self.head is None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MIO.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f028aab2470&gt;
+data = &lt;queue5.Queue object at 0x7f028aab2470&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if not self.head is None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f028aa96860&gt;
+data = &lt;queue5.Queue object at 0x7f028aa96860&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if not self.head is None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f028ab01b70&gt;
+data = &lt;queue5.Queue object at 0x7f028ab01b70&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if not self.head is None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f028aa96470&gt;
+data = &lt;queue5.Queue object at 0x7f028aa96470&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if not self.head is None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+MIO-MOSA/test_queue5_MOSA.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f028ac42110&gt;
+data = &lt;queue5.Queue object at 0x7f028ac42110&gt;
+
+    def enqueue(self, data):
+        node = Node(data)
+        # Empty list
+        if not self.head is None and self.tail is None:
+            self.head = node
+            self.tail = node
+        else:
+&gt;           self.tail.next = node
+E           AttributeError: 'NoneType' object has no attribute 'next'
+
+queue5.py:21: AttributeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_0 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_1 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_0 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_1 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - AttributeError: 'NoneType'...
+========================= 8 failed, 3 passed in 0.08s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 282d47e10089471c9ee873f20ed15c6f</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (26, 11), end pos: (26, 50)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -23,7 +23,7 @@
+ 
+     def dequeue(self):
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if not self.head is None and self.tail is None:
+             return None
+         data = self.head.data
+         # Remove only element from a one element list</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ..F...                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py .FF..                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MIO.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f0e7577e140&gt;
+
+    def dequeue(self):
+        # Empty list
+        if not self.head is None and self.tail is None:
+            return None
+&gt;       data = self.head.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5.py:28: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        bool_0 = True
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        queue_1 = module_0.Queue()
+        queue_2 = module_0.Queue()
+        node_0 = module_0.Node(bool_0)
+&gt;       var_1 = queue_2.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f0e7563ead0&gt;
+
+    def dequeue(self):
+        # Empty list
+        if not self.head is None and self.tail is None:
+            return None
+&gt;       data = self.head.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5.py:28: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       var_0 = queue_0.dequeue()
+
+MIO-MOSA/test_queue5_MOSA.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue5.Queue object at 0x7f0e7577e080&gt;
+
+    def dequeue(self):
+        # Empty list
+        if not self.head is None and self.tail is None:
+            return None
+&gt;       data = self.head.data
+E       AttributeError: 'NoneType' object has no attribute 'data'
+
+queue5.py:28: AttributeError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_2 - AttributeError: 'NoneType' ...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_1 - AttributeError: 'NoneType'...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_2 - AttributeError: 'NoneType'...
+========================= 3 failed, 8 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 369fff0393c6431f813322a50c35cc15</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=30" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (30, 11), end pos: (30, 33)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -27,7 +27,7 @@
+             return None
+         data = self.head.data
+         # Remove only element from a one element list
+-        if self.head == self.tail:
++        if not self.head == self.tail:
+             self.head = None
+             self.tail = None
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ...FF.                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py ...FF                                       [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+&gt;       assert queue_0.tail is None
+E       assert &lt;queue5.Node object at 0x7f4d2d7afb80&gt; is None
+E        +  where &lt;queue5.Node object at 0x7f4d2d7afb80&gt; = &lt;queue5.Queue object at 0x7f4d2d7aff70&gt;.tail
+
+MIO-MOSA/test_queue5_MIO.py:28: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+&gt;       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'queue5.Node'
+E         - queue5.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_queue5_MIO.py:41: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.dequeue()
+        assert queue_0.head is None
+&gt;       assert queue_0.tail is None
+E       assert &lt;queue5.Node object at 0x7f4d2d7aebf0&gt; is None
+E        +  where &lt;queue5.Node object at 0x7f4d2d7aebf0&gt; = &lt;queue5.Queue object at 0x7f4d2d7adf90&gt;.tail
+
+MIO-MOSA/test_queue5_MOSA.py:34: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+        var_0 = queue_0.enqueue(queue_0)
+        assert f'{type(queue_0.head).__module__}.{type(queue_0.head).__qualname__}' == 'queue5.Node'
+        assert f'{type(queue_0.tail).__module__}.{type(queue_0.tail).__qualname__}' == 'queue5.Node'
+        var_1 = queue_0.enqueue(queue_0)
+        var_2 = queue_0.dequeue()
+        assert f'{type(var_2).__module__}.{type(var_2).__qualname__}' == 'queue5.Queue'
+&gt;       assert f'{type(var_2.head).__module__}.{type(var_2.head).__qualname__}' == 'queue5.Node'
+E       AssertionError: assert 'builtins.NoneType' == 'queue5.Node'
+E         - queue5.Node
+E         + builtins.NoneType
+
+MIO-MOSA/test_queue5_MOSA.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_3 - assert &lt;queue5.Node object ...
+FAILED MIO-MOSA/test_queue5_MIO.py::test_case_4 - AssertionError: assert 'bui...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_3 - assert &lt;queue5.Node object...
+FAILED MIO-MOSA/test_queue5_MOSA.py::test_case_4 - AssertionError: assert 'bu...
+========================= 4 failed, 7 passed in 0.07s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_15_1"><button class="btn btn-outline-danger"><span class="job_id">15 : Job ID 0058642e77d5453d832791e496ef2320</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=17" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (17, 29), end pos: (17, 32)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -14,7 +14,7 @@
+     def enqueue(self, data):
+         node = Node(data)
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None or self.tail is None:
+             self.head = node
+             self.tail = node
+         else:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ......                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py .....                                       [100%]
+
+============================== 11 passed in 0.04s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_16_1"><button class="btn btn-outline-danger"><span class="job_id">16 : Job ID e9e909a162e7482e8d9488820f26eb11</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=queue5.py&amp;line=26" class="text-secondary"><button class="btn btn-outline-dark">queue5.py, start pos: (26, 29), end pos: (26, 32)</button></a></pre><pre>operator: core/ReplaceAndWithOr, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue5.py
++++ bqueue5.py
+@@ -23,7 +23,7 @@
+ 
+     def dequeue(self):
+         # Empty list
+-        if self.head is None and self.tail is None:
++        if self.head is None or self.tail is None:
+             return None
+         data = self.head.data
+         # Remove only element from a one element list</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue5
+collected 11 items
+
+MIO-MOSA/test_queue5_MIO.py ......                                       [ 54%]
+MIO-MOSA/test_queue5_MOSA.py .....                                       [100%]
+
+============================== 11 passed in 0.04s ==============================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

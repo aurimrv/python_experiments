@@ -1,0 +1,129 @@
+2023-03-06 08:10:45,934: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList5
+collected 125 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList5_DYNAMOSA.py ............. [ 10%]
+.......................                                                  [ 28%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList5_MIO.py .................. [ 43%]
+...................                                                      [ 58%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py ................. [ 72%]
+...............                                                          [ 84%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py .......... [ 92%]
+..........                                                               [100%]
+
+============================= 125 passed in 0.78s ==============================
+2023-03-06 08:10:46,915: [92m55 mutation targets found in linkedList5.py AST.[0m
+2023-03-06 08:10:46,915: Setting random.seed to: None
+2023-03-06 08:10:46,915: Coverage file does not exist, proceeding to sample from all targets.
+2023-03-06 08:10:46,915: Total sample space size: 55
+2023-03-06 08:10:46,915: [92mSelecting 10 locations from 55 potentials.[0m
+2023-03-06 08:10:46,915: Starting individual mutation trials!
+2023-03-06 08:10:46,915: Running serial (single processor) dispatch mode.
+2023-03-06 08:10:46,915: Current target location: linkedList5.py, LocIndex(ast_class='NameConstant', lineno=39, col_offset=36, op_type=None, end_lineno=39, end_col_offset=40)
+2023-03-06 08:10:48,052: [92mResult: Detected at linkedList5.py: (39, 36)[0m
+2023-03-06 08:10:49,060: [92mResult: Detected at linkedList5.py: (39, 36)[0m
+2023-03-06 08:10:49,061: Current target location: linkedList5.py, LocIndex(ast_class='NameConstant', lineno=26, col_offset=19, op_type=None, end_lineno=26, end_col_offset=23)
+2023-03-06 08:10:49,382: [91mResult: Survived at linkedList5.py: (26, 19)[0m
+2023-03-06 08:10:49,699: [91mResult: Survived at linkedList5.py: (26, 19)[0m
+2023-03-06 08:10:49,699: Current target location: linkedList5.py, LocIndex(ast_class='CompareIs', lineno=74, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=74, end_col_offset=28)
+2023-03-06 08:10:50,365: [92mResult: Detected at linkedList5.py: (74, 11)[0m
+2023-03-06 08:10:50,365: Current target location: linkedList5.py, LocIndex(ast_class='CompareIs', lineno=64, col_offset=14, op_type=<class 'ast.IsNot'>, end_lineno=64, end_col_offset=35)
+2023-03-06 08:10:50,872: [92mResult: Detected at linkedList5.py: (64, 14)[0m
+2023-03-06 08:10:50,873: Current target location: linkedList5.py, LocIndex(ast_class='CompareIs', lineno=39, col_offset=14, op_type=<class 'ast.IsNot'>, end_lineno=39, end_col_offset=40)
+2023-03-06 08:10:51,723: [92mResult: Detected at linkedList5.py: (39, 14)[0m
+2023-03-06 08:10:51,723: Current target location: linkedList5.py, LocIndex(ast_class='NameConstant', lineno=52, col_offset=15, op_type=None, end_lineno=52, end_col_offset=19)
+2023-03-06 08:10:52,073: [92mResult: Detected at linkedList5.py: (52, 15)[0m
+2023-03-06 08:10:52,449: [92mResult: Detected at linkedList5.py: (52, 15)[0m
+2023-03-06 08:10:52,449: Current target location: linkedList5.py, LocIndex(ast_class='NameConstant', lineno=57, col_offset=24, op_type=None, end_lineno=57, end_col_offset=28)
+2023-03-06 08:10:53,068: [92mResult: Detected at linkedList5.py: (57, 24)[0m
+2023-03-06 08:10:53,687: [92mResult: Detected at linkedList5.py: (57, 24)[0m
+2023-03-06 08:10:53,687: Current target location: linkedList5.py, LocIndex(ast_class='NameConstant', lineno=33, col_offset=19, op_type=None, end_lineno=33, end_col_offset=23)
+2023-03-06 08:10:54,008: [91mResult: Survived at linkedList5.py: (33, 19)[0m
+2023-03-06 08:10:54,329: [91mResult: Survived at linkedList5.py: (33, 19)[0m
+2023-03-06 08:10:54,329: Current target location: linkedList5.py, LocIndex(ast_class='If', lineno=72, col_offset=8, op_type='If_Statement', end_lineno=73, end_col_offset=18)
+2023-03-06 08:10:54,735: [92mResult: Detected at linkedList5.py: (72, 8)[0m
+2023-03-06 08:10:55,056: [91mResult: Survived at linkedList5.py: (72, 8)[0m
+2023-03-06 08:10:55,056: Current target location: linkedList5.py, LocIndex(ast_class='If', lineno=32, col_offset=8, op_type='If_Statement', end_lineno=33, end_col_offset=23)
+2023-03-06 08:10:56,294: [92mResult: Detected at linkedList5.py: (32, 8)[0m
+2023-03-06 08:10:56,731: [92mResult: Detected at linkedList5.py: (32, 8)[0m
+2023-03-06 08:10:56,732: Running clean trial
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/linkedList5
+collected 125 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList5_DYNAMOSA.py ............. [ 10%]
+.......................                                                  [ 28%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList5_MIO.py .................. [ 43%]
+...................                                                      [ 58%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList5_MOSA.py ................. [ 72%]
+...............                                                          [ 84%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList5_WHOLE_SUITE.py .......... [ 92%]
+..........                                                               [100%]
+
+============================= 125 passed in 0.13s ==============================
+2023-03-06 08:10:57,083: CLI Report:
+
+Mutatest diagnostic summary
+===========================
+ - Source location: /home/auri/temp/lucca/python_experiments/linkedList5/linkedList5.py
+ - Test commands: ['python', '-m', 'pytest', './DYNAMOSA-MIO-MOSA-WHOLE_SUITE']
+ - Mode: f
+ - Excluded files: []
+ - N locations input: 10
+ - Random seed: None
+
+Random sample details
+---------------------
+ - Total locations mutated: 10
+ - Total locations identified: 55
+ - Location sample coverage: 18.18 %
+
+
+Running time details
+--------------------
+ - Clean trial 1 run time: 0:00:00.978186
+ - Clean trial 2 run time: 0:00:00.351256
+ - Mutation trials total run time: 0:00:09.819454
+
+2023-03-06 08:10:57,083: Trial Summary Report:
+
+Overall mutation trial summary
+==============================
+ - DETECTED: 12
+ - SURVIVED: 5
+ - TOTAL RUNS: 17
+ - RUN DATETIME: 2023-03-06 08:10:57.083616
+
+2023-03-06 08:10:57,083: Detected mutations:[92m
+
+DETECTED
+--------
+ - linkedList5.py: (l: 32, c: 8) - mutation from If_Statement to If_True
+ - linkedList5.py: (l: 32, c: 8) - mutation from If_Statement to If_False
+ - linkedList5.py: (l: 39, c: 14) - mutation from <class 'ast.IsNot'> to <class 'ast.Is'>
+ - linkedList5.py: (l: 39, c: 36) - mutation from None to True
+ - linkedList5.py: (l: 39, c: 36) - mutation from None to False
+ - linkedList5.py: (l: 52, c: 15) - mutation from None to True
+ - linkedList5.py: (l: 52, c: 15) - mutation from None to False
+ - linkedList5.py: (l: 57, c: 24) - mutation from None to False
+ - linkedList5.py: (l: 57, c: 24) - mutation from None to True
+ - linkedList5.py: (l: 64, c: 14) - mutation from <class 'ast.IsNot'> to <class 'ast.Is'>
+ - linkedList5.py: (l: 72, c: 8) - mutation from If_Statement to If_True
+ - linkedList5.py: (l: 74, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>[0m
+
+2023-03-06 08:10:57,083: Timedout mutations:
+
+2023-03-06 08:10:57,083: Surviving mutations:[91m
+
+SURVIVED
+--------
+ - linkedList5.py: (l: 26, c: 19) - mutation from None to True
+ - linkedList5.py: (l: 26, c: 19) - mutation from None to False
+ - linkedList5.py: (l: 33, c: 19) - mutation from None to False
+ - linkedList5.py: (l: 33, c: 19) - mutation from None to True
+ - linkedList5.py: (l: 72, c: 8) - mutation from If_Statement to If_False[0m
+
+2023-03-06 08:10:57,084: Writing output report to: /home/auri/temp/lucca/python_experiments/linkedList5/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/mutatest/DYNAMOSA-MIO-MOSA-WHOLE_SUITE-report.rst

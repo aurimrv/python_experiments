@@ -1,0 +1,1661 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 05/03/2023 22:57:18</p><p>Total jobs: 19</p><p>Complete: 19 (100.00%)</p><p>Surviving mutants: 1 (5.26%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 0361766f2a004bf0b8ad23344435bdc3</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Sub, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" - str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for -: 'str' and 'str'") raised in repr()] Stack object at 0x7f98b6cd2530&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" - str(self.stack)
+E       TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" - str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for -: 'str' and 'str'") raised in repr()] Stack object at 0x7f98b6b35960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" - str(self.stack)
+E       TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for -: 'str' and 'str'") raised in repr()] Stack object at 0x7f98b6cd2140&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" - str(self.stack)
+E       TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for -: 'str' and 'str'") raised in repr()] Stack object at 0x7f98b6b37340&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" - str(self.stack)
+E       TypeError: unsupported operand type(s) for -: 'str' and 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.13s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID 560559ea74424a8690cbca8183a198bc</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mul, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" * str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("can't multiply sequence by non-int of type 'str'") raised in repr()] Stack object at 0x7fa32960e4d0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" * str(self.stack)
+E       TypeError: can't multiply sequence by non-int of type 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" * str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("can't multiply sequence by non-int of type 'str'") raised in repr()] Stack object at 0x7fa329471960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" * str(self.stack)
+E       TypeError: can't multiply sequence by non-int of type 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("can't multiply sequence by non-int of type 'str'") raised in repr()] Stack object at 0x7fa32960e0e0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" * str(self.stack)
+E       TypeError: can't multiply sequence by non-int of type 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("can't multiply sequence by non-int of type 'str'") raised in repr()] Stack object at 0x7fa329473340&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" * str(self.stack)
+E       TypeError: can't multiply sequence by non-int of type 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.12s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID 36ac053d66474ed3ba51ec4f49109186</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Div, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" / str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for /: 'str' and 'str'") raised in repr()] Stack object at 0x7f313cf46560&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" / str(self.stack)
+E       TypeError: unsupported operand type(s) for /: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" / str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for /: 'str' and 'str'") raised in repr()] Stack object at 0x7f313cda5960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" / str(self.stack)
+E       TypeError: unsupported operand type(s) for /: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for /: 'str' and 'str'") raised in repr()] Stack object at 0x7f313cf46170&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" / str(self.stack)
+E       TypeError: unsupported operand type(s) for /: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for /: 'str' and 'str'") raised in repr()] Stack object at 0x7f313cda75e0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" / str(self.stack)
+E       TypeError: unsupported operand type(s) for /: 'str' and 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.13s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID f7168935aa284abf90576e29abc88992</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_FloorDiv, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" // str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for //: 'str' and 'str'") raised in repr()] Stack object at 0x7f325fa26500&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" // str(self.stack)
+E       TypeError: unsupported operand type(s) for //: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" // str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for //: 'str' and 'str'") raised in repr()] Stack object at 0x7f325f889960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" // str(self.stack)
+E       TypeError: unsupported operand type(s) for //: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for //: 'str' and 'str'") raised in repr()] Stack object at 0x7f325fa26110&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" // str(self.stack)
+E       TypeError: unsupported operand type(s) for //: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for //: 'str' and 'str'") raised in repr()] Stack object at 0x7f325f88b4f0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" // str(self.stack)
+E       TypeError: unsupported operand type(s) for //: 'str' and 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.13s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 70a24cfb42ba48939ad622705927c4db</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Mod, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" % str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError('not all arguments converted during string formatting') raised in repr()] Stack object at 0x7f8e22caaa10&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" % str(self.stack)
+E       TypeError: not all arguments converted during string formatting
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" % str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError('not all arguments converted during string formatting') raised in repr()] Stack object at 0x7f8e22b0d960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" % str(self.stack)
+E       TypeError: not all arguments converted during string formatting
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError('not all arguments converted during string formatting') raised in repr()] Stack object at 0x7f8e22caa530&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" % str(self.stack)
+E       TypeError: not all arguments converted during string formatting
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError('not all arguments converted during string formatting') raised in repr()] Stack object at 0x7f8e22b0c940&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" % str(self.stack)
+E       TypeError: not all arguments converted during string formatting
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.12s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID e433539420b5499c8f945383110952ea</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_Pow, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" ** str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for ** or pow(): 'str' and 'str'") raised in repr()] Stack object at 0x7fd8878465c0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" ** str(self.stack)
+E       TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" ** str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for ** or pow(): 'str' and 'str'") raised in repr()] Stack object at 0x7fd8876a9960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" ** str(self.stack)
+E       TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for ** or pow(): 'str' and 'str'") raised in repr()] Stack object at 0x7fd8878461d0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" ** str(self.stack)
+E       TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for ** or pow(): 'str' and 'str'") raised in repr()] Stack object at 0x7fd8876ab5b0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" ** str(self.stack)
+E       TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.12s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID da5d37aec2e1475e94f6ed54c6fd2df9</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_RShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" &gt;&gt; str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &gt;&gt;: 'str' and 'str'") raised in repr()] Stack object at 0x7f83f7c06590&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &gt;&gt; str(self.stack)
+E       TypeError: unsupported operand type(s) for &gt;&gt;: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" &gt;&gt; str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &gt;&gt;: 'str' and 'str'") raised in repr()] Stack object at 0x7f83f7a69960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &gt;&gt; str(self.stack)
+E       TypeError: unsupported operand type(s) for &gt;&gt;: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &gt;&gt;: 'str' and 'str'") raised in repr()] Stack object at 0x7f83f7c061a0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &gt;&gt; str(self.stack)
+E       TypeError: unsupported operand type(s) for &gt;&gt;: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &gt;&gt;: 'str' and 'str'") raised in repr()] Stack object at 0x7f83f7a6b640&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &gt;&gt; str(self.stack)
+E       TypeError: unsupported operand type(s) for &gt;&gt;: 'str' and 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.12s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 6b8a12b8bdcf4e028244996979df3d85</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_LShift, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" &lt;&lt; str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &lt;&lt;: 'str' and 'str'") raised in repr()] Stack object at 0x7fed970b6c80&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &lt;&lt; str(self.stack)
+E       TypeError: unsupported operand type(s) for &lt;&lt;: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" &lt;&lt; str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &lt;&lt;: 'str' and 'str'") raised in repr()] Stack object at 0x7fed96f19960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &lt;&lt; str(self.stack)
+E       TypeError: unsupported operand type(s) for &lt;&lt;: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &lt;&lt;: 'str' and 'str'") raised in repr()] Stack object at 0x7fed970b6170&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &lt;&lt; str(self.stack)
+E       TypeError: unsupported operand type(s) for &lt;&lt;: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &lt;&lt;: 'str' and 'str'") raised in repr()] Stack object at 0x7fed96f1bdf0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &lt;&lt; str(self.stack)
+E       TypeError: unsupported operand type(s) for &lt;&lt;: 'str' and 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.12s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 25108ae3c4ce4ca0ab0907aa9655014d</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitOr, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" | str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for |: 'str' and 'str'") raised in repr()] Stack object at 0x7f1c9b862590&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" | str(self.stack)
+E       TypeError: unsupported operand type(s) for |: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" | str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for |: 'str' and 'str'") raised in repr()] Stack object at 0x7f1c9b6c5960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" | str(self.stack)
+E       TypeError: unsupported operand type(s) for |: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for |: 'str' and 'str'") raised in repr()] Stack object at 0x7f1c9b8621a0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" | str(self.stack)
+E       TypeError: unsupported operand type(s) for |: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for |: 'str' and 'str'") raised in repr()] Stack object at 0x7f1c9b6c4880&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" | str(self.stack)
+E       TypeError: unsupported operand type(s) for |: 'str' and 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.12s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID 0dedf138aceb4525aa6a034562760606</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitAnd, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" &amp; str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &amp;: 'str' and 'str'") raised in repr()] Stack object at 0x7f5215202530&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &amp; str(self.stack)
+E       TypeError: unsupported operand type(s) for &amp;: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" &amp; str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &amp;: 'str' and 'str'") raised in repr()] Stack object at 0x7f5215065960&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &amp; str(self.stack)
+E       TypeError: unsupported operand type(s) for &amp;: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &amp;: 'str' and 'str'") raised in repr()] Stack object at 0x7f5215202140&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &amp; str(self.stack)
+E       TypeError: unsupported operand type(s) for &amp;: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for &amp;: 'str' and 'str'") raised in repr()] Stack object at 0x7f5215067640&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" &amp; str(self.stack)
+E       TypeError: unsupported operand type(s) for &amp;: 'str' and 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.12s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID ffe2b9e580de47f7bb128f9e10ad1e73</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=27" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (27, 24), end pos: (27, 25)</button></a></pre><pre>operator: core/ReplaceBinaryOperator_Add_BitXor, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -24,5 +24,5 @@
+ 
+     def __repr__(self):
+         """show representation."""
+-        return "stack:" + str(self.stack)
++        return "stack:" ^ str(self.stack)
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ....F                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F..FF..                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+&gt;       var_0 = stack_0.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for ^: 'str' and 'str'") raised in repr()] Stack object at 0x7fc2b0a8a500&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" ^ str(self.stack)
+E       TypeError: unsupported operand type(s) for ^: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+        var_1 = stack_1.pop()
+        assert stack_1.stack == []
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'stack2.Stack'
+        assert var_1.stack == []
+        stack_2 = module_0.Stack()
+        var_2 = var_1.push(var_1)
+        var_3 = var_1.isEmpty()
+&gt;       var_4 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+stack2.py:27: in __repr__
+    return "stack:" ^ str(self.stack)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for ^: 'str' and 'str'") raised in repr()] Stack object at 0x7fc2b08ed6f0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" ^ str(self.stack)
+E       TypeError: unsupported operand type(s) for ^: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for ^: 'str' and 'str'") raised in repr()] Stack object at 0x7fc2b0a8a110&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" ^ str(self.stack)
+E       TypeError: unsupported operand type(s) for ^: 'str' and 'str'
+
+stack2.py:27: TypeError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+&gt;       var_0 = stack_1.__repr__()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;[TypeError("unsupported operand type(s) for ^: 'str' and 'str'") raised in repr()] Stack object at 0x7fc2b08ec9d0&gt;
+
+    def __repr__(self):
+        """show representation."""
+&gt;       return "stack:" ^ str(self.stack)
+E       TypeError: unsupported operand type(s) for ^: 'str' and 'str'
+
+stack2.py:27: TypeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_4 - TypeError:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_3 - TypeErr...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_4 - TypeErr...
+========================= 4 failed, 8 passed in 0.13s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID 72436acb98b94f82bda0abda53387adb</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_NotEq, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) != 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py .F.F.                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F....F.                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.push(stack_0)
+        stack_1 = module_0.Stack()
+        var_1 = stack_1.push(stack_1)
+&gt;       var_2 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bool_0 = True
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:35: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+&gt;       var_1 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_1 - Exception:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_3 - assert Fal...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Excepti...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert ...
+========================= 4 failed, 8 passed in 0.13s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 44a72cfba66b4aa284ff9033eea0ce3d</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Lt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &lt; 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ...F.                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py .....F.                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bool_0 = True
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:35: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_3 - assert Fal...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert ...
+========================= 2 failed, 10 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-danger" id="job_list___sub_heading_14_1"><button class="btn btn-outline-danger"><span class="job_id">14 : Job ID 4fad2d7fcd2a4d6a892bcc568eff18c6</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-danger test-outcome" role="alert"><p>SURVIVED</p><p>worker outcome: normal</p><p>test outcome: survived</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_LtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &lt;= 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py .....                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py .......                  [100%]
+
+============================== 12 passed in 0.06s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_15"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_15_1" aria-expanded="false" aria-controls="job_list___sub_collapse_15_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_15_1"><button class="btn btn-outline-success"><span class="job_id">15 : Job ID 431b8de9c18d4b759882fb0910203609</span></button></div></a><div aria-labelledby="job_list___sub_heading_15_1" data-parent="#job_list___sub_accordion_15" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_15_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_Gt, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &gt; 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py .F.F.                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F....F.                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.push(stack_0)
+        stack_1 = module_0.Stack()
+        var_1 = stack_1.push(stack_1)
+&gt;       var_2 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bool_0 = True
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:35: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+&gt;       var_1 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_1 - Exception:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_3 - assert Fal...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Excepti...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert ...
+========================= 4 failed, 8 passed in 0.13s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_16"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_16_1" aria-expanded="false" aria-controls="job_list___sub_collapse_16_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_16_1"><button class="btn btn-outline-success"><span class="job_id">16 : Job ID 4ea711230d76429fa0f36f098d5bd047</span></button></div></a><div aria-labelledby="job_list___sub_heading_16_1" data-parent="#job_list___sub_accordion_16" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_16_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 31), end pos: (13, 33)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Eq_GtE, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) &gt;= 0
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py .F...                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F......                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.push(stack_0)
+        stack_1 = module_0.Stack()
+        var_1 = stack_1.push(stack_1)
+&gt;       var_2 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+&gt;       var_1 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_1 - Exception:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Excepti...
+========================= 2 failed, 10 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_17"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_17_1" aria-expanded="false" aria-controls="job_list___sub_collapse_17_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_17_1"><button class="btn btn-outline-success"><span class="job_id">17 : Job ID b79759fca558458181747246e30a498b</span></button></div></a><div aria-labelledby="job_list___sub_heading_17_1" data-parent="#job_list___sub_accordion_17" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_17_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=21" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (21, 11), end pos: (21, 25)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -18,7 +18,7 @@
+ 
+     def pop(self):
+         """Remove topmost element and return it. O(1) performance."""
+-        if self.isEmpty():
++        if not self.isEmpty():
+             raise Exception('Stack is empty.')
+         return self.stack.pop()
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py .F...                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F......                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.push(stack_0)
+        stack_1 = module_0.Stack()
+        var_1 = stack_1.push(stack_1)
+&gt;       var_2 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if not self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+&gt;       var_1 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if not self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_1 - Exception:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Excepti...
+========================= 2 failed, 10 passed in 0.11s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_18"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_18_1" aria-expanded="false" aria-controls="job_list___sub_collapse_18_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_18_1"><button class="btn btn-outline-success"><span class="job_id">18 : Job ID 4078a35745d0443d90ab690d9baf8985</span></button></div></a><div aria-labelledby="job_list___sub_heading_18_1" data-parent="#job_list___sub_accordion_18" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_18_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 34), end pos: (13, 35)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) == 1
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py .F.F.                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py F....F.                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.push(stack_0)
+        stack_1 = module_0.Stack()
+        var_1 = stack_1.push(stack_1)
+&gt;       var_2 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bool_0 = True
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:35: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        stack_0 = module_0.Stack()
+        stack_1 = module_0.Stack()
+        var_0 = stack_1.push(stack_1)
+&gt;       var_1 = stack_1.pop()
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = stack:[stack:[...]]
+
+    def pop(self):
+        """Remove topmost element and return it. O(1) performance."""
+        if self.isEmpty():
+&gt;           raise Exception('Stack is empty.')
+E           Exception: Stack is empty.
+
+stack2.py:22: Exception
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_1 - Exception:...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_3 - assert Fal...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_0 - Excepti...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert ...
+========================= 4 failed, 8 passed in 0.13s ==========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_19"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_19_1" aria-expanded="false" aria-controls="job_list___sub_collapse_19_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_19_1"><button class="btn btn-outline-success"><span class="job_id">19 : Job ID 065e1ff2d227437c929d43461e9e410f</span></button></div></a><div aria-labelledby="job_list___sub_heading_19_1" data-parent="#job_list___sub_accordion_19" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_19_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=stack2.py&amp;line=13" class="text-secondary"><button class="btn btn-outline-dark">stack2.py, start pos: (13, 34), end pos: (13, 35)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- astack2.py
++++ bstack2.py
+@@ -10,7 +10,7 @@
+ 
+     def isEmpty(self):
+         """Determines whether stack is empty. O(1) performance"""
+-        return len(self.stack) == 0
++        return len(self.stack) == -1
+ 
+     def push(self, v):
+         """Push v onto the stack. O(1) performance."""</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/stack2
+collected 12 items
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py ...F.                       [ 41%]
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py .....F.                  [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        bool_0 = True
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py:35: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        stack_0 = module_0.Stack()
+        var_0 = stack_0.isEmpty()
+&gt;       assert var_0 is True
+E       assert False is True
+
+DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py:47: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_DYNAMOSA.py::test_case_3 - assert Fal...
+FAILED DYNAMOSA-WHOLE_SUITE/test_stack2_WHOLE_SUITE.py::test_case_5 - assert ...
+========================= 2 failed, 10 passed in 0.12s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>

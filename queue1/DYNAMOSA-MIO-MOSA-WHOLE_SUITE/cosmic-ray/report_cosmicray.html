@@ -1,0 +1,3320 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /><title>Cosmic Ray Report</title></head><body><div class="container"><h1><p class="text-dark">Cosmic Ray Report</p></h1></div><div class="container"><div class="mb-1" id="summary_info___accordion"><div class="card"><a data-toggle="collapse" data-target="#summary_info___collapse_1" aria-expanded="true" aria-controls="summary_info___collapse_1" href="#"><div class="card-header" id="summary_info___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Summary info</h4></button></div></a><div aria-labelledby="summary_info___heading_1" data-parent="#summary_info___accordion" class="collapse show" id="summary_info___collapse_1"><div class="card-body"><p>Date time: 06/03/2023 08:38:46</p><p>Total jobs: 14</p><p>Complete: 14 (100.00%)</p><p>Surviving mutants: 0 (0.00%)</p></div></div></div></div><div class="mb-1" id="job_list___accordion"><div class="card"><a data-toggle="collapse" data-target="#job_list___collapse_1" aria-expanded="false" aria-controls="job_list___collapse_1" href="#"><div class="card-header" id="job_list___heading_1"><button class="btn btn-outline-dark"><h4 class="m-0">Job list</h4></button></div></a><div aria-labelledby="job_list___heading_1" data-parent="#job_list___accordion" class="collapse" id="job_list___collapse_1"><div class="card-body"><div class="text-right mb-1"><div class="mx-1" id="job_item_expand_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('show');"><button class="btn btn-outline-dark"><span>Expand All</span></button></a></div><div class="mx-1" id="job_item_collapse_all"><a href="#" onclick="$('div.job_list___sub_multi_collapse').collapse('hide');"><button class="btn btn-outline-dark"><span>Collapse All</span></button></a></div></div><div class="mb-1" id="job_list___sub_accordion_1"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_1_1" aria-expanded="false" aria-controls="job_list___sub_collapse_1_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_1_1"><button class="btn btn-outline-success"><span class="job_id">1 : Job ID 41567d578b90482face0ca1fffa16a39</span></button></div></a><div aria-labelledby="job_list___sub_heading_1_1" data-parent="#job_list___sub_accordion_1" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_1_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 16), end pos: (23, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if self.front is not None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py F..F..FF           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py F.F....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py F..F..FF               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d887c70&gt;
+item = &lt;queue1.Queue object at 0x7f614d887c70&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d7422f0&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d743880&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d743070&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.peek()
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614da32530&gt;
+item = &lt;queue1.Queue object at 0x7f614da32530&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d8a6da0&gt;
+item = &lt;queue1.Queue object at 0x7f614d8a6da0&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614da32d40&gt;
+item = &lt;queue1.Queue object at 0x7f614da32d40&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d717e20&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d8a5b40&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d8a5b70&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d7424d0&gt;
+item = &lt;queue1.Queue object at 0x7f614d7424d0&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(bool_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614da32650&gt;, item = False
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614d715b40&gt;
+item = &lt;queue1.Queue object at 0x7f614d715b40&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+&gt;       var_0 = queue_1.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f614da32b30&gt;
+item = &lt;queue1.Queue object at 0x7f614da32f20&gt;
+
+    def enqueue(self, item):
+    
+    	if self.front is not None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_7 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9
+======================== 14 failed, 19 passed in 0.16s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_2"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_2_1" aria-expanded="false" aria-controls="job_list___sub_collapse_2_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_2_1"><button class="btn btn-outline-success"><span class="job_id">2 : Job ID d692a27eca744ad49e5a2c294dbdcad2</span></button></div></a><div aria-labelledby="job_list___sub_heading_2_1" data-parent="#job_list___sub_accordion_2" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_2_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 16), end pos: (35, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py .F.F..F.           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py FFF....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py .F.F..F.               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .F...F....      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc79394a2c0&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc79392f4c0&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc793adec20&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.peek()
+        var_1 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_2 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 2
+        var_3 = queue_0.__str__()
+        var_4 = queue_0.__str__()
+        var_5 = var_3.__str__()
+        var_6 = queue_0.__len__()
+        assert var_6 == 2
+&gt;       var_7 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc793adeb00&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc7939b8160&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 1
+        var_2 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 2
+        assert len(var_1) == 2
+        var_3 = queue_0.__str__()
+        var_4 = queue_0.__str__()
+        var_5 = var_3.__str__()
+        var_6 = var_1.clear()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        var_7 = queue_0.__len__()
+        assert var_7 == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc79394b970&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc7937e6e30&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc7939baaa0&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc793949ea0&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc793948490&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fc793873ac0&gt;
+
+    def dequeue(self):
+    	if self.front is not None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_1 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_1 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_1 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+======================== 11 failed, 22 passed in 0.16s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_3"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_3_1" aria-expanded="false" aria-controls="job_list___sub_collapse_3_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_3_1"><button class="btn btn-outline-success"><span class="job_id">3 : Job ID a3d16e5813fc448ca9a248143e67d3d9</span></button></div></a><div aria-labelledby="job_list___sub_heading_3_1" data-parent="#job_list___sub_accordion_3" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_3_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 16), end pos: (44, 18)</button></a></pre><pre>operator: core/ReplaceComparisonOperator_Is_IsNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if self.front is not None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ..F.....           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py F.F....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py ..F.....               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py F....F...F      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f775556c910&gt;
+
+    def peek(self):
+    	if self.front is not None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f7755557430&gt;
+
+    def peek(self):
+    	if self.front is not None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+E       AssertionError: assert 'builtins.NoneType' == 'queue1.Queue'
+E         - queue1.Queue
+E         + builtins.NoneType
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:35: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f775556e590&gt;
+
+    def peek(self):
+    	if self.front is not None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__str__()
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+&gt;       var_1 = queue_1.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f77556fe3e0&gt;
+
+    def peek(self):
+    	if self.front is not None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 0
+        var_2 = queue_0.enqueue(var_1)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        var_3 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+&gt;       var_4 = queue_0.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f775559c0d0&gt;
+
+    def peek(self):
+    	if self.front is not None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+        var_0 = queue_1.enqueue(queue_0)
+        assert len(queue_1) == 1
+        var_1 = queue_1.peek()
+&gt;       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+E       AssertionError: assert 'builtins.NoneType' == 'queue1.Queue'
+E         - queue1.Queue
+E         + builtins.NoneType
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:103: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_2 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - Assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_2 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9
+========================= 7 failed, 26 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_4"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_4_1" aria-expanded="false" aria-controls="job_list___sub_collapse_4_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_4_1"><button class="btn btn-outline-success"><span class="job_id">4 : Job ID e81ba8693cf34922aea0175ea649659f</span></button></div></a><div aria-labelledby="job_list___sub_heading_4_1" data-parent="#job_list___sub_accordion_4" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_4_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=23" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (23, 5), end pos: (23, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -20,7 +20,7 @@
+ 
+ 	def enqueue(self, item):
+ 
+-		if self.front is None:
++		if not self.front is None:
+ 			new_node = QueueNode(item)
+ 			self.front = new_node
+ 			self.back = new_node</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py F..F..FF           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py F.F....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py F..F..FF               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a57dc90&gt;
+item = &lt;queue1.Queue object at 0x7ff86a57dc90&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a4f6f50&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a57e8f0&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a69e770&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.peek()
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a510dc0&gt;
+item = &lt;queue1.Queue object at 0x7ff86a510dc0&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a69e410&gt;
+item = &lt;queue1.Queue object at 0x7ff86a69e410&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+&gt;       var_1 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a4f7fd0&gt;
+item = &lt;queue1.Queue object at 0x7ff86a4f7fd0&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a5122c0&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a3ad330&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(dict_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a3ac6a0&gt;, item = {}
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a57db10&gt;
+item = &lt;queue1.Queue object at 0x7ff86a57db10&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(bool_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a69eda0&gt;, item = False
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a512c80&gt;
+item = &lt;queue1.Queue object at 0x7ff86a512c80&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+&gt;       var_0 = queue_1.enqueue(queue_0)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7ff86a69c310&gt;
+item = &lt;queue1.Queue object at 0x7ff86a69ead0&gt;
+
+    def enqueue(self, item):
+    
+    	if not self.front is None:
+    		new_node = QueueNode(item)
+    		self.front = new_node
+    		self.back = new_node
+    	else:
+    		new_back = QueueNode(item)
+&gt;   		self.back.next = new_back
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:29: AttributeError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_7 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9
+======================== 14 failed, 19 passed in 0.16s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_5"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_5_1" aria-expanded="false" aria-controls="job_list___sub_collapse_5_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_5_1"><button class="btn btn-outline-success"><span class="job_id">5 : Job ID 6a5b7e9182814bc19474f8319148f82a</span></button></div></a><div aria-labelledby="job_list___sub_heading_5_1" data-parent="#job_list___sub_accordion_5" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_5_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=35" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (35, 5), end pos: (35, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -32,7 +32,7 @@
+ 		self.size += 1
+ 
+ 	def dequeue(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			raise ValueError()
+ 		else:
+ 			front_node = self.front</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py .F.F..F.           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py FFF....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py .F.F..F.               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .F...F....      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c638cd0&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c466440&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c63b1c0&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.peek()
+        var_1 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_2 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 2
+        var_3 = queue_0.__str__()
+        var_4 = queue_0.__str__()
+        var_5 = var_3.__str__()
+        var_6 = queue_0.__len__()
+        assert var_6 == 2
+&gt;       var_7 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c5c4520&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c5ae920&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 1
+        var_2 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 2
+        assert len(var_1) == 2
+        var_3 = queue_0.__str__()
+        var_4 = queue_0.__str__()
+        var_5 = var_3.__str__()
+        var_6 = var_1.clear()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        var_7 = queue_0.__len__()
+        assert var_7 == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c63a890&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c466800&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       var_2 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c5c6080&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c63b430&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        with pytest.raises(ValueError):
+&gt;           queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c63b4f0&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+    		raise ValueError()
+    	else:
+    		front_node = self.front
+&gt;   		self.front = self.front.next
+E     AttributeError: 'NoneType' object has no attribute 'next'
+
+queue1.py:39: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+&gt;       var_1 = queue_0.dequeue()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7fd68c756740&gt;
+
+    def dequeue(self):
+    	if not self.front is None:
+&gt;   		raise ValueError()
+E     ValueError
+
+queue1.py:36: ValueError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_1 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_1 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_1 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+======================== 11 failed, 22 passed in 0.15s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_6"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_6_1" aria-expanded="false" aria-controls="job_list___sub_collapse_6_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_6_1"><button class="btn btn-outline-success"><span class="job_id">6 : Job ID b50adf1566a54eb2bdb28a44db41ff57</span></button></div></a><div aria-labelledby="job_list___sub_heading_6_1" data-parent="#job_list___sub_accordion_6" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_6_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=44" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (44, 5), end pos: (44, 23)</button></a></pre><pre>operator: core/AddNot, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -41,7 +41,7 @@
+ 			return front_node.data
+ 
+ 	def peek(self):
+-		if self.front is None:
++		if not self.front is None:
+ 			return None
+ 		return self.front.data
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ..F.....           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py F.F....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py ..F.....               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py F....F...F      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f1cfd0a8cd0&gt;
+
+    def peek(self):
+    	if not self.front is None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:8: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f1cfd1ca860&gt;
+
+    def peek(self):
+    	if not self.front is None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+&gt;       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+E       AssertionError: assert 'builtins.NoneType' == 'queue1.Queue'
+E         - queue1.Queue
+E         + builtins.NoneType
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:35: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+&gt;       var_0 = queue_0.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f1cfd1ca380&gt;
+
+    def peek(self):
+    	if not self.front is None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__str__()
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+&gt;       var_1 = queue_1.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f1cfd0aa530&gt;
+
+    def peek(self):
+    	if not self.front is None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 0
+        var_2 = queue_0.enqueue(var_1)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        var_3 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+&gt;       var_4 = queue_0.peek()
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;queue1.Queue object at 0x7f1cfd01eef0&gt;
+
+    def peek(self):
+    	if not self.front is None:
+    		return None
+&gt;   	return self.front.data
+E    AttributeError: 'NoneType' object has no attribute 'data'
+
+queue1.py:46: AttributeError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+        var_0 = queue_1.enqueue(queue_0)
+        assert len(queue_1) == 1
+        var_1 = queue_1.peek()
+&gt;       assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+E       AssertionError: assert 'builtins.NoneType' == 'queue1.Queue'
+E         - queue1.Queue
+E         + builtins.NoneType
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:103: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_2 - A...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - Attrib...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - Assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_2 - Attri...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9
+========================= 7 failed, 26 passed in 0.14s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_7"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_7_1" aria-expanded="false" aria-controls="job_list___sub_collapse_7_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_7_1"><button class="btn btn-outline-success"><span class="job_id">7 : Job ID 2bf0f877c12542e9a47b0eb601b4b8c0</span></button></div></a><div aria-labelledby="job_list___sub_heading_7_1" data-parent="#job_list___sub_accordion_7" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_7_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 0</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = 1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py FFFFFFFF           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py FFFFFFF                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py FFFFFFFF               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py FFFFFFFFFF      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb7ae90&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:7: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb7ba30&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb7b6a0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:21: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbd24310&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:31: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2ecb0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:41: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbd26410&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:46: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2f7c0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:53: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb93280&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:64: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2c550&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:7: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb911b0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:25: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb920b0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:31: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbc010f0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:53: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbc00490&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:57: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbd26c80&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:62: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbc01450&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:68: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cc989180&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:7: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbc006d0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2ee90&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:21: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb92b00&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:31: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2de10&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:41: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb91fc0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:46: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2d510&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:53: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb920b0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:64: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2ca00&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:7: AssertionError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbac3a90&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:15: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb7a770&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:21: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbac3400&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:26: AssertionError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbd26320&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:31: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2db70&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:38: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb90460&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:70: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2db40&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:79: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cbb93070&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:87: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f67cba2fd30&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:95: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_1 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_2 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_4 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_5 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_1 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_3 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_4 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_5 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_6 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_1 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_2 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_4 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_5 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9
+============================== 33 failed in 0.20s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_8"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_8_1" aria-expanded="false" aria-controls="job_list___sub_collapse_8_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_8_1"><button class="btn btn-outline-success"><span class="job_id">8 : Job ID 7196dfeb2f9149039c460975a4b306b0</span></button></div></a><div aria-labelledby="job_list___sub_heading_8_1" data-parent="#job_list___sub_accordion_8" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_8_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=12" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (12, 14), end pos: (12, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 1</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -9,7 +9,7 @@
+ 	def __init__(self):
+ 		self.front = None
+ 		self.back = None
+-		self.size = 0
++		self.size = -1
+ 
+ 	def __str__(self):
+ 		# TODO implement this later</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py FFFFFFFF           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py FFFFFFF                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py FFFFFFFF               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py FFFFFFFFFF      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:7: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:15: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:21: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:31: ValueError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:41: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:46: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:53: ValueError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:64: ValueError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:7: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:25: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:31: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:53: ValueError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:57: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:62: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:68: ValueError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:7: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:15: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:21: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:31: ValueError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        none_type_0 = None
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:41: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:46: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:53: ValueError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:64: ValueError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:7: ValueError
+_________________________________ test_case_1 __________________________________
+
+    def test_case_1():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:15: ValueError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:21: ValueError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:26: ValueError
+_________________________________ test_case_4 __________________________________
+
+    def test_case_4():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:31: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:38: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:70: ValueError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:79: ValueError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:87: ValueError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:95: ValueError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_1 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_2 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_4 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_5 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_1 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_3 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_4 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_5 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_6 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_1 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_2 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_4 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_5 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_7 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_0
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_1
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_2
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_3
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_4
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_6
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9
+============================== 33 failed in 0.19s ==============================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_9"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_9_1" aria-expanded="false" aria-controls="job_list___sub_collapse_9_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_9_1"><button class="btn btn-outline-success"><span class="job_id">9 : Job ID 495d38d1a4504bfb85d86442f32a946a</span></button></div></a><div aria-labelledby="job_list___sub_heading_9_1" data-parent="#job_list___sub_accordion_9" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_9_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 2</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 2
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py F..F..FF           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py F.F....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py F..F..FF               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77ba86a0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:11: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77bab8e0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:33: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77d339a0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:55: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77bab9a0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:66: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.peek()
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77d31030&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:10: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77babb20&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:33: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77d30070&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:11: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77baad70&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:33: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77d33190&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:55: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77baa5c0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:66: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77d30cd0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:40: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(bool_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77ec30d0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:81: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c78b28fa0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:89: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+        var_0 = queue_1.enqueue(queue_0)
+&gt;       assert len(queue_1) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f7c77d551b0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:101: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9
+======================== 14 failed, 19 passed in 0.16s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_10"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_10_1" aria-expanded="false" aria-controls="job_list___sub_collapse_10_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_10_1"><button class="btn btn-outline-success"><span class="job_id">10 : Job ID 54635beeba07433883408db415e4d34a</span></button></div></a><div aria-labelledby="job_list___sub_heading_10_1" data-parent="#job_list___sub_accordion_10" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_10_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=32" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (32, 15), end pos: (32, 16)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 3</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -29,7 +29,7 @@
+ 			self.back.next = new_back
+ 			self.back = new_back
+ 
+-		self.size += 1
++		self.size += 0
+ 
+ 	def dequeue(self):
+ 		if self.front is None:</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py F..F..FF           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py F.F....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py F..F..FF               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F.FFF      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab47243fd0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:11: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab473eda80&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:33: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab473ee620&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:55: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab470fda20&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:66: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.peek()
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab47262290&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:10: AssertionError
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab473eeb30&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:33: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.__len__()
+        assert var_0 == 0
+        var_1 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab47260b20&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:11: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab470fc5b0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:33: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab47260400&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:55: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        str_0 = '\\=BToYP3(\rYl?ol$]='
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab470ffbe0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:66: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab470d1e40&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:40: AssertionError
+_________________________________ test_case_7 __________________________________
+
+    def test_case_7():
+        bool_0 = False
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(bool_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab4718ba60&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:81: AssertionError
+_________________________________ test_case_8 __________________________________
+
+    def test_case_8():
+        complex_0 = -855.07 + 3693.73564j
+        queue_node_0 = module_0.QueueNode(complex_0)
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab47260f10&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:89: AssertionError
+_________________________________ test_case_9 __________________________________
+
+    def test_case_9():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        queue_1 = module_0.Queue()
+        assert len(queue_1) == 0
+        queue_node_0 = module_0.QueueNode(queue_0)
+        assert len(queue_node_0.data) == 0
+        var_0 = queue_1.enqueue(queue_0)
+&gt;       assert len(queue_1) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fab47292fe0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:101: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_0 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_7 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_0 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_7 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_7
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_8
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_9
+======================== 14 failed, 19 passed in 0.16s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_11"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_11_1" aria-expanded="false" aria-controls="job_list___sub_collapse_11_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_11_1"><button class="btn btn-outline-success"><span class="job_id">11 : Job ID cd548c33fefe417291bd217d7206047b</span></button></div></a><div aria-labelledby="job_list___sub_heading_11_1" data-parent="#job_list___sub_accordion_11" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_11_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 4</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 2
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ...F..F.           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py F......                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py ...F..F.               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:57: ValueError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.peek()
+        var_1 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_2 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 2
+        var_3 = queue_0.__str__()
+        var_4 = queue_0.__str__()
+        var_5 = var_3.__str__()
+        var_6 = queue_0.__len__()
+        assert var_6 == 2
+        var_7 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 1
+E       assert 0 == 1
+E        +  where 0 = len(&lt;queue1.Queue object at 0x7fb5de062740&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:19: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:36: ValueError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:57: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:42: ValueError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - V...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - Value...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+========================= 6 failed, 27 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_12"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_12_1" aria-expanded="false" aria-controls="job_list___sub_collapse_12_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_12_1"><button class="btn btn-outline-success"><span class="job_id">12 : Job ID ac50e05aa9634dacaf121873d5e31b0b</span></button></div></a><div aria-labelledby="job_list___sub_heading_12_1" data-parent="#job_list___sub_accordion_12" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_12_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=40" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (40, 16), end pos: (40, 17)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 5</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -37,7 +37,7 @@
+ 		else:
+ 			front_node = self.front
+ 			self.front = self.front.next
+-			self.size -= 1
++			self.size -= 0
+ 			return front_node.data
+ 
+ 	def peek(self):</pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ...F..F.           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py F......                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py ...F..F.               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f827d921cc0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:36: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f827d9230a0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py:57: AssertionError
+_________________________________ test_case_0 __________________________________
+
+    def test_case_0():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.peek()
+        var_1 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_2 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 2
+        var_3 = queue_0.__str__()
+        var_4 = queue_0.__str__()
+        var_5 = var_3.__str__()
+        var_6 = queue_0.__len__()
+        assert var_6 == 2
+        var_7 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 1
+E       assert 2 == 1
+E        +  where 2 = len(&lt;queue1.Queue object at 0x7f827dab2ef0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:19: AssertionError
+_________________________________ test_case_3 __________________________________
+
+    def test_case_3():
+        str_0 = 'I*So4'
+        queue_node_0 = module_0.QueueNode(str_0)
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        var_2 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f827d9230d0&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:36: AssertionError
+_________________________________ test_case_6 __________________________________
+
+    def test_case_6():
+        dict_0 = {}
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(dict_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f827dab1f90&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py:57: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f827d951900&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:42: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_3 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py::test_case_6 - a...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_0 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_3 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py::test_case_6 - asser...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+========================= 6 failed, 27 passed in 0.13s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_13"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_13_1" aria-expanded="false" aria-controls="job_list___sub_collapse_13_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_13_1"><button class="btn btn-outline-success"><span class="job_id">13 : Job ID 0423d6f01ca0497ba81901efadcf7ba1</span></button></div></a><div aria-labelledby="job_list___sub_heading_13_1" data-parent="#job_list___sub_accordion_13" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_13_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 6</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = 1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ........           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py ..F....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py ........               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 1
+        var_2 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 2
+        assert len(var_1) == 2
+        var_3 = queue_0.__str__()
+        var_4 = queue_0.__str__()
+        var_5 = var_3.__str__()
+        var_6 = var_1.clear()
+&gt;       assert len(queue_0) == 0
+E       assert 1 == 0
+E        +  where 1 = len(&lt;queue1.Queue object at 0x7f259576a560&gt;)
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:44: AssertionError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 0
+        var_2 = queue_0.enqueue(var_1)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        var_3 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        var_4 = queue_0.peek()
+        var_5 = queue_0.enqueue(var_3)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        assert len(var_3) == 1
+        var_6 = var_3.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        assert len(var_6) == 0
+        var_7 = var_6.clear()
+        var_8 = var_6.__len__()
+&gt;       assert var_8 == 0
+E       assert 1 == 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:64: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - assert...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+========================= 2 failed, 31 passed in 0.12s =========================
+</pre></div></div></div></div></div><div class="mb-1" id="job_list___sub_accordion_14"><div class="card"><a data-toggle="collapse" data-target="#job_list___sub_collapse_14_1" aria-expanded="false" aria-controls="job_list___sub_collapse_14_1" href="#" class="job_list___sub_multi_heading"><div role="alert" class="card-header alert-success" id="job_list___sub_heading_14_1"><button class="btn btn-outline-success"><span class="job_id">14 : Job ID 8387744df0604a1785b7d660086a47ac</span></button></div></a><div aria-labelledby="job_list___sub_heading_14_1" data-parent="#job_list___sub_accordion_14" class="collapse job_list___sub_multi_collapse" id="job_list___sub_collapse_14_1"><div class="card-body"><div class="work-item"><div class="alert alert-success test-outcome" role="alert"><p>worker outcome: normal</p><p>test outcome: killed</p></div></div><pre class="location"><a href="pycharm://open?file=queue1.py&amp;line=49" class="text-secondary"><button class="btn btn-outline-dark">queue1.py, start pos: (49, 14), end pos: (49, 15)</button></a></pre><pre>operator: core/NumberReplacer, occurrence: 7</pre><div class="alert alert-secondary"><pre class="diff">--- mutation diff ---
+--- aqueue1.py
++++ bqueue1.py
+@@ -46,7 +46,7 @@
+ 		return self.front.data
+ 
+ 	def clear(self):
+-		self.size = 0 
++		self.size = -1 
+ 		self.front = None
+ 		self.back = None
+ </pre></div><div class="alert alert-secondary"><pre class="diff">============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
+rootdir: /home/auri/temp/lucca/python_experiments/queue1
+collected 33 items
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_DYNAMOSA.py ........           [ 24%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py ..F....                 [ 45%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MOSA.py ........               [ 69%]
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py .....F....      [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_case_2 __________________________________
+
+    def test_case_2():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.peek()
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 1
+        var_2 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 2
+        assert len(var_1) == 2
+        var_3 = queue_0.__str__()
+        var_4 = queue_0.__str__()
+        var_5 = var_3.__str__()
+        var_6 = var_1.clear()
+&gt;       assert len(queue_0) == 0
+E       ValueError: __len__() should return &gt;= 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py:44: ValueError
+_________________________________ test_case_5 __________________________________
+
+    def test_case_5():
+        queue_0 = module_0.Queue()
+        assert len(queue_0) == 0
+        var_0 = queue_0.enqueue(queue_0)
+        assert len(queue_0) == 1
+        var_1 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert f'{type(var_1).__module__}.{type(var_1).__qualname__}' == 'queue1.Queue'
+        assert len(var_1) == 0
+        var_2 = queue_0.enqueue(var_1)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        var_3 = queue_0.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        var_4 = queue_0.peek()
+        var_5 = queue_0.enqueue(var_3)
+        assert len(queue_0) == 1
+        assert len(var_1) == 1
+        assert len(var_3) == 1
+        var_6 = var_3.dequeue()
+        assert len(queue_0) == 0
+        assert len(var_1) == 0
+        assert len(var_3) == 0
+        assert len(var_6) == 0
+        var_7 = var_6.clear()
+        var_8 = var_6.__len__()
+&gt;       assert var_8 == 0
+E       assert -1 == 0
+
+DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py:64: AssertionError
+=========================== short test summary info ============================
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_MIO.py::test_case_2 - ValueE...
+FAILED DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_queue1_WHOLE_SUITE.py::test_case_5
+========================= 2 failed, 31 passed in 0.12s =========================
+</pre></div></div></div></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script type="text/javascript">$('div.job_list___sub_multi_collapse').on('shown.bs.collapse',  function () {    correct_behavior_functional_buttons();  });$('div.job_list___sub_multi_collapse').on('hidden.bs.collapse',  function () {    correct_behavior_functional_buttons();  });function correct_behavior_functional_buttons() {    var expand = false;    var collapse = false;    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'false') {        expand = true;        return false;      };    });    $('a.job_list___sub_multi_heading').each(function(index) {      if ($(this).attr('aria-expanded') == 'true') {        collapse = true;        return false;      };    });    if (expand) {      $('div#job_item_expand_all').css('display', 'inline-block');    } else {      $('div#job_item_expand_all').css('display', 'none');    };    if (collapse) {      $('div#job_item_collapse_all').css('display', 'inline-block');    } else {      $('div#job_item_collapse_all').css('display', 'none');    };  };correct_behavior_functional_buttons();</script></body></html>
