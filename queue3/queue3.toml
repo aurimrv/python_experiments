@@ -2,7 +2,7 @@
 module-path = "queue3.py"
 timeout = 60.0
 excluded-modules = []
-test-command = "python -m pytest ./MIO-MOSA"
+test-command = "python -m pytest ./MOSA-WHOLE_SUITE"
 
 [cosmic-ray.distributor]
 name = "local"

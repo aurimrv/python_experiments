@@ -1,0 +1,13 @@
+[03/06/23 14:09:44] INFO     INFO:root:Reading config from                   config.py:103
+                             'binarySearchTree1.toml'                                     
+                    INFO     INFO:cosmic_ray.commands.execute:Beginning      execute.py:45
+                             execution                                                    
+                    INFO     INFO:cosmic_ray.testing:Running test            testing.py:36
+                             (timeout=60.0): python -m pytest                             
+                             ./MOSA-WHOLE_SUITE                                           
+                    INFO     INFO:cosmic_ray.commands.execute:Job baseline   execute.py:43
+                             complete                                                     
+                    INFO     INFO:cosmic_ray.commands.execute:Execution      execute.py:53
+                             finished                                                     
+                    INFO     INFO:root:Baseline passed. Execution with no       cli.py:166
+                             mutation works fine.                                         
