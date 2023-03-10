@@ -19,3 +19,7 @@ pynguin --project-path ./ --output-path ./RANDOM --module-name binarySearchTree3
 ## CosmicRay
 
 We have to set up Timeout limit to RANDOM tests to 60s instead the default value (20s). For the majority of programs the `cosmic-ray --verbosity INFO baseline` command finished with TIMEOUT error with timeout default value.
+
+## Running scripts on all test set directories
+
+for alg in $(cat test-sets.txt); do echo ${alg}; ./scripts/coverageReport.sh /home/auri/temp/lucca/python_experiments files.txt ${alg};./scripts/coverageSummary.py /home/auri/temp/lucca/python_experiments files.txt ${alg}; done

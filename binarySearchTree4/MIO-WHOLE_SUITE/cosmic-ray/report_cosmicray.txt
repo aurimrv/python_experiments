@@ -1,0 +1,57 @@
+[job-id] ab25f13e221a4287b09a46075bed091b
+binarySearchTree4.py core/ReplaceComparisonOperator_LtE_Eq 0
+worker outcome: normal, test outcome: killed
+[job-id] a3b0e0bb569b4d4b9406cdfe5bb15c3b
+binarySearchTree4.py core/ReplaceComparisonOperator_LtE_NotEq 0
+worker outcome: normal, test outcome: killed
+[job-id] da2796d18d67461fa703d4c78d2c3e30
+binarySearchTree4.py core/ReplaceComparisonOperator_LtE_Lt 0
+worker outcome: normal, test outcome: killed
+[job-id] 56b1b0ca294049b2a401cd74d29e69e8
+binarySearchTree4.py core/ReplaceComparisonOperator_LtE_Gt 0
+worker outcome: normal, test outcome: killed
+[job-id] 6ca4914476614753a0a0833b0e82881c
+binarySearchTree4.py core/ReplaceComparisonOperator_LtE_GtE 0
+worker outcome: normal, test outcome: killed
+[job-id] 83c03a77a6b2431388a7375125372f5a
+binarySearchTree4.py core/ReplaceComparisonOperator_LtE_Is 0
+worker outcome: normal, test outcome: killed
+[job-id] db7a8f0c6c6b4f8293834ee7767961bb
+binarySearchTree4.py core/ReplaceComparisonOperator_LtE_IsNot 0
+worker outcome: normal, test outcome: killed
+[job-id] c49b857e1f9d48acb2935872d2308aba
+binarySearchTree4.py core/ReplaceComparisonOperator_Is_IsNot 0
+worker outcome: normal, test outcome: killed
+[job-id] f617e8d5bab44d78809eb876b4f55fb0
+binarySearchTree4.py core/ReplaceComparisonOperator_Is_IsNot 1
+worker outcome: normal, test outcome: killed
+[job-id] 2841aba675b246a5b16c513962a8cf48
+binarySearchTree4.py core/ReplaceComparisonOperator_Is_IsNot 2
+worker outcome: normal, test outcome: killed
+[job-id] 68285b44e48f462d90ba0e62cd128002
+binarySearchTree4.py core/ReplaceComparisonOperator_Is_IsNot 3
+worker outcome: normal, test outcome: killed
+[job-id] c10487819d044a7a8b09157231837712
+binarySearchTree4.py core/ReplaceComparisonOperator_Is_IsNot 4
+worker outcome: normal, test outcome: killed
+[job-id] 9940b66b9b3d4516953dffa6d2a07841
+binarySearchTree4.py core/AddNot 0
+worker outcome: normal, test outcome: killed
+[job-id] 84d5c151c1a6486395bd9376103f147f
+binarySearchTree4.py core/AddNot 1
+worker outcome: normal, test outcome: killed
+[job-id] cf6df51b9c2d478ea2eb4696dd8a04eb
+binarySearchTree4.py core/AddNot 2
+worker outcome: normal, test outcome: killed
+[job-id] 32f17b0a91c340a49072aff5c4ae50b4
+binarySearchTree4.py core/AddNot 3
+worker outcome: normal, test outcome: killed
+[job-id] e7116c3e4cab4a7f98ebd5c6deededaf
+binarySearchTree4.py core/AddNot 4
+worker outcome: normal, test outcome: killed
+[job-id] 7cb70f0f551549e1a63f53aea2e2982f
+binarySearchTree4.py core/AddNot 5
+worker outcome: normal, test outcome: killed
+total jobs: 18
+complete: 18 (100.00%)
+surviving mutants: 0 (0.00%)
