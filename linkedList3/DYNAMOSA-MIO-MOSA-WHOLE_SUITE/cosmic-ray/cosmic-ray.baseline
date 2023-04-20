@@ -1,13 +1,6 @@
-[03/06/23 08:26:57] INFO     INFO:root:Reading config from                   config.py:103
-                             'linkedList3.toml'                                           
-                    INFO     INFO:cosmic_ray.commands.execute:Beginning      execute.py:45
-                             execution                                                    
-                    INFO     INFO:cosmic_ray.testing:Running test            testing.py:36
-                             (timeout=60.0): python -m pytest                             
-                             ./DYNAMOSA-MIO-MOSA-WHOLE_SUITE                              
-[03/06/23 08:26:58] INFO     INFO:cosmic_ray.commands.execute:Job baseline   execute.py:43
-                             complete                                                     
-                    INFO     INFO:cosmic_ray.commands.execute:Execution      execute.py:53
-                             finished                                                     
-                    INFO     INFO:root:Baseline passed. Execution with no       cli.py:166
-                             mutation works fine.                                         
+[04/19/23 08:28:18] INFO     INFO:root:Reading config from 'linkedList3.toml'                                                        config.py:103
+                    INFO     INFO:cosmic_ray.commands.execute:Beginning execution                                                    execute.py:45
+                    INFO     INFO:cosmic_ray.testing:Running test (timeout=60.0): python -m pytest ./DYNAMOSA-MIO-MOSA-WHOLE_SUITE   testing.py:36
+                    INFO     INFO:cosmic_ray.commands.execute:Job baseline complete                                                  execute.py:43
+                    INFO     INFO:cosmic_ray.commands.execute:Execution finished                                                     execute.py:53
+                    INFO     INFO:root:Baseline passed. Execution with no mutation works fine.                                          cli.py:166

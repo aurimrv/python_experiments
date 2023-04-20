@@ -2,7 +2,7 @@
 module-path = "binarySearchTree3.py"
 timeout = 60.0
 excluded-modules = []
-test-command = "python -m pytest ./DYNAMOSA-MOSA-WHOLE_SUITE"
+test-command = "python -m pytest ./DYNAMOSA-MIO-MOSA-WHOLE_SUITE"
 
 [cosmic-ray.distributor]
 name = "local"
