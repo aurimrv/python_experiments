@@ -1,13 +1,6 @@
-[03/05/23 13:17:10] INFO     INFO:root:Reading config from         config.py:103
-                             'linkedList3.toml'                                 
-                    INFO     INFO:cosmic_ray.commands.execute:Begi execute.py:45
-                             nning execution                                    
-                    INFO     INFO:cosmic_ray.testing:Running test  testing.py:36
-                             (timeout=60.0): python -m pytest                   
-                             ./DYNAMOSA-MIO                                     
-[03/05/23 13:17:12] INFO     INFO:cosmic_ray.commands.execute:Job  execute.py:43
-                             baseline complete                                  
-                    INFO     INFO:cosmic_ray.commands.execute:Exec execute.py:53
-                             ution finished                                     
-                    INFO     INFO:root:Baseline passed. Execution     cli.py:166
-                             with no mutation works fine.                       
+[04/20/23 14:15:01] INFO     INFO:root:Reading config from 'linkedList3.toml'                                                        config.py:103
+                    INFO     INFO:cosmic_ray.commands.execute:Beginning execution                                                    execute.py:45
+                    INFO     INFO:cosmic_ray.testing:Running test (timeout=40.0): python -m pytest --tb=no ./DYNAMOSA-MIO            testing.py:36
+[04/20/23 14:15:02] INFO     INFO:cosmic_ray.commands.execute:Job baseline complete                                                  execute.py:43
+                    INFO     INFO:cosmic_ray.commands.execute:Execution finished                                                     execute.py:53
+                    INFO     INFO:root:Baseline passed. Execution with no mutation works fine.                                          cli.py:166

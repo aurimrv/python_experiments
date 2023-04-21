@@ -1,8 +1,8 @@
 [cosmic-ray]
 module-path = "stack5.py"
-timeout = 60.0
+timeout = 40.0
 excluded-modules = []
-test-command = "python -m pytest ./DYNAMOSA-MIO-MOSA-WHOLE_SUITE"
+test-command = "python -m pytest --tb=no ./DYNAMOSA-MIO-MOSA-WHOLE_SUITE"
 
 [cosmic-ray.distributor]
 name = "local"

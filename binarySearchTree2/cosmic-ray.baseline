@@ -1,6 +1,0 @@
-[04/19/23 22:18:58] INFO     INFO:root:Reading config from 'binarySearchTree2.toml'                                                  config.py:103
-                    INFO     INFO:cosmic_ray.commands.execute:Beginning execution                                                    execute.py:45
-                    INFO     INFO:cosmic_ray.testing:Running test (timeout=120.0): python -m pytest ./RANDOM                         testing.py:36
-[04/19/23 22:19:01] INFO     INFO:cosmic_ray.commands.execute:Job baseline complete                                                  execute.py:43
-                    INFO     INFO:cosmic_ray.commands.execute:Execution finished                                                     execute.py:53
-                    INFO     INFO:root:Baseline passed. Execution with no mutation works fine.                                          cli.py:166
