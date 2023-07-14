@@ -1,4 +1,4 @@
-2023-03-05 01:56:27,712: Running clean trial
+2023-07-14 00:16:56,651: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/stack1
@@ -6,53 +6,57 @@ collected 17 items
 
 WHOLE_SUITE/test_stack1_WHOLE_SUITE.py .................                 [100%]
 
-============================== 17 passed in 0.27s ==============================
-2023-03-05 01:56:28,754: [92m35 mutation targets found in stack1.py AST.[0m
-2023-03-05 01:56:28,754: Setting random.seed to: None
-2023-03-05 01:56:28,755: Coverage file does not exist, proceeding to sample from all targets.
-2023-03-05 01:56:28,755: Total sample space size: 35
-2023-03-05 01:56:28,755: [92mSelecting 10 locations from 35 potentials.[0m
-2023-03-05 01:56:28,755: Starting individual mutation trials!
-2023-03-05 01:56:28,755: Running serial (single processor) dispatch mode.
-2023-03-05 01:56:28,755: Current target location: stack1.py, LocIndex(ast_class='BinOp', lineno=96, col_offset=29, op_type=<class 'ast.Mult'>, end_lineno=96, end_col_offset=34)
-2023-03-05 01:56:29,941: [91mResult: Survived at stack1.py: (96, 29)[0m
-2023-03-05 01:56:31,019: [91mResult: Survived at stack1.py: (96, 29)[0m
-2023-03-05 01:56:32,269: [91mResult: Survived at stack1.py: (96, 29)[0m
-2023-03-05 01:56:33,463: [91mResult: Survived at stack1.py: (96, 29)[0m
-2023-03-05 01:56:34,539: [91mResult: Survived at stack1.py: (96, 29)[0m
-2023-03-05 01:56:35,693: [91mResult: Survived at stack1.py: (96, 29)[0m
-2023-03-05 01:56:35,693: Current target location: stack1.py, LocIndex(ast_class='If', lineno=130, col_offset=4, op_type='If_Statement', end_lineno=131, end_col_offset=26)
-2023-03-05 01:56:36,852: [91mResult: Survived at stack1.py: (130, 4)[0m
-2023-03-05 01:56:38,123: [92mResult: Detected at stack1.py: (130, 4)[0m
-2023-03-05 01:56:38,124: Current target location: stack1.py, LocIndex(ast_class='NameConstant', lineno=73, col_offset=15, op_type=False, end_lineno=73, end_col_offset=20)
-2023-03-05 01:56:39,345: [92mResult: Detected at stack1.py: (73, 15)[0m
-2023-03-05 01:56:40,552: [92mResult: Detected at stack1.py: (73, 15)[0m
-2023-03-05 01:56:40,552: Current target location: stack1.py, LocIndex(ast_class='NameConstant', lineno=29, col_offset=23, op_type=None, end_lineno=29, end_col_offset=27)
-2023-03-05 01:56:41,762: [92mResult: Detected at stack1.py: (29, 23)[0m
-2023-03-05 01:56:42,959: [92mResult: Detected at stack1.py: (29, 23)[0m
-2023-03-05 01:56:42,960: Current target location: stack1.py, LocIndex(ast_class='If', lineno=72, col_offset=4, op_type='If_Statement', end_lineno=76, end_col_offset=19)
-2023-03-05 01:56:44,203: [92mResult: Detected at stack1.py: (72, 4)[0m
-2023-03-05 01:56:45,394: [92mResult: Detected at stack1.py: (72, 4)[0m
-2023-03-05 01:56:45,394: Current target location: stack1.py, LocIndex(ast_class='BinOp', lineno=99, col_offset=29, op_type=<class 'ast.Pow'>, end_lineno=99, end_col_offset=35)
-2023-03-05 01:56:46,539: [91mResult: Survived at stack1.py: (99, 29)[0m
-2023-03-05 01:56:47,619: [91mResult: Survived at stack1.py: (99, 29)[0m
-2023-03-05 01:56:48,630: [91mResult: Survived at stack1.py: (99, 29)[0m
-2023-03-05 01:56:49,693: [91mResult: Survived at stack1.py: (99, 29)[0m
-2023-03-05 01:56:50,743: [91mResult: Survived at stack1.py: (99, 29)[0m
-2023-03-05 01:56:51,771: [91mResult: Survived at stack1.py: (99, 29)[0m
-2023-03-05 01:56:51,771: Current target location: stack1.py, LocIndex(ast_class='AugAssign', lineno=26, col_offset=8, op_type='AugAssign_Add', end_lineno=26, end_col_offset=22)
-2023-03-05 01:56:53,003: [92mResult: Detected at stack1.py: (26, 8)[0m
-2023-03-05 01:56:54,239: [92mResult: Detected at stack1.py: (26, 8)[0m
-2023-03-05 01:56:55,375: [92mResult: Detected at stack1.py: (26, 8)[0m
-2023-03-05 01:56:55,375: Current target location: stack1.py, LocIndex(ast_class='If', lineno=66, col_offset=16, op_type='If_Statement', end_lineno=67, end_col_offset=32)
-2023-03-05 01:56:56,554: [92mResult: Detected at stack1.py: (66, 16)[0m
-2023-03-05 01:56:57,827: [92mResult: Detected at stack1.py: (66, 16)[0m
-2023-03-05 01:56:57,828: Current target location: stack1.py, LocIndex(ast_class='CompareIn', lineno=106, col_offset=11, op_type=<class 'ast.In'>, end_lineno=106, end_col_offset=34)
-2023-03-05 01:56:59,065: [92mResult: Detected at stack1.py: (106, 11)[0m
-2023-03-05 01:56:59,065: Current target location: stack1.py, LocIndex(ast_class='NameConstant', lineno=15, col_offset=23, op_type=None, end_lineno=15, end_col_offset=27)
-2023-03-05 01:57:00,123: [91mResult: Survived at stack1.py: (15, 23)[0m
-2023-03-05 01:57:01,234: [91mResult: Survived at stack1.py: (15, 23)[0m
-2023-03-05 01:57:01,235: Running clean trial
+============================== 17 passed in 0.05s ==============================
+2023-07-14 00:16:56,891: [92m35 mutation targets found in stack1.py AST.[0m
+2023-07-14 00:16:56,891: Setting random.seed to: 2023
+2023-07-14 00:16:56,892: Total sample space size: 35
+2023-07-14 00:16:56,892: [92mSelecting 10 locations from 35 potentials.[0m
+2023-07-14 00:16:56,892: Starting individual mutation trials!
+2023-07-14 00:16:56,892: Running serial (single processor) dispatch mode.
+2023-07-14 00:16:56,892: Current target location: stack1.py, LocIndex(ast_class='NameConstant', lineno=76, col_offset=15, op_type=True, end_lineno=76, end_col_offset=19)
+2023-07-14 00:16:57,108: [92mResult: Detected at stack1.py: (76, 15)[0m
+2023-07-14 00:16:57,325: [92mResult: Detected at stack1.py: (76, 15)[0m
+2023-07-14 00:16:57,326: Current target location: stack1.py, LocIndex(ast_class='BinOp', lineno=97, col_offset=29, op_type=<class 'ast.Div'>, end_lineno=97, end_col_offset=34)
+2023-07-14 00:16:57,535: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-07-14 00:16:57,742: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-07-14 00:16:57,956: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-07-14 00:16:58,163: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-07-14 00:16:58,377: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-07-14 00:16:58,585: [91mResult: Survived at stack1.py: (97, 29)[0m
+2023-07-14 00:16:58,585: Current target location: stack1.py, LocIndex(ast_class='Compare', lineno=130, col_offset=7, op_type=<class 'ast.Gt'>, end_lineno=130, end_col_offset=21)
+2023-07-14 00:16:58,792: [92mResult: Detected at stack1.py: (130, 7)[0m
+2023-07-14 00:16:58,999: [92mResult: Detected at stack1.py: (130, 7)[0m
+2023-07-14 00:16:59,205: [91mResult: Survived at stack1.py: (130, 7)[0m
+2023-07-14 00:16:59,413: [92mResult: Detected at stack1.py: (130, 7)[0m
+2023-07-14 00:16:59,620: [91mResult: Survived at stack1.py: (130, 7)[0m
+2023-07-14 00:16:59,620: Current target location: stack1.py, LocIndex(ast_class='NameConstant', lineno=70, col_offset=23, op_type=False, end_lineno=70, end_col_offset=28)
+2023-07-14 00:16:59,835: [92mResult: Detected at stack1.py: (70, 23)[0m
+2023-07-14 00:17:00,049: [92mResult: Detected at stack1.py: (70, 23)[0m
+2023-07-14 00:17:00,049: Current target location: stack1.py, LocIndex(ast_class='NameConstant', lineno=67, col_offset=27, op_type=False, end_lineno=67, end_col_offset=32)
+2023-07-14 00:17:00,256: [92mResult: Detected at stack1.py: (67, 27)[0m
+2023-07-14 00:17:00,464: [92mResult: Detected at stack1.py: (67, 27)[0m
+2023-07-14 00:17:00,464: Current target location: stack1.py, LocIndex(ast_class='Compare', lineno=66, col_offset=19, op_type=<class 'ast.NotEq'>, end_lineno=66, end_col_offset=47)
+2023-07-14 00:17:00,674: [92mResult: Detected at stack1.py: (66, 19)[0m
+2023-07-14 00:17:00,881: [91mResult: Survived at stack1.py: (66, 19)[0m
+2023-07-14 00:17:01,095: [92mResult: Detected at stack1.py: (66, 19)[0m
+2023-07-14 00:17:01,309: [92mResult: Detected at stack1.py: (66, 19)[0m
+2023-07-14 00:17:01,527: [92mResult: Detected at stack1.py: (66, 19)[0m
+2023-07-14 00:17:01,527: Current target location: stack1.py, LocIndex(ast_class='CompareIs', lineno=39, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=39, end_col_offset=27)
+2023-07-14 00:17:01,745: [92mResult: Detected at stack1.py: (39, 11)[0m
+2023-07-14 00:17:01,745: Current target location: stack1.py, LocIndex(ast_class='If', lineno=106, col_offset=8, op_type='If_Statement', end_lineno=127, end_col_offset=23)
+2023-07-14 00:17:01,959: [92mResult: Detected at stack1.py: (106, 8)[0m
+2023-07-14 00:17:02,173: [91mResult: Survived at stack1.py: (106, 8)[0m
+2023-07-14 00:17:02,173: Current target location: stack1.py, LocIndex(ast_class='NameConstant', lineno=15, col_offset=23, op_type=None, end_lineno=15, end_col_offset=27)
+2023-07-14 00:17:02,380: [91mResult: Survived at stack1.py: (15, 23)[0m
+2023-07-14 00:17:02,586: [91mResult: Survived at stack1.py: (15, 23)[0m
+2023-07-14 00:17:02,586: Current target location: stack1.py, LocIndex(ast_class='BinOp', lineno=94, col_offset=29, op_type=<class 'ast.Add'>, end_lineno=94, end_col_offset=34)
+2023-07-14 00:17:02,792: [91mResult: Survived at stack1.py: (94, 29)[0m
+2023-07-14 00:17:03,000: [91mResult: Survived at stack1.py: (94, 29)[0m
+2023-07-14 00:17:03,207: [91mResult: Survived at stack1.py: (94, 29)[0m
+2023-07-14 00:17:03,413: [91mResult: Survived at stack1.py: (94, 29)[0m
+2023-07-14 00:17:03,619: [91mResult: Survived at stack1.py: (94, 29)[0m
+2023-07-14 00:17:03,833: [91mResult: Survived at stack1.py: (94, 29)[0m
+2023-07-14 00:17:03,833: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/stack1
@@ -60,17 +64,17 @@ collected 17 items
 
 WHOLE_SUITE/test_stack1_WHOLE_SUITE.py .................                 [100%]
 
-============================== 17 passed in 0.17s ==============================
-2023-03-05 01:57:02,408: CLI Report:
+============================== 17 passed in 0.03s ==============================
+2023-07-14 00:17:04,036: CLI Report:
 
 Mutatest diagnostic summary
 ===========================
  - Source location: /home/auri/temp/lucca/python_experiments/stack1/stack1.py
- - Test commands: ['python', '-m', 'pytest', './WHOLE_SUITE']
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './WHOLE_SUITE']
  - Mode: f
  - Excluded files: []
  - N locations input: 10
- - Random seed: None
+ - Random seed: 2023
 
 Random sample details
 ---------------------
@@ -81,57 +85,62 @@ Random sample details
 
 Running time details
 --------------------
- - Clean trial 1 run time: 0:00:01.024775
- - Clean trial 2 run time: 0:00:01.172161
- - Mutation trials total run time: 0:00:32.484589
+ - Clean trial 1 run time: 0:00:00.237438
+ - Clean trial 2 run time: 0:00:00.202470
+ - Mutation trials total run time: 0:00:06.944739
 
-2023-03-05 01:57:02,408: Trial Summary Report:
+2023-07-14 00:17:04,036: Trial Summary Report:
 
 Overall mutation trial summary
 ==============================
- - SURVIVED: 15
- - DETECTED: 13
- - TOTAL RUNS: 28
- - RUN DATETIME: 2023-03-05 01:57:02.407870
+ - DETECTED: 15
+ - SURVIVED: 18
+ - TOTAL RUNS: 33
+ - RUN DATETIME: 2023-07-14 00:17:04.036353
 
-2023-03-05 01:57:02,408: Detected mutations:[92m
+2023-07-14 00:17:04,036: Detected mutations:[92m
 
 DETECTED
 --------
- - stack1.py: (l: 26, c: 8) - mutation from AugAssign_Add to AugAssign_Div
- - stack1.py: (l: 26, c: 8) - mutation from AugAssign_Add to AugAssign_Sub
- - stack1.py: (l: 26, c: 8) - mutation from AugAssign_Add to AugAssign_Mult
- - stack1.py: (l: 29, c: 23) - mutation from None to False
- - stack1.py: (l: 29, c: 23) - mutation from None to True
- - stack1.py: (l: 66, c: 16) - mutation from If_Statement to If_False
- - stack1.py: (l: 66, c: 16) - mutation from If_Statement to If_True
- - stack1.py: (l: 72, c: 4) - mutation from If_Statement to If_False
- - stack1.py: (l: 72, c: 4) - mutation from If_Statement to If_True
- - stack1.py: (l: 73, c: 15) - mutation from False to None
- - stack1.py: (l: 73, c: 15) - mutation from False to True
- - stack1.py: (l: 106, c: 11) - mutation from <class 'ast.In'> to <class 'ast.NotIn'>
- - stack1.py: (l: 130, c: 4) - mutation from If_Statement to If_True[0m
+ - stack1.py: (l: 39, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - stack1.py: (l: 66, c: 19) - mutation from <class 'ast.NotEq'> to <class 'ast.LtE'>
+ - stack1.py: (l: 66, c: 19) - mutation from <class 'ast.NotEq'> to <class 'ast.Lt'>
+ - stack1.py: (l: 66, c: 19) - mutation from <class 'ast.NotEq'> to <class 'ast.Eq'>
+ - stack1.py: (l: 66, c: 19) - mutation from <class 'ast.NotEq'> to <class 'ast.GtE'>
+ - stack1.py: (l: 67, c: 27) - mutation from False to True
+ - stack1.py: (l: 67, c: 27) - mutation from False to None
+ - stack1.py: (l: 70, c: 23) - mutation from False to True
+ - stack1.py: (l: 70, c: 23) - mutation from False to None
+ - stack1.py: (l: 76, c: 15) - mutation from True to False
+ - stack1.py: (l: 76, c: 15) - mutation from True to None
+ - stack1.py: (l: 106, c: 8) - mutation from If_Statement to If_True
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.Eq'>
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.LtE'>
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.GtE'>[0m
 
-2023-03-05 01:57:02,408: Timedout mutations:
+2023-07-14 00:17:04,036: Timedout mutations:
 
-2023-03-05 01:57:02,408: Surviving mutations:[91m
+2023-07-14 00:17:04,036: Surviving mutations:[91m
 
 SURVIVED
 --------
  - stack1.py: (l: 15, c: 23) - mutation from None to False
  - stack1.py: (l: 15, c: 23) - mutation from None to True
- - stack1.py: (l: 96, c: 29) - mutation from <class 'ast.Mult'> to <class 'ast.Sub'>
- - stack1.py: (l: 96, c: 29) - mutation from <class 'ast.Mult'> to <class 'ast.Add'>
- - stack1.py: (l: 96, c: 29) - mutation from <class 'ast.Mult'> to <class 'ast.FloorDiv'>
- - stack1.py: (l: 96, c: 29) - mutation from <class 'ast.Mult'> to <class 'ast.Pow'>
- - stack1.py: (l: 96, c: 29) - mutation from <class 'ast.Mult'> to <class 'ast.Mod'>
- - stack1.py: (l: 96, c: 29) - mutation from <class 'ast.Mult'> to <class 'ast.Div'>
- - stack1.py: (l: 99, c: 29) - mutation from <class 'ast.Pow'> to <class 'ast.Div'>
- - stack1.py: (l: 99, c: 29) - mutation from <class 'ast.Pow'> to <class 'ast.Mod'>
- - stack1.py: (l: 99, c: 29) - mutation from <class 'ast.Pow'> to <class 'ast.FloorDiv'>
- - stack1.py: (l: 99, c: 29) - mutation from <class 'ast.Pow'> to <class 'ast.Sub'>
- - stack1.py: (l: 99, c: 29) - mutation from <class 'ast.Pow'> to <class 'ast.Add'>
- - stack1.py: (l: 99, c: 29) - mutation from <class 'ast.Pow'> to <class 'ast.Mult'>
- - stack1.py: (l: 130, c: 4) - mutation from If_Statement to If_False[0m
+ - stack1.py: (l: 66, c: 19) - mutation from <class 'ast.NotEq'> to <class 'ast.Gt'>
+ - stack1.py: (l: 94, c: 29) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - stack1.py: (l: 94, c: 29) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - stack1.py: (l: 94, c: 29) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - stack1.py: (l: 94, c: 29) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - stack1.py: (l: 94, c: 29) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - stack1.py: (l: 94, c: 29) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.FloorDiv'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Add'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Sub'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Mult'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Pow'>
+ - stack1.py: (l: 97, c: 29) - mutation from <class 'ast.Div'> to <class 'ast.Mod'>
+ - stack1.py: (l: 106, c: 8) - mutation from If_Statement to If_False
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.Lt'>
+ - stack1.py: (l: 130, c: 7) - mutation from <class 'ast.Gt'> to <class 'ast.NotEq'>[0m
 
-2023-03-05 01:57:02,409: Writing output report to: /home/auri/temp/lucca/python_experiments/stack1/WHOLE_SUITE/mutatest/WHOLE_SUITE-report.rst
+2023-07-14 00:17:04,036: Writing output report to: /home/auri/temp/lucca/python_experiments/stack1/WHOLE_SUITE/mutatest/WHOLE_SUITE-report.rst

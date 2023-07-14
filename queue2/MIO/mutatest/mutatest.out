@@ -1,4 +1,4 @@
-2023-03-05 01:28:24,882: Running clean trial
+2023-07-14 00:11:51,073: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/queue2
@@ -6,47 +6,49 @@ collected 34 items
 
 MIO/test_queue2_MIO.py ..................................                [100%]
 
-============================== 34 passed in 0.61s ==============================
-2023-03-05 01:28:26,500: [92m59 mutation targets found in queue2.py AST.[0m
-2023-03-05 01:28:26,500: Setting random.seed to: None
-2023-03-05 01:28:26,501: Coverage file does not exist, proceeding to sample from all targets.
-2023-03-05 01:28:26,502: Total sample space size: 59
-2023-03-05 01:28:26,502: [92mSelecting 10 locations from 59 potentials.[0m
-2023-03-05 01:28:26,502: Starting individual mutation trials!
-2023-03-05 01:28:26,502: Running serial (single processor) dispatch mode.
-2023-03-05 01:28:26,502: Current target location: queue2.py, LocIndex(ast_class='CompareIs', lineno=120, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=120, end_col_offset=28)
-2023-03-05 01:28:27,847: [92mResult: Detected at queue2.py: (120, 11)[0m
-2023-03-05 01:28:27,848: Current target location: queue2.py, LocIndex(ast_class='Compare', lineno=129, col_offset=14, op_type=<class 'ast.NotEq'>, end_lineno=129, end_col_offset=23)
-2023-03-05 01:28:29,444: [92mResult: Detected at queue2.py: (129, 14)[0m
-2023-03-05 01:28:31,319: [92mResult: Detected at queue2.py: (129, 14)[0m
-2023-03-05 01:28:33,123: [92mResult: Detected at queue2.py: (129, 14)[0m
-2023-03-05 01:28:34,947: [92mResult: Detected at queue2.py: (129, 14)[0m
-2023-03-05 01:28:36,603: [92mResult: Detected at queue2.py: (129, 14)[0m
-2023-03-05 01:28:36,604: Current target location: queue2.py, LocIndex(ast_class='If', lineno=120, col_offset=8, op_type='If_Statement', end_lineno=121, end_col_offset=29)
-2023-03-05 01:28:37,769: [91mResult: Survived at queue2.py: (120, 8)[0m
-2023-03-05 01:28:39,099: [92mResult: Detected at queue2.py: (120, 8)[0m
-2023-03-05 01:28:39,099: Current target location: queue2.py, LocIndex(ast_class='If', lineno=37, col_offset=8, op_type='If_Statement', end_lineno=38, end_col_offset=53)
-2023-03-05 01:28:40,371: [92mResult: Detected at queue2.py: (37, 8)[0m
-2023-03-05 01:28:41,567: [91mResult: Survived at queue2.py: (37, 8)[0m
-2023-03-05 01:28:41,567: Current target location: queue2.py, LocIndex(ast_class='AugAssign', lineno=130, col_offset=12, op_type='AugAssign_Add', end_lineno=130, end_col_offset=22)
-2023-03-05 01:28:43,192: [92mResult: Detected at queue2.py: (130, 12)[0m
-2023-03-05 01:28:44,631: [92mResult: Detected at queue2.py: (130, 12)[0m
-2023-03-05 01:28:46,126: [92mResult: Detected at queue2.py: (130, 12)[0m
-2023-03-05 01:28:46,126: Current target location: queue2.py, LocIndex(ast_class='If', lineno=48, col_offset=12, op_type='If_Statement', end_lineno=53, end_col_offset=27)
-2023-03-05 01:28:47,346: [92mResult: Detected at queue2.py: (48, 12)[0m
-2023-03-05 01:28:48,715: [92mResult: Detected at queue2.py: (48, 12)[0m
-2023-03-05 01:28:48,716: Current target location: queue2.py, LocIndex(ast_class='BoolOp', lineno=15, col_offset=14, op_type=<class 'ast.And'>, end_lineno=15, end_col_offset=39)
-2023-03-05 01:28:50,046: [92mResult: Detected at queue2.py: (15, 14)[0m
-2023-03-05 01:28:50,046: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=21, col_offset=32, op_type=True, end_lineno=21, end_col_offset=36)
-2023-03-05 01:28:51,245: [91mResult: Survived at queue2.py: (21, 32)[0m
-2023-03-05 01:28:52,627: [91mResult: Survived at queue2.py: (21, 32)[0m
-2023-03-05 01:28:52,628: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=15, col_offset=20, op_type=None, end_lineno=15, end_col_offset=24)
-2023-03-05 01:28:53,843: [91mResult: Survived at queue2.py: (15, 20)[0m
-2023-03-05 01:28:54,992: [91mResult: Survived at queue2.py: (15, 20)[0m
-2023-03-05 01:28:54,992: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=129, col_offset=19, op_type=None, end_lineno=129, end_col_offset=23)
-2023-03-05 01:28:56,695: [92mResult: Detected at queue2.py: (129, 19)[0m
-2023-03-05 01:28:58,242: [92mResult: Detected at queue2.py: (129, 19)[0m
-2023-03-05 01:28:58,242: Running clean trial
+============================== 34 passed in 0.09s ==============================
+2023-07-14 00:11:51,330: [92m59 mutation targets found in queue2.py AST.[0m
+2023-07-14 00:11:51,331: Setting random.seed to: 2023
+2023-07-14 00:11:51,332: Total sample space size: 59
+2023-07-14 00:11:51,332: [92mSelecting 10 locations from 59 potentials.[0m
+2023-07-14 00:11:51,332: Starting individual mutation trials!
+2023-07-14 00:11:51,332: Running serial (single processor) dispatch mode.
+2023-07-14 00:11:51,332: Current target location: queue2.py, LocIndex(ast_class='Compare', lineno=49, col_offset=19, op_type=<class 'ast.Eq'>, end_lineno=49, end_col_offset=31)
+2023-07-14 00:11:51,558: [92mResult: Detected at queue2.py: (49, 19)[0m
+2023-07-14 00:11:51,785: [92mResult: Detected at queue2.py: (49, 19)[0m
+2023-07-14 00:11:52,013: [92mResult: Detected at queue2.py: (49, 19)[0m
+2023-07-14 00:11:52,239: [92mResult: Detected at queue2.py: (49, 19)[0m
+2023-07-14 00:11:52,468: [92mResult: Detected at queue2.py: (49, 19)[0m
+2023-07-14 00:11:52,468: Current target location: queue2.py, LocIndex(ast_class='If', lineno=103, col_offset=8, op_type='If_Statement', end_lineno=104, end_col_offset=47)
+2023-07-14 00:11:52,697: [92mResult: Detected at queue2.py: (103, 8)[0m
+2023-07-14 00:11:52,925: [91mResult: Survived at queue2.py: (103, 8)[0m
+2023-07-14 00:11:52,925: Current target location: queue2.py, LocIndex(ast_class='Compare', lineno=60, col_offset=14, op_type=<class 'ast.NotEq'>, end_lineno=60, end_col_offset=23)
+2023-07-14 00:11:53,155: [92mResult: Detected at queue2.py: (60, 14)[0m
+2023-07-14 00:11:53,383: [92mResult: Detected at queue2.py: (60, 14)[0m
+2023-07-14 00:11:53,610: [92mResult: Detected at queue2.py: (60, 14)[0m
+2023-07-14 00:11:53,838: [92mResult: Detected at queue2.py: (60, 14)[0m
+2023-07-14 00:11:54,069: [92mResult: Detected at queue2.py: (60, 14)[0m
+2023-07-14 00:11:54,069: Current target location: queue2.py, LocIndex(ast_class='CompareIs', lineno=120, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=120, end_col_offset=28)
+2023-07-14 00:11:54,296: [92mResult: Detected at queue2.py: (120, 11)[0m
+2023-07-14 00:11:54,296: Current target location: queue2.py, LocIndex(ast_class='AugAssign', lineno=130, col_offset=12, op_type='AugAssign_Add', end_lineno=130, end_col_offset=22)
+2023-07-14 00:11:54,530: [92mResult: Detected at queue2.py: (130, 12)[0m
+2023-07-14 00:11:54,762: [92mResult: Detected at queue2.py: (130, 12)[0m
+2023-07-14 00:11:54,993: [92mResult: Detected at queue2.py: (130, 12)[0m
+2023-07-14 00:11:54,993: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=47, col_offset=19, op_type=None, end_lineno=47, end_col_offset=23)
+2023-07-14 00:11:55,234: [92mResult: Detected at queue2.py: (47, 19)[0m
+2023-07-14 00:11:55,466: [92mResult: Detected at queue2.py: (47, 19)[0m
+2023-07-14 00:11:55,466: Current target location: queue2.py, LocIndex(ast_class='If', lineno=91, col_offset=8, op_type='If_Statement', end_lineno=95, end_col_offset=31)
+2023-07-14 00:11:55,701: [92mResult: Detected at queue2.py: (91, 8)[0m
+2023-07-14 00:11:55,936: [92mResult: Detected at queue2.py: (91, 8)[0m
+2023-07-14 00:11:55,936: Current target location: queue2.py, LocIndex(ast_class='NameConstant', lineno=83, col_offset=20, op_type=None, end_lineno=83, end_col_offset=24)
+2023-07-14 00:11:56,178: [92mResult: Detected at queue2.py: (83, 20)[0m
+2023-07-14 00:11:56,426: [92mResult: Detected at queue2.py: (83, 20)[0m
+2023-07-14 00:11:56,426: Current target location: queue2.py, LocIndex(ast_class='If', lineno=48, col_offset=12, op_type='If_Statement', end_lineno=53, end_col_offset=27)
+2023-07-14 00:11:56,666: [92mResult: Detected at queue2.py: (48, 12)[0m
+2023-07-14 00:11:56,899: [92mResult: Detected at queue2.py: (48, 12)[0m
+2023-07-14 00:11:56,899: Current target location: queue2.py, LocIndex(ast_class='CompareIs', lineno=91, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=91, end_col_offset=28)
+2023-07-14 00:11:57,132: [92mResult: Detected at queue2.py: (91, 11)[0m
+2023-07-14 00:11:57,133: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/queue2
@@ -54,17 +56,17 @@ collected 34 items
 
 MIO/test_queue2_MIO.py ..................................                [100%]
 
-============================== 34 passed in 0.24s ==============================
-2023-03-05 01:28:59,293: CLI Report:
+============================== 34 passed in 0.06s ==============================
+2023-07-14 00:11:57,362: CLI Report:
 
 Mutatest diagnostic summary
 ===========================
  - Source location: /home/auri/temp/lucca/python_experiments/queue2/queue2.py
- - Test commands: ['python', '-m', 'pytest', './MIO']
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './MIO']
  - Mode: f
  - Excluded files: []
  - N locations input: 10
- - Random seed: None
+ - Random seed: 2023
 
 Random sample details
 ---------------------
@@ -75,51 +77,54 @@ Random sample details
 
 Running time details
 --------------------
- - Clean trial 1 run time: 0:00:01.597624
- - Clean trial 2 run time: 0:00:01.050096
- - Mutation trials total run time: 0:00:31.747194
+ - Clean trial 1 run time: 0:00:00.254981
+ - Clean trial 2 run time: 0:00:00.229034
+ - Mutation trials total run time: 0:00:05.804577
 
-2023-03-05 01:28:59,293: Trial Summary Report:
+2023-07-14 00:11:57,362: Trial Summary Report:
 
 Overall mutation trial summary
 ==============================
- - DETECTED: 16
- - SURVIVED: 6
- - TOTAL RUNS: 22
- - RUN DATETIME: 2023-03-05 01:28:59.293228
+ - DETECTED: 24
+ - SURVIVED: 1
+ - TOTAL RUNS: 25
+ - RUN DATETIME: 2023-07-14 00:11:57.362327
 
-2023-03-05 01:28:59,293: Detected mutations:[92m
+2023-07-14 00:11:57,362: Detected mutations:[92m
 
 DETECTED
 --------
- - queue2.py: (l: 15, c: 14) - mutation from <class 'ast.And'> to <class 'ast.Or'>
- - queue2.py: (l: 37, c: 8) - mutation from If_Statement to If_True
+ - queue2.py: (l: 47, c: 19) - mutation from None to False
+ - queue2.py: (l: 47, c: 19) - mutation from None to True
  - queue2.py: (l: 48, c: 12) - mutation from If_Statement to If_False
  - queue2.py: (l: 48, c: 12) - mutation from If_Statement to If_True
- - queue2.py: (l: 120, c: 8) - mutation from If_Statement to If_True
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - queue2.py: (l: 49, c: 19) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - queue2.py: (l: 60, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Gt'>
+ - queue2.py: (l: 60, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.GtE'>
+ - queue2.py: (l: 60, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.LtE'>
+ - queue2.py: (l: 60, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Eq'>
+ - queue2.py: (l: 60, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Lt'>
+ - queue2.py: (l: 83, c: 20) - mutation from None to False
+ - queue2.py: (l: 83, c: 20) - mutation from None to True
+ - queue2.py: (l: 91, c: 8) - mutation from If_Statement to If_False
+ - queue2.py: (l: 91, c: 8) - mutation from If_Statement to If_True
+ - queue2.py: (l: 91, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue2.py: (l: 103, c: 8) - mutation from If_Statement to If_True
  - queue2.py: (l: 120, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
- - queue2.py: (l: 129, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Gt'>
- - queue2.py: (l: 129, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.LtE'>
- - queue2.py: (l: 129, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.GtE'>
- - queue2.py: (l: 129, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Eq'>
- - queue2.py: (l: 129, c: 14) - mutation from <class 'ast.NotEq'> to <class 'ast.Lt'>
- - queue2.py: (l: 129, c: 19) - mutation from None to False
- - queue2.py: (l: 129, c: 19) - mutation from None to True
  - queue2.py: (l: 130, c: 12) - mutation from AugAssign_Add to AugAssign_Mult
- - queue2.py: (l: 130, c: 12) - mutation from AugAssign_Add to AugAssign_Sub
- - queue2.py: (l: 130, c: 12) - mutation from AugAssign_Add to AugAssign_Div[0m
+ - queue2.py: (l: 130, c: 12) - mutation from AugAssign_Add to AugAssign_Div
+ - queue2.py: (l: 130, c: 12) - mutation from AugAssign_Add to AugAssign_Sub[0m
 
-2023-03-05 01:28:59,293: Timedout mutations:
+2023-07-14 00:11:57,362: Timedout mutations:
 
-2023-03-05 01:28:59,293: Surviving mutations:[91m
+2023-07-14 00:11:57,362: Surviving mutations:[91m
 
 SURVIVED
 --------
- - queue2.py: (l: 15, c: 20) - mutation from None to False
- - queue2.py: (l: 15, c: 20) - mutation from None to True
- - queue2.py: (l: 21, c: 32) - mutation from True to False
- - queue2.py: (l: 21, c: 32) - mutation from True to None
- - queue2.py: (l: 37, c: 8) - mutation from If_Statement to If_False
- - queue2.py: (l: 120, c: 8) - mutation from If_Statement to If_False[0m
+ - queue2.py: (l: 103, c: 8) - mutation from If_Statement to If_False[0m
 
-2023-03-05 01:28:59,294: Writing output report to: /home/auri/temp/lucca/python_experiments/queue2/MIO/mutatest/MIO-report.rst
+2023-07-14 00:11:57,362: Writing output report to: /home/auri/temp/lucca/python_experiments/queue2/MIO/mutatest/MIO-report.rst

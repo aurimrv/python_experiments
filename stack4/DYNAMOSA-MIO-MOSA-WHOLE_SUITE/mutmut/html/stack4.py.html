@@ -1,4 +1,4 @@
-<html><body><h1>stack4.py</h1>Killed 30 out of 47 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 12</h3><pre>--- stack4.py
+<html><body><h1>stack4.py</h1>Killed 31 out of 47 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 12</h3><pre>--- stack4.py
 +++ stack4.py
 @@ -46,7 +46,7 @@
      def pop(self):
@@ -174,15 +174,4 @@
  
      def display(self):
          """Display list as a tuple."""
-</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 4</h3><pre>--- stack4.py
-+++ stack4.py
-@@ -28,7 +28,7 @@
- 
-     def __init__(self, data=None):
-         """Linked list initialized with head."""
--        self._length = 0
-+        self._length = None
-         self.head = None
-         try:
-             for val in data:
 </pre></body></html>

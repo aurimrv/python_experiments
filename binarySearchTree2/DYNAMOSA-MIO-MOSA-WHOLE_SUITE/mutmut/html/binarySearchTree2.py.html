@@ -1,4 +1,4 @@
-<html><body><h1>binarySearchTree2.py</h1>Killed 52 out of 99 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- binarySearchTree2.py
+<html><body><h1>binarySearchTree2.py</h1>Killed 60 out of 99 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- binarySearchTree2.py
 +++ binarySearchTree2.py
 @@ -2,7 +2,7 @@
  
@@ -428,92 +428,4 @@
 +    tree2.remove(3)
 +    print(tree2, tree2.size)
 +
-</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 4</h3><pre>--- binarySearchTree2.py
-+++ binarySearchTree2.py
-@@ -7,7 +7,7 @@
- class Node:
-     def __init__(self, value: T):
-         self.value = value
--        self.left = None
-+        self.left = ""
-         self.right = None
- 
- class BST:
-</pre><h3>Mutant 5</h3><pre>--- binarySearchTree2.py
-+++ binarySearchTree2.py
-@@ -8,7 +8,7 @@
-     def __init__(self, value: T):
-         self.value = value
-         self.left = None
--        self.right = None
-+        self.right = ""
- 
- class BST:
-     def __init__(self):
-</pre><h3>Mutant 6</h3><pre>--- binarySearchTree2.py
-+++ binarySearchTree2.py
-@@ -12,7 +12,7 @@
- 
- class BST:
-     def __init__(self):
--        self.root = None
-+        self.root = ""
-         self.size = 0
- 
-     def add(self, value: T):
-</pre><h3>Mutant 7</h3><pre>--- binarySearchTree2.py
-+++ binarySearchTree2.py
-@@ -13,7 +13,7 @@
- class BST:
-     def __init__(self):
-         self.root = None
--        self.size = 0
-+        self.size = 1
- 
-     def add(self, value: T):
-         if self.contains(value):
-</pre><h3>Mutant 8</h3><pre>--- binarySearchTree2.py
-+++ binarySearchTree2.py
-@@ -13,7 +13,7 @@
- class BST:
-     def __init__(self):
-         self.root = None
--        self.size = 0
-+        self.size = None
- 
-     def add(self, value: T):
-         if self.contains(value):
-</pre><h3>Mutant 10</h3><pre>--- binarySearchTree2.py
-+++ binarySearchTree2.py
-@@ -18,7 +18,7 @@
-     def add(self, value: T):
-         if self.contains(value):
-             return False
--        elif self.root == None:
-+        elif self.root != None:
-             self.root = Node(value)
-             self.size += 1
-         else:
-</pre><h3>Mutant 27</h3><pre>--- binarySearchTree2.py
-+++ binarySearchTree2.py
-@@ -43,7 +43,7 @@
-         return self.__contains(self.root, value)
- 
-     def __contains(self, root, value):
--        if root == None:
-+        if root != None:
-             return False
-         elif root.value == value:
-             return True
-</pre><h3>Mutant 75</h3><pre>--- binarySearchTree2.py
-+++ binarySearchTree2.py
-@@ -135,7 +135,7 @@
- 
-             self.__add(root, array[mid])
- 
--        self.__build(array, root, left, mid - 1)
-+        self.__build(array, root, left, mid + 1)
-         self.__build(array, root, mid + 1, right)
- 
-         return root
 </pre></body></html>

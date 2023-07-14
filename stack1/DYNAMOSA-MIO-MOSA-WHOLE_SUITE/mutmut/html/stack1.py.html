@@ -1,4 +1,4 @@
-<html><body><h1>stack1.py</h1>Killed 40 out of 68 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 4</h3><pre>--- stack1.py
+<html><body><h1>stack1.py</h1>Killed 41 out of 68 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 4</h3><pre>--- stack1.py
 +++ stack1.py
 @@ -12,7 +12,7 @@
          return self.size
@@ -295,15 +295,4 @@
          raise ValueError()
  
      return stack.pop()
-</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 32</h3><pre>--- stack1.py
-+++ stack1.py
-@@ -60,7 +60,7 @@
-         # Values being the right-side brackets
-         if character in brackets.values():
-             try:
--                other = stack.pop()
-+                other = None
- 
-                 # Check for it's pair using the dict earlier
-                 if brackets[other] != character:
 </pre></body></html>

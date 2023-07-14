@@ -1,4 +1,4 @@
-2023-03-06 08:10:29,639: Running clean trial
+2023-07-14 00:18:27,546: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
@@ -9,52 +9,54 @@ DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList3_MIO.py ..............     [ 56%]
 DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........       [ 81%]
 DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........   [100%]
 
-============================== 44 passed in 0.12s ==============================
-2023-03-06 08:10:29,949: [92m20 mutation targets found in linkedList3.py AST.[0m
-2023-03-06 08:10:29,949: Setting random.seed to: None
-2023-03-06 08:10:29,949: Coverage file does not exist, proceeding to sample from all targets.
-2023-03-06 08:10:29,949: Total sample space size: 20
-2023-03-06 08:10:29,949: [92mSelecting 10 locations from 20 potentials.[0m
-2023-03-06 08:10:29,949: Starting individual mutation trials!
-2023-03-06 08:10:29,949: Running serial (single processor) dispatch mode.
-2023-03-06 08:10:29,949: Current target location: linkedList3.py, LocIndex(ast_class='AugAssign', lineno=52, col_offset=12, op_type='AugAssign_Sub', end_lineno=52, end_col_offset=28)
-2023-03-06 08:10:30,200: [91mResult: Survived at linkedList3.py: (52, 12)[0m
-2023-03-06 08:10:30,499: [91mResult: Survived at linkedList3.py: (52, 12)[0m
-2023-03-06 08:10:30,774: [91mResult: Survived at linkedList3.py: (52, 12)[0m
-2023-03-06 08:10:30,774: Current target location: linkedList3.py, LocIndex(ast_class='AugAssign', lineno=29, col_offset=12, op_type='AugAssign_Add', end_lineno=29, end_col_offset=28)
-2023-03-06 08:10:31,085: [92mResult: Detected at linkedList3.py: (29, 12)[0m
-2023-03-06 08:10:31,382: [92mResult: Detected at linkedList3.py: (29, 12)[0m
-2023-03-06 08:10:31,689: [92mResult: Detected at linkedList3.py: (29, 12)[0m
-2023-03-06 08:10:31,689: Current target location: linkedList3.py, LocIndex(ast_class='NameConstant', lineno=77, col_offset=45, op_type=False, end_lineno=77, end_col_offset=50)
-2023-03-06 08:10:31,977: [92mResult: Detected at linkedList3.py: (77, 45)[0m
-2023-03-06 08:10:32,266: [92mResult: Detected at linkedList3.py: (77, 45)[0m
-2023-03-06 08:10:32,266: Current target location: linkedList3.py, LocIndex(ast_class='NameConstant', lineno=77, col_offset=15, op_type=True, end_lineno=77, end_col_offset=19)
-2023-03-06 08:10:32,566: [92mResult: Detected at linkedList3.py: (77, 15)[0m
-2023-03-06 08:10:32,864: [92mResult: Detected at linkedList3.py: (77, 15)[0m
-2023-03-06 08:10:32,864: Current target location: linkedList3.py, LocIndex(ast_class='NameConstant', lineno=44, col_offset=35, op_type=None, end_lineno=44, end_col_offset=39)
-2023-03-06 08:10:33,144: [92mResult: Detected at linkedList3.py: (44, 35)[0m
-2023-03-06 08:10:33,418: [92mResult: Detected at linkedList3.py: (44, 35)[0m
-2023-03-06 08:10:33,418: Current target location: linkedList3.py, LocIndex(ast_class='Compare', lineno=42, col_offset=11, op_type=<class 'ast.GtE'>, end_lineno=42, end_col_offset=27)
-2023-03-06 08:10:33,696: [92mResult: Detected at linkedList3.py: (42, 11)[0m
-2023-03-06 08:10:33,971: [92mResult: Detected at linkedList3.py: (42, 11)[0m
-2023-03-06 08:10:34,246: [92mResult: Detected at linkedList3.py: (42, 11)[0m
-2023-03-06 08:10:34,517: [92mResult: Detected at linkedList3.py: (42, 11)[0m
-2023-03-06 08:10:34,784: [92mResult: Detected at linkedList3.py: (42, 11)[0m
-2023-03-06 08:10:34,784: Current target location: linkedList3.py, LocIndex(ast_class='AugAssign', lineno=46, col_offset=12, op_type='AugAssign_Sub', end_lineno=46, end_col_offset=28)
-2023-03-06 08:10:35,032: [91mResult: Survived at linkedList3.py: (46, 12)[0m
-2023-03-06 08:10:35,279: [91mResult: Survived at linkedList3.py: (46, 12)[0m
-2023-03-06 08:10:35,526: [91mResult: Survived at linkedList3.py: (46, 12)[0m
-2023-03-06 08:10:35,527: Current target location: linkedList3.py, LocIndex(ast_class='AugAssign', lineno=34, col_offset=12, op_type='AugAssign_Add', end_lineno=34, end_col_offset=28)
-2023-03-06 08:10:35,808: [92mResult: Detected at linkedList3.py: (34, 12)[0m
-2023-03-06 08:10:36,088: [92mResult: Detected at linkedList3.py: (34, 12)[0m
-2023-03-06 08:10:36,368: [92mResult: Detected at linkedList3.py: (34, 12)[0m
-2023-03-06 08:10:36,369: Current target location: linkedList3.py, LocIndex(ast_class='NameConstant', lineno=21, col_offset=31, op_type=None, end_lineno=21, end_col_offset=35)
-2023-03-06 08:10:36,620: [91mResult: Survived at linkedList3.py: (21, 31)[0m
-2023-03-06 08:10:36,875: [91mResult: Survived at linkedList3.py: (21, 31)[0m
-2023-03-06 08:10:36,875: Current target location: linkedList3.py, LocIndex(ast_class='If', lineno=42, col_offset=8, op_type='If_Statement', end_lineno=53, end_col_offset=31)
-2023-03-06 08:10:37,123: [91mResult: Survived at linkedList3.py: (42, 8)[0m
-2023-03-06 08:10:37,392: [92mResult: Detected at linkedList3.py: (42, 8)[0m
-2023-03-06 08:10:37,392: Running clean trial
+============================== 44 passed in 0.11s ==============================
+2023-07-14 00:18:27,853: [92m20 mutation targets found in linkedList3.py AST.[0m
+2023-07-14 00:18:27,853: Setting random.seed to: 2023
+2023-07-14 00:18:27,854: Total sample space size: 19
+2023-07-14 00:18:27,854: [92mSelecting 10 locations from 19 potentials.[0m
+2023-07-14 00:18:27,854: Starting individual mutation trials!
+2023-07-14 00:18:27,854: Running serial (single processor) dispatch mode.
+2023-07-14 00:18:27,854: Current target location: linkedList3.py, LocIndex(ast_class='NameConstant', lineno=44, col_offset=35, op_type=None, end_lineno=44, end_col_offset=39)
+2023-07-14 00:18:28,090: [92mResult: Detected at linkedList3.py: (44, 35)[0m
+2023-07-14 00:18:28,326: [92mResult: Detected at linkedList3.py: (44, 35)[0m
+2023-07-14 00:18:28,326: Current target location: linkedList3.py, LocIndex(ast_class='NameConstant', lineno=77, col_offset=15, op_type=True, end_lineno=77, end_col_offset=19)
+2023-07-14 00:18:28,566: [92mResult: Detected at linkedList3.py: (77, 15)[0m
+2023-07-14 00:18:28,804: [92mResult: Detected at linkedList3.py: (77, 15)[0m
+2023-07-14 00:18:28,804: Current target location: linkedList3.py, LocIndex(ast_class='Compare', lineno=102, col_offset=3, op_type=<class 'ast.Eq'>, end_lineno=102, end_col_offset=25)
+2023-07-14 00:18:29,038: [91mResult: Survived at linkedList3.py: (102, 3)[0m
+2023-07-14 00:18:29,271: [91mResult: Survived at linkedList3.py: (102, 3)[0m
+2023-07-14 00:18:29,509: [91mResult: Survived at linkedList3.py: (102, 3)[0m
+2023-07-14 00:18:29,749: [91mResult: Survived at linkedList3.py: (102, 3)[0m
+2023-07-14 00:18:29,983: [91mResult: Survived at linkedList3.py: (102, 3)[0m
+2023-07-14 00:18:29,983: Current target location: linkedList3.py, LocIndex(ast_class='If', lineno=42, col_offset=8, op_type='If_Statement', end_lineno=53, end_col_offset=31)
+2023-07-14 00:18:30,218: [92mResult: Detected at linkedList3.py: (42, 8)[0m
+2023-07-14 00:18:30,450: [91mResult: Survived at linkedList3.py: (42, 8)[0m
+2023-07-14 00:18:30,450: Current target location: linkedList3.py, LocIndex(ast_class='NameConstant', lineno=41, col_offset=19, op_type=None, end_lineno=41, end_col_offset=23)
+2023-07-14 00:18:30,685: [92mResult: Detected at linkedList3.py: (41, 19)[0m
+2023-07-14 00:18:30,920: [92mResult: Detected at linkedList3.py: (41, 19)[0m
+2023-07-14 00:18:30,920: Current target location: linkedList3.py, LocIndex(ast_class='If', lineno=102, col_offset=0, op_type='If_Statement', end_lineno=103, end_col_offset=8)
+2023-07-14 00:18:31,153: [91mResult: Survived at linkedList3.py: (102, 0)[0m
+2023-07-14 00:18:31,390: [91mResult: Survived at linkedList3.py: (102, 0)[0m
+2023-07-14 00:18:31,390: Current target location: linkedList3.py, LocIndex(ast_class='AugAssign', lineno=29, col_offset=12, op_type='AugAssign_Add', end_lineno=29, end_col_offset=28)
+2023-07-14 00:18:31,627: [92mResult: Detected at linkedList3.py: (29, 12)[0m
+2023-07-14 00:18:31,868: [92mResult: Detected at linkedList3.py: (29, 12)[0m
+2023-07-14 00:18:32,106: [92mResult: Detected at linkedList3.py: (29, 12)[0m
+2023-07-14 00:18:32,106: Current target location: linkedList3.py, LocIndex(ast_class='Compare', lineno=77, col_offset=23, op_type=<class 'ast.Eq'>, end_lineno=77, end_col_offset=39)
+2023-07-14 00:18:32,344: [92mResult: Detected at linkedList3.py: (77, 23)[0m
+2023-07-14 00:18:32,580: [92mResult: Detected at linkedList3.py: (77, 23)[0m
+2023-07-14 00:18:32,824: [91mResult: Survived at linkedList3.py: (77, 23)[0m
+2023-07-14 00:18:33,066: [92mResult: Detected at linkedList3.py: (77, 23)[0m
+2023-07-14 00:18:33,311: [92mResult: Detected at linkedList3.py: (77, 23)[0m
+2023-07-14 00:18:33,311: Current target location: linkedList3.py, LocIndex(ast_class='NameConstant', lineno=17, col_offset=31, op_type=None, end_lineno=17, end_col_offset=35)
+2023-07-14 00:18:33,552: [92mResult: Detected at linkedList3.py: (17, 31)[0m
+2023-07-14 00:18:33,799: [92mResult: Detected at linkedList3.py: (17, 31)[0m
+2023-07-14 00:18:33,799: Current target location: linkedList3.py, LocIndex(ast_class='Compare', lineno=42, col_offset=11, op_type=<class 'ast.GtE'>, end_lineno=42, end_col_offset=27)
+2023-07-14 00:18:34,033: [92mResult: Detected at linkedList3.py: (42, 11)[0m
+2023-07-14 00:18:34,268: [92mResult: Detected at linkedList3.py: (42, 11)[0m
+2023-07-14 00:18:34,502: [92mResult: Detected at linkedList3.py: (42, 11)[0m
+2023-07-14 00:18:34,736: [92mResult: Detected at linkedList3.py: (42, 11)[0m
+2023-07-14 00:18:34,971: [92mResult: Detected at linkedList3.py: (42, 11)[0m
+2023-07-14 00:18:34,972: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/linkedList3
@@ -66,76 +68,79 @@ DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList3_MOSA.py ...........       [ 81%]
 DYNAMOSA-MIO-MOSA-WHOLE_SUITE/test_linkedList3_WHOLE_SUITE.py ........   [100%]
 
 ============================== 44 passed in 0.06s ==============================
-2023-03-06 08:10:37,641: CLI Report:
+2023-07-14 00:18:35,202: CLI Report:
 
 Mutatest diagnostic summary
 ===========================
  - Source location: /home/auri/temp/lucca/python_experiments/linkedList3/linkedList3.py
- - Test commands: ['python', '-m', 'pytest', './DYNAMOSA-MIO-MOSA-WHOLE_SUITE']
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './DYNAMOSA-MIO-MOSA-WHOLE_SUITE']
  - Mode: f
  - Excluded files: []
  - N locations input: 10
- - Random seed: None
+ - Random seed: 2023
 
 Random sample details
 ---------------------
  - Total locations mutated: 10
- - Total locations identified: 20
- - Location sample coverage: 50.00 %
+ - Total locations identified: 19
+ - Location sample coverage: 52.63 %
 
 
 Running time details
 --------------------
- - Clean trial 1 run time: 0:00:00.307951
- - Clean trial 2 run time: 0:00:00.247804
- - Mutation trials total run time: 0:00:07.445507
+ - Clean trial 1 run time: 0:00:00.305074
+ - Clean trial 2 run time: 0:00:00.230296
+ - Mutation trials total run time: 0:00:07.120284
 
-2023-03-06 08:10:37,641: Trial Summary Report:
+2023-07-14 00:18:35,202: Trial Summary Report:
 
 Overall mutation trial summary
 ==============================
+ - DETECTED: 21
  - SURVIVED: 9
- - DETECTED: 18
- - TOTAL RUNS: 27
- - RUN DATETIME: 2023-03-06 08:10:37.640994
+ - TOTAL RUNS: 30
+ - RUN DATETIME: 2023-07-14 00:18:35.202579
 
-2023-03-06 08:10:37,641: Detected mutations:[92m
+2023-07-14 00:18:35,202: Detected mutations:[92m
 
 DETECTED
 --------
+ - linkedList3.py: (l: 17, c: 31) - mutation from None to False
+ - linkedList3.py: (l: 17, c: 31) - mutation from None to True
  - linkedList3.py: (l: 29, c: 12) - mutation from AugAssign_Add to AugAssign_Mult
- - linkedList3.py: (l: 29, c: 12) - mutation from AugAssign_Add to AugAssign_Sub
  - linkedList3.py: (l: 29, c: 12) - mutation from AugAssign_Add to AugAssign_Div
- - linkedList3.py: (l: 34, c: 12) - mutation from AugAssign_Add to AugAssign_Sub
- - linkedList3.py: (l: 34, c: 12) - mutation from AugAssign_Add to AugAssign_Div
- - linkedList3.py: (l: 34, c: 12) - mutation from AugAssign_Add to AugAssign_Mult
+ - linkedList3.py: (l: 29, c: 12) - mutation from AugAssign_Add to AugAssign_Sub
+ - linkedList3.py: (l: 41, c: 19) - mutation from None to False
+ - linkedList3.py: (l: 41, c: 19) - mutation from None to True
  - linkedList3.py: (l: 42, c: 8) - mutation from If_Statement to If_False
- - linkedList3.py: (l: 42, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.Lt'>
  - linkedList3.py: (l: 42, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.Eq'>
- - linkedList3.py: (l: 42, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.NotEq'>
  - linkedList3.py: (l: 42, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.Gt'>
  - linkedList3.py: (l: 42, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.LtE'>
+ - linkedList3.py: (l: 42, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.Lt'>
+ - linkedList3.py: (l: 42, c: 11) - mutation from <class 'ast.GtE'> to <class 'ast.NotEq'>
  - linkedList3.py: (l: 44, c: 35) - mutation from None to True
  - linkedList3.py: (l: 44, c: 35) - mutation from None to False
  - linkedList3.py: (l: 77, c: 15) - mutation from True to False
  - linkedList3.py: (l: 77, c: 15) - mutation from True to None
- - linkedList3.py: (l: 77, c: 45) - mutation from False to True
- - linkedList3.py: (l: 77, c: 45) - mutation from False to None[0m
+ - linkedList3.py: (l: 77, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - linkedList3.py: (l: 77, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - linkedList3.py: (l: 77, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - linkedList3.py: (l: 77, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>[0m
 
-2023-03-06 08:10:37,641: Timedout mutations:
+2023-07-14 00:18:35,202: Timedout mutations:
 
-2023-03-06 08:10:37,641: Surviving mutations:[91m
+2023-07-14 00:18:35,202: Surviving mutations:[91m
 
 SURVIVED
 --------
- - linkedList3.py: (l: 21, c: 31) - mutation from None to True
- - linkedList3.py: (l: 21, c: 31) - mutation from None to False
  - linkedList3.py: (l: 42, c: 8) - mutation from If_Statement to If_True
- - linkedList3.py: (l: 46, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
- - linkedList3.py: (l: 46, c: 12) - mutation from AugAssign_Sub to AugAssign_Mult
- - linkedList3.py: (l: 46, c: 12) - mutation from AugAssign_Sub to AugAssign_Div
- - linkedList3.py: (l: 52, c: 12) - mutation from AugAssign_Sub to AugAssign_Div
- - linkedList3.py: (l: 52, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
- - linkedList3.py: (l: 52, c: 12) - mutation from AugAssign_Sub to AugAssign_Mult[0m
+ - linkedList3.py: (l: 77, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - linkedList3.py: (l: 102, c: 0) - mutation from If_Statement to If_True
+ - linkedList3.py: (l: 102, c: 0) - mutation from If_Statement to If_False
+ - linkedList3.py: (l: 102, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - linkedList3.py: (l: 102, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - linkedList3.py: (l: 102, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - linkedList3.py: (l: 102, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - linkedList3.py: (l: 102, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>[0m
 
-2023-03-06 08:10:37,641: Writing output report to: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/mutatest/DYNAMOSA-MIO-MOSA-WHOLE_SUITE-report.rst
+2023-07-14 00:18:35,203: Writing output report to: /home/auri/temp/lucca/python_experiments/linkedList3/DYNAMOSA-MIO-MOSA-WHOLE_SUITE/mutatest/DYNAMOSA-MIO-MOSA-WHOLE_SUITE-report.rst

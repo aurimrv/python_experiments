@@ -1,4 +1,4 @@
-2023-03-03 18:03:16,369: Running clean trial
+2023-07-14 00:00:55,774: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/queue5
@@ -32,44 +32,45 @@ RANDOM/test_queue5_RANDOM.py ........................................... [  2%]
 ........................................................................ [ 98%]
 ...........................                                              [100%]
 
-============================= 1870 passed in 5.01s =============================
-2023-03-03 18:03:21,577: [92m20 mutation targets found in queue5.py AST.[0m
-2023-03-03 18:03:21,577: Setting random.seed to: None
-2023-03-03 18:03:21,577: Coverage file does not exist, proceeding to sample from all targets.
-2023-03-03 18:03:21,577: Total sample space size: 20
-2023-03-03 18:03:21,577: [92mSelecting 10 locations from 20 potentials.[0m
-2023-03-03 18:03:21,577: Starting individual mutation trials!
-2023-03-03 18:03:21,577: Running serial (single processor) dispatch mode.
-2023-03-03 18:03:21,577: Current target location: queue5.py, LocIndex(ast_class='BoolOp', lineno=26, col_offset=11, op_type=<class 'ast.And'>, end_lineno=26, end_col_offset=50)
-2023-03-03 18:03:23,166: [91mResult: Survived at queue5.py: (26, 11)[0m
-2023-03-03 18:03:23,166: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=17, col_offset=33, op_type=<class 'ast.Is'>, end_lineno=17, end_col_offset=50)
-2023-03-03 18:03:49,220: [93mResult: Timeout at queue5.py: (17, 33)[0m
-2023-03-03 18:03:49,220: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-03 18:03:49,220: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=11, col_offset=20, op_type=None, end_lineno=11, end_col_offset=24)
-2023-03-03 18:04:15,270: [93mResult: Timeout at queue5.py: (11, 20)[0m
-2023-03-03 18:04:15,270: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-03 18:04:15,270: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=17, col_offset=46, op_type=None, end_lineno=17, end_col_offset=50)
-2023-03-03 18:04:41,320: [93mResult: Timeout at queue5.py: (17, 46)[0m
-2023-03-03 18:04:41,320: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-03 18:04:41,320: Current target location: queue5.py, LocIndex(ast_class='If', lineno=17, col_offset=8, op_type='If_Statement', end_lineno=22, end_col_offset=28)
-2023-03-03 18:05:07,373: [93mResult: Timeout at queue5.py: (17, 8)[0m
-2023-03-03 18:05:07,373: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-03 18:05:07,373: Current target location: queue5.py, LocIndex(ast_class='Compare', lineno=30, col_offset=11, op_type=<class 'ast.Eq'>, end_lineno=30, end_col_offset=33)
-2023-03-03 18:05:33,423: [93mResult: Timeout at queue5.py: (30, 11)[0m
-2023-03-03 18:05:33,423: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-03 18:05:33,423: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=31, col_offset=24, op_type=None, end_lineno=31, end_col_offset=28)
-2023-03-03 18:05:59,475: [93mResult: Timeout at queue5.py: (31, 24)[0m
-2023-03-03 18:05:59,475: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-03 18:05:59,475: Current target location: queue5.py, LocIndex(ast_class='If', lineno=26, col_offset=8, op_type='If_Statement', end_lineno=27, end_col_offset=23)
-2023-03-03 18:06:25,525: [93mResult: Timeout at queue5.py: (26, 8)[0m
-2023-03-03 18:06:25,525: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-03 18:06:25,525: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=5, col_offset=20, op_type=None, end_lineno=5, end_col_offset=24)
-2023-03-03 18:06:32,635: [92mResult: Detected at queue5.py: (5, 20)[0m
-2023-03-03 18:06:39,739: [92mResult: Detected at queue5.py: (5, 20)[0m
-2023-03-03 18:06:39,739: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=26, col_offset=33, op_type=<class 'ast.Is'>, end_lineno=26, end_col_offset=50)
-2023-03-03 18:07:05,790: [93mResult: Timeout at queue5.py: (26, 33)[0m
-2023-03-03 18:07:05,790: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-03 18:07:05,790: Running clean trial
+============================= 1870 passed in 4.95s =============================
+2023-07-14 00:01:00,921: [92m20 mutation targets found in queue5.py AST.[0m
+2023-07-14 00:01:00,921: Setting random.seed to: 2023
+2023-07-14 00:01:00,923: Total sample space size: 20
+2023-07-14 00:01:00,923: [92mSelecting 10 locations from 20 potentials.[0m
+2023-07-14 00:01:00,923: Starting individual mutation trials!
+2023-07-14 00:01:00,923: Running serial (single processor) dispatch mode.
+2023-07-14 00:01:00,923: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=26, col_offset=24, op_type=None, end_lineno=26, end_col_offset=28)
+2023-07-14 00:01:03,494: [92mResult: Detected at queue5.py: (26, 24)[0m
+2023-07-14 00:01:06,172: [92mResult: Detected at queue5.py: (26, 24)[0m
+2023-07-14 00:01:06,172: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=26, col_offset=46, op_type=None, end_lineno=26, end_col_offset=50)
+2023-07-14 00:01:08,736: [92mResult: Detected at queue5.py: (26, 46)[0m
+2023-07-14 00:01:11,418: [92mResult: Detected at queue5.py: (26, 46)[0m
+2023-07-14 00:01:11,418: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=32, col_offset=24, op_type=None, end_lineno=32, end_col_offset=28)
+2023-07-14 00:01:13,841: [92mResult: Detected at queue5.py: (32, 24)[0m
+2023-07-14 00:01:15,724: [92mResult: Detected at queue5.py: (32, 24)[0m
+2023-07-14 00:01:15,724: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=26, col_offset=11, op_type=<class 'ast.Is'>, end_lineno=26, end_col_offset=28)
+2023-07-14 00:01:18,206: [92mResult: Detected at queue5.py: (26, 11)[0m
+2023-07-14 00:01:18,206: Current target location: queue5.py, LocIndex(ast_class='If', lineno=30, col_offset=8, op_type='If_Statement', end_lineno=34, end_col_offset=38)
+2023-07-14 00:01:19,750: [91mResult: Survived at queue5.py: (30, 8)[0m
+2023-07-14 00:01:22,040: [92mResult: Detected at queue5.py: (30, 8)[0m
+2023-07-14 00:01:22,040: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=27, col_offset=19, op_type=None, end_lineno=27, end_col_offset=23)
+2023-07-14 00:01:23,596: [91mResult: Survived at queue5.py: (27, 19)[0m
+2023-07-14 00:01:25,194: [91mResult: Survived at queue5.py: (27, 19)[0m
+2023-07-14 00:01:25,194: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=11, col_offset=20, op_type=None, end_lineno=11, end_col_offset=24)
+2023-07-14 00:01:27,920: [92mResult: Detected at queue5.py: (11, 20)[0m
+2023-07-14 00:01:30,682: [92mResult: Detected at queue5.py: (11, 20)[0m
+2023-07-14 00:01:30,682: Current target location: queue5.py, LocIndex(ast_class='Compare', lineno=30, col_offset=11, op_type=<class 'ast.Eq'>, end_lineno=30, end_col_offset=33)
+2023-07-14 00:01:32,534: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-07-14 00:01:34,397: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-07-14 00:01:36,237: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-07-14 00:01:38,097: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-07-14 00:01:39,938: [92mResult: Detected at queue5.py: (30, 11)[0m
+2023-07-14 00:01:39,938: Current target location: queue5.py, LocIndex(ast_class='CompareIs', lineno=26, col_offset=33, op_type=<class 'ast.Is'>, end_lineno=26, end_col_offset=50)
+2023-07-14 00:01:42,436: [92mResult: Detected at queue5.py: (26, 33)[0m
+2023-07-14 00:01:42,436: Current target location: queue5.py, LocIndex(ast_class='NameConstant', lineno=31, col_offset=24, op_type=None, end_lineno=31, end_col_offset=28)
+2023-07-14 00:01:44,158: [92mResult: Detected at queue5.py: (31, 24)[0m
+2023-07-14 00:01:45,874: [92mResult: Detected at queue5.py: (31, 24)[0m
+2023-07-14 00:01:45,874: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/queue5
@@ -103,17 +104,17 @@ RANDOM/test_queue5_RANDOM.py ........................................... [  2%]
 ........................................................................ [ 98%]
 ...........................                                              [100%]
 
-============================= 1870 passed in 1.45s =============================
-2023-03-03 18:07:07,433: CLI Report:
+============================= 1870 passed in 1.36s =============================
+2023-07-14 00:01:47,424: CLI Report:
 
 Mutatest diagnostic summary
 ===========================
  - Source location: /home/auri/temp/lucca/python_experiments/queue5/queue5.py
- - Test commands: ['python', '-m', 'pytest', './RANDOM']
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './RANDOM']
  - Mode: f
  - Excluded files: []
  - N locations input: 10
- - Random seed: None
+ - Random seed: 2023
 
 Random sample details
 ---------------------
@@ -124,44 +125,50 @@ Random sample details
 
 Running time details
 --------------------
- - Clean trial 1 run time: 0:00:05.206673
- - Clean trial 2 run time: 0:00:01.642423
- - Mutation trials total run time: 0:03:44.213680
+ - Clean trial 1 run time: 0:00:05.145560
+ - Clean trial 2 run time: 0:00:01.549075
+ - Mutation trials total run time: 0:00:44.953814
 
-2023-03-03 18:07:07,433: Trial Summary Report:
+2023-07-14 00:01:47,424: Trial Summary Report:
 
 Overall mutation trial summary
 ==============================
- - SURVIVED: 1
- - TIMEOUT: 8
- - DETECTED: 2
- - TOTAL RUNS: 11
- - RUN DATETIME: 2023-03-03 18:07:07.432997
+ - DETECTED: 18
+ - SURVIVED: 3
+ - TOTAL RUNS: 21
+ - RUN DATETIME: 2023-07-14 00:01:47.423930
 
-2023-03-03 18:07:07,433: Detected mutations:[92m
+2023-07-14 00:01:47,424: Detected mutations:[92m
 
 DETECTED
 --------
- - queue5.py: (l: 5, c: 20) - mutation from None to True
- - queue5.py: (l: 5, c: 20) - mutation from None to False[0m
-
-2023-03-03 18:07:07,433: Timedout mutations:[93m
-
-TIMEOUT
--------
  - queue5.py: (l: 11, c: 20) - mutation from None to False
- - queue5.py: (l: 17, c: 8) - mutation from If_Statement to If_False
- - queue5.py: (l: 17, c: 33) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
- - queue5.py: (l: 17, c: 46) - mutation from None to True
- - queue5.py: (l: 26, c: 8) - mutation from If_Statement to If_True
+ - queue5.py: (l: 11, c: 20) - mutation from None to True
+ - queue5.py: (l: 26, c: 11) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 26, c: 24) - mutation from None to True
+ - queue5.py: (l: 26, c: 24) - mutation from None to False
  - queue5.py: (l: 26, c: 33) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
+ - queue5.py: (l: 26, c: 46) - mutation from None to False
+ - queue5.py: (l: 26, c: 46) - mutation from None to True
+ - queue5.py: (l: 30, c: 8) - mutation from If_Statement to If_False
+ - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
  - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
- - queue5.py: (l: 31, c: 24) - mutation from None to False[0m
+ - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - queue5.py: (l: 30, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - queue5.py: (l: 31, c: 24) - mutation from None to True
+ - queue5.py: (l: 31, c: 24) - mutation from None to False
+ - queue5.py: (l: 32, c: 24) - mutation from None to False
+ - queue5.py: (l: 32, c: 24) - mutation from None to True[0m
 
-2023-03-03 18:07:07,433: Surviving mutations:[91m
+2023-07-14 00:01:47,424: Timedout mutations:
+
+2023-07-14 00:01:47,424: Surviving mutations:[91m
 
 SURVIVED
 --------
- - queue5.py: (l: 26, c: 11) - mutation from <class 'ast.And'> to <class 'ast.Or'>[0m
+ - queue5.py: (l: 27, c: 19) - mutation from None to False
+ - queue5.py: (l: 27, c: 19) - mutation from None to True
+ - queue5.py: (l: 30, c: 8) - mutation from If_Statement to If_True[0m
 
-2023-03-03 18:07:07,433: Writing output report to: /home/auri/temp/lucca/python_experiments/queue5/RANDOM/mutatest/RANDOM-report.rst
+2023-07-14 00:01:47,424: Writing output report to: /home/auri/temp/lucca/python_experiments/queue5/RANDOM/mutatest/RANDOM-report.rst

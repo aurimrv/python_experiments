@@ -1,11 +1,11 @@
 Mutatest diagnostic summary
 ===========================
  - Source location: /home/auri/temp/lucca/python_experiments/linkedList4/linkedList4.py
- - Test commands: ['python', '-m', 'pytest', './DYNAMOSA-MIO-MOSA-WHOLE_SUITE']
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './DYNAMOSA-MIO-MOSA-WHOLE_SUITE']
  - Mode: f
  - Excluded files: []
  - N locations input: 10
- - Random seed: None
+ - Random seed: 2023
 
 Random sample details
 ---------------------
@@ -16,16 +16,16 @@ Random sample details
 
 Running time details
 --------------------
- - Clean trial 1 run time: 0:00:00.332971
- - Clean trial 2 run time: 0:00:00.305027
- - Mutation trials total run time: 0:00:07.050886
+ - Clean trial 1 run time: 0:00:00.319127
+ - Clean trial 2 run time: 0:00:00.233717
+ - Mutation trials total run time: 0:00:07.453349
 
 Overall mutation trial summary
 ==============================
- - DETECTED: 14
  - SURVIVED: 7
- - TOTAL RUNS: 21
- - RUN DATETIME: 2023-03-06 08:10:45.619075
+ - DETECTED: 23
+ - TOTAL RUNS: 30
+ - RUN DATETIME: 2023-07-14 00:18:43.475877
 
 
 Mutations by result status
@@ -34,28 +34,37 @@ Mutations by result status
 
 SURVIVED
 --------
- - linkedList4.py: (l: 10, c: 39) - mutation from None to False
- - linkedList4.py: (l: 10, c: 39) - mutation from None to True
  - linkedList4.py: (l: 30, c: 28) - mutation from None to False
+ - linkedList4.py: (l: 73, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
  - linkedList4.py: (l: 73, c: 12) - mutation from AugAssign_Sub to AugAssign_Mult
  - linkedList4.py: (l: 73, c: 12) - mutation from AugAssign_Sub to AugAssign_Div
- - linkedList4.py: (l: 73, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
- - linkedList4.py: (l: 75, c: 12) - mutation from If_Statement to If_False
+ - linkedList4.py: (l: 77, c: 16) - mutation from AugAssign_Sub to AugAssign_Add
+ - linkedList4.py: (l: 77, c: 16) - mutation from AugAssign_Sub to AugAssign_Div
+ - linkedList4.py: (l: 77, c: 16) - mutation from AugAssign_Sub to AugAssign_Mult
 
 
 DETECTED
 --------
  - linkedList4.py: (l: 30, c: 28) - mutation from None to True
+ - linkedList4.py: (l: 38, c: 12) - mutation from If_Statement to If_True
+ - linkedList4.py: (l: 38, c: 12) - mutation from If_Statement to If_False
  - linkedList4.py: (l: 45, c: 8) - mutation from AugAssign_Add to AugAssign_Mult
  - linkedList4.py: (l: 45, c: 8) - mutation from AugAssign_Add to AugAssign_Sub
  - linkedList4.py: (l: 45, c: 8) - mutation from AugAssign_Add to AugAssign_Div
- - linkedList4.py: (l: 49, c: 8) - mutation from If_Statement to If_False
- - linkedList4.py: (l: 49, c: 8) - mutation from If_Statement to If_True
- - linkedList4.py: (l: 53, c: 8) - mutation from AugAssign_Sub to AugAssign_Mult
- - linkedList4.py: (l: 53, c: 8) - mutation from AugAssign_Sub to AugAssign_Div
- - linkedList4.py: (l: 53, c: 8) - mutation from AugAssign_Sub to AugAssign_Add
- - linkedList4.py: (l: 71, c: 8) - mutation from If_Statement to If_False
- - linkedList4.py: (l: 71, c: 8) - mutation from If_Statement to If_True
- - linkedList4.py: (l: 71, c: 20) - mutation from <class 'ast.Is'> to <class 'ast.IsNot'>
- - linkedList4.py: (l: 75, c: 12) - mutation from If_Statement to If_True
+ - linkedList4.py: (l: 71, c: 11) - mutation from <class 'ast.And'> to <class 'ast.Or'>
  - linkedList4.py: (l: 75, c: 16) - mutation from <class 'ast.And'> to <class 'ast.Or'>
+ - linkedList4.py: (l: 85, c: 12) - mutation from AugAssign_Add to AugAssign_Sub
+ - linkedList4.py: (l: 85, c: 12) - mutation from AugAssign_Add to AugAssign_Div
+ - linkedList4.py: (l: 85, c: 12) - mutation from AugAssign_Add to AugAssign_Mult
+ - linkedList4.py: (l: 85, c: 23) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - linkedList4.py: (l: 85, c: 23) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - linkedList4.py: (l: 85, c: 23) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - linkedList4.py: (l: 85, c: 23) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>
+ - linkedList4.py: (l: 85, c: 23) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - linkedList4.py: (l: 85, c: 23) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - linkedList4.py: (l: 87, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Pow'>
+ - linkedList4.py: (l: 87, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mult'>
+ - linkedList4.py: (l: 87, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Mod'>
+ - linkedList4.py: (l: 87, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Div'>
+ - linkedList4.py: (l: 87, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.Sub'>
+ - linkedList4.py: (l: 87, c: 15) - mutation from <class 'ast.Add'> to <class 'ast.FloorDiv'>

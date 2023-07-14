@@ -1,4 +1,4 @@
-<html><body><h1>queue2.py</h1>Killed 57 out of 73 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3</h3><pre>--- queue2.py
+<html><body><h1>queue2.py</h1>Killed 61 out of 73 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3</h3><pre>--- queue2.py
 +++ queue2.py
 @@ -11,7 +11,7 @@
  
@@ -130,48 +130,4 @@
          return val
  
      def __iter__(self):
-</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 14</h3><pre>--- queue2.py
-+++ queue2.py
-@@ -24,7 +24,7 @@
- class LinkedList:
-     def __init__(self, *start):
-         """Demonstrate linked lists in Python."""
--        self.head  = None
-+        self.head  = ""
-         for _ in start:
-             self.prepend(_)
- 
-</pre><h3>Mutant 15</h3><pre>--- queue2.py
-+++ queue2.py
-@@ -30,7 +30,7 @@
- 
-     def prepend(self, value):
-         """Prepend element into list."""
--        self.head = LinkedNode(value, self.head)
-+        self.head = None
- 
-     def pop(self):
-         """Remove first value in list."""
-</pre><h3>Mutant 40</h3><pre>--- queue2.py
-+++ queue2.py
-@@ -72,7 +72,7 @@
-         """Count values in list."""
-         n = self.head
-         count = 0
--        while n != None:
-+        while n == None:
-             count += 1
-             n = n.next
-         return count
-</pre><h3>Mutant 45</h3><pre>--- queue2.py
-+++ queue2.py
-@@ -80,7 +80,7 @@
- class QueueLinkedList:
-     def __init__(self, *start):
-         """Demonstrate queue using linked list in Python."""
--        self.head = None
-+        self.head = ""
-         self.tail = None
-         for _ in start:
-             self.add(_)
 </pre></body></html>

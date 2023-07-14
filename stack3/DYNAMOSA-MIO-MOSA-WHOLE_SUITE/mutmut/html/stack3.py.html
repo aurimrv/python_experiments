@@ -1,4 +1,4 @@
-<html><body><h1>stack3.py</h1>Killed 35 out of 57 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 7</h3><pre>--- stack3.py
+<html><body><h1>stack3.py</h1>Killed 36 out of 57 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 7</h3><pre>--- stack3.py
 +++ stack3.py
 @@ -14,7 +14,7 @@
      def __init__(self):
@@ -226,16 +226,5 @@
 -if __name__ == "__main__":
 +if __name__ == "XX__main__XX":
      pass
- 
-</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 51</h3><pre>--- stack3.py
-+++ stack3.py
-@@ -122,7 +122,7 @@
- 
-         """Check if stack is empty."""
- 
--        return True if self.__stack.getSize() == 0 else False
-+        return True if self.__stack.getSize() != 0 else False
- 
-     def getSize(self) -> int:
  
 </pre></body></html>

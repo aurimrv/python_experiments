@@ -1,4 +1,4 @@
-2023-03-05 01:45:29,302: Running clean trial
+2023-07-14 00:14:53,832: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/stack3
@@ -6,53 +6,50 @@ collected 17 items
 
 MOSA/test_stack3_MOSA.py .................                               [100%]
 
-============================== 17 passed in 0.33s ==============================
-2023-03-05 01:45:30,497: [92m24 mutation targets found in stack3.py AST.[0m
-2023-03-05 01:45:30,497: Setting random.seed to: None
-2023-03-05 01:45:30,498: Coverage file does not exist, proceeding to sample from all targets.
-2023-03-05 01:45:30,498: Total sample space size: 24
-2023-03-05 01:45:30,498: [92mSelecting 10 locations from 24 potentials.[0m
-2023-03-05 01:45:30,498: Starting individual mutation trials!
-2023-03-05 01:45:30,498: Running serial (single processor) dispatch mode.
-2023-03-05 01:45:30,499: Current target location: stack3.py, LocIndex(ast_class='If', lineno=24, col_offset=8, op_type='If_Statement', end_lineno=32, end_col_offset=28)
-2023-03-05 01:45:36,555: [93mResult: Timeout at stack3.py: (24, 8)[0m
-2023-03-05 01:45:36,556: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-05 01:45:36,556: Current target location: stack3.py, LocIndex(ast_class='If', lineno=40, col_offset=8, op_type='If_Statement', end_lineno=51, end_col_offset=31)
-2023-03-05 01:45:37,831: [92mResult: Detected at stack3.py: (40, 8)[0m
-2023-03-05 01:45:38,905: [91mResult: Survived at stack3.py: (40, 8)[0m
-2023-03-05 01:45:38,905: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=10, col_offset=20, op_type=None, end_lineno=10, end_col_offset=24)
-2023-03-05 01:45:40,276: [92mResult: Detected at stack3.py: (10, 20)[0m
-2023-03-05 01:45:41,671: [92mResult: Detected at stack3.py: (10, 20)[0m
-2023-03-05 01:45:41,672: Current target location: stack3.py, LocIndex(ast_class='Compare', lineno=24, col_offset=11, op_type=<class 'ast.Eq'>, end_lineno=24, end_col_offset=27)
-2023-03-05 01:45:47,674: [93mResult: Timeout at stack3.py: (24, 11)[0m
-2023-03-05 01:45:47,674: [93mBreak on timeout: stopping further mutations at location.[0m
-2023-03-05 01:45:47,675: Current target location: stack3.py, LocIndex(ast_class='If', lineno=140, col_offset=0, op_type='If_Statement', end_lineno=141, end_col_offset=8)
-2023-03-05 01:45:48,675: [91mResult: Survived at stack3.py: (140, 0)[0m
-2023-03-05 01:45:49,901: [91mResult: Survived at stack3.py: (140, 0)[0m
-2023-03-05 01:45:49,901: Current target location: stack3.py, LocIndex(ast_class='Compare', lineno=38, col_offset=11, op_type=<class 'ast.Eq'>, end_lineno=38, end_col_offset=27)
-2023-03-05 01:45:51,057: [91mResult: Survived at stack3.py: (38, 11)[0m
-2023-03-05 01:45:52,523: [92mResult: Detected at stack3.py: (38, 11)[0m
-2023-03-05 01:45:53,836: [92mResult: Detected at stack3.py: (38, 11)[0m
-2023-03-05 01:45:54,923: [91mResult: Survived at stack3.py: (38, 11)[0m
-2023-03-05 01:45:56,314: [92mResult: Detected at stack3.py: (38, 11)[0m
-2023-03-05 01:45:56,315: Current target location: stack3.py, LocIndex(ast_class='AugAssign', lineno=44, col_offset=12, op_type='AugAssign_Sub', end_lineno=44, end_col_offset=28)
-2023-03-05 01:45:57,455: [91mResult: Survived at stack3.py: (44, 12)[0m
-2023-03-05 01:45:58,534: [91mResult: Survived at stack3.py: (44, 12)[0m
-2023-03-05 01:45:59,748: [91mResult: Survived at stack3.py: (44, 12)[0m
-2023-03-05 01:45:59,748: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=125, col_offset=56, op_type=False, end_lineno=125, end_col_offset=61)
-2023-03-05 01:46:00,907: [92mResult: Detected at stack3.py: (125, 56)[0m
-2023-03-05 01:46:02,016: [92mResult: Detected at stack3.py: (125, 56)[0m
-2023-03-05 01:46:02,016: Current target location: stack3.py, LocIndex(ast_class='AugAssign', lineno=27, col_offset=12, op_type='AugAssign_Add', end_lineno=27, end_col_offset=28)
-2023-03-05 01:46:03,409: [92mResult: Detected at stack3.py: (27, 12)[0m
-2023-03-05 01:46:04,563: [92mResult: Detected at stack3.py: (27, 12)[0m
-2023-03-05 01:46:05,771: [92mResult: Detected at stack3.py: (27, 12)[0m
-2023-03-05 01:46:05,771: Current target location: stack3.py, LocIndex(ast_class='Compare', lineno=75, col_offset=23, op_type=<class 'ast.Eq'>, end_lineno=75, end_col_offset=39)
-2023-03-05 01:46:07,099: [92mResult: Detected at stack3.py: (75, 23)[0m
-2023-03-05 01:46:08,447: [92mResult: Detected at stack3.py: (75, 23)[0m
-2023-03-05 01:46:09,567: [91mResult: Survived at stack3.py: (75, 23)[0m
-2023-03-05 01:46:11,011: [92mResult: Detected at stack3.py: (75, 23)[0m
-2023-03-05 01:46:12,295: [92mResult: Detected at stack3.py: (75, 23)[0m
-2023-03-05 01:46:12,296: Running clean trial
+============================== 17 passed in 0.05s ==============================
+2023-07-14 00:14:54,057: [92m24 mutation targets found in stack3.py AST.[0m
+2023-07-14 00:14:54,057: Setting random.seed to: 2023
+2023-07-14 00:14:54,058: Total sample space size: 23
+2023-07-14 00:14:54,058: [92mSelecting 10 locations from 23 potentials.[0m
+2023-07-14 00:14:54,058: Starting individual mutation trials!
+2023-07-14 00:14:54,058: Running serial (single processor) dispatch mode.
+2023-07-14 00:14:54,058: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=42, col_offset=35, op_type=None, end_lineno=42, end_col_offset=39)
+2023-07-14 00:14:54,280: [92mResult: Detected at stack3.py: (42, 35)[0m
+2023-07-14 00:14:54,505: [92mResult: Detected at stack3.py: (42, 35)[0m
+2023-07-14 00:14:54,505: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=75, col_offset=15, op_type=True, end_lineno=75, end_col_offset=19)
+2023-07-14 00:14:54,730: [92mResult: Detected at stack3.py: (75, 15)[0m
+2023-07-14 00:14:54,942: [92mResult: Detected at stack3.py: (75, 15)[0m
+2023-07-14 00:14:54,942: Current target location: stack3.py, LocIndex(ast_class='Compare', lineno=140, col_offset=3, op_type=<class 'ast.Eq'>, end_lineno=140, end_col_offset=25)
+2023-07-14 00:14:55,162: [91mResult: Survived at stack3.py: (140, 3)[0m
+2023-07-14 00:14:55,386: [91mResult: Survived at stack3.py: (140, 3)[0m
+2023-07-14 00:14:55,598: [91mResult: Survived at stack3.py: (140, 3)[0m
+2023-07-14 00:14:55,819: [91mResult: Survived at stack3.py: (140, 3)[0m
+2023-07-14 00:14:56,043: [91mResult: Survived at stack3.py: (140, 3)[0m
+2023-07-14 00:14:56,043: Current target location: stack3.py, LocIndex(ast_class='If', lineno=40, col_offset=8, op_type='If_Statement', end_lineno=51, end_col_offset=31)
+2023-07-14 00:14:56,266: [91mResult: Survived at stack3.py: (40, 8)[0m
+2023-07-14 00:14:56,493: [92mResult: Detected at stack3.py: (40, 8)[0m
+2023-07-14 00:14:56,493: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=125, col_offset=15, op_type=True, end_lineno=125, end_col_offset=19)
+2023-07-14 00:14:56,706: [92mResult: Detected at stack3.py: (125, 15)[0m
+2023-07-14 00:14:56,929: [92mResult: Detected at stack3.py: (125, 15)[0m
+2023-07-14 00:14:56,929: Current target location: stack3.py, LocIndex(ast_class='Compare', lineno=125, col_offset=23, op_type=<class 'ast.Eq'>, end_lineno=125, end_col_offset=50)
+2023-07-14 00:14:57,142: [92mResult: Detected at stack3.py: (125, 23)[0m
+2023-07-14 00:14:57,358: [91mResult: Survived at stack3.py: (125, 23)[0m
+2023-07-14 00:14:57,581: [92mResult: Detected at stack3.py: (125, 23)[0m
+2023-07-14 00:14:57,794: [92mResult: Detected at stack3.py: (125, 23)[0m
+2023-07-14 00:14:58,015: [92mResult: Detected at stack3.py: (125, 23)[0m
+2023-07-14 00:14:58,015: Current target location: stack3.py, LocIndex(ast_class='If', lineno=24, col_offset=8, op_type='If_Statement', end_lineno=32, end_col_offset=28)
+2023-07-14 00:14:59,140: [93mResult: Timeout at stack3.py: (24, 8)[0m
+2023-07-14 00:14:59,140: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-07-14 00:14:59,140: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=75, col_offset=45, op_type=False, end_lineno=75, end_col_offset=50)
+2023-07-14 00:14:59,363: [92mResult: Detected at stack3.py: (75, 45)[0m
+2023-07-14 00:14:59,589: [92mResult: Detected at stack3.py: (75, 45)[0m
+2023-07-14 00:14:59,589: Current target location: stack3.py, LocIndex(ast_class='NameConstant', lineno=103, col_offset=32, op_type=None, end_lineno=103, end_col_offset=36)
+2023-07-14 00:14:59,800: [91mResult: Survived at stack3.py: (103, 32)[0m
+2023-07-14 00:15:00,027: [91mResult: Survived at stack3.py: (103, 32)[0m
+2023-07-14 00:15:00,027: Current target location: stack3.py, LocIndex(ast_class='Compare', lineno=24, col_offset=11, op_type=<class 'ast.Eq'>, end_lineno=24, end_col_offset=27)
+2023-07-14 00:15:01,156: [93mResult: Timeout at stack3.py: (24, 11)[0m
+2023-07-14 00:15:01,157: [93mBreak on timeout: stopping further mutations at location.[0m
+2023-07-14 00:15:01,157: Running clean trial
 ============================= test session starts ==============================
 platform linux -- Python 3.10.10, pytest-7.2.1, pluggy-1.0.0
 rootdir: /home/auri/temp/lucca/python_experiments/stack3
@@ -60,80 +57,78 @@ collected 17 items
 
 MOSA/test_stack3_MOSA.py .................                               [100%]
 
-============================== 17 passed in 0.22s ==============================
-2023-03-05 01:46:13,370: CLI Report:
+============================== 17 passed in 0.04s ==============================
+2023-07-14 00:15:01,369: CLI Report:
 
 Mutatest diagnostic summary
 ===========================
  - Source location: /home/auri/temp/lucca/python_experiments/stack3/stack3.py
- - Test commands: ['python', '-m', 'pytest', './MOSA']
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './MOSA']
  - Mode: f
  - Excluded files: []
  - N locations input: 10
- - Random seed: None
+ - Random seed: 2023
 
 Random sample details
 ---------------------
  - Total locations mutated: 10
- - Total locations identified: 24
- - Location sample coverage: 41.67 %
+ - Total locations identified: 23
+ - Location sample coverage: 43.48 %
 
 
 Running time details
 --------------------
- - Clean trial 1 run time: 0:00:01.190966
- - Clean trial 2 run time: 0:00:01.073238
- - Mutation trials total run time: 0:00:41.802727
+ - Clean trial 1 run time: 0:00:00.222268
+ - Clean trial 2 run time: 0:00:00.212191
+ - Mutation trials total run time: 0:00:07.101725
 
-2023-03-05 01:46:13,370: Trial Summary Report:
+2023-07-14 00:15:01,369: Trial Summary Report:
 
 Overall mutation trial summary
 ==============================
- - TIMEOUT: 2
- - DETECTED: 15
+ - DETECTED: 13
  - SURVIVED: 9
- - TOTAL RUNS: 26
- - RUN DATETIME: 2023-03-05 01:46:13.370052
+ - TIMEOUT: 2
+ - TOTAL RUNS: 24
+ - RUN DATETIME: 2023-07-14 00:15:01.369656
 
-2023-03-05 01:46:13,370: Detected mutations:[92m
+2023-07-14 00:15:01,369: Detected mutations:[92m
 
 DETECTED
 --------
- - stack3.py: (l: 10, c: 20) - mutation from None to False
- - stack3.py: (l: 10, c: 20) - mutation from None to True
- - stack3.py: (l: 27, c: 12) - mutation from AugAssign_Add to AugAssign_Mult
- - stack3.py: (l: 27, c: 12) - mutation from AugAssign_Add to AugAssign_Div
- - stack3.py: (l: 27, c: 12) - mutation from AugAssign_Add to AugAssign_Sub
- - stack3.py: (l: 38, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
- - stack3.py: (l: 38, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
- - stack3.py: (l: 38, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
  - stack3.py: (l: 40, c: 8) - mutation from If_Statement to If_False
- - stack3.py: (l: 75, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
- - stack3.py: (l: 75, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
- - stack3.py: (l: 75, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
- - stack3.py: (l: 75, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
- - stack3.py: (l: 125, c: 56) - mutation from False to True
- - stack3.py: (l: 125, c: 56) - mutation from False to None[0m
+ - stack3.py: (l: 42, c: 35) - mutation from None to True
+ - stack3.py: (l: 42, c: 35) - mutation from None to False
+ - stack3.py: (l: 75, c: 15) - mutation from True to False
+ - stack3.py: (l: 75, c: 15) - mutation from True to None
+ - stack3.py: (l: 75, c: 45) - mutation from False to None
+ - stack3.py: (l: 75, c: 45) - mutation from False to True
+ - stack3.py: (l: 125, c: 15) - mutation from True to False
+ - stack3.py: (l: 125, c: 15) - mutation from True to None
+ - stack3.py: (l: 125, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - stack3.py: (l: 125, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - stack3.py: (l: 125, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - stack3.py: (l: 125, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>[0m
 
-2023-03-05 01:46:13,370: Timedout mutations:[93m
+2023-07-14 00:15:01,370: Timedout mutations:[93m
 
 TIMEOUT
 -------
  - stack3.py: (l: 24, c: 8) - mutation from If_Statement to If_False
- - stack3.py: (l: 24, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>[0m
+ - stack3.py: (l: 24, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>[0m
 
-2023-03-05 01:46:13,370: Surviving mutations:[91m
+2023-07-14 00:15:01,370: Surviving mutations:[91m
 
 SURVIVED
 --------
- - stack3.py: (l: 38, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
- - stack3.py: (l: 38, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
  - stack3.py: (l: 40, c: 8) - mutation from If_Statement to If_True
- - stack3.py: (l: 44, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
- - stack3.py: (l: 44, c: 12) - mutation from AugAssign_Sub to AugAssign_Div
- - stack3.py: (l: 44, c: 12) - mutation from AugAssign_Sub to AugAssign_Mult
- - stack3.py: (l: 75, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
- - stack3.py: (l: 140, c: 0) - mutation from If_Statement to If_True
- - stack3.py: (l: 140, c: 0) - mutation from If_Statement to If_False[0m
+ - stack3.py: (l: 103, c: 32) - mutation from None to False
+ - stack3.py: (l: 103, c: 32) - mutation from None to True
+ - stack3.py: (l: 125, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - stack3.py: (l: 140, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - stack3.py: (l: 140, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - stack3.py: (l: 140, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - stack3.py: (l: 140, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - stack3.py: (l: 140, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>[0m
 
-2023-03-05 01:46:13,371: Writing output report to: /home/auri/temp/lucca/python_experiments/stack3/MOSA/mutatest/MOSA-report.rst
+2023-07-14 00:15:01,370: Writing output report to: /home/auri/temp/lucca/python_experiments/stack3/MOSA/mutatest/MOSA-report.rst

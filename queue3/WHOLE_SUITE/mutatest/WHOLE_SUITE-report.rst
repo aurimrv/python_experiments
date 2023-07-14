@@ -1,11 +1,11 @@
 Mutatest diagnostic summary
 ===========================
  - Source location: /home/auri/temp/lucca/python_experiments/queue3/queue3.py
- - Test commands: ['python', '-m', 'pytest', './WHOLE_SUITE']
+ - Test commands: ['python', '-m', 'pytest', '--tb=no', './WHOLE_SUITE']
  - Mode: f
  - Excluded files: []
  - N locations input: 10
- - Random seed: None
+ - Random seed: 2023
 
 Random sample details
 ---------------------
@@ -16,16 +16,16 @@ Random sample details
 
 Running time details
 --------------------
- - Clean trial 1 run time: 0:00:01.359282
- - Clean trial 2 run time: 0:00:01.028553
- - Mutation trials total run time: 0:00:38.203226
+ - Clean trial 1 run time: 0:00:00.247008
+ - Clean trial 2 run time: 0:00:00.208777
+ - Mutation trials total run time: 0:00:07.747363
 
 Overall mutation trial summary
 ==============================
- - DETECTED: 20
- - SURVIVED: 10
- - TOTAL RUNS: 30
- - RUN DATETIME: 2023-03-05 01:54:38.899995
+ - DETECTED: 26
+ - SURVIVED: 9
+ - TOTAL RUNS: 35
+ - RUN DATETIME: 2023-07-14 00:16:38.121683
 
 
 Mutations by result status
@@ -34,37 +34,42 @@ Mutations by result status
 
 SURVIVED
 --------
- - queue3.py: (l: 16, c: 31) - mutation from None to True
- - queue3.py: (l: 16, c: 31) - mutation from None to False
- - queue3.py: (l: 61, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
- - queue3.py: (l: 63, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
- - queue3.py: (l: 84, c: 19) - mutation from None to False
- - queue3.py: (l: 84, c: 19) - mutation from None to True
- - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
  - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
- - queue3.py: (l: 113, c: 19) - mutation from None to False
- - queue3.py: (l: 113, c: 19) - mutation from None to True
+ - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - queue3.py: (l: 106, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - queue3.py: (l: 193, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.LtE'>
+ - queue3.py: (l: 193, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - queue3.py: (l: 193, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - queue3.py: (l: 193, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - queue3.py: (l: 193, c: 3) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
 
 
 DETECTED
 --------
- - queue3.py: (l: 61, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
- - queue3.py: (l: 61, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
- - queue3.py: (l: 61, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
- - queue3.py: (l: 61, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
- - queue3.py: (l: 63, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
- - queue3.py: (l: 63, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
- - queue3.py: (l: 63, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
- - queue3.py: (l: 63, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
- - queue3.py: (l: 74, c: 32) - mutation from None to True
+ - queue3.py: (l: 30, c: 12) - mutation from AugAssign_Add to AugAssign_Div
+ - queue3.py: (l: 30, c: 12) - mutation from AugAssign_Add to AugAssign_Mult
+ - queue3.py: (l: 30, c: 12) - mutation from AugAssign_Add to AugAssign_Sub
+ - queue3.py: (l: 38, c: 12) - mutation from AugAssign_Add to AugAssign_Mult
+ - queue3.py: (l: 38, c: 12) - mutation from AugAssign_Add to AugAssign_Div
+ - queue3.py: (l: 38, c: 12) - mutation from AugAssign_Add to AugAssign_Sub
+ - queue3.py: (l: 66, c: 32) - mutation from None to False
+ - queue3.py: (l: 66, c: 32) - mutation from None to True
+ - queue3.py: (l: 67, c: 12) - mutation from AugAssign_Sub to AugAssign_Mult
+ - queue3.py: (l: 67, c: 12) - mutation from AugAssign_Sub to AugAssign_Div
+ - queue3.py: (l: 67, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
  - queue3.py: (l: 74, c: 32) - mutation from None to False
+ - queue3.py: (l: 74, c: 32) - mutation from None to True
+ - queue3.py: (l: 83, c: 8) - mutation from If_Statement to If_True
+ - queue3.py: (l: 83, c: 8) - mutation from If_Statement to If_False
  - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
- - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
  - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
- - queue3.py: (l: 99, c: 12) - mutation from AugAssign_Sub to AugAssign_Div
- - queue3.py: (l: 99, c: 12) - mutation from AugAssign_Sub to AugAssign_Add
- - queue3.py: (l: 99, c: 12) - mutation from AugAssign_Sub to AugAssign_Mult
- - queue3.py: (l: 106, c: 45) - mutation from False to None
- - queue3.py: (l: 106, c: 45) - mutation from False to True
- - queue3.py: (l: 112, c: 8) - mutation from If_Statement to If_False
- - queue3.py: (l: 112, c: 8) - mutation from If_Statement to If_True
+ - queue3.py: (l: 85, c: 13) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - queue3.py: (l: 106, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - queue3.py: (l: 106, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - queue3.py: (l: 106, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>
+ - queue3.py: (l: 106, c: 23) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Lt'>
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.NotEq'>
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.GtE'>
+ - queue3.py: (l: 112, c: 11) - mutation from <class 'ast.Eq'> to <class 'ast.Gt'>

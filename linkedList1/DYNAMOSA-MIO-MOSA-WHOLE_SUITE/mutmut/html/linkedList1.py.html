@@ -1,4 +1,4 @@
-<html><body><h1>linkedList1.py</h1>Killed 68 out of 95 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- linkedList1.py
+<html><body><h1>linkedList1.py</h1>Killed 75 out of 95 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- linkedList1.py
 +++ linkedList1.py
 @@ -4,7 +4,7 @@
  """
@@ -209,81 +209,4 @@
      print (test[2])
 -    print (test[-1])
 +    print (test[-2])
-</pre><h2>Suspicious</h2>Mutants that made the test suite take longer, but otherwise seemed ok<h3>Mutant 2</h3><pre>--- linkedList1.py
-+++ linkedList1.py
-@@ -7,7 +7,7 @@
-     __next__ = next # For Python 3.X compatibility
- 
-     def __init__(self):
--        self.head = None
-+        self.head = ""
-         self.size = 0
-         self.cursor = None
- 
-</pre><h3>Mutant 3</h3><pre>--- linkedList1.py
-+++ linkedList1.py
-@@ -8,7 +8,7 @@
- 
-     def __init__(self):
-         self.head = None
--        self.size = 0
-+        self.size = 1
-         self.cursor = None
- 
-     def __len__(self):
-</pre><h3>Mutant 4</h3><pre>--- linkedList1.py
-+++ linkedList1.py
-@@ -8,7 +8,7 @@
- 
-     def __init__(self):
-         self.head = None
--        self.size = 0
-+        self.size = None
-         self.cursor = None
- 
-     def __len__(self):
-</pre><h3>Mutant 41</h3><pre>--- linkedList1.py
-+++ linkedList1.py
-@@ -83,7 +83,7 @@
- class SinglyLinkedNode(object):
-     def __init__(self, data):
-         self.data = data
--        self.next = None
-+        self.next = ""
- 
- 
- class DoublyLinkedList(SinglyLinkedList):
-</pre><h3>Mutant 44</h3><pre>--- linkedList1.py
-+++ linkedList1.py
-@@ -104,7 +104,7 @@
-             however, insertion is O(1), giving it an
-             advantage over arrays.
-         """
--        if self.head is None:
-+        if self.head is not None:
-             self.head = DoublyLinkedNode(data)
-             self.cursor = self.head
-         else:
-</pre><h3>Mutant 48</h3><pre>--- linkedList1.py
-+++ linkedList1.py
-@@ -110,7 +110,7 @@
-         else:
-             node = self.head
-             # This is a common pattern with linked lists
--            while node.next is not None:
-+            while node.next is  None:
-                 node = node.next
-             # A simple change to use the double node
-             # and link the previous
-</pre><h3>Mutant 53</h3><pre>--- linkedList1.py
-+++ linkedList1.py
-@@ -117,7 +117,7 @@
-             new_node = DoublyLinkedNode(data)
-             node.next = new_node
-             new_node.prev = node
--        self.size += 1
-+        self.size = 1
- 
-     def insert(self, data, index):
-         if index >= self.size:
 </pre></body></html>
